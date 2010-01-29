@@ -45,11 +45,6 @@
     Setup of various application servers should be similar to the examples shown
     above. For sharing test setups please use one of the project mailing lists.
 
-  Tests
-
-    org.jomc.sequences.it.SequenceOperationsTest
-    org.jomc.sequences.it.SequenceDirectoryTest
-
   JDK 1.5
 
     The 'lib/ext' directory contains JDK extensions to setup using the

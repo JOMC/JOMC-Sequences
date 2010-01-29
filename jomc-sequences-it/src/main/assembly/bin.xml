@@ -90,9 +90,10 @@
       <outputDirectory>/bin</outputDirectory>
       <directoryMode>0755</directoryMode>
       <fileMode>0555</fileMode>
-      <includes>
-        <include>testsuite</include>
-      </includes>
+      <excludes>
+        <exclude>*.bat</exclude>
+        <exclude>**/*.formatted</exclude> <!-- See http://jira.codehaus.org/browse/MASSEMBLY-462 -->
+      </excludes>
       <lineEnding>unix</lineEnding>
     </fileSet>
     <fileSet>

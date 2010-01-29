@@ -36,10 +36,15 @@
 // SECTION-END
 package org.jomc.sequences.it;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.math.BigInteger;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
+import java.util.logging.LogManager;
 import org.jomc.sequences.ConcurrentModificationException;
 import org.jomc.sequences.DuplicateSequenceException;
 import org.jomc.sequences.SequenceVetoException;
@@ -48,6 +53,7 @@ import org.jomc.sequences.SequenceDirectory;
 import org.jomc.sequences.SequenceNotFoundException;
 import org.jomc.sequences.SequencesSystemException;
 import org.junit.Test;
+import org.junit.runner.JUnitCore;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.fail;
@@ -400,6 +406,37 @@ public class SequenceDirectoryTest
         }
 
         assertEquals( BigInteger.ZERO, this.getSequenceDirectory().getSequenceCount() );
+    }
+
+    /**
+     * Test runner entry point.
+     * <p>This method sets up the JDK's {@code LogManager} with properties found at classpath location
+     * {@code "/logging.properties"} and executes {@link JUnitCore#main} passing the given arguments with this classes
+     * name prepended.</p>
+     *
+     * @param args Command line arguments.
+     */
+    public static void main( final String... args )
+    {
+        try
+        {
+            final URL loggingProperties = SequenceDirectoryTest.class.getResource( "/logging.properties" );
+            if ( loggingProperties != null )
+            {
+                final InputStream in = loggingProperties.openStream();
+                LogManager.getLogManager().readConfiguration( in );
+                in.close();
+            }
+
+            final List<String> l = new ArrayList<String>( Arrays.asList( args ) );
+            l.add( 0, SequenceDirectoryTest.class.getName() );
+            JUnitCore.main( l.toArray( new String[ l.size() ] ) );
+        }
+        catch ( final IOException e )
+        {
+            e.printStackTrace();
+            System.exit( 1 );
+        }
     }
 
     // SECTION-END

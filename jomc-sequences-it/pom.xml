@@ -94,8 +94,12 @@
             <configuration>
               <programs>
                 <program>
-                  <mainClass>junit.textui.TestRunner</mainClass>
-                  <name>testsuite</name>
+                  <mainClass>org.jomc.sequences.it.SequenceDirectoryTest</mainClass>
+                  <name>test-sequence-directory</name>
+                </program>
+                <program>
+                  <mainClass>org.jomc.sequences.it.SequenceOperationsTest</mainClass>
+                  <name>test-sequence-operations</name>
                 </program>
               </programs>
               <repositoryLayout>flat</repositoryLayout>
