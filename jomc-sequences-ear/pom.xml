@@ -151,11 +151,6 @@
               <artifactId>persistence-api</artifactId>
               <excluded>true</excluded>
             </jarModule>
-            <jarModule>
-              <groupId>javax.annotation</groupId>
-              <artifactId>jsr250-api</artifactId>
-              <excluded>true</excluded>
-            </jarModule>
           </modules>
           <earSourceDirectory>${project.build.directory}/jomc-ear</earSourceDirectory>
         </configuration>

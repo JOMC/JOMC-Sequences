@@ -147,20 +147,10 @@
   </build>
   <dependencies>
     <dependency>
-      <groupId>org.jomc</groupId>
-      <artifactId>jomc-api</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
       <groupId>javax.persistence</groupId>
       <artifactId>persistence-api</artifactId>
       <scope>compile</scope>
       <optional>true</optional>
-    </dependency>
-    <dependency>
-      <groupId>org.jomc</groupId>
-      <artifactId>jomc-ri</artifactId>
-      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>org.jomc.sdk</groupId>
