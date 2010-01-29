@@ -121,6 +121,24 @@
             <configuration>
               <artifactItems>
                 <artifactItem>
+                  <groupId>${project.groupId}</groupId>
+                  <artifactId>jomc-sequences</artifactId>
+                  <version>${project.version}</version>
+                  <type>txt</type>
+                  <classifier>license</classifier>
+                  <outputDirectory>${project.build.directory}</outputDirectory>
+                  <destFileName>JOMC_LICENSE.txt</destFileName>
+                </artifactItem>
+                <artifactItem>
+                  <groupId>${project.groupId}</groupId>
+                  <artifactId>jomc-sequences</artifactId>
+                  <version>${project.version}</version>
+                  <type>xhtml</type>
+                  <classifier>changes</classifier>
+                  <outputDirectory>${project.build.directory}</outputDirectory>
+                  <destFileName>changes.xhtml</destFileName>
+                </artifactItem>
+                <artifactItem>
                   <groupId>javax.xml.parsers</groupId>
                   <artifactId>jaxp-api</artifactId>
                   <version>1.4.2</version>
@@ -156,21 +174,6 @@
             </configuration>
           </execution>
         </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <configuration>
-          <archive>
-            <index>true</index>
-            <addMavenDescriptor>false</addMavenDescriptor>
-            <compress>true</compress>
-            <manifestEntries>
-              <Build-Date>${buildNumber}</Build-Date>
-              <Main-Class>junit.textui.TestRunner</Main-Class>
-            </manifestEntries>
-          </archive>
-        </configuration>
       </plugin>
     </plugins>
   </build>

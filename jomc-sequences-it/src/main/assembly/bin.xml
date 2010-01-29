@@ -41,6 +41,16 @@
     <format>tar.bz2</format>
     <format>zip</format>
   </formats>
+  <files>
+    <file>
+      <destName>Changelog.html</destName>
+      <fileMode>0444</fileMode>
+      <filtered>false</filtered>
+      <lineEnding>dos</lineEnding>
+      <outputDirectory>/</outputDirectory>
+      <source>${project.build.directory}/changes.xhtml</source>
+    </file>
+  </files>
   <fileSets>
     <fileSet>
       <directory>${remoteResourcesOutputDirectory}/META-INF</directory>
