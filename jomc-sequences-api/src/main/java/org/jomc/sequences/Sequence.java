@@ -304,7 +304,7 @@ public class Sequence implements Comparable<Sequence>, Cloneable, Serializable
         {
             return (Sequence) super.clone();
         }
-        catch ( CloneNotSupportedException e )
+        catch ( final CloneNotSupportedException e )
         {
             throw new AssertionError( e );
         }

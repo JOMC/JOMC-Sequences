@@ -65,7 +65,7 @@ public class DefaultVetoableSequenceChangeListener
 {
     // SECTION-START[VetoableSequenceChangeListener]
 
-    public void vetoableSequenceChange( final SequenceChangeEvent evt ) throws SequenceVetoException
+    public void vetoableSequenceChange( final SequenceChangeEvent evt )
     {
         boolean valid = true;
 

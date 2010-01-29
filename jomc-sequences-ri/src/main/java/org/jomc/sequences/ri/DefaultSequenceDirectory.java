@@ -284,7 +284,7 @@ public class DefaultSequenceDirectory
 
         }
 
-        SequenceType sequenceType = this.getSequenceByName( sequenceName );
+        final SequenceType sequenceType = this.getSequenceByName( sequenceName );
 
         if ( sequenceType == null )
         {
@@ -325,7 +325,7 @@ public class DefaultSequenceDirectory
 
         }
 
-        SequenceType sequenceType = this.getSequenceByName( sequenceName );
+        final SequenceType sequenceType = this.getSequenceByName( sequenceName );
 
         if ( sequenceType == null )
         {
@@ -450,7 +450,7 @@ public class DefaultSequenceDirectory
      *
      * @throws CapacityLimitException if the model reached its maximum capacity.
      */
-    protected void assertMaximumCapacityNotReached() throws CapacityLimitException
+    protected void assertMaximumCapacityNotReached()
     {
         final Query query = this.getEntityManager().createNamedQuery( COUNT_SEQUENCES_QUERY );
         query.setParameter( 1, this.getSequencesList().getName() );

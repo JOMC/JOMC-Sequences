@@ -49,7 +49,6 @@ import org.jomc.sequences.ConcurrentModificationException;
 import org.jomc.sequences.DuplicateSequenceException;
 import org.jomc.sequences.SequenceVetoException;
 import org.jomc.sequences.Sequence;
-import org.jomc.sequences.SequenceDirectory;
 import org.jomc.sequences.SequenceNotFoundException;
 import org.jomc.sequences.SequencesSystemException;
 import org.junit.Test;
@@ -100,8 +99,8 @@ public class SequenceDirectoryTest
     }
 
     /**
-     * Tests all {@link SequenceDirectory} methods to handle illegal arguments correctly by throwing a
-     * {@code SequencesSystemException} with non-null message.
+     * Tests all {@link org.jomc.sequences.SequenceDirectory} methods to handle illegal arguments correctly by throwing
+     * a {@code SequencesSystemException} with non-null message.
      */
     @Test public void testIllegalArguments() throws Exception
     {
@@ -175,9 +174,7 @@ public class SequenceDirectoryTest
 
     }
 
-    /**
-     * Tests that a valid sequence can get added, edited, searched and removed.
-     */
+    /** Tests that a valid sequence can get added, edited, searched and removed. */
     @Test public void testAddEditSearchDeleteLegalSequence() throws Exception
     {
         assert this.getSequenceDirectory() != null;
@@ -209,9 +206,7 @@ public class SequenceDirectoryTest
         assertEquals( BigInteger.ZERO, this.getSequenceDirectory().getSequenceCount() );
     }
 
-    /**
-     * Tests that a sequence cannot get edited or removed when it got changed concurrently.
-     */
+    /** Tests that a sequence cannot get edited or removed when it got changed concurrently. */
     @Test public void testConcurrentModificationException() throws Exception
     {
         assert this.getSequenceDirectory() != null;
@@ -220,7 +215,7 @@ public class SequenceDirectoryTest
 
         final Sequence legal = getTestSequence();
 
-        Sequence sequence = this.getSequenceDirectory().addSequence( legal );
+        final Sequence sequence = this.getSequenceDirectory().addSequence( legal );
 
         try
         {
@@ -353,9 +348,7 @@ public class SequenceDirectoryTest
         this.clearDirectory();
     }
 
-    /**
-     * Tests that adding, editing and then removing multiple sequences leaves an empty directory.
-     */
+    /** Tests that adding, editing and then removing multiple sequences leaves an empty directory. */
     @Test public void testAddEditDeleteMany() throws Exception
     {
         assert this.getSequenceDirectory() != null;

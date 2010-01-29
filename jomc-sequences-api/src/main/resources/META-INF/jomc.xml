@@ -112,7 +112,7 @@
             <text language="de">Kapazitätsgrenze {0,number} des Sequenz-Verzeichnisses erreicht.</text>
           </template>
           <arguments>
-            <argument index="0" name="capacityLimit" type="Number"/>
+            <argument index="0" name="limit" type="Number"/>
           </arguments>
         </message>
       </messages>
@@ -187,7 +187,7 @@
             <text language="de">Keine Sequenz mit Namen ''{0}'' vorhanden.</text>
           </template>
           <arguments>
-            <argument index="0" name="sequenceName"/>
+            <argument index="0" name="name"/>
           </arguments>
         </message>
       </messages>

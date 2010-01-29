@@ -73,7 +73,7 @@ public class ConcurrentModificationException extends SequencesException
      * Most recent revision of the correspondent reported.
      * @serial
      */
-    private Sequence mostRecentRevision;
+    private final Sequence mostRecentRevision;
 
     /**
      * Creates a new {@code ConcurrentModificationException} instance taking the most recent revision of the sequence to

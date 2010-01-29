@@ -82,7 +82,7 @@ public class DefaultSequenceMapper implements SequenceMapper
 {
     // SECTION-START[SequenceMapper]
 
-    public Sequence map( final SequenceType source, final Sequence target ) throws SequencesSystemException
+    public Sequence map( final SequenceType source, final Sequence target )
     {
         if ( source == null )
         {
@@ -104,7 +104,7 @@ public class DefaultSequenceMapper implements SequenceMapper
         return target;
     }
 
-    public SequenceType map( final Sequence source, final SequenceType target ) throws SequencesSystemException
+    public SequenceType map( final Sequence source, final SequenceType target )
     {
         if ( source == null )
         {
@@ -141,7 +141,7 @@ public class DefaultSequenceMapper implements SequenceMapper
      *
      * @throws SequencesSystemException if injecting {@code value} fails unexpectedly.
      */
-    protected void injectRevision( final Sequence s, final long value ) throws SequencesSystemException
+    protected void injectRevision( final Sequence s, final long value )
     {
         this.injectFieldValue( s, "revision", Long.valueOf( value ) );
     }
@@ -154,7 +154,7 @@ public class DefaultSequenceMapper implements SequenceMapper
      *
      * @throws SequencesSystemException if injecting {@code value} fails unexpectedly.
      */
-    protected void injectDate( final Sequence s, final long value ) throws SequencesSystemException
+    protected void injectDate( final Sequence s, final long value )
     {
         this.injectFieldValue( s, "date", Long.valueOf( value ) );
     }
@@ -169,7 +169,6 @@ public class DefaultSequenceMapper implements SequenceMapper
      * @throws SequencesSystemException if setting {@code value} fails unexpectedly.
      */
     protected void injectFieldValue( final Object object, final String fieldName, final Object value )
-        throws SequencesSystemException
     {
         AccessController.doPrivileged( new PrivilegedAction<Object>()
         {

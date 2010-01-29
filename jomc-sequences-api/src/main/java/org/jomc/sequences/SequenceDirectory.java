@@ -150,7 +150,7 @@ public interface SequenceDirectory
     /**
      * Searches the directory for sequences matching the given arguments.
      *
-     * @param name Text to select sequences whose property {@code name} match the given text; {@code null} to ignore
+     * @param name Text to select sequences whose {@code name} property matches the given text; {@code null} to ignore
      * property {@code name} in the search.
      *
      * @return All sequences matching the given criteria.

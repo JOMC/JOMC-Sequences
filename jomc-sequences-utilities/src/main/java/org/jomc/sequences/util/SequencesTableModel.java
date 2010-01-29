@@ -711,7 +711,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *
      * @throws SequencesSystemException if searching entities fails.
      */
-    public List<Sequence> getSequences() throws SequencesSystemException
+    public List<Sequence> getSequences()
     {
         if ( this.sequences == null )
         {

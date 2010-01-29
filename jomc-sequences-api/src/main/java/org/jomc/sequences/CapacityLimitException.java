@@ -75,7 +75,7 @@ public class CapacityLimitException extends SequencesException
      * Capacity limit value.
      * @serial
      */
-    private BigInteger capacityLimit;
+    private final BigInteger capacityLimit;
 
     /**
      * Creates a new {@code CapacityLimitException} taking the capacity limit value.
@@ -142,16 +142,16 @@ public class CapacityLimitException extends SequencesException
      * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Kapazit&auml;tsgrenze {0,number} des Sequenz-Verzeichnisses erreicht.</pre></td></tr>
      * </table></p>
      * @param locale The locale of the message to return.
-     * @param capacityLimit Format argument.
+     * @param limit Format argument.
      * @return The text of the {@code capacityLimit} message.
      *
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
-    private String getCapacityLimitMessage( final java.util.Locale locale, final java.lang.Number capacityLimit )
+    private String getCapacityLimitMessage( final java.util.Locale locale, final java.lang.Number limit )
     {
-        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "capacityLimit", locale, capacityLimit );
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "capacityLimit", locale, limit );
         assert _m != null : "'capacityLimit' message not found.";
         return _m;
     }

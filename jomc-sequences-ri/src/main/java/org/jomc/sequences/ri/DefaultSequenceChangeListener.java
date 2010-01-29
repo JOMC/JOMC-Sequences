@@ -86,8 +86,8 @@ public class DefaultSequenceChangeListener
         if ( this.getLogger().isDebugEnabled() )
         {
             this.getLogger().debug( this.getOperationInfoMessage(
-                this.getLocale(), ( evt.getOldSequence() == null ? null : evt.getOldSequence().toString() ),
-                ( evt.getNewSequence() == null ? null : evt.getNewSequence().toString() ) ) );
+                this.getLocale(), evt.getOldSequence() == null ? null : evt.getOldSequence().toString(),
+                evt.getNewSequence() == null ? null : evt.getNewSequence().toString() ) );
 
         }
     }

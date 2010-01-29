@@ -46,7 +46,6 @@ import java.util.logging.LogManager;
 import org.jomc.sequences.Sequence;
 import org.jomc.sequences.SequenceLimitException;
 import org.jomc.sequences.SequenceNotFoundException;
-import org.jomc.sequences.SequenceOperations;
 import org.jomc.sequences.SequencesSystemException;
 import org.junit.Test;
 import org.junit.runner.JUnitCore;
@@ -84,9 +83,9 @@ public class SequenceOperationsTest
     private static final int TEST_INCREMENT = 10;
 
     /**
-     * Tests the {@link SequenceOperations#getNextSequenceValue(String)} and
-     * {@link SequenceOperations#getNextSequenceValues(String,int)} methods to handle illegal arguments correctly
-     * by throwing a {@code SequencesSystemException} with non-null message.
+     * Tests the {@link org.jomc.sequences.SequenceOperations#getNextSequenceValue(String)} and
+     * {@link org.jomc.sequences.SequenceOperations#getNextSequenceValues(String,int)} methods to handle illegal
+     * arguments correctly by throwing a {@code SequencesSystemException} with non-null message.
      */
     @Test public void testIllegalArguments() throws Exception
     {
@@ -159,9 +158,8 @@ public class SequenceOperationsTest
     }
 
     /**
-     * Tests the
-     * {@link SequenceOperations#getNextSequenceValue(java.lang.String) }
-     * and {@link SequenceOperations#getNextSequenceValues(java.lang.String, int) } methods to throw a
+     * Tests the {@link org.jomc.sequences.SequenceOperations#getNextSequenceValue(java.lang.String) } and
+     * {@link org.jomc.sequences.SequenceOperations#getNextSequenceValues(java.lang.String, int) } methods to throw a
      * {@code SequenceLimitException} when a maximum value is reached.
      */
     @Test public void testSequenceLimitException() throws Exception

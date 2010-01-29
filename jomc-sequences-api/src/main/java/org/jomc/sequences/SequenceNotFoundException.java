@@ -73,7 +73,7 @@ public class SequenceNotFoundException extends SequencesException
      * Name of the sequence which does not exist.
      * @serial
      */
-    private String sequenceName;
+    private final String sequenceName;
 
     /**
      * Creates a new {@code SequenceNotFoundException} instance taking the name of the sequence which does not exist.
@@ -142,16 +142,16 @@ public class SequenceNotFoundException extends SequencesException
      * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Keine Sequenz mit Namen ''{0}'' vorhanden.</pre></td></tr>
      * </table></p>
      * @param locale The locale of the message to return.
-     * @param sequenceName Format argument.
+     * @param name Format argument.
      * @return The text of the {@code sequenceNotFound} message.
      *
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
-    private String getSequenceNotFoundMessage( final java.util.Locale locale, final java.lang.String sequenceName )
+    private String getSequenceNotFoundMessage( final java.util.Locale locale, final java.lang.String name )
     {
-        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "sequenceNotFound", locale, sequenceName );
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "sequenceNotFound", locale, name );
         assert _m != null : "'sequenceNotFound' message not found.";
         return _m;
     }

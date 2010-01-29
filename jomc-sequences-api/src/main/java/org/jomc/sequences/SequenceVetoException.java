@@ -73,7 +73,7 @@ public class SequenceVetoException extends SequencesException
      * Event describing a vetoed sequence change.
      * @serial
      */
-    private SequenceChangeEvent sequenceChangeEvent;
+    private final SequenceChangeEvent sequenceChangeEvent;
 
     /**
      * Creates a new {@code SequenceVetoException} taking an event describing a vetoed sequence change.
@@ -120,6 +120,7 @@ public class SequenceVetoException extends SequencesException
     {
         // SECTION-START[Default Constructor]
         super();
+        this.sequenceChangeEvent = null;
         // SECTION-END
     }
     // </editor-fold>

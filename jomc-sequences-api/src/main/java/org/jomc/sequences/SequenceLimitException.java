@@ -73,7 +73,7 @@ public class SequenceLimitException extends SequencesException
      * Current value of the sequence.
      * @serial
      */
-    private long currentValue;
+    private final long currentValue;
 
     /**
      * Creates a new {@code SequenceLimitException} taking the current value of the sequence.
