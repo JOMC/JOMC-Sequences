@@ -1,9 +1,9 @@
 
-  ${pom.organization.name} - ${pom.name} - README.txt
-  Version ${pom.version} Build ${buildNumber}
-  ${pom.url}
+  ${project.organization.name} - ${project.name} - README.txt
+  Version ${project.version} Build ${buildNumber}
+  ${project.url}
 
-  ${pom.description}
+  ${project.description}
 
   Environment
 
@@ -17,6 +17,15 @@
     etc/jboss-jndi.properties to etc/jndi.properties and update the
     JNDI names in file etc/META-INF/jomc.xml accordingly.
 
+    for i in jboss-5.1.0.GA/client/*.jar;do
+      CLASSPATH_PREFIX="$i:$CLASSPATH_PREFIX"
+    done
+    CLASSPATH_PREFIX=jboss-5.1.0.GA/common/lib/jnpserver.jar:$CLASSPATH_PREFIX
+    export CLASSPATH_PREFIX
+
+    location="jndi+rmi:jomc-sequences-ear-${project.version}/org.jomc.sequences.ri.DefaultSequenceDirectory/remote-org.jomc.sequences.SequenceOperations"
+    location="jndi+rmi:jomc-sequences-ear-${project.version}/org.jomc.sequences.ri.DefaultSequenceDirectory/remote-org.jomc.sequences.SequenceDirectory"
+
   Glassfish
 
     For testing against a local Glassfish application server copy the
@@ -28,11 +37,8 @@
     done
     export CLASSPATH_PREFIX
 
-    <property name="objectName" type="java.lang.String"
-              value="#org.jomc.sequences.SequenceOperations"/>
-
-    <property name="objectName" type="java.lang.String"
-              value="#org.jomc.sequences.SequenceDirectory"/>
+    location="jndi+rmi://#org.jomc.sequences.SequenceOperations"
+    location="jndi+rmi://#org.jomc.sequences.SequenceDirectory"
 
   Other
 
@@ -43,3 +49,17 @@
 
     org.jomc.sequences.it.SequenceOperationsTest
     org.jomc.sequences.it.SequenceDirectoryTest
+
+  JDK 1.5
+
+    The 'lib/ext' directory contains JDK extensions to setup using the
+    'java.ext.dirs' system property or another mechanism compatible to the JDK
+    in use.
+
+    The 'lib/endorsed' directory contains updates to libraries part of the JDK
+    to setup via the 'java.endorsed.dirs' system property or another mechanism
+    compatible to the JDK in use. Use of these libraries may become necessary
+    when encountering problems with the XML parsers of the JDK.
+
+    export JAVA_OPTS="-Djava.ext.dirs='path to lib/ext directory' \
+                      -Djava.endorsed.dirs='path to lib/endorsed directory'"

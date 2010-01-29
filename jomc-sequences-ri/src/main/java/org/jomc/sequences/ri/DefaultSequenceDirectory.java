@@ -1,7 +1,8 @@
 // SECTION-START[License Header]
+// <editor-fold defaultstate="collapsed" desc=" Generated License ">
 /*
- *   Copyright (c) 2009 The JOMC Project
- *   Copyright (c) 2005 Christian Schulte <schulte2005@users.sourceforge.net>
+ *   Copyright (c) 2010 The JOMC Project
+ *   Copyright (c) 2005 Christian Schulte <cs@jomc.org>
  *   All rights reserved.
  *
  *   Redistribution and use in source and binary forms, with or without
@@ -31,6 +32,7 @@
  *   $Id$
  *
  */
+// </editor-fold>
 // SECTION-END
 package org.jomc.sequences.ri;
 
@@ -41,14 +43,6 @@ import java.util.List;
 import java.util.Set;
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
-import javax.transaction.HeuristicMixedException;
-import javax.transaction.HeuristicRollbackException;
-import javax.transaction.NotSupportedException;
-import javax.transaction.RollbackException;
-import javax.transaction.Status;
-import javax.transaction.SystemException;
-import javax.transaction.UserTransaction;
-import org.jomc.ObjectManagementException;
 import org.jomc.sequences.CapacityLimitException;
 import org.jomc.sequences.ConcurrentModificationException;
 import org.jomc.sequences.DuplicateSequenceException;
@@ -60,91 +54,60 @@ import org.jomc.sequences.SequenceDirectory;
 import org.jomc.sequences.SequenceLimitException;
 import org.jomc.sequences.SequenceNotFoundException;
 import org.jomc.sequences.SequenceOperations;
-import org.jomc.sequences.SequencesException;
 import org.jomc.sequences.SequencesSystemException;
 import org.jomc.sequences.VetoableSequenceChangeListener;
 import org.jomc.sequences.model.SequenceType;
 import org.jomc.sequences.model.SequencesType;
 
-// SECTION-START[Implementation Comment]
+// SECTION-START[Documentation]
+// <editor-fold defaultstate="collapsed" desc=" Generated Documentation ">
 /**
  * SequenceDirectory reference implementation.
  * <p><b>Specifications</b><ul>
- * <li>{@code org.jomc.sequences.SequenceOperations} {@code 1.0}<blockquote>
- * Object applies to Singleton scope.</blockquote></li>
- * <li>{@code org.jomc.sequences.SequenceDirectory} {@code 1.0}<blockquote>
- * Object applies to Singleton scope.</blockquote></li>
+ * <li>{@code org.jomc.sequences.SequenceDirectory} {@code 1.0} {@code Singleton}</li>
+ * <li>{@code org.jomc.sequences.SequenceOperations} {@code 1.0} {@code Singleton}</li>
  * </ul></p>
  * <p><b>Properties</b><ul>
- * <li>"{@link #getDirectoryName directoryName}"<blockquote>
- * Property of type {@code java.lang.String} with value "JOMC Sequences RI".</blockquote></li>
- * <li>"{@link #isContainerManaged containerManaged}"<blockquote>
- * Property of type {@code boolean} with value "false".</blockquote></li>
+ * <li>"{@link #getDirectoryName directoryName}"
+ * <blockquote>Property of type {@code java.lang.String}.
+ * <p>Name uniquely identifying the directory in a set of directories.</p>
+ * </blockquote></li>
  * </ul></p>
  * <p><b>Dependencies</b><ul>
- * <li>"{@link #getLogger Logger}"<blockquote>
- * Dependency on {@code org.jomc.logging.Logger} at specification level 1.0 applying to Multiton scope bound to an instance.</blockquote></li>
- * <li>"{@link #getSequenceChangeListener SequenceChangeListener}"<blockquote>
- * Dependency on {@code org.jomc.sequences.SequenceChangeListener} at specification level 1.0 applying to Multiton scope bound to an instance.</blockquote></li>
- * <li>"{@link #getVetoableSequenceChangeListener VetoableSequenceChangeListener}"<blockquote>
- * Dependency on {@code org.jomc.sequences.VetoableSequenceChangeListener} at specification level 1.0 applying to Multiton scope bound to an instance.</blockquote></li>
- * <li>"{@link #getSequenceMapper SequenceMapper}"<blockquote>
- * Dependency on {@code org.jomc.sequences.ri.SequenceMapper} at specification level 1.0 applying to Singleton scope bound to an instance.</blockquote></li>
  * <li>"{@link #getEntityManager EntityManager}"<blockquote>
- * Dependency on {@code javax.persistence.EntityManager} applying to Multiton scope.</blockquote></li>
- * <li>"{@link #getUserTransaction UserTransaction}"<blockquote>
- * Dependency on {@code javax.transaction.UserTransaction} applying to Multiton scope.</blockquote></li>
+ * Dependency on {@code javax.persistence.EntityManager}.</blockquote></li>
  * <li>"{@link #getLocale Locale}"<blockquote>
- * Dependency on {@code java.util.Locale} at specification level 1.1 applying to Multiton scope bound to an instance.</blockquote></li>
+ * Dependency on {@code java.util.Locale} at specification level 1.1 bound to an instance.</blockquote></li>
+ * <li>"{@link #getLogger Logger}"<blockquote>
+ * Dependency on {@code org.jomc.logging.Logger} at specification level 1.0 bound to an instance.</blockquote></li>
+ * <li>"{@link #getSequenceChangeListener SequenceChangeListener}"<blockquote>
+ * Dependency on {@code org.jomc.sequences.SequenceChangeListener} at specification level 1.0 bound to an instance.</blockquote></li>
+ * <li>"{@link #getSequenceMapper SequenceMapper}"<blockquote>
+ * Dependency on {@code org.jomc.sequences.ri.SequenceMapper} at specification level 1.0 bound to an instance.</blockquote></li>
+ * <li>"{@link #getVetoableSequenceChangeListener VetoableSequenceChangeListener}"<blockquote>
+ * Dependency on {@code org.jomc.sequences.VetoableSequenceChangeListener} at specification level 1.0 bound to an instance.</blockquote></li>
  * </ul></p>
  * <p><b>Messages</b><ul>
- * <li>"{@link #getUnhandledExceptionMessage unhandledException}"<table>
- * <tr><td valign="top">English:</td><td valign="top"><pre>Unhandled exception.</pre></td></tr>
- * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Unbehandelte Ausnahme.</pre></td></tr>
- * </table>
- * </li>
  * <li>"{@link #getIllegalArgumentMessage illegalArgument}"<table>
  * <tr><td valign="top">English:</td><td valign="top"><pre>Illegal value ''{1}'' for argument ''{0}''.</pre></td></tr>
- * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Ungültiger Wert ''{1}'' für Parameter ''{0}''.</pre></td></tr>
+ * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Ung&uuml;ltiger Wert ''{1}'' f&uuml;r Parameter ''{0}''.</pre></td></tr>
  * </table>
- * </li>
- * <li>"{@link #getImplementationInfoMessage implementationInfo}"<table>
- * <tr><td valign="top">English:</td><td valign="top"><pre>DefaultSequenceDirectory Version 1.0-alpha-1-SNAPSHOT</pre></td></tr>
- * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>DefaultSequenceDirectory Version 1.0-alpha-1-SNAPSHOT</pre></td></tr>
- * </table>
- * </li>
- * <li>"{@link #getSuccessfullyStartedTransactionMessage successfullyStartedTransaction}"<table>
- * <tr><td valign="top">English:</td><td valign="top"><pre>Started new transaction with status ''{0}''.</pre></td></tr>
- * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Neue Transaktion mit Status ''{0}'' gestartet.</pre></td></tr>
- * </table>
- * </li>
- * <li>"{@link #getSuccessfullyCommittedTransactionMessage successfullyCommittedTransaction}"<table>
- * <tr><td valign="top">English:</td><td valign="top"><pre>Committed active transaction with status ''{0}''.</pre></td></tr>
- * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Aktuelle Transaktion mit Status ''{0}'' festgeschrieben.</pre></td></tr>
- * </table>
- * </li>
- * <li>"{@link #getSuccessfullyRolledBackTransactionMessage successfullyRolledBackTransaction}"<table>
- * <tr><td valign="top">English:</td><td valign="top"><pre>Rolled back active transaction with status ''{0}''.</pre></td></tr>
- * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Aktuelle Transaktion mit Status ''{0}'' zurückgenommen.</pre></td></tr>
- * </table>
- * </li>
  * <li>"{@link #getSuccessfullyCreatedSequenceDirectoryMessage successfullyCreatedSequenceDirectory}"<table>
  * <tr><td valign="top">English:</td><td valign="top"><pre>Sequence directory ''{0}'' created.</pre></td></tr>
  * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Sequenzverzeichnis ''{0}'' erstellt.</pre></td></tr>
  * </table>
- * </li>
  * </ul></p>
  *
- * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
+ * @author <a href="mailto:cs@jomc.org">Christian Schulte</a> 1.0
  * @version $Id$
  */
+// </editor-fold>
 // SECTION-END
 // SECTION-START[Annotations]
-@javax.annotation.Generated
-(
-    value = "org.jomc.tools.JavaSources",
-    comments = "See http://jomc.sourceforge.net/jomc-tools"
-)
+// <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
+@javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+// </editor-fold>
 // SECTION-END
 public class DefaultSequenceDirectory
     implements SequenceDirectory, SequenceOperations
@@ -153,54 +116,9 @@ public class DefaultSequenceDirectory
 
     public BigInteger getSequenceCount()
     {
-        boolean commit = false;
-        boolean rollback = false;
-
-        try
-        {
-            if ( !this.isContainerManaged() )
-            {
-                commit = this.beginTransaction();
-            }
-
-            final Query query = this.getEntityManager().createNamedQuery( COUNT_SEQUENCES_QUERY );
-            query.setParameter( 1, this.getSequencesList().getName() );
-
-            final BigInteger count = BigInteger.valueOf( ( (Long) query.getSingleResult() ).longValue() );
-
-            if ( commit )
-            {
-                this.commitTransaction();
-            }
-
-            return count;
-        }
-        catch ( SequencesException e )
-        {
-            rollback = true;
-            this.getLogger().error( e.getMessage() );
-            throw e;
-        }
-        catch ( Exception e )
-        {
-            rollback = true;
-            this.getLogger().fatal( e );
-            throw new SequencesSystemException( this.getUnhandledExceptionMessage( this.getLocale() ), e );
-        }
-        finally
-        {
-            if ( !this.isContainerManaged() && rollback )
-            {
-                try
-                {
-                    this.rollbackTransaction();
-                }
-                catch ( SystemException e )
-                {
-                    throw new SequencesSystemException( this.getUnhandledExceptionMessage( this.getLocale() ), e );
-                }
-            }
-        }
+        final Query query = this.getEntityManager().createNamedQuery( COUNT_SEQUENCES_QUERY );
+        query.setParameter( 1, this.getSequencesList().getName() );
+        return BigInteger.valueOf( ( (Long) query.getSingleResult() ).longValue() );
     }
 
     public BigInteger getCapacityLimit()
@@ -215,133 +133,46 @@ public class DefaultSequenceDirectory
             throw new SequencesSystemException( this.getIllegalArgumentMessage( this.getLocale(), "name", null ) );
         }
 
-        boolean commit = false;
-        boolean rollback = false;
-
-        try
+        final SequenceType sequenceType = this.getSequenceByName( name );
+        if ( sequenceType != null )
         {
-            if ( !this.isContainerManaged() )
-            {
-                commit = this.beginTransaction();
-            }
+            return this.getSequenceMapper().map( sequenceType, new Sequence() );
+        }
 
-            Sequence s = null;
-            final SequenceType sequenceType = this.getSequenceByName( name );
-            if ( sequenceType != null )
-            {
-                s = this.getSequenceMapper().map( sequenceType, new Sequence() );
-            }
-
-            if ( commit )
-            {
-                this.commitTransaction();
-            }
-
-            return s;
-        }
-        catch ( SequencesException e )
-        {
-            rollback = true;
-            this.getLogger().error( e.getMessage() );
-            throw e;
-        }
-        catch ( Exception e )
-        {
-            rollback = true;
-            this.getLogger().fatal( e );
-            throw new SequencesSystemException( this.getUnhandledExceptionMessage( this.getLocale() ), e );
-        }
-        finally
-        {
-            if ( !this.isContainerManaged() && rollback )
-            {
-                try
-                {
-                    this.rollbackTransaction();
-                }
-                catch ( SystemException e )
-                {
-                    throw new SequencesSystemException( this.getUnhandledExceptionMessage( this.getLocale() ), e );
-                }
-            }
-        }
+        return null;
     }
 
-    public Sequence addSequence( final Sequence sequence ) throws CapacityLimitException
+    public Sequence addSequence( final Sequence sequence )
     {
         if ( sequence == null )
         {
             throw new SequencesSystemException( this.getIllegalArgumentMessage( this.getLocale(), "sequence", null ) );
         }
 
-        boolean commit = false;
-        boolean rollback = false;
+        this.assertMaximumCapacityNotReached();
+        this.fireVetoableSequenceChange( null, sequence );
 
-        try
+        SequenceType sequenceType = this.getSequenceByName( sequence.getName() );
+
+        if ( sequenceType != null )
         {
-            if ( !this.isContainerManaged() )
-            {
-                commit = this.beginTransaction();
-            }
-
-            this.assertMaximumCapacityNotReached();
-            this.fireVetoableSequenceChange( null, sequence );
-
-            SequenceType sequenceType = this.getSequenceByName( sequence.getName() );
-
-            if ( sequenceType != null )
-            {
-                throw new DuplicateSequenceException( this.getSequenceMapper().map( sequenceType, new Sequence() ) );
-            }
-
-            sequenceType = this.getSequenceMapper().map( sequence, new SequenceType() );
-            sequenceType.setJpaDate( Calendar.getInstance() );
-
-            final SequencesType sequences = this.getSequencesList();
-            this.getEntityManager().persist( sequenceType );
-            sequences.getSequence().add( sequenceType );
-            this.getEntityManager().merge( sequences );
-
-            final Sequence persistent = this.getSequenceMapper().map( sequenceType, new Sequence() );
-
-            if ( commit )
-            {
-                this.commitTransaction();
-            }
-
-            this.fireSequenceChange( null, persistent );
-            return persistent;
+            throw new DuplicateSequenceException( this.getSequenceMapper().map( sequenceType, new Sequence() ) );
         }
-        catch ( SequencesException e )
-        {
-            rollback = true;
-            this.getLogger().error( e.getMessage() );
-            throw e;
-        }
-        catch ( Exception e )
-        {
-            rollback = true;
-            this.getLogger().fatal( e );
-            throw new SequencesSystemException( this.getUnhandledExceptionMessage( this.getLocale() ), e );
-        }
-        finally
-        {
-            if ( !this.isContainerManaged() && rollback )
-            {
-                try
-                {
-                    this.rollbackTransaction();
-                }
-                catch ( SystemException e )
-                {
-                    throw new SequencesSystemException( this.getUnhandledExceptionMessage( this.getLocale() ), e );
-                }
-            }
-        }
+
+        sequenceType = this.getSequenceMapper().map( sequence, new SequenceType() );
+        sequenceType.setJpaDate( Calendar.getInstance() );
+
+        final SequencesType sequences = this.getSequencesList();
+        this.getEntityManager().persist( sequenceType );
+        sequences.getSequence().add( sequenceType );
+        this.getEntityManager().merge( sequences );
+
+        final Sequence persistent = this.getSequenceMapper().map( sequenceType, new Sequence() );
+        this.fireSequenceChange( null, persistent );
+        return persistent;
     }
 
     public Sequence editSequence( final String name, final long revision, final Sequence sequence )
-        throws ConcurrentModificationException
     {
         if ( name == null )
         {
@@ -352,229 +183,99 @@ public class DefaultSequenceDirectory
             throw new SequencesSystemException( this.getIllegalArgumentMessage( this.getLocale(), "sequence", null ) );
         }
 
-        boolean commit = false;
-        boolean rollback = false;
+        SequenceType sequenceType = this.getSequenceByName( name );
 
-        try
+        if ( sequenceType == null )
         {
-            if ( !this.isContainerManaged() )
-            {
-                commit = this.beginTransaction();
-            }
-
-            SequenceType sequenceType = this.getSequenceByName( name );
-
-            if ( sequenceType == null )
-            {
-                throw new SequenceNotFoundException( name );
-            }
-            if ( sequenceType.getRevision() != revision )
-            {
-                throw new ConcurrentModificationException(
-                    this.getSequenceMapper().map( sequenceType, new Sequence() ) );
-
-            }
-
-            final Sequence oldValue = this.getSequenceMapper().map( sequenceType, new Sequence() );
-            this.fireVetoableSequenceChange( oldValue, sequence );
-
-            sequenceType = this.getSequenceMapper().map( sequence, sequenceType );
-            sequenceType.setRevision( sequenceType.getRevision() + 1L );
-            sequenceType.setJpaDate( Calendar.getInstance() );
-            this.getEntityManager().merge( sequenceType );
-
-            final Sequence edited = this.getSequenceMapper().map( sequenceType, new Sequence() );
-
-            if ( commit )
-            {
-                this.commitTransaction();
-            }
-
-            this.fireSequenceChange( oldValue, edited );
-            return edited;
+            throw new SequenceNotFoundException( name );
         }
-        catch ( SequencesException e )
+        if ( sequenceType.getRevision() != revision )
         {
-            rollback = true;
-            this.getLogger().error( e.getMessage() );
-            throw e;
+            throw new ConcurrentModificationException(
+                this.getSequenceMapper().map( sequenceType, new Sequence() ) );
+
         }
-        catch ( Exception e )
-        {
-            rollback = true;
-            this.getLogger().fatal( e );
-            throw new SequencesSystemException( this.getUnhandledExceptionMessage( this.getLocale() ), e );
-        }
-        finally
-        {
-            if ( !this.isContainerManaged() && rollback )
-            {
-                try
-                {
-                    this.rollbackTransaction();
-                }
-                catch ( SystemException e )
-                {
-                    throw new SequencesSystemException( this.getUnhandledExceptionMessage( this.getLocale() ), e );
-                }
-            }
-        }
+
+        final Sequence oldValue = this.getSequenceMapper().map( sequenceType, new Sequence() );
+        this.fireVetoableSequenceChange( oldValue, sequence );
+
+        sequenceType = this.getSequenceMapper().map( sequence, sequenceType );
+        sequenceType.setRevision( sequenceType.getRevision() + 1L );
+        sequenceType.setJpaDate( Calendar.getInstance() );
+        this.getEntityManager().merge( sequenceType );
+
+        final Sequence edited = this.getSequenceMapper().map( sequenceType, new Sequence() );
+        this.fireSequenceChange( oldValue, edited );
+        return edited;
     }
 
     public Sequence deleteSequence( final String name, final long revision )
-        throws ConcurrentModificationException
     {
         if ( name == null )
         {
             throw new SequencesSystemException( this.getIllegalArgumentMessage( this.getLocale(), "name", null ) );
         }
 
-        boolean commit = false;
-        boolean rollback = false;
+        final SequenceType sequenceType = this.getSequenceByName( name );
 
-        try
+        if ( sequenceType == null )
         {
-            if ( !this.isContainerManaged() )
-            {
-                commit = this.beginTransaction();
-            }
-
-            final SequenceType sequenceType = this.getSequenceByName( name );
-
-            if ( sequenceType == null )
-            {
-                throw new SequenceNotFoundException( name );
-            }
-            if ( sequenceType.getRevision() != revision )
-            {
-                throw new ConcurrentModificationException(
-                    this.getSequenceMapper().map( sequenceType, new Sequence() ) );
-
-            }
-
-            final Sequence deleted = this.getSequenceMapper().map( sequenceType, new Sequence() );
-            this.fireVetoableSequenceChange( deleted, null );
-
-            final SequencesType sequences = this.getSequencesList();
-            sequences.getSequence().remove( sequenceType );
-            this.getEntityManager().remove( sequenceType );
-
-            if ( sequences.getSequence().isEmpty() )
-            {
-                this.getEntityManager().remove( sequences );
-            }
-            else
-            {
-                this.getEntityManager().merge( sequences );
-            }
-
-            final Sequence s = this.getSequenceMapper().map( sequenceType, new Sequence() );
-
-            if ( commit )
-            {
-                this.commitTransaction();
-            }
-
-            this.fireSequenceChange( s, null );
-            return deleted;
+            throw new SequenceNotFoundException( name );
         }
-        catch ( SequencesException e )
+        if ( sequenceType.getRevision() != revision )
         {
-            rollback = true;
-            this.getLogger().error( e.getMessage() );
-            throw e;
+            throw new ConcurrentModificationException(
+                this.getSequenceMapper().map( sequenceType, new Sequence() ) );
+
         }
-        catch ( Exception e )
+
+        final Sequence deleted = this.getSequenceMapper().map( sequenceType, new Sequence() );
+        this.fireVetoableSequenceChange( deleted, null );
+
+        final SequencesType sequences = this.getSequencesList();
+        sequences.getSequence().remove( sequenceType );
+        this.getEntityManager().remove( sequenceType );
+
+        if ( sequences.getSequence().isEmpty() )
         {
-            rollback = true;
-            this.getLogger().fatal( e );
-            throw new SequencesSystemException( this.getUnhandledExceptionMessage( this.getLocale() ), e );
+            this.getEntityManager().remove( sequences );
         }
-        finally
+        else
         {
-            if ( !this.isContainerManaged() && rollback )
-            {
-                try
-                {
-                    this.rollbackTransaction();
-                }
-                catch ( SystemException e )
-                {
-                    throw new SequencesSystemException( this.getUnhandledExceptionMessage( this.getLocale() ), e );
-                }
-            }
+            this.getEntityManager().merge( sequences );
         }
+
+        final Sequence s = this.getSequenceMapper().map( sequenceType, new Sequence() );
+        this.fireSequenceChange( s, null );
+        return deleted;
     }
 
     public Set<Sequence> searchSequences( final String name )
     {
-        boolean commit = false;
-        boolean rollback = false;
+        final Query query = this.getEntityManager().createNamedQuery(
+            name == null ? FIND_ALL_SEQUENCES_QUERY : SEARCH_SEQUENCES_QUERY );
 
-        try
+        query.setParameter( 1, this.getSequencesList().getName() );
+
+        if ( name != null )
         {
-            if ( !this.isContainerManaged() )
-            {
-                commit = this.beginTransaction();
-            }
-
-            final Query query = this.getEntityManager().createNamedQuery(
-                name == null ? FIND_ALL_SEQUENCES_QUERY : SEARCH_SEQUENCES_QUERY );
-
-            query.setParameter( 1, this.getSequencesList().getName() );
-
-            if ( name != null )
-            {
-                query.setParameter( 2, "%" + name + "%" );
-            }
-
-            final List<SequenceType> resultList = (List<SequenceType>) query.getResultList();
-            final Set<Sequence> sequences = new HashSet<Sequence>( resultList.size() );
-
-            for ( SequenceType s : resultList )
-            {
-                sequences.add( this.getSequenceMapper().map( s, new Sequence() ) );
-            }
-
-            if ( commit )
-            {
-                this.commitTransaction();
-            }
-
-            return sequences;
+            query.setParameter( 2, "%" + name + "%" );
         }
-        catch ( SequencesException e )
+
+        final List<SequenceType> resultList = (List<SequenceType>) query.getResultList();
+        final Set<Sequence> sequences = new HashSet<Sequence>( resultList.size() );
+
+        for ( SequenceType s : resultList )
         {
-            rollback = true;
-            this.getLogger().error( e.getMessage() );
-            throw e;
+            sequences.add( this.getSequenceMapper().map( s, new Sequence() ) );
         }
-        catch ( Exception e )
-        {
-            rollback = true;
-            this.getLogger().fatal( e );
-            throw new SequencesSystemException( this.getUnhandledExceptionMessage( this.getLocale() ), e );
-        }
-        finally
-        {
-            if ( !this.isContainerManaged() && rollback )
-            {
-                try
-                {
-                    this.rollbackTransaction();
-                }
-                catch ( SystemException e )
-                {
-                    throw new SequencesSystemException( this.getUnhandledExceptionMessage( this.getLocale() ), e );
-                }
-            }
-        }
+
+        return sequences;
     }
 
     // SECTION-END
     // SECTION-START[SequenceOperations]
-
-    public long getNextSequenceValue( final String sequenceName ) throws SequenceLimitException
+    public long getNextSequenceValue( final String sequenceName )
     {
         if ( sequenceName == null )
         {
@@ -583,76 +284,33 @@ public class DefaultSequenceDirectory
 
         }
 
-        boolean commit = false;
-        boolean rollback = false;
+        SequenceType sequenceType = this.getSequenceByName( sequenceName );
 
-        try
+        if ( sequenceType == null )
         {
-            if ( !this.isContainerManaged() )
-            {
-                commit = this.beginTransaction();
-            }
-
-            SequenceType sequenceType = this.getSequenceByName( sequenceName );
-
-            if ( sequenceType == null )
-            {
-                throw new SequenceNotFoundException( sequenceName );
-            }
-
-            final Sequence oldValue = this.getSequenceMapper().map( sequenceType, new Sequence() );
-            final Long nextValue = sequenceType.getValue() + sequenceType.getIncrement();
-
-            if ( nextValue < sequenceType.getValue() || nextValue > sequenceType.getMaximum() )
-            {
-                throw new SequenceLimitException( sequenceType.getValue() );
-            }
-
-            sequenceType.setValue( nextValue );
-            sequenceType.setRevision( sequenceType.getRevision() + 1L );
-            sequenceType.setJpaDate( Calendar.getInstance() );
-
-            this.getEntityManager().merge( sequenceType );
-
-            final Sequence s = this.getSequenceMapper().map( sequenceType, new Sequence() );
-
-            if ( commit )
-            {
-                this.commitTransaction();
-            }
-
-            this.fireSequenceChange( oldValue, s );
-            return s.getValue();
+            throw new SequenceNotFoundException( sequenceName );
         }
-        catch ( SequencesException e )
+
+        final Sequence oldValue = this.getSequenceMapper().map( sequenceType, new Sequence() );
+        final Long nextValue = sequenceType.getValue() + sequenceType.getIncrement();
+
+        if ( nextValue < sequenceType.getValue() || nextValue > sequenceType.getMaximum() )
         {
-            rollback = true;
-            this.getLogger().error( e.getMessage() );
-            throw e;
+            throw new SequenceLimitException( sequenceType.getValue() );
         }
-        catch ( Exception e )
-        {
-            rollback = true;
-            this.getLogger().fatal( e );
-            throw new SequencesSystemException( this.getUnhandledExceptionMessage( this.getLocale() ), e );
-        }
-        finally
-        {
-            if ( !this.isContainerManaged() && rollback )
-            {
-                try
-                {
-                    this.rollbackTransaction();
-                }
-                catch ( SystemException e )
-                {
-                    throw new SequencesSystemException( this.getUnhandledExceptionMessage( this.getLocale() ), e );
-                }
-            }
-        }
+
+        sequenceType.setValue( nextValue );
+        sequenceType.setRevision( sequenceType.getRevision() + 1L );
+        sequenceType.setJpaDate( Calendar.getInstance() );
+
+        this.getEntityManager().merge( sequenceType );
+
+        final Sequence s = this.getSequenceMapper().map( sequenceType, new Sequence() );
+        this.fireSequenceChange( oldValue, s );
+        return s.getValue();
     }
 
-    public long[] getNextSequenceValues( final String sequenceName, final int numValues ) throws SequenceLimitException
+    public long[] getNextSequenceValues( final String sequenceName, final int numValues )
     {
         if ( sequenceName == null )
         {
@@ -667,85 +325,41 @@ public class DefaultSequenceDirectory
 
         }
 
-        boolean commit = false;
-        boolean rollback = false;
+        SequenceType sequenceType = this.getSequenceByName( sequenceName );
 
-        try
+        if ( sequenceType == null )
         {
-            if ( !this.isContainerManaged() )
-            {
-                commit = this.beginTransaction();
-            }
-
-            SequenceType sequenceType = this.getSequenceByName( sequenceName );
-
-            if ( sequenceType == null )
-            {
-                throw new SequenceNotFoundException( sequenceName );
-            }
-
-            final long[] values = new long[ numValues ];
-            final Sequence oldValue = this.getSequenceMapper().map( sequenceType, new Sequence() );
-
-            for ( int i = values.length - 1; i >= 0; i-- )
-            {
-                final long nextValue = sequenceType.getValue() + sequenceType.getIncrement();
-
-                if ( nextValue < sequenceType.getValue() || nextValue > sequenceType.getMaximum() )
-                {
-                    throw new SequenceLimitException( sequenceType.getValue() );
-                }
-
-                sequenceType.setValue( nextValue );
-                values[i] = nextValue;
-            }
-
-            sequenceType.setRevision( sequenceType.getRevision() + 1L );
-            sequenceType.setJpaDate( Calendar.getInstance() );
-
-            this.getEntityManager().merge( sequenceType );
-
-            final Sequence s = this.getSequenceMapper().map( sequenceType, new Sequence() );
-
-            if ( commit )
-            {
-                this.commitTransaction();
-            }
-
-            this.fireSequenceChange( oldValue, s );
-            return values;
+            throw new SequenceNotFoundException( sequenceName );
         }
-        catch ( SequencesException e )
+
+        final long[] values = new long[ numValues ];
+        final Sequence oldValue = this.getSequenceMapper().map( sequenceType, new Sequence() );
+
+        for ( int i = values.length - 1; i >= 0; i-- )
         {
-            rollback = true;
-            this.getLogger().error( e.getMessage() );
-            throw e;
-        }
-        catch ( Exception e )
-        {
-            rollback = true;
-            this.getLogger().fatal( e );
-            throw new SequencesSystemException( this.getUnhandledExceptionMessage( this.getLocale() ), e );
-        }
-        finally
-        {
-            if ( !this.isContainerManaged() && rollback )
+            final long nextValue = sequenceType.getValue() + sequenceType.getIncrement();
+
+            if ( nextValue < sequenceType.getValue() || nextValue > sequenceType.getMaximum() )
             {
-                try
-                {
-                    this.rollbackTransaction();
-                }
-                catch ( SystemException e )
-                {
-                    throw new SequencesSystemException( this.getUnhandledExceptionMessage( this.getLocale() ), e );
-                }
+                throw new SequenceLimitException( sequenceType.getValue() );
             }
+
+            sequenceType.setValue( nextValue );
+            values[i] = nextValue;
         }
+
+        sequenceType.setRevision( sequenceType.getRevision() + 1L );
+        sequenceType.setJpaDate( Calendar.getInstance() );
+
+        this.getEntityManager().merge( sequenceType );
+
+        final Sequence s = this.getSequenceMapper().map( sequenceType, new Sequence() );
+        this.fireSequenceChange( oldValue, s );
+        return values;
     }
 
     // SECTION-END
     // SECTION-START[DefaultSequenceDirectory]
-
     /** Constant for the name of the query for counting sequences. */
     private static final String COUNT_SEQUENCES_QUERY = "jomc-sequences-model-count-sequences";
 
@@ -781,7 +395,7 @@ public class DefaultSequenceDirectory
 
             return (SequenceType) query.getSingleResult();
         }
-        catch ( NoResultException e )
+        catch ( final NoResultException e )
         {
             if ( this.getLogger().isDebugEnabled() )
             {
@@ -808,7 +422,7 @@ public class DefaultSequenceDirectory
         {
             sequencesType = (SequencesType) query.getSingleResult();
         }
-        catch ( NoResultException e )
+        catch ( final NoResultException e )
         {
             if ( this.getLogger().isDebugEnabled() )
             {
@@ -832,77 +446,6 @@ public class DefaultSequenceDirectory
     }
 
     /**
-     * Begins a transaction.
-     *
-     * @return {@code true} if a new transaction was associated with the current context. {@code false} if the current
-     * context already had a transaction associated.
-     *
-     * @throws SystemException if transaction management fails to operate.
-     * @throws NotSupportedException if transaction management does not support the operation.
-     */
-    protected boolean beginTransaction() throws SystemException, NotSupportedException
-    {
-        final UserTransaction tx = this.getUserTransaction();
-        final int status = tx.getStatus();
-
-        if ( status == Status.STATUS_NO_TRANSACTION )
-        {
-            tx.begin();
-
-            if ( this.getLogger().isDebugEnabled() )
-            {
-                this.getLogger().debug( this.getSuccessfullyStartedTransactionMessage(
-                    this.getLocale(), tx.getStatus() ) );
-
-            }
-
-            return true;
-        }
-
-        return false;
-    }
-
-    /**
-     * Commits the current transaction.
-     *
-     * @throws SystemException if transaction management fails to operate.
-     * @throws RollbackException if the current transaction is rolled back.
-     * @throws HeuristicMixedException if a heuristic decision was made so that some relevant updates have been
-     * committed and others have been rolled back.
-     * @throws HeuristicRollbackException if a heuristic decision was made so that all relevant updates have been
-     * rolled back.
-     */
-    protected void commitTransaction() throws SystemException, RollbackException, HeuristicMixedException,
-                                              HeuristicRollbackException
-    {
-        this.getUserTransaction().commit();
-
-        if ( this.getLogger().isDebugEnabled() )
-        {
-            this.getLogger().debug( this.getSuccessfullyCommittedTransactionMessage(
-                this.getLocale(), this.getUserTransaction().getStatus() ) );
-
-        }
-    }
-
-    /**
-     * Marks the current transaction for rollback.
-     *
-     * @throws SystemException if transaction management fails to operate.
-     */
-    protected void rollbackTransaction() throws SystemException
-    {
-        this.getUserTransaction().rollback();
-
-        if ( this.getLogger().isDebugEnabled() )
-        {
-            this.getLogger().debug( this.getSuccessfullyRolledBackTransactionMessage(
-                this.getLocale(), this.getUserTransaction().getStatus() ) );
-
-        }
-    }
-
-    /**
      * Checks the model to not have reached its maximum capacity.
      *
      * @throws CapacityLimitException if the model reached its maximum capacity.
@@ -920,7 +463,7 @@ public class DefaultSequenceDirectory
     }
 
     /**
-     * Notifies all availble {@code SequenceChangeListener}s about a changed sequence.
+     * Notifies all available {@code SequenceChangeListener}s about a changed sequence.
      *
      * @param oldValue The entity having been changed or {@code null} if {@code newValue} got added to the directory.
      * @param newValue The value {@code oldValue} got changed to or {@code null} if {@code oldValue} got removed from
@@ -941,7 +484,7 @@ public class DefaultSequenceDirectory
     }
 
     /**
-     * Notifies all availble {@code SequenceChangeListener}s about a sequence about to change.
+     * Notifies all available {@code SequenceChangeListener}s about a sequence about to change.
      *
      * @param oldValue The entity about to change or {@code null} if {@code newValue} is about to be added to the
      * directory.
@@ -967,7 +510,7 @@ public class DefaultSequenceDirectory
             {
                 l.vetoableSequenceChange( sequenceChange );
             }
-            catch ( SequenceVetoException e )
+            catch ( final SequenceVetoException e )
             {
                 this.getLogger().error( e.getMessage() );
                 vetoed = true;
@@ -982,184 +525,150 @@ public class DefaultSequenceDirectory
 
     // SECTION-END
     // SECTION-START[Constructors]
+    // <editor-fold defaultstate="collapsed" desc=" Generated Constructors ">
 
-    /** Default implementation constructor. */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
+    /** Creates a new {@code DefaultSequenceDirectory} instance. */
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
     public DefaultSequenceDirectory()
     {
         // SECTION-START[Default Constructor]
         super();
-        if ( this.getLogger().isDebugEnabled() )
-        {
-            this.getLogger().debug( this.getImplementationInfoMessage( this.getLocale() ) );
-            this.getLogger().debug( "\tcontainerManaged=" + this.isContainerManaged() );
-            this.getLogger().debug( "\tdirectoryName=" + this.getDirectoryName() );
-        }
         // SECTION-END
     }
+    // </editor-fold>
     // SECTION-END
     // SECTION-START[Dependencies]
+    // <editor-fold defaultstate="collapsed" desc=" Generated Dependencies ">
 
     /**
      * Gets the {@code EntityManager} dependency.
-     * <p>This method returns the "{@code JOMC SDK}" object of the {@code javax.persistence.EntityManager} specification.</p>
+     * <p>This method returns the "{@code JOMC Standalone RI}" object of the {@code javax.persistence.EntityManager} specification.</p>
+     * <p>That specification does not apply to any scope. A new object is returned whenever requested.</p>
      * @return The {@code EntityManager} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
-    private javax.persistence.EntityManager getEntityManager() throws org.jomc.ObjectManagementException
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+    private javax.persistence.EntityManager getEntityManager()
     {
-        return (javax.persistence.EntityManager) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "EntityManager" );
+        final javax.persistence.EntityManager _d = (javax.persistence.EntityManager) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "EntityManager" );
+        assert _d != null : "'EntityManager' dependency not found.";
+        return _d;
     }
 
     /**
      * Gets the {@code Locale} dependency.
      * <p>This method returns the "{@code default}" object of the {@code java.util.Locale} specification at specification level 1.1.</p>
+     * <p>That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.</p>
      * @return The {@code Locale} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
-    private java.util.Locale getLocale() throws org.jomc.ObjectManagementException
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+    private java.util.Locale getLocale()
     {
-        return (java.util.Locale) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "Locale" );
+        final java.util.Locale _d = (java.util.Locale) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "Locale" );
+        assert _d != null : "'Locale' dependency not found.";
+        return _d;
     }
 
     /**
      * Gets the {@code Logger} dependency.
      * <p>This method returns any available object of the {@code org.jomc.logging.Logger} specification at specification level 1.0.</p>
+     * <p>That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.</p>
      * <p><b>Properties</b><dl>
      * <dt>"{@code name}"</dt>
-     * <dd>Property of type {@code java.lang.String} with value "org.jomc.sequences.ri.DefaultSequenceDirectory".
+     * <dd>Property of type {@code java.lang.String}.
      * </dd>
      * </dl>
      * @return The {@code Logger} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
-    private org.jomc.logging.Logger getLogger() throws org.jomc.ObjectManagementException
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+    private org.jomc.logging.Logger getLogger()
     {
-        return (org.jomc.logging.Logger) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "Logger" );
+        final org.jomc.logging.Logger _d = (org.jomc.logging.Logger) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "Logger" );
+        assert _d != null : "'Logger' dependency not found.";
+        return _d;
     }
 
     /**
      * Gets the {@code SequenceChangeListener} dependency.
      * <p>This method returns any available object of the {@code org.jomc.sequences.SequenceChangeListener} specification at specification level 1.0.</p>
+     * <p>That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.</p>
      * @return The {@code SequenceChangeListener} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
-    private org.jomc.sequences.SequenceChangeListener[] getSequenceChangeListener() throws org.jomc.ObjectManagementException
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+    private org.jomc.sequences.SequenceChangeListener[] getSequenceChangeListener()
     {
-        return (org.jomc.sequences.SequenceChangeListener[]) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "SequenceChangeListener" );
+        final org.jomc.sequences.SequenceChangeListener[] _d = (org.jomc.sequences.SequenceChangeListener[]) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "SequenceChangeListener" );
+        assert _d != null : "'SequenceChangeListener' dependency not found.";
+        return _d;
     }
 
     /**
      * Gets the {@code SequenceMapper} dependency.
      * <p>This method returns the "{@code JOMC Sequences RI}" object of the {@code org.jomc.sequences.ri.SequenceMapper} specification at specification level 1.0.</p>
+     * <p>That specification applies to {@code Singleton} scope. The singleton object is returned whenever requested and bound to this instance.</p>
      * @return The {@code SequenceMapper} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
-    private org.jomc.sequences.ri.SequenceMapper getSequenceMapper() throws org.jomc.ObjectManagementException
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+    private org.jomc.sequences.ri.SequenceMapper getSequenceMapper()
     {
-        return (org.jomc.sequences.ri.SequenceMapper) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "SequenceMapper" );
-    }
-
-    /**
-     * Gets the {@code UserTransaction} dependency.
-     * <p>This method returns the "{@code JOMC SDK}" object of the {@code javax.transaction.UserTransaction} specification.</p>
-     * @return The {@code UserTransaction} dependency.
-     * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
-     */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
-    private javax.transaction.UserTransaction getUserTransaction() throws org.jomc.ObjectManagementException
-    {
-        return (javax.transaction.UserTransaction) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "UserTransaction" );
+        final org.jomc.sequences.ri.SequenceMapper _d = (org.jomc.sequences.ri.SequenceMapper) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "SequenceMapper" );
+        assert _d != null : "'SequenceMapper' dependency not found.";
+        return _d;
     }
 
     /**
      * Gets the {@code VetoableSequenceChangeListener} dependency.
      * <p>This method returns any available object of the {@code org.jomc.sequences.VetoableSequenceChangeListener} specification at specification level 1.0.</p>
+     * <p>That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.</p>
      * @return The {@code VetoableSequenceChangeListener} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
-    private org.jomc.sequences.VetoableSequenceChangeListener[] getVetoableSequenceChangeListener() throws org.jomc.ObjectManagementException
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+    private org.jomc.sequences.VetoableSequenceChangeListener[] getVetoableSequenceChangeListener()
     {
-        return (org.jomc.sequences.VetoableSequenceChangeListener[]) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "VetoableSequenceChangeListener" );
+        final org.jomc.sequences.VetoableSequenceChangeListener[] _d = (org.jomc.sequences.VetoableSequenceChangeListener[]) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "VetoableSequenceChangeListener" );
+        assert _d != null : "'VetoableSequenceChangeListener' dependency not found.";
+        return _d;
     }
+    // </editor-fold>
     // SECTION-END
     // SECTION-START[Properties]
-
-    /**
-     * Gets the value of the {@code containerManaged} property.
-     * @return Flag indicating container managed transaction demarcation. Set to true when using in an EJB environment.
-     * @throws org.jomc.ObjectManagementException if getting the property instance fails.
-     */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
-    private boolean isContainerManaged() throws org.jomc.ObjectManagementException
-    {
-        return ( (java.lang.Boolean) org.jomc.ObjectManagerFactory.getObjectManager().getProperty( this, "containerManaged" ) ).booleanValue();
-    }
+    // <editor-fold defaultstate="collapsed" desc=" Generated Properties ">
 
     /**
      * Gets the value of the {@code directoryName} property.
      * @return Name uniquely identifying the directory in a set of directories.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
-    private java.lang.String getDirectoryName() throws org.jomc.ObjectManagementException
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+    private java.lang.String getDirectoryName()
     {
-        return (java.lang.String) org.jomc.ObjectManagerFactory.getObjectManager().getProperty( this, "directoryName" );
+        final java.lang.String _p = (java.lang.String) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getProperty( this, "directoryName" );
+        assert _p != null : "'directoryName' property not found.";
+        return _p;
     }
+    // </editor-fold>
     // SECTION-END
     // SECTION-START[Messages]
+    // <editor-fold defaultstate="collapsed" desc=" Generated Messages ">
 
     /**
      * Gets the text of the {@code illegalArgument} message.
      * <p><b>Templates</b><br/><table>
      * <tr><td valign="top">English:</td><td valign="top"><pre>Illegal value ''{1}'' for argument ''{0}''.</pre></td></tr>
-     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Ungültiger Wert ''{1}'' für Parameter ''{0}''.</pre></td></tr>
+     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Ung&uuml;ltiger Wert ''{1}'' f&uuml;r Parameter ''{0}''.</pre></td></tr>
      * </table></p>
      * @param locale The locale of the message to return.
      * @param argumentName Format argument.
@@ -1168,57 +677,13 @@ public class DefaultSequenceDirectory
      *
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
-    private String getIllegalArgumentMessage( final java.util.Locale locale, final java.lang.String argumentName, final java.lang.String argumentValue ) throws org.jomc.ObjectManagementException
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+    private String getIllegalArgumentMessage( final java.util.Locale locale, final java.lang.String argumentName, final java.lang.String argumentValue )
     {
-        return org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "illegalArgument", locale, new Object[] { argumentName, argumentValue, null } );
-    }
-
-    /**
-     * Gets the text of the {@code implementationInfo} message.
-     * <p><b>Templates</b><br/><table>
-     * <tr><td valign="top">English:</td><td valign="top"><pre>DefaultSequenceDirectory Version 1.0-alpha-1-SNAPSHOT</pre></td></tr>
-     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>DefaultSequenceDirectory Version 1.0-alpha-1-SNAPSHOT</pre></td></tr>
-     * </table></p>
-     * @param locale The locale of the message to return.
-     * @return The text of the {@code implementationInfo} message.
-     *
-     * @throws org.jomc.ObjectManagementException if getting the message instance fails.
-     */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
-    private String getImplementationInfoMessage( final java.util.Locale locale ) throws org.jomc.ObjectManagementException
-    {
-        return org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "implementationInfo", locale,  null );
-    }
-
-    /**
-     * Gets the text of the {@code successfullyCommittedTransaction} message.
-     * <p><b>Templates</b><br/><table>
-     * <tr><td valign="top">English:</td><td valign="top"><pre>Committed active transaction with status ''{0}''.</pre></td></tr>
-     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Aktuelle Transaktion mit Status ''{0}'' festgeschrieben.</pre></td></tr>
-     * </table></p>
-     * @param locale The locale of the message to return.
-     * @param status Format argument.
-     * @return The text of the {@code successfullyCommittedTransaction} message.
-     *
-     * @throws org.jomc.ObjectManagementException if getting the message instance fails.
-     */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
-    private String getSuccessfullyCommittedTransactionMessage( final java.util.Locale locale, final java.lang.Number status ) throws org.jomc.ObjectManagementException
-    {
-        return org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "successfullyCommittedTransaction", locale, new Object[] { status, null } );
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "illegalArgument", locale, argumentName, argumentValue );
+        assert _m != null : "'illegalArgument' message not found.";
+        return _m;
     }
 
     /**
@@ -1233,79 +698,14 @@ public class DefaultSequenceDirectory
      *
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
-    private String getSuccessfullyCreatedSequenceDirectoryMessage( final java.util.Locale locale, final java.lang.String name ) throws org.jomc.ObjectManagementException
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+    private String getSuccessfullyCreatedSequenceDirectoryMessage( final java.util.Locale locale, final java.lang.String name )
     {
-        return org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "successfullyCreatedSequenceDirectory", locale, new Object[] { name, null } );
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "successfullyCreatedSequenceDirectory", locale, name );
+        assert _m != null : "'successfullyCreatedSequenceDirectory' message not found.";
+        return _m;
     }
-
-    /**
-     * Gets the text of the {@code successfullyRolledBackTransaction} message.
-     * <p><b>Templates</b><br/><table>
-     * <tr><td valign="top">English:</td><td valign="top"><pre>Rolled back active transaction with status ''{0}''.</pre></td></tr>
-     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Aktuelle Transaktion mit Status ''{0}'' zurückgenommen.</pre></td></tr>
-     * </table></p>
-     * @param locale The locale of the message to return.
-     * @param status Format argument.
-     * @return The text of the {@code successfullyRolledBackTransaction} message.
-     *
-     * @throws org.jomc.ObjectManagementException if getting the message instance fails.
-     */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
-    private String getSuccessfullyRolledBackTransactionMessage( final java.util.Locale locale, final java.lang.Number status ) throws org.jomc.ObjectManagementException
-    {
-        return org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "successfullyRolledBackTransaction", locale, new Object[] { status, null } );
-    }
-
-    /**
-     * Gets the text of the {@code successfullyStartedTransaction} message.
-     * <p><b>Templates</b><br/><table>
-     * <tr><td valign="top">English:</td><td valign="top"><pre>Started new transaction with status ''{0}''.</pre></td></tr>
-     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Neue Transaktion mit Status ''{0}'' gestartet.</pre></td></tr>
-     * </table></p>
-     * @param locale The locale of the message to return.
-     * @param status Format argument.
-     * @return The text of the {@code successfullyStartedTransaction} message.
-     *
-     * @throws org.jomc.ObjectManagementException if getting the message instance fails.
-     */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
-    private String getSuccessfullyStartedTransactionMessage( final java.util.Locale locale, final java.lang.Number status ) throws org.jomc.ObjectManagementException
-    {
-        return org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "successfullyStartedTransaction", locale, new Object[] { status, null } );
-    }
-
-    /**
-     * Gets the text of the {@code unhandledException} message.
-     * <p><b>Templates</b><br/><table>
-     * <tr><td valign="top">English:</td><td valign="top"><pre>Unhandled exception.</pre></td></tr>
-     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Unbehandelte Ausnahme.</pre></td></tr>
-     * </table></p>
-     * @param locale The locale of the message to return.
-     * @return The text of the {@code unhandledException} message.
-     *
-     * @throws org.jomc.ObjectManagementException if getting the message instance fails.
-     */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
-    private String getUnhandledExceptionMessage( final java.util.Locale locale ) throws org.jomc.ObjectManagementException
-    {
-        return org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "unhandledException", locale,  null );
-    }
+    // </editor-fold>
     // SECTION-END
 }

@@ -1,7 +1,8 @@
 // SECTION-START[License Header]
+// <editor-fold defaultstate="collapsed" desc=" Generated License ">
 /*
- *   Copyright (c) 2009 The JOMC Project
- *   Copyright (c) 2005 Christian Schulte <schulte2005@users.sourceforge.net>
+ *   Copyright (c) 2010 The JOMC Project
+ *   Copyright (c) 2005 Christian Schulte <cs@jomc.org>
  *   All rights reserved.
  *
  *   Redistribution and use in source and binary forms, with or without
@@ -31,6 +32,7 @@
  *   $Id$
  *
  */
+// </editor-fold>
 // SECTION-END
 package org.jomc.sequences;
 
@@ -41,20 +43,21 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-// SECTION-START[Implementation Comment]
+// SECTION-START[Documentation]
+// <editor-fold defaultstate="collapsed" desc=" Generated Documentation ">
 /**
- * A "SequenceChange" event gets delivered whenever the state of a sequence changes.
+ * A &quot;SequenceChange&quot; event gets delivered whenever the state of a sequence changes.
  *
- * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
+ * @author <a href="mailto:cs@jomc.org">Christian Schulte</a> 1.0
  * @version $Id$
  */
+// </editor-fold>
 // SECTION-END
 // SECTION-START[Annotations]
-@javax.annotation.Generated
-(
-    value = "org.jomc.tools.JavaSources",
-    comments = "See http://jomc.sourceforge.net/jomc-tools"
-)
+// <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
+@javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+// </editor-fold>
 // SECTION-END
 public class SequenceChangeEvent extends EventObject
 {
@@ -75,6 +78,9 @@ public class SequenceChangeEvent extends EventObject
 
         /** Constant for an error. */
         public static final int ERROR = 3;
+
+        /** Serial version UID for backwards compatibility with 1.0.x classes. */
+        private static final long serialVersionUID = 489933079268603831L;
 
         /**
          * Type of the status.
@@ -177,6 +183,9 @@ public class SequenceChangeEvent extends EventObject
     /** A property value is illegal. */
     public static final Status ILLEGAL_VALUE =
         new Status( Status.ERROR, Sequence.class.getName() + ".ILLEGAL_VALUE" );
+
+    /** Serial version UID for backwards compatibility with 1.0.x classes. */
+    private static final long serialVersionUID = 4189816896435679868L;
 
     /**
      * The entity getting changed.

@@ -1,7 +1,8 @@
 // SECTION-START[License Header]
+// <editor-fold defaultstate="collapsed" desc=" Generated License ">
 /*
- *   Copyright (c) 2009 The JOMC Project
- *   Copyright (c) 2005 Christian Schulte <schulte2005@users.sourceforge.net>
+ *   Copyright (c) 2010 The JOMC Project
+ *   Copyright (c) 2005 Christian Schulte <cs@jomc.org>
  *   All rights reserved.
  *
  *   Redistribution and use in source and binary forms, with or without
@@ -31,6 +32,7 @@
  *   $Id$
  *
  */
+// </editor-fold>
 // SECTION-END
 package org.jomc.sequences.ri;
 
@@ -43,40 +45,38 @@ import org.jomc.sequences.Sequence;
 import org.jomc.sequences.SequencesSystemException;
 import org.jomc.sequences.model.SequenceType;
 
-// SECTION-START[Implementation Comment]
+// SECTION-START[Documentation]
+// <editor-fold defaultstate="collapsed" desc=" Generated Documentation ">
 /**
- * {@code SequenceMapper} reference implementation.
+ * SequenceMapper reference implementation.
  * <p><b>Specifications</b><ul>
- * <li>{@code org.jomc.sequences.ri.SequenceMapper} {@code 1.0}<blockquote>
- * Object applies to Singleton scope.</blockquote></li>
+ * <li>{@code org.jomc.sequences.ri.SequenceMapper} {@code 1.0} {@code Singleton}</li>
  * </ul></p>
  * <p><b>Dependencies</b><ul>
  * <li>"{@link #getLocale Locale}"<blockquote>
- * Dependency on {@code java.util.Locale} at specification level 1.1 applying to Multiton scope bound to an instance.</blockquote></li>
+ * Dependency on {@code java.util.Locale} at specification level 1.1 bound to an instance.</blockquote></li>
  * </ul></p>
  * <p><b>Messages</b><ul>
+ * <li>"{@link #getIllegalArgumentMessage illegalArgument}"<table>
+ * <tr><td valign="top">English:</td><td valign="top"><pre>Illegal value ''{1}'' for argument ''{0}''.</pre></td></tr>
+ * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Ung&uuml;ltiger Wert ''{1}'' f&uuml;r Parameter ''{0}''.</pre></td></tr>
+ * </table>
  * <li>"{@link #getUnhandledExceptionMessage unhandledException}"<table>
  * <tr><td valign="top">English:</td><td valign="top"><pre>Unhandled exception.</pre></td></tr>
  * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Unbehandelte Ausnahme.</pre></td></tr>
  * </table>
- * </li>
- * <li>"{@link #getIllegalArgumentMessage illegalArgument}"<table>
- * <tr><td valign="top">English:</td><td valign="top"><pre>Illegal value ''{1}'' for argument ''{0}''.</pre></td></tr>
- * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Ungültiger Wert ''{1}'' für Parameter ''{0}''.</pre></td></tr>
- * </table>
- * </li>
  * </ul></p>
  *
- * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
+ * @author <a href="mailto:cs@jomc.org">Christian Schulte</a> 1.0
  * @version $Id$
  */
+// </editor-fold>
 // SECTION-END
 // SECTION-START[Annotations]
-@javax.annotation.Generated
-(
-    value = "org.jomc.tools.JavaSources",
-    comments = "See http://jomc.sourceforge.net/jomc-tools"
-)
+// <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
+@javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+// </editor-fold>
 // SECTION-END
 public class DefaultSequenceMapper implements SequenceMapper
 {
@@ -186,7 +186,7 @@ public class DefaultSequenceMapper implements SequenceMapper
                     field.setAccessible( false );
                     return null;
                 }
-                catch ( Exception e )
+                catch ( final Exception e )
                 {
                     throw new SequencesSystemException( getUnhandledExceptionMessage( getLocale() ), e );
                 }
@@ -197,47 +197,49 @@ public class DefaultSequenceMapper implements SequenceMapper
 
     // SECTION-END
     // SECTION-START[Constructors]
+    // <editor-fold defaultstate="collapsed" desc=" Generated Constructors ">
 
-    /** Default implementation constructor. */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
+    /** Creates a new {@code DefaultSequenceMapper} instance. */
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
     public DefaultSequenceMapper()
     {
         // SECTION-START[Default Constructor]
         super();
         // SECTION-END
     }
+    // </editor-fold>
     // SECTION-END
     // SECTION-START[Dependencies]
+    // <editor-fold defaultstate="collapsed" desc=" Generated Dependencies ">
 
     /**
      * Gets the {@code Locale} dependency.
      * <p>This method returns the "{@code default}" object of the {@code java.util.Locale} specification at specification level 1.1.</p>
+     * <p>That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.</p>
      * @return The {@code Locale} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
-    private java.util.Locale getLocale() throws org.jomc.ObjectManagementException
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+    private java.util.Locale getLocale()
     {
-        return (java.util.Locale) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "Locale" );
+        final java.util.Locale _d = (java.util.Locale) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "Locale" );
+        assert _d != null : "'Locale' dependency not found.";
+        return _d;
     }
+    // </editor-fold>
     // SECTION-END
     // SECTION-START[Properties]
     // SECTION-END
     // SECTION-START[Messages]
+    // <editor-fold defaultstate="collapsed" desc=" Generated Messages ">
 
     /**
      * Gets the text of the {@code illegalArgument} message.
      * <p><b>Templates</b><br/><table>
      * <tr><td valign="top">English:</td><td valign="top"><pre>Illegal value ''{1}'' for argument ''{0}''.</pre></td></tr>
-     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Ungültiger Wert ''{1}'' für Parameter ''{0}''.</pre></td></tr>
+     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Ung&uuml;ltiger Wert ''{1}'' f&uuml;r Parameter ''{0}''.</pre></td></tr>
      * </table></p>
      * @param locale The locale of the message to return.
      * @param argumentName Format argument.
@@ -246,14 +248,13 @@ public class DefaultSequenceMapper implements SequenceMapper
      *
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
-    private String getIllegalArgumentMessage( final java.util.Locale locale, final java.lang.String argumentName, final java.lang.String argumentValue ) throws org.jomc.ObjectManagementException
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+    private String getIllegalArgumentMessage( final java.util.Locale locale, final java.lang.String argumentName, final java.lang.String argumentValue )
     {
-        return org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "illegalArgument", locale, new Object[] { argumentName, argumentValue, null } );
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "illegalArgument", locale, argumentName, argumentValue );
+        assert _m != null : "'illegalArgument' message not found.";
+        return _m;
     }
 
     /**
@@ -267,14 +268,14 @@ public class DefaultSequenceMapper implements SequenceMapper
      *
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
-    private String getUnhandledExceptionMessage( final java.util.Locale locale ) throws org.jomc.ObjectManagementException
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+    private String getUnhandledExceptionMessage( final java.util.Locale locale )
     {
-        return org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "unhandledException", locale,  null );
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "unhandledException", locale );
+        assert _m != null : "'unhandledException' message not found.";
+        return _m;
     }
+    // </editor-fold>
     // SECTION-END
 }

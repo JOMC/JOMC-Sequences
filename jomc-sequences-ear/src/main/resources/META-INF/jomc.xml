@@ -2,7 +2,7 @@
 <!--
 
   Copyright (c) 2009 The JOMC Project
-  Copyright (c) 2005 Christian Schulte <schulte2005@users.sourceforge.net>
+  Copyright (c) 2005 Christian Schulte <cs@jomc.org>
   All rights reserved.
 
   Redistribution and use in source and binary forms, with or without
@@ -32,13 +32,31 @@
   $Id$
 
 -->
-<implementation xmlns="http://jomc.org/model"
-                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                xsi:schemaLocation="http://jomc.org/model http://jomc.sourceforge.net/jomc-model/jomc-1.0.xsd"
-                modelVersion="1.0"
-                identifier="org.jomc.sdk.persistence.PersistenceFramework">
+<module xmlns="http://jomc.org/model"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://jomc.org/model http://jomc.org/model/jomc-1.0.xsd"
+        name="${project.name}" version="${project.version}" vendor="${project.organization.name}" modelVersion="1.0">
 
-  <properties>
-    <property name="containerManaged" type="boolean" value="true"/>
-  </properties>
-</implementation>
+  <documentation defaultLanguage="en">
+    <text language="en">${project.description}</text>
+  </documentation>
+
+  <implementations>
+    <!-- *********************************************************************************************************** -->
+    <implementation identifier="${project.name} Entity Manager"
+                    location="jndi:java:comp/env/persistence/EntityManager"
+                    name="${project.name}" version="${project.version}" vendor="${project.organization.name}"
+                    stateless="true">
+
+      <documentation defaultLanguage="en">
+        <text language="en">${project.name} {@code EntityManager} implementation.</text>
+      </documentation>
+      <authors>
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+      </authors>
+      <specifications>
+        <reference identifier="javax.persistence.EntityManager"/>
+      </specifications>
+    </implementation>
+  </implementations>
+</module>

@@ -1,7 +1,8 @@
 // SECTION-START[License Header]
+// <editor-fold defaultstate="collapsed" desc=" Generated License ">
 /*
- *   Copyright (c) 2009 The JOMC Project
- *   Copyright (c) 2005 Christian Schulte <schulte2005@users.sourceforge.net>
+ *   Copyright (c) 2010 The JOMC Project
+ *   Copyright (c) 2005 Christian Schulte <cs@jomc.org>
  *   All rights reserved.
  *
  *   Redistribution and use in source and binary forms, with or without
@@ -31,26 +32,28 @@
  *   $Id$
  *
  */
+// </editor-fold>
 // SECTION-END
 package org.jomc.sequences;
 
 import java.io.Serializable;
 import java.util.Date;
 
-// SECTION-START[Implementation Comment]
+// SECTION-START[Documentation]
+// <editor-fold defaultstate="collapsed" desc=" Generated Documentation ">
 /**
  * Sequence of numbers.
  *
- * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
+ * @author <a href="mailto:cs@jomc.org">Christian Schulte</a> 1.0
  * @version $Id$
  */
+// </editor-fold>
 // SECTION-END
 // SECTION-START[Annotations]
-@javax.annotation.Generated
-(
-    value = "org.jomc.tools.JavaSources",
-    comments = "See http://jomc.sourceforge.net/jomc-tools"
-)
+// <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
+@javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+// </editor-fold>
 // SECTION-END
 public class Sequence implements Comparable<Sequence>, Cloneable, Serializable
 {
@@ -72,7 +75,7 @@ public class Sequence implements Comparable<Sequence>, Cloneable, Serializable
     public static final String PROP_VALUE = "org.jomc.sequences.Sequence.PROP_VALUE";
 
     /** Serial version UID for backwards compatibility with 1.0.x classes. */
-    private static final long serialVersionUID = -5986954258127229601L;
+    private static final long serialVersionUID = 4782576402999874315L;
 
     /**
      * Revision of the sequence.
@@ -257,7 +260,6 @@ public class Sequence implements Comparable<Sequence>, Cloneable, Serializable
 
     // SECTION-END
     // SECTION-START[Comparable]
-
     /**
      * Compares this sequence with the specified sequence for order.
      * <p>Returns a negative integer, zero, or a positive integer as this sequence is less than, equal to, or greater
@@ -290,7 +292,6 @@ public class Sequence implements Comparable<Sequence>, Cloneable, Serializable
 
     // SECTION-END
     // SECTION-START[Cloneable]
-
     /**
      * Creates and returns a copy of this object.
      *
@@ -311,7 +312,6 @@ public class Sequence implements Comparable<Sequence>, Cloneable, Serializable
 
     // SECTION-END
     // SECTION-START[Object]
-
     /**
      * Indicates whether some other object is equal to this one by comparing the values of properties {@code name} and
      * {@code revision}.
@@ -363,18 +363,23 @@ public class Sequence implements Comparable<Sequence>, Cloneable, Serializable
 
     // SECTION-END
     // SECTION-START[Constructors]
+    // <editor-fold defaultstate="collapsed" desc=" Generated Constructors ">
 
-    /** Default implementation constructor. */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
+    /** Creates a new {@code Sequence} instance. */
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
     public Sequence()
     {
         // SECTION-START[Default Constructor]
         super();
         // SECTION-END
     }
+    // </editor-fold>
+    // SECTION-END
+    // SECTION-START[Dependencies]
+    // SECTION-END
+    // SECTION-START[Properties]
+    // SECTION-END
+    // SECTION-START[Messages]
     // SECTION-END
 }

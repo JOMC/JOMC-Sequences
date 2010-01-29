@@ -2,7 +2,7 @@
 <!--
 
   Copyright (c) 2009 The JOMC Project
-  Copyright (c) 2005 Christian Schulte <schulte2005@users.sourceforge.net>
+  Copyright (c) 2005 Christian Schulte <cs@jomc.org>
   All rights reserved.
 
   Redistribution and use in source and binary forms, with or without
@@ -35,66 +35,47 @@
 <module xmlns="http://jomc.org/model"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://jomc.org/model http://jomc.org/model/jomc-1.0.xsd"
-        name="${pom.name}"
-        version="${pom.version}"
-        vendor="${pom.organization.name}"
+        name="${project.name}" version="${project.version}" vendor="${project.organization.name}"
         modelVersion="1.0">
 
   <documentation defaultLanguage="en">
-    <text language="en"><![CDATA[${pom.description}]]></text>
+    <text language="en">${project.description}</text>
   </documentation>
 
   <implementations>
-    <!-- ******************************************************************* -->
+    <!-- *********************************************************************************************************** -->
     <implementation identifier="org.jomc.sequences.it.SequenceDirectoryTest"
-                    class="org.jomc.sequences.it.SequenceDirectoryTest"
-                    name="${pom.name}"
-                    vendor="${organization.name}"
-                    version="${pom.version}"
-                    final="true">
+                    class="org.jomc.sequences.it.SequenceDirectoryTest" classDeclaration="true"
+                    name="${project.name}" vendor="${organization.name}" version="${project.version}" final="true">
 
       <documentation defaultLanguage="en">
-        <text language="en"><![CDATA[Testcase for {@code SequenceDirectory} implementations.]]></text>
+        <text language="en">Testcase for SequenceDirectory implementations.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
-                createDate="2005-07-25T19:56:45Z"/>
-
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
       </authors>
       <dependencies>
-        <dependency name="SequenceDirectory"
-                    identifier="org.jomc.sequences.SequenceDirectory"
-                    version="1.0">
+        <dependency name="SequenceDirectory" identifier="org.jomc.sequences.SequenceDirectory" version="1.0"
+                    optional="true"/>
 
-        </dependency>
       </dependencies>
     </implementation>
-
-    <!-- ******************************************************************* -->
+    <!-- *********************************************************************************************************** -->
     <implementation identifier="org.jomc.sequences.it.SequenceOperationsTest"
-                    class="org.jomc.sequences.it.SequenceOperationsTest"
-                    name="${pom.name}"
-                    vendor="${organization.name}"
-                    version="${pom.version}"
-                    final="true">
+                    class="org.jomc.sequences.it.SequenceOperationsTest" classDeclaration="true"
+                    name="${project.name}" vendor="${organization.name}" version="${project.version}" final="true">
 
       <documentation defaultLanguage="en">
-        <text language="en"><![CDATA[Testcase for {@code SequenceOperations} implementations.]]></text>
+        <text language="en">Testcase for SequenceOperations implementations.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
-                createDate="2005-07-25T19:56:45Z"/>
-
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
       </authors>
       <dependencies>
-        <dependency name="SequenceDirectory"
-                    identifier="org.jomc.sequences.SequenceDirectory"
-                    version="1.0"/>
-
-        <dependency name="SequenceOperations"
-                    identifier="org.jomc.sequences.SequenceOperations"
-                    version="1.0"/>
-
+        <dependency name="SequenceDirectory" identifier="org.jomc.sequences.SequenceDirectory" version="1.0"
+                    optional="true"/>
+        <dependency name="SequenceOperations" identifier="org.jomc.sequences.SequenceOperations" version="1.0"
+                    optional="true"/>
       </dependencies>
     </implementation>
   </implementations>

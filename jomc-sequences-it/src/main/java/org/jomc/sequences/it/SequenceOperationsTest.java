@@ -1,7 +1,8 @@
 // SECTION-START[License Header]
+// <editor-fold defaultstate="collapsed" desc=" Generated License ">
 /*
- *   Copyright (c) 2009 The JOMC Project
- *   Copyright (c) 2005 Christian Schulte <schulte2005@users.sourceforge.net>
+ *   Copyright (c) 2010 The JOMC Project
+ *   Copyright (c) 2005 Christian Schulte <cs@jomc.org>
  *   All rights reserved.
  *
  *   Redistribution and use in source and binary forms, with or without
@@ -31,39 +32,43 @@
  *   $Id$
  *
  */
+// </editor-fold>
 // SECTION-END
 package org.jomc.sequences.it;
 
-import junit.framework.Assert;
-import junit.framework.TestCase;
 import org.jomc.sequences.Sequence;
 import org.jomc.sequences.SequenceLimitException;
 import org.jomc.sequences.SequenceNotFoundException;
 import org.jomc.sequences.SequenceOperations;
 import org.jomc.sequences.SequencesSystemException;
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.fail;
 
-// SECTION-START[Implementation Comment]
+// SECTION-START[Documentation]
+// <editor-fold defaultstate="collapsed" desc=" Generated Documentation ">
 /**
- * Testcase for {@code SequenceOperations} implementations.
+ * Testcase for SequenceOperations implementations.
  * <p><b>Dependencies</b><ul>
  * <li>"{@link #getSequenceDirectory SequenceDirectory}"<blockquote>
- * Dependency on {@code org.jomc.sequences.SequenceDirectory} at specification level 1.0 applying to Singleton scope bound to an instance.</blockquote></li>
+ * Dependency on {@code org.jomc.sequences.SequenceDirectory} at specification level 1.0 bound to an instance.</blockquote></li>
  * <li>"{@link #getSequenceOperations SequenceOperations}"<blockquote>
- * Dependency on {@code org.jomc.sequences.SequenceOperations} at specification level 1.0 applying to Singleton scope bound to an instance.</blockquote></li>
+ * Dependency on {@code org.jomc.sequences.SequenceOperations} at specification level 1.0 bound to an instance.</blockquote></li>
  * </ul></p>
  *
- * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
+ * @author <a href="mailto:cs@jomc.org">Christian Schulte</a> 1.0
  * @version $Id$
  */
+// </editor-fold>
 // SECTION-END
 // SECTION-START[Annotations]
-@javax.annotation.Generated
-(
-    value = "org.jomc.tools.JavaSources",
-    comments = "See http://jomc.sourceforge.net/jomc-tools"
-)
+// <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
+@javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+// </editor-fold>
 // SECTION-END
-public class SequenceOperationsTest extends TestCase
+public class SequenceOperationsTest
 {
     // SECTION-START[SequenceOperationsTest]
 
@@ -71,45 +76,45 @@ public class SequenceOperationsTest extends TestCase
     private static final int TEST_INCREMENT = 10;
 
     /**
-     * Tetst the {@link SequenceOperations#getNextSequenceValue(String)} and
+     * Tests the {@link SequenceOperations#getNextSequenceValue(String)} and
      * {@link SequenceOperations#getNextSequenceValues(String,int)} methods to handle illegal arguments correctly
      * by throwing a {@code SequencesSystemException} with non-null message.
      */
-    public void testIllegalArguments() throws Exception
+    @Test public void testIllegalArguments() throws Exception
     {
         assert this.getSequenceOperations() != null;
 
         try
         {
             this.getSequenceOperations().getNextSequenceValue( null );
-            throw new AssertionError();
+            fail( "Expected SequencesSystemException not thrown." );
         }
-        catch ( SequencesSystemException e )
+        catch ( final SequencesSystemException e )
         {
+            assertNotNull( e.getMessage() );
             System.out.println( e.toString() );
-            Assert.assertNotNull( e.getMessage() );
         }
 
         try
         {
             this.getSequenceOperations().getNextSequenceValues( null, 0 );
-            throw new AssertionError();
+            fail( "Expected SequencesSystemException not thrown." );
         }
-        catch ( SequencesSystemException e )
+        catch ( final SequencesSystemException e )
         {
+            assertNotNull( e.getMessage() );
             System.out.println( e.toString() );
-            Assert.assertNotNull( e.getMessage() );
         }
 
         try
         {
             this.getSequenceOperations().getNextSequenceValues( "TEST", -1 );
-            throw new AssertionError();
+            fail( "Expected SequencesSystemException not thrown." );
         }
-        catch ( SequencesSystemException e )
+        catch ( final SequencesSystemException e )
         {
+            assertNotNull( e.getMessage() );
             System.out.println( e.toString() );
-            Assert.assertNotNull( e.getMessage() );
         }
 
     }
@@ -118,30 +123,30 @@ public class SequenceOperationsTest extends TestCase
      * Tests that requesting sequence values for unknown sequences is prevented by throwing a corresponding
      * {@code SequenceNotFoundException}.
      */
-    public void testSequenceNotFoundException() throws Exception
+    @Test public void testSequenceNotFoundException() throws Exception
     {
         assert this.getSequenceOperations() != null;
 
         try
         {
             this.getSequenceOperations().getNextSequenceValue( "UNKNOWN" );
-            throw new AssertionError();
+            fail( "Expected SequenceNotFoundException not thrown." );
         }
-        catch ( SequenceNotFoundException e )
+        catch ( final SequenceNotFoundException e )
         {
+            assertNotNull( e.getMessage() );
             System.out.println( e.toString() );
-            Assert.assertNotNull( e.getMessage() );
         }
 
         try
         {
             this.getSequenceOperations().getNextSequenceValues( "UNKNOWN", 100 );
-            throw new AssertionError();
+            fail( "Expected SequenceNotFoundException not thrown." );
         }
-        catch ( SequenceNotFoundException e )
+        catch ( final SequenceNotFoundException e )
         {
+            assertNotNull( e.getMessage() );
             System.out.println( e.toString() );
-            Assert.assertNotNull( e.getMessage() );
         }
     }
 
@@ -151,38 +156,39 @@ public class SequenceOperationsTest extends TestCase
      * and {@link SequenceOperations#getNextSequenceValues(java.lang.String, int) } methods to throw a
      * {@code SequenceLimitException} when a maximum value is reached.
      */
-    public void testSequenceLimitException() throws Exception
+    @Test public void testSequenceLimitException() throws Exception
     {
         this.setupTestSequence();
 
         final long nextValue = this.getSequenceOperations().getNextSequenceValue( this.getClass().getName() );
 
-        Assert.assertEquals( 10, nextValue );
+        assertEquals( 10, nextValue );
 
         try
         {
             this.getSequenceOperations().getNextSequenceValue( this.getClass().getName() );
-            throw new AssertionError();
+            fail( "Expected SequenceLimitException not thrown." );
         }
-        catch ( SequenceLimitException e )
+        catch ( final SequenceLimitException e )
         {
-            Assert.assertNotNull( e.getMessage() );
+            assertNotNull( e.getMessage() );
             System.out.println( e.toString() );
         }
 
         this.setupTestSequence();
 
         final long[] nextValues = this.getSequenceOperations().getNextSequenceValues( this.getClass().getName(), 1 );
-        Assert.assertEquals( 1, nextValues.length );
-        Assert.assertEquals( 10, nextValues[0] );
+        assertEquals( 1, nextValues.length );
+        assertEquals( 10, nextValues[0] );
 
         try
         {
             this.getSequenceOperations().getNextSequenceValues( this.getClass().getName(), 1 );
+            fail( "Expected SequenceLimitException not thrown." );
         }
-        catch ( SequenceLimitException e )
+        catch ( final SequenceLimitException e )
         {
-            Assert.assertNotNull( e.getMessage() );
+            assertNotNull( e.getMessage() );
             System.out.println( e.toString() );
         }
     }
@@ -213,52 +219,55 @@ public class SequenceOperationsTest extends TestCase
 
     // SECTION-END
     // SECTION-START[Constructors]
+    // <editor-fold defaultstate="collapsed" desc=" Generated Constructors ">
 
-    /** Default implementation constructor. */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
+    /** Creates a new {@code SequenceOperationsTest} instance. */
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
     public SequenceOperationsTest()
     {
         // SECTION-START[Default Constructor]
         super();
         // SECTION-END
     }
+    // </editor-fold>
     // SECTION-END
     // SECTION-START[Dependencies]
+    // <editor-fold defaultstate="collapsed" desc=" Generated Dependencies ">
 
     /**
      * Gets the {@code SequenceDirectory} dependency.
      * <p>This method returns any available object of the {@code org.jomc.sequences.SequenceDirectory} specification at specification level 1.0.</p>
+     * <p>That specification applies to {@code Singleton} scope. The singleton object is returned whenever requested and bound to this instance.</p>
      * @return The {@code SequenceDirectory} dependency.
+     * {@code null} if no object is available.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
-    private org.jomc.sequences.SequenceDirectory getSequenceDirectory() throws org.jomc.ObjectManagementException
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+    private org.jomc.sequences.SequenceDirectory getSequenceDirectory()
     {
-        return (org.jomc.sequences.SequenceDirectory) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "SequenceDirectory" );
+        return (org.jomc.sequences.SequenceDirectory) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "SequenceDirectory" );
     }
 
     /**
      * Gets the {@code SequenceOperations} dependency.
      * <p>This method returns any available object of the {@code org.jomc.sequences.SequenceOperations} specification at specification level 1.0.</p>
+     * <p>That specification applies to {@code Singleton} scope. The singleton object is returned whenever requested and bound to this instance.</p>
      * @return The {@code SequenceOperations} dependency.
+     * {@code null} if no object is available.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
-    private org.jomc.sequences.SequenceOperations getSequenceOperations() throws org.jomc.ObjectManagementException
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+    private org.jomc.sequences.SequenceOperations getSequenceOperations()
     {
-        return (org.jomc.sequences.SequenceOperations) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "SequenceOperations" );
+        return (org.jomc.sequences.SequenceOperations) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "SequenceOperations" );
     }
+    // </editor-fold>
+    // SECTION-END
+    // SECTION-START[Properties]
+    // SECTION-END
+    // SECTION-START[Messages]
     // SECTION-END
 }

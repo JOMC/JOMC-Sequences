@@ -40,8 +40,8 @@
     <display-name>${pom.name}</display-name>
     <enterprise-beans>
         <session>
-            <description>${pom.description}</description>
-            <display-name>${pom.name}</display-name>
+            <description>${project.description}</description>
+            <display-name>${project.name}</display-name>
             <ejb-name>org.jomc.sequences.ri.DefaultSequenceDirectory</ejb-name>
             <business-remote>org.jomc.sequences.SequenceDirectory</business-remote>
             <business-remote>org.jomc.sequences.SequenceOperations</business-remote>
@@ -55,7 +55,7 @@
         </session>
     </enterprise-beans>
     <assembly-descriptor>
-        <security-role>
+        <!-- security-role>
             <description>Role for browsing the sequence directory.</description>
             <role-name>${pom.artifactId}-reader</role-name>
         </security-role>
@@ -108,7 +108,7 @@
                 <ejb-name>org.jomc.sequences.ri.DefaultSequenceDirectory</ejb-name>
                 <method-name>deleteSequence</method-name>
             </method>
-        </method-permission>
+        </method-permission -->
         <container-transaction>
             <method>
                 <ejb-name>org.jomc.sequences.ri.DefaultSequenceDirectory</ejb-name>
@@ -142,6 +142,10 @@
         </application-exception>
         <application-exception>
             <exception-class>org.jomc.sequences.SequenceVetoException</exception-class>
+            <rollback>true</rollback>
+        </application-exception>
+        <application-exception>
+            <exception-class>org.jomc.sequences.SequencesException</exception-class>
             <rollback>true</rollback>
         </application-exception>
         <application-exception>

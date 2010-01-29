@@ -2,7 +2,7 @@
 <!--
 
   Copyright (c) 2009 The JOMC Project
-  Copyright (c) 2005 Christian Schulte <schulte2005@users.sourceforge.net>
+  Copyright (c) 2005 Christian Schulte <cs@jomc.org>
   All rights reserved.
 
   Redistribution and use in source and binary forms, with or without
@@ -45,7 +45,7 @@
   <artifactId>jomc-sequences-ear</artifactId>
   <packaging>ear</packaging>
   <name>JOMC Sequences EAR</name>
-  <description><![CDATA[Sequences enterprise application archive.]]></description>
+  <description>Sequences enterprise application archive.</description>
   <build>
     <resources>
       <resource>
@@ -55,39 +55,44 @@
     </resources>
     <plugins>
       <plugin>
-        <groupId>org.jomc</groupId>
-        <artifactId>maven-jomc-plugin</artifactId>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-remote-resources-plugin</artifactId>
         <executions>
           <execution>
-            <id>assemble-modules</id>
+            <id>process</id>
             <goals>
-              <goal>assemble-modules</goal>
+              <goal>process</goal>
             </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <artifactId>maven-jar-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>jar</id>
-            <goals>
-              <goal>jar</goal>
-              <goal>sign</goal>
-            </goals>
-            <phase>process-resources</phase>
             <configuration>
-              <classesDirectory>${project.build.directory}/jomc</classesDirectory>
-              <outputDirectory>${project.build.directory}/jomc-ear/lib</outputDirectory>
-              <jarPath>${project.build.directory}/jomc-ear/lib/${project.build.finalName}.jar</jarPath>
-              <storepass>${jarsigner.storepass}</storepass>
-              <keypass>${jarsigner.keypass}</keypass>
-              <alias>${jarsigner.alias}</alias>
+              <resourceBundles>
+                <resourceBundle>org.jomc.build:jomc-build-resources:${jomc-build.version}</resourceBundle>
+              </resourceBundles>
+              <properties>
+                <buildNumber>${buildNumber}</buildNumber>
+              </properties>
+              <outputDirectory>${project.build.directory}/jomc-ear</outputDirectory>
             </configuration>
           </execution>
         </executions>
       </plugin>
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>archive-transformations</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+            <phase>process-resources</phase>
+            <configuration>
+              <outputDirectory>${project.build.directory}/jomc-ear/lib</outputDirectory>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-ear-plugin</artifactId>
         <configuration>
           <modules>
@@ -108,12 +113,17 @@
             </jarModule>
             <jarModule>
               <groupId>org.jomc</groupId>
-              <artifactId>jomc-model</artifactId>
+              <artifactId>jomc-util</artifactId>
               <includeInApplicationXml>false</includeInApplicationXml>
             </jarModule>
             <jarModule>
               <groupId>org.jomc</groupId>
-              <artifactId>jomc-sdk</artifactId>
+              <artifactId>jomc-model</artifactId>
+              <includeInApplicationXml>false</includeInApplicationXml>
+            </jarModule>
+            <jarModule>
+              <groupId>org.jomc.sdk</groupId>
+              <artifactId>jomc-sdk-model</artifactId>
               <includeInApplicationXml>false</includeInApplicationXml>
             </jarModule>
             <jarModule>
@@ -133,23 +143,8 @@
             </jarModule>
             <jarModule>
               <groupId>org.jomc.logging</groupId>
-              <artifactId>jomc-logging-jdk-logging</artifactId>
+              <artifactId>jomc-logging-log4j-logging</artifactId>
               <includeInApplicationXml>false</includeInApplicationXml>
-            </jarModule>
-            <jarModule>
-              <groupId>javax.xml.bind</groupId>
-              <artifactId>jaxb-api</artifactId>
-              <excluded>true</excluded>
-            </jarModule>
-            <jarModule>
-              <groupId>javax.xml.stream</groupId>
-              <artifactId>stax-api</artifactId>
-              <excluded>true</excluded>
-            </jarModule>
-            <jarModule>
-              <groupId>com.sun.xml.bind</groupId>
-              <artifactId>jaxb-impl</artifactId>
-              <excluded>true</excluded>
             </jarModule>
             <jarModule>
               <groupId>javax.persistence</groupId>
@@ -157,43 +152,8 @@
               <excluded>true</excluded>
             </jarModule>
             <jarModule>
-              <groupId>javax.activation</groupId>
-              <artifactId>activation</artifactId>
-              <excluded>true</excluded>
-            </jarModule>
-            <jarModule>
-              <groupId>javax.transaction</groupId>
-              <artifactId>transaction-api</artifactId>
-              <excluded>true</excluded>
-            </jarModule>
-            <jarModule>
-              <groupId>javax.jms</groupId>
-              <artifactId>jms</artifactId>
-              <excluded>true</excluded>
-            </jarModule>
-            <jarModule>
-              <groupId>javax.resource</groupId>
-              <artifactId>connector-api</artifactId>
-              <excluded>true</excluded>
-            </jarModule>
-            <jarModule>
               <groupId>javax.annotation</groupId>
               <artifactId>jsr250-api</artifactId>
-              <excluded>true</excluded>
-            </jarModule>
-            <jarModule>
-              <groupId>javax.ejb</groupId>
-              <artifactId>ejb-api</artifactId>
-              <excluded>true</excluded>
-            </jarModule>
-            <jarModule>
-              <groupId>javax.xml</groupId>
-              <artifactId>jaxrpc-api</artifactId>
-              <excluded>true</excluded>
-            </jarModule>
-            <jarModule>
-              <groupId>javax.xml.soap</groupId>
-              <artifactId>saaj-api</artifactId>
               <excluded>true</excluded>
             </jarModule>
           </modules>
@@ -205,14 +165,122 @@
   <dependencies>
     <dependency>
       <groupId>org.jomc.logging</groupId>
-      <artifactId>jomc-logging-jdk-logging</artifactId>
+      <artifactId>jomc-logging-log4j-logging</artifactId>
       <scope>runtime</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>log4j</groupId>
+          <artifactId>log4j</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>javax.xml.bind</groupId>
+          <artifactId>jaxb-api</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>com.sun.xml.bind</groupId>
+          <artifactId>jaxb-impl</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.jomc.sequences</groupId>
       <artifactId>jomc-sequences-ri</artifactId>
       <type>ejb</type>
       <scope>runtime</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>javax.xml.bind</groupId>
+          <artifactId>jaxb-api</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>com.sun.xml.bind</groupId>
+          <artifactId>jaxb-impl</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
   </dependencies>
+  <profiles>
+    <profile>
+      <id>jomc-release</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-deploy-plugin</artifactId>
+            <configuration>
+              <updateReleaseInfo>true</updateReleaseInfo>
+            </configuration>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-sources</id>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-javadocs</id>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jarsigner-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>sign-transformations</id>
+                <goals>
+                  <goal>sign</goal>
+                  <goal>verify</goal>
+                </goals>
+                <phase>process-resources</phase>
+                <configuration>
+                  <archive>${project.build.directory}/jomc-ear/lib/${project.build.finalName}.jar</archive>
+                </configuration>
+              </execution>
+              <execution>
+                <id>sign</id>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+              </execution>
+              <execution>
+                <id>verify</id>
+                <goals>
+                  <goal>verify</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>sign</id>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>

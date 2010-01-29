@@ -1,7 +1,8 @@
 // SECTION-START[License Header]
+// <editor-fold defaultstate="collapsed" desc=" Generated License ">
 /*
- *   Copyright (c) 2009 The JOMC Project
- *   Copyright (c) 2005 Christian Schulte <schulte2005@users.sourceforge.net>
+ *   Copyright (c) 2010 The JOMC Project
+ *   Copyright (c) 2005 Christian Schulte <cs@jomc.org>
  *   All rights reserved.
  *
  *   Redistribution and use in source and binary forms, with or without
@@ -31,6 +32,7 @@
  *   $Id$
  *
  */
+// </editor-fold>
 // SECTION-END
 package org.jomc.sequences.it;
 
@@ -38,8 +40,6 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-import junit.framework.Assert;
-import junit.framework.TestCase;
 import org.jomc.sequences.ConcurrentModificationException;
 import org.jomc.sequences.DuplicateSequenceException;
 import org.jomc.sequences.SequenceVetoException;
@@ -47,27 +47,32 @@ import org.jomc.sequences.Sequence;
 import org.jomc.sequences.SequenceDirectory;
 import org.jomc.sequences.SequenceNotFoundException;
 import org.jomc.sequences.SequencesSystemException;
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.fail;
 
-// SECTION-START[Implementation Comment]
+// SECTION-START[Documentation]
+// <editor-fold defaultstate="collapsed" desc=" Generated Documentation ">
 /**
- * Testcase for {@code SequenceDirectory} implementations.
+ * Testcase for SequenceDirectory implementations.
  * <p><b>Dependencies</b><ul>
  * <li>"{@link #getSequenceDirectory SequenceDirectory}"<blockquote>
- * Dependency on {@code org.jomc.sequences.SequenceDirectory} at specification level 1.0 applying to Singleton scope bound to an instance.</blockquote></li>
+ * Dependency on {@code org.jomc.sequences.SequenceDirectory} at specification level 1.0 bound to an instance.</blockquote></li>
  * </ul></p>
  *
- * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
+ * @author <a href="mailto:cs@jomc.org">Christian Schulte</a> 1.0
  * @version $Id$
  */
+// </editor-fold>
 // SECTION-END
 // SECTION-START[Annotations]
-@javax.annotation.Generated
-(
-    value = "org.jomc.tools.JavaSources",
-    comments = "See http://jomc.sourceforge.net/jomc-tools"
-)
+// <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
+@javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+// </editor-fold>
 // SECTION-END
-public class SequenceDirectoryTest extends TestCase
+public class SequenceDirectoryTest
 {
     // SECTION-START[SequenceDirectoryTest]
 
@@ -92,73 +97,73 @@ public class SequenceDirectoryTest extends TestCase
      * Tests all {@link SequenceDirectory} methods to handle illegal arguments correctly by throwing a
      * {@code SequencesSystemException} with non-null message.
      */
-    public void testIllegalArguments() throws Exception
+    @Test public void testIllegalArguments() throws Exception
     {
         assert this.getSequenceDirectory() != null;
 
         try
         {
             this.getSequenceDirectory().addSequence( null );
-            throw new AssertionError();
+            fail( "Expected SequencesSystemException not thrown." );
         }
-        catch ( SequencesSystemException e )
+        catch ( final SequencesSystemException e )
         {
-            Assert.assertNotNull( e.getMessage() );
+            assertNotNull( e.getMessage() );
             System.out.println( e.toString() );
         }
 
         try
         {
             this.getSequenceDirectory().deleteSequence( null, 0L );
-            throw new AssertionError();
+            fail( "Expected SequencesSystemException not thrown." );
         }
-        catch ( SequencesSystemException e )
+        catch ( final SequencesSystemException e )
         {
-            Assert.assertNotNull( e.getMessage() );
+            assertNotNull( e.getMessage() );
             System.out.println( e.toString() );
         }
 
         try
         {
             this.getSequenceDirectory().editSequence( null, 0L, null );
-            throw new AssertionError();
+            fail( "Expected SequencesSystemException not thrown." );
         }
-        catch ( SequencesSystemException e )
+        catch ( final SequencesSystemException e )
         {
-            Assert.assertNotNull( e.getMessage() );
+            assertNotNull( e.getMessage() );
             System.out.println( e.toString() );
         }
 
         try
         {
             this.getSequenceDirectory().editSequence( "TEST", 0L, null );
-            throw new AssertionError();
+            fail( "Expected SequencesSystemException not thrown." );
         }
-        catch ( SequencesSystemException e )
+        catch ( final SequencesSystemException e )
         {
-            Assert.assertNotNull( e.getMessage() );
+            assertNotNull( e.getMessage() );
             System.out.println( e.toString() );
         }
 
         try
         {
             this.getSequenceDirectory().editSequence( null, 0L, new Sequence() );
-            throw new AssertionError();
+            fail( "Expected SequencesSystemException not thrown." );
         }
-        catch ( SequencesSystemException e )
+        catch ( final SequencesSystemException e )
         {
-            Assert.assertNotNull( e.getMessage() );
+            assertNotNull( e.getMessage() );
             System.out.println( e.toString() );
         }
 
         try
         {
             this.getSequenceDirectory().getSequence( null );
-            throw new AssertionError();
+            fail( "Expected SequencesSystemException not thrown." );
         }
-        catch ( SequencesSystemException e )
+        catch ( final SequencesSystemException e )
         {
-            Assert.assertNotNull( e.getMessage() );
+            assertNotNull( e.getMessage() );
             System.out.println( e.toString() );
         }
 
@@ -167,7 +172,7 @@ public class SequenceDirectoryTest extends TestCase
     /**
      * Tests that a valid sequence can get added, edited, searched and removed.
      */
-    public void testAddEditSearchDeleteLegalSequence() throws Exception
+    @Test public void testAddEditSearchDeleteLegalSequence() throws Exception
     {
         assert this.getSequenceDirectory() != null;
 
@@ -185,23 +190,23 @@ public class SequenceDirectoryTest extends TestCase
 
         System.out.println( legal );
 
-        Assert.assertEquals( legal, this.getSequenceDirectory().getSequence( "TEST2" ) );
+        assertEquals( legal, this.getSequenceDirectory().getSequence( "TEST2" ) );
 
         final Set<Sequence> result = this.getSequenceDirectory().searchSequences( "TEST" );
 
-        Assert.assertEquals( 1, result.size() );
-        Assert.assertEquals( legal, result.toArray()[0] );
+        assertEquals( 1, result.size() );
+        assertEquals( legal, result.toArray()[0] );
 
         this.getSequenceDirectory().deleteSequence( "TEST2", legal.getRevision() );
 
-        Assert.assertEquals( 0, this.getSequenceDirectory().searchSequences( null ).size() );
-        Assert.assertEquals( BigInteger.ZERO, this.getSequenceDirectory().getSequenceCount() );
+        assertEquals( 0, this.getSequenceDirectory().searchSequences( null ).size() );
+        assertEquals( BigInteger.ZERO, this.getSequenceDirectory().getSequenceCount() );
     }
 
     /**
      * Tests that a sequence cannot get edited or removed when it got changed concurrently.
      */
-    public void testConcurrentModificationException() throws Exception
+    @Test public void testConcurrentModificationException() throws Exception
     {
         assert this.getSequenceDirectory() != null;
 
@@ -214,22 +219,22 @@ public class SequenceDirectoryTest extends TestCase
         try
         {
             this.getSequenceDirectory().editSequence( "TEST", sequence.getRevision() + 1L, sequence );
-            throw new AssertionError();
+            fail( "Expected ConcurrentModificationException not thrown." );
         }
-        catch ( ConcurrentModificationException e )
+        catch ( final ConcurrentModificationException e )
         {
-            Assert.assertNotNull( e.getMessage() );
+            assertNotNull( e.getMessage() );
             System.out.println( e.toString() );
         }
 
         try
         {
             this.getSequenceDirectory().deleteSequence( "TEST", sequence.getRevision() + 1L );
-            throw new AssertionError();
+            fail( "Expected ConcurrentModificationException not thrown." );
         }
-        catch ( ConcurrentModificationException e )
+        catch ( final ConcurrentModificationException e )
         {
-            Assert.assertNotNull( e.getMessage() );
+            assertNotNull( e.getMessage() );
             System.out.println( e.toString() );
         }
     }
@@ -238,7 +243,7 @@ public class SequenceDirectoryTest extends TestCase
      * Tests that adding an illegal sequence or updating an existing sequence with illegal data is prevented by throwing
      * a corresponding {@code SequenceVetoException}.
      */
-    public void testSequenceVetoException() throws Exception
+    @Test public void testSequenceVetoException() throws Exception
     {
         assert this.getSequenceDirectory() != null;
 
@@ -256,11 +261,11 @@ public class SequenceDirectoryTest extends TestCase
         try
         {
             this.getSequenceDirectory().addSequence( illegal );
-            throw new AssertionError();
+            fail( "Expected SequenceVetoException not thrown." );
         }
-        catch ( SequenceVetoException e )
+        catch ( final SequenceVetoException e )
         {
-            Assert.assertNotNull( e.getMessage() );
+            assertNotNull( e.getMessage() );
             System.out.println( e.toString() );
         }
 
@@ -269,11 +274,11 @@ public class SequenceDirectoryTest extends TestCase
         try
         {
             this.getSequenceDirectory().editSequence( legal.getName(), legal.getRevision(), illegal );
-            throw new AssertionError();
+            fail( "Expected SequenceVetoException not thrown." );
         }
-        catch ( SequenceVetoException e )
+        catch ( final SequenceVetoException e )
         {
-            Assert.assertNotNull( e.getMessage() );
+            assertNotNull( e.getMessage() );
             System.out.println( e.toString() );
         }
 
@@ -283,7 +288,7 @@ public class SequenceDirectoryTest extends TestCase
     /**
      * Tests that adding a sequence twice is prevented by throwing a corresponding {@code DuplicateSequenceException}.
      */
-    public void testDuplicateSequenceException() throws Exception
+    @Test public void testDuplicateSequenceException() throws Exception
     {
         assert this.getSequenceDirectory() != null;
 
@@ -296,11 +301,11 @@ public class SequenceDirectoryTest extends TestCase
         try
         {
             this.getSequenceDirectory().addSequence( legal );
-            throw new AssertionError();
+            fail( "Expected DuplicateSequenceException not thrown." );
         }
-        catch ( DuplicateSequenceException e )
+        catch ( final DuplicateSequenceException e )
         {
-            Assert.assertNotNull( e.getMessage() );
+            assertNotNull( e.getMessage() );
             System.out.println( e.toString() );
         }
     }
@@ -309,7 +314,7 @@ public class SequenceDirectoryTest extends TestCase
      * Tests that updating or deleting an unknown sequence is prevented by throwing a corresponding
      * {@code SequenceNotFoundException}.
      */
-    public void testSequenceNotFoundException() throws Exception
+    @Test public void testSequenceNotFoundException() throws Exception
     {
         assert this.getSequenceDirectory() != null;
 
@@ -320,22 +325,22 @@ public class SequenceDirectoryTest extends TestCase
         try
         {
             this.getSequenceDirectory().editSequence( "UNKNOWN", 0L, legal );
-            throw new AssertionError();
+            fail( "Expected SequenceNotFoundException not thrown." );
         }
-        catch ( SequenceNotFoundException e )
+        catch ( final SequenceNotFoundException e )
         {
-            Assert.assertNotNull( e.getMessage() );
+            assertNotNull( e.getMessage() );
             System.out.println( e.toString() );
         }
 
         try
         {
             this.getSequenceDirectory().deleteSequence( "UNKNOWN", 0L );
-            throw new AssertionError();
+            fail( "Expected SequenceNotFoundException not thrown." );
         }
-        catch ( SequenceNotFoundException e )
+        catch ( final SequenceNotFoundException e )
         {
-            Assert.assertNotNull( e.getMessage() );
+            assertNotNull( e.getMessage() );
             System.out.println( e.toString() );
         }
 
@@ -345,7 +350,7 @@ public class SequenceDirectoryTest extends TestCase
     /**
      * Tests that adding, editing and then removing multiple sequences leaves an empty directory.
      */
-    public void testAddEditDeleteMany() throws Exception
+    @Test public void testAddEditDeleteMany() throws Exception
     {
         assert this.getSequenceDirectory() != null;
 
@@ -367,22 +372,20 @@ public class SequenceDirectoryTest extends TestCase
         {
             final String oldName = s.getName();
             s.setName( oldName + "_UPDATED" );
-            final Sequence u = this.getSequenceDirectory().editSequence(
-                oldName, s.getRevision(), s );
 
+            final Sequence u = this.getSequenceDirectory().editSequence( oldName, s.getRevision(), s );
             updated.add( u );
+
             System.out.println( "EDIT: " + u );
         }
 
         for ( Sequence s : updated )
         {
-            final Sequence d = this.getSequenceDirectory().deleteSequence(
-                s.getName(), s.getRevision() );
-
+            final Sequence d = this.getSequenceDirectory().deleteSequence( s.getName(), s.getRevision() );
             System.out.println( "DELETE: " + d );
         }
 
-        Assert.assertEquals( BigInteger.ZERO, this.getSequenceDirectory().getSequenceCount() );
+        assertEquals( BigInteger.ZERO, this.getSequenceDirectory().getSequenceCount() );
     }
 
     /** Removes all sequences from the directory. */
@@ -396,41 +399,45 @@ public class SequenceDirectoryTest extends TestCase
 
         }
 
-        Assert.assertEquals( BigInteger.ZERO, this.getSequenceDirectory().getSequenceCount() );
+        assertEquals( BigInteger.ZERO, this.getSequenceDirectory().getSequenceCount() );
     }
 
     // SECTION-END
     // SECTION-START[Constructors]
+    // <editor-fold defaultstate="collapsed" desc=" Generated Constructors ">
 
-    /** Default implementation constructor. */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
+    /** Creates a new {@code SequenceDirectoryTest} instance. */
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
     public SequenceDirectoryTest()
     {
         // SECTION-START[Default Constructor]
         super();
         // SECTION-END
     }
+    // </editor-fold>
     // SECTION-END
     // SECTION-START[Dependencies]
+    // <editor-fold defaultstate="collapsed" desc=" Generated Dependencies ">
 
     /**
      * Gets the {@code SequenceDirectory} dependency.
      * <p>This method returns any available object of the {@code org.jomc.sequences.SequenceDirectory} specification at specification level 1.0.</p>
+     * <p>That specification applies to {@code Singleton} scope. The singleton object is returned whenever requested and bound to this instance.</p>
      * @return The {@code SequenceDirectory} dependency.
+     * {@code null} if no object is available.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
-    private org.jomc.sequences.SequenceDirectory getSequenceDirectory() throws org.jomc.ObjectManagementException
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+    private org.jomc.sequences.SequenceDirectory getSequenceDirectory()
     {
-        return (org.jomc.sequences.SequenceDirectory) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "SequenceDirectory" );
+        return (org.jomc.sequences.SequenceDirectory) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "SequenceDirectory" );
     }
+    // </editor-fold>
+    // SECTION-END
+    // SECTION-START[Properties]
+    // SECTION-END
+    // SECTION-START[Messages]
     // SECTION-END
 }

@@ -1,7 +1,8 @@
 // SECTION-START[License Header]
+// <editor-fold defaultstate="collapsed" desc=" Generated License ">
 /*
- *   Copyright (c) 2009 The JOMC Project
- *   Copyright (c) 2005 Christian Schulte <schulte2005@users.sourceforge.net>
+ *   Copyright (c) 2010 The JOMC Project
+ *   Copyright (c) 2005 Christian Schulte <cs@jomc.org>
  *   All rights reserved.
  *
  *   Redistribution and use in source and binary forms, with or without
@@ -31,9 +32,11 @@
  *   $Id$
  *
  */
+// </editor-fold>
 // SECTION-END
 package org.jomc.sequences.util;
 
+import java.beans.Beans;
 import java.beans.ExceptionListener;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
@@ -43,85 +46,86 @@ import java.util.LinkedList;
 import java.util.List;
 import javax.swing.event.SwingPropertyChangeSupport;
 import javax.swing.table.AbstractTableModel;
-import org.jomc.ObjectManagementException;
-import org.jomc.sequences.ConcurrentModificationException;
-import org.jomc.sequences.SequenceVetoException;
 import org.jomc.sequences.Sequence;
-import org.jomc.sequences.SequenceNotFoundException;
+import org.jomc.sequences.SequencesException;
 import org.jomc.sequences.SequencesSystemException;
 
-// SECTION-START[Implementation Comment]
+// SECTION-START[Documentation]
+// <editor-fold defaultstate="collapsed" desc=" Generated Documentation ">
 /**
- * Swing {@code TableModel} Java Bean for displaying and editing a system's {@code SequenceDirectory}.
+ * Swing TableModel Java Bean for displaying and editing a system's SequenceDirectory.
  * <p><b>Specifications</b><ul>
- * <li>{@code org.jomc.sequences.util.SequencesTableModel} {@code 1.0}<blockquote>
- * Object applies to Context scope.</blockquote></li>
+ * <li>{@code javax.swing.table.TableModel} {@code Multiton}</li>
  * </ul></p>
  * <p><b>Properties</b><ul>
- * <li>"{@link #isNameColumnEditableByDefault nameColumnEditableByDefault}"<blockquote>
- * Property of type {@code java.lang.Boolean} with value "true".</blockquote></li>
- * <li>"{@link #isMinimumColumnEditableByDefault minimumColumnEditableByDefault}"<blockquote>
- * Property of type {@code java.lang.Boolean} with value "true".</blockquote></li>
- * <li>"{@link #isMaximumColumnEditableByDefault maximumColumnEditableByDefault}"<blockquote>
- * Property of type {@code java.lang.Boolean} with value "true".</blockquote></li>
- * <li>"{@link #isIncrementColumnEditableByDefault incrementColumnEditableByDefault}"<blockquote>
- * Property of type {@code java.lang.Boolean} with value "true".</blockquote></li>
- * <li>"{@link #isValueColumnEditableByDefault valueColumnEditableByDefault}"<blockquote>
- * Property of type {@code java.lang.Boolean} with value "true".</blockquote></li>
+ * <li>"{@link #isIncrementColumnEditableByDefault incrementColumnEditableByDefault}"
+ * <blockquote>Property of type {@code java.lang.Boolean}.
+ * <p>Flag indicating that the &quot;increment&quot; column is editable by default.</p>
+ * </blockquote></li>
+ * <li>"{@link #isMaximumColumnEditableByDefault maximumColumnEditableByDefault}"
+ * <blockquote>Property of type {@code java.lang.Boolean}.
+ * <p>Flag indicating that the &quot;maximum&quot; column is editable by default.</p>
+ * </blockquote></li>
+ * <li>"{@link #isMinimumColumnEditableByDefault minimumColumnEditableByDefault}"
+ * <blockquote>Property of type {@code java.lang.Boolean}.
+ * <p>Flag indicating that the &quot;minimum&quot; column is editable by default.</p>
+ * </blockquote></li>
+ * <li>"{@link #isNameColumnEditableByDefault nameColumnEditableByDefault}"
+ * <blockquote>Property of type {@code java.lang.Boolean}.
+ * <p>Flag indicating that the &quot;name&quot; column is editable by default.</p>
+ * </blockquote></li>
+ * <li>"{@link #isValueColumnEditableByDefault valueColumnEditableByDefault}"
+ * <blockquote>Property of type {@code java.lang.Boolean}.
+ * <p>Flag indicating that the &quot;value&quot; column is editable by default.</p>
+ * </blockquote></li>
  * </ul></p>
  * <p><b>Dependencies</b><ul>
- * <li>"{@link #getSequenceDirectory SequenceDirectory}"<blockquote>
- * Dependency on {@code org.jomc.sequences.SequenceDirectory} at specification level 1.0 applying to Singleton scope bound to an instance.</blockquote></li>
  * <li>"{@link #getExceptionListener ExceptionListener}"<blockquote>
- * Dependency on {@code java.beans.ExceptionListener} at specification level 1.4 applying to Multiton scope bound to an instance.</blockquote></li>
+ * Dependency on {@code java.beans.ExceptionListener} at specification level 1.4 bound to an instance.</blockquote></li>
  * <li>"{@link #getLocale Locale}"<blockquote>
- * Dependency on {@code java.util.Locale} at specification level 1.1 applying to Multiton scope bound to an instance.</blockquote></li>
+ * Dependency on {@code java.util.Locale} at specification level 1.1 bound to an instance.</blockquote></li>
  * <li>"{@link #getLogger Logger}"<blockquote>
- * Dependency on {@code org.jomc.logging.Logger} at specification level 1.0 applying to Multiton scope bound to an instance.</blockquote></li>
+ * Dependency on {@code org.jomc.logging.Logger} at specification level 1.0 bound to an instance.</blockquote></li>
+ * <li>"{@link #getSequenceDirectory SequenceDirectory}"<blockquote>
+ * Dependency on {@code org.jomc.sequences.SequenceDirectory} at specification level 1.0 bound to an instance.</blockquote></li>
  * </ul></p>
  * <p><b>Messages</b><ul>
- * <li>"{@link #getNameColumnTitleMessage nameColumnTitle}"<table>
- * <tr><td valign="top">English:</td><td valign="top"><pre>Name</pre></td></tr>
- * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Name</pre></td></tr>
+ * <li>"{@link #getIllegalColumnIndexMessage illegalColumnIndex}"<table>
+ * <tr><td valign="top">English:</td><td valign="top"><pre>Illegal column index {0}. {1}</pre></td></tr>
+ * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Ung&uuml;ltiger Spalten-Index {0}. {1}</pre></td></tr>
  * </table>
- * </li>
- * <li>"{@link #getMinimumColumnTitleMessage minimumColumnTitle}"<table>
- * <tr><td valign="top">English:</td><td valign="top"><pre>Minimum</pre></td></tr>
- * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Minimum</pre></td></tr>
- * </table>
- * </li>
- * <li>"{@link #getMaximumColumnTitleMessage maximumColumnTitle}"<table>
- * <tr><td valign="top">English:</td><td valign="top"><pre>Maximum</pre></td></tr>
- * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Maximum</pre></td></tr>
- * </table>
- * </li>
  * <li>"{@link #getIncrementColumnTitleMessage incrementColumnTitle}"<table>
  * <tr><td valign="top">English:</td><td valign="top"><pre>Increment</pre></td></tr>
  * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Inkrement</pre></td></tr>
  * </table>
- * </li>
+ * <li>"{@link #getMaximumColumnTitleMessage maximumColumnTitle}"<table>
+ * <tr><td valign="top">English:</td><td valign="top"><pre>Maximum</pre></td></tr>
+ * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Maximum</pre></td></tr>
+ * </table>
+ * <li>"{@link #getMinimumColumnTitleMessage minimumColumnTitle}"<table>
+ * <tr><td valign="top">English:</td><td valign="top"><pre>Minimum</pre></td></tr>
+ * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Minimum</pre></td></tr>
+ * </table>
+ * <li>"{@link #getNameColumnTitleMessage nameColumnTitle}"<table>
+ * <tr><td valign="top">English:</td><td valign="top"><pre>Name</pre></td></tr>
+ * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Name</pre></td></tr>
+ * </table>
  * <li>"{@link #getValueColumnTitleMessage valueColumnTitle}"<table>
  * <tr><td valign="top">English:</td><td valign="top"><pre>Value</pre></td></tr>
  * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Wert</pre></td></tr>
  * </table>
- * </li>
- * <li>"{@link #getIllegalColumnIndexMessage illegalColumnIndex}"<table>
- * <tr><td valign="top">English:</td><td valign="top"><pre>Illegal column index {0}. {1}</pre></td></tr>
- * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Ungültiger Spalten-Index {0}. {1}</pre></td></tr>
- * </table>
- * </li>
  * </ul></p>
  *
- * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
+ * @author <a href="mailto:cs@jomc.org">Christian Schulte</a> 1.0
  * @version $Id$
  */
+// </editor-fold>
 // SECTION-END
 // SECTION-START[Annotations]
-@javax.annotation.Generated
-(
-    value = "org.jomc.tools.JavaSources",
-    comments = "See http://jomc.sourceforge.net/jomc-tools"
-)
+// <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
+@javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+// </editor-fold>
 // SECTION-END
 public class SequencesTableModel extends AbstractTableModel implements Serializable
 {
@@ -133,7 +137,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
         {
             return this.getSequences().size();
         }
-        catch ( SequencesSystemException e )
+        catch ( final SequencesSystemException e )
         {
             this.fireExceptionThrown( e );
         }
@@ -149,130 +153,103 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
     @Override
     public String getColumnName( final int columnIndex )
     {
-        try
+        final String columnName;
+
+        switch ( columnIndex )
         {
-            final String columnName;
+            case NAME_COLUMN_INDEX:
+                columnName = this.getNameColumnTitleMessage( this.getLocale() );
+                break;
 
-            switch ( columnIndex )
-            {
-                case NAME_COLUMN_INDEX:
-                    columnName = this.getNameColumnTitleMessage( this.getLocale() );
-                    break;
+            case MINIMUM_COLUMN_INDEX:
+                columnName = this.getMinimumColumnTitleMessage( this.getLocale() );
+                break;
 
-                case MINIMUM_COLUMN_INDEX:
-                    columnName = this.getMinimumColumnTitleMessage( this.getLocale() );
-                    break;
+            case MAXIMUM_COLUMN_INDEX:
+                columnName = this.getMaximumColumnTitleMessage( this.getLocale() );
+                break;
 
-                case MAXIMUM_COLUMN_INDEX:
-                    columnName = this.getMaximumColumnTitleMessage( this.getLocale() );
-                    break;
+            case INCREMENT_COLUMN_INDEX:
+                columnName = this.getIncrementColumnTitleMessage( this.getLocale() );
+                break;
 
-                case INCREMENT_COLUMN_INDEX:
-                    columnName = this.getIncrementColumnTitleMessage( this.getLocale() );
-                    break;
+            case VALUE_COLUMN_INDEX:
+                columnName = this.getValueColumnTitleMessage( this.getLocale() );
+                break;
 
-                case VALUE_COLUMN_INDEX:
-                    columnName = this.getValueColumnTitleMessage( this.getLocale() );
-                    break;
+            default:
+                columnName = super.getColumnName( columnIndex );
+                this.getLogger().warn( this.getIllegalColumnIndexMessage( this.getLocale(), columnIndex ) );
+                break;
 
-                default:
-                    columnName = super.getColumnName( columnIndex );
-                    this.getLogger().warn( this.getIllegalColumnIndexMessage( this.getLocale(), columnIndex ) );
-                    break;
-
-            }
-
-            return columnName;
-        }
-        catch ( SequencesSystemException e )
-        {
-            this.fireExceptionThrown( e );
         }
 
-        return "";
+        return columnName;
     }
 
     @Override
     public Class<?> getColumnClass( final int columnIndex )
     {
-        try
+        final Class columnClass;
+
+        switch ( columnIndex )
         {
-            final Class columnClass;
+            case NAME_COLUMN_INDEX:
+                columnClass = String.class;
+                break;
 
-            switch ( columnIndex )
-            {
-                case NAME_COLUMN_INDEX:
-                    columnClass = String.class;
-                    break;
+            case MINIMUM_COLUMN_INDEX:
+            case MAXIMUM_COLUMN_INDEX:
+            case INCREMENT_COLUMN_INDEX:
+            case VALUE_COLUMN_INDEX:
+                columnClass = BigInteger.class;
+                break;
 
-                case MINIMUM_COLUMN_INDEX:
-                case MAXIMUM_COLUMN_INDEX:
-                case INCREMENT_COLUMN_INDEX:
-                case VALUE_COLUMN_INDEX:
-                    columnClass = BigInteger.class;
-                    break;
+            default:
+                columnClass = super.getColumnClass( columnIndex );
+                this.getLogger().warn( this.getIllegalColumnIndexMessage( this.getLocale(), columnIndex ) );
+                break;
 
-                default:
-                    columnClass = super.getColumnClass( columnIndex );
-                    this.getLogger().warn( this.getIllegalColumnIndexMessage( this.getLocale(), columnIndex ) );
-                    break;
-
-            }
-
-            return columnClass;
-        }
-        catch ( SequencesSystemException e )
-        {
-            this.fireExceptionThrown( e );
         }
 
-        return Object.class;
+        return columnClass;
     }
 
     @Override
     public boolean isCellEditable( final int rowIndex, final int columnIndex )
     {
-        try
+        final boolean cellEditable;
+
+        switch ( columnIndex )
         {
-            final boolean cellEditable;
+            case NAME_COLUMN_INDEX:
+                cellEditable = this.getNameColumnEditable();
+                break;
 
-            switch ( columnIndex )
-            {
-                case NAME_COLUMN_INDEX:
-                    cellEditable = this.getNameColumnEditable();
-                    break;
+            case MINIMUM_COLUMN_INDEX:
+                cellEditable = this.getMinimumColumnEditable();
+                break;
 
-                case MINIMUM_COLUMN_INDEX:
-                    cellEditable = this.getMinimumColumnEditable();
-                    break;
+            case MAXIMUM_COLUMN_INDEX:
+                cellEditable = this.getMaximumColumnEditable();
+                break;
 
-                case MAXIMUM_COLUMN_INDEX:
-                    cellEditable = this.getMaximumColumnEditable();
-                    break;
+            case INCREMENT_COLUMN_INDEX:
+                cellEditable = this.getIncrementColumnEditable();
+                break;
 
-                case INCREMENT_COLUMN_INDEX:
-                    cellEditable = this.getIncrementColumnEditable();
-                    break;
+            case VALUE_COLUMN_INDEX:
+                cellEditable = this.getValueColumnEditable();
+                break;
 
-                case VALUE_COLUMN_INDEX:
-                    cellEditable = this.getValueColumnEditable();
-                    break;
+            default:
+                cellEditable = super.isCellEditable( rowIndex, columnIndex );
+                this.getLogger().warn( this.getIllegalColumnIndexMessage( this.getLocale(), columnIndex ) );
+                break;
 
-                default:
-                    cellEditable = super.isCellEditable( rowIndex, columnIndex );
-                    this.getLogger().warn( this.getIllegalColumnIndexMessage( this.getLocale(), columnIndex ) );
-                    break;
-
-            }
-
-            return cellEditable;
-        }
-        catch ( SequencesSystemException e )
-        {
-            this.fireExceptionThrown( e );
         }
 
-        return false;
+        return cellEditable;
     }
 
     public Object getValueAt( final int rowIndex, final int columnIndex )
@@ -313,11 +290,11 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
 
             return value;
         }
-        catch ( SequencesSystemException e )
+        catch ( final SequencesSystemException e )
         {
             this.fireExceptionThrown( e );
         }
-        catch ( IndexOutOfBoundsException e )
+        catch ( final IndexOutOfBoundsException e )
         {
             this.fireExceptionThrown( e );
         }
@@ -326,7 +303,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
     }
 
     @Override
-    public synchronized void setValueAt( final Object aValue, final int rowIndex, final int columnIndex )
+    public void setValueAt( final Object aValue, final int rowIndex, final int columnIndex )
     {
         try
         {
@@ -362,34 +339,26 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
 
             }
 
-            this.getSequenceDirectory().editSequence( name, revision, sequence );
+            if ( !Beans.isDesignTime() )
+            {
+                this.getSequenceDirectory().editSequence( name, revision, sequence );
+            }
+
             this.fireTableRowsUpdated( rowIndex, rowIndex );
         }
-        catch ( SequenceNotFoundException e )
+        catch ( final SequencesException e )
         {
             this.fireExceptionThrown( e );
             this.sequences = null;
             this.fireTableDataChanged();
         }
-        catch ( ConcurrentModificationException e )
+        catch ( final SequencesSystemException e )
         {
             this.fireExceptionThrown( e );
             this.sequences = null;
             this.fireTableDataChanged();
         }
-        catch ( SequenceVetoException e )
-        {
-            this.fireExceptionThrown( e );
-            this.sequences = null;
-            this.fireTableDataChanged();
-        }
-        catch ( SequencesSystemException e )
-        {
-            this.fireExceptionThrown( e );
-            this.sequences = null;
-            this.fireTableDataChanged();
-        }
-        catch ( IndexOutOfBoundsException e )
+        catch ( final IndexOutOfBoundsException e )
         {
             this.fireExceptionThrown( e );
             this.sequences = null;
@@ -742,14 +711,18 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *
      * @throws SequencesSystemException if searching entities fails.
      */
-    protected List<Sequence> getSequences() throws SequencesSystemException
+    public List<Sequence> getSequences() throws SequencesSystemException
     {
         if ( this.sequences == null )
         {
             this.sequences = new LinkedList<Sequence>();
-            this.sequences.addAll( this.getSequenceDirectory().searchSequences(
-                this.getSequenceFilter() != null ? this.getSequenceFilter().getName() : null ) );
 
+            if ( !Beans.isDesignTime() )
+            {
+                this.sequences.addAll( this.getSequenceDirectory().searchSequences(
+                    this.getSequenceFilter() != null ? this.getSequenceFilter().getName() : null ) );
+
+            }
         }
 
         return this.sequences;
@@ -762,183 +735,186 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      */
     protected void fireExceptionThrown( final Exception e )
     {
-        for ( ExceptionListener l : this.getExceptionListener() )
+        this.getLogger().error( e );
+
+        if ( this.getExceptionListener() != null )
         {
-            l.exceptionThrown( e );
+            for ( ExceptionListener l : this.getExceptionListener() )
+            {
+                l.exceptionThrown( e );
+            }
         }
     }
 
     // SECTION-END
     // SECTION-START[Constructors]
+    // <editor-fold defaultstate="collapsed" desc=" Generated Constructors ">
 
-    /** Default implementation constructor. */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
+    /** Creates a new {@code SequencesTableModel} instance. */
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
     public SequencesTableModel()
     {
         // SECTION-START[Default Constructor]
         super();
         // SECTION-END
     }
+    // </editor-fold>
     // SECTION-END
     // SECTION-START[Dependencies]
+    // <editor-fold defaultstate="collapsed" desc=" Generated Dependencies ">
 
     /**
      * Gets the {@code ExceptionListener} dependency.
      * <p>This method returns any available object of the {@code java.beans.ExceptionListener} specification at specification level 1.4.</p>
+     * <p>That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.</p>
      * @return The {@code ExceptionListener} dependency.
+     * {@code null} if no object is available.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
-    private java.beans.ExceptionListener[] getExceptionListener() throws org.jomc.ObjectManagementException
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+    private java.beans.ExceptionListener[] getExceptionListener()
     {
-        return (java.beans.ExceptionListener[]) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "ExceptionListener" );
+        return (java.beans.ExceptionListener[]) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "ExceptionListener" );
     }
 
     /**
      * Gets the {@code Locale} dependency.
      * <p>This method returns the "{@code default}" object of the {@code java.util.Locale} specification at specification level 1.1.</p>
+     * <p>That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.</p>
      * @return The {@code Locale} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
-    private java.util.Locale getLocale() throws org.jomc.ObjectManagementException
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+    private java.util.Locale getLocale()
     {
-        return (java.util.Locale) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "Locale" );
+        final java.util.Locale _d = (java.util.Locale) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "Locale" );
+        assert _d != null : "'Locale' dependency not found.";
+        return _d;
     }
 
     /**
      * Gets the {@code Logger} dependency.
      * <p>This method returns any available object of the {@code org.jomc.logging.Logger} specification at specification level 1.0.</p>
+     * <p>That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.</p>
      * <p><b>Properties</b><dl>
      * <dt>"{@code name}"</dt>
-     * <dd>Property of type {@code java.lang.String} with value "org.jomc.sequences.util.SequencesTableModel".
+     * <dd>Property of type {@code java.lang.String}.
      * </dd>
      * </dl>
      * @return The {@code Logger} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
-    private org.jomc.logging.Logger getLogger() throws org.jomc.ObjectManagementException
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+    private org.jomc.logging.Logger getLogger()
     {
-        return (org.jomc.logging.Logger) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "Logger" );
+        final org.jomc.logging.Logger _d = (org.jomc.logging.Logger) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "Logger" );
+        assert _d != null : "'Logger' dependency not found.";
+        return _d;
     }
 
     /**
      * Gets the {@code SequenceDirectory} dependency.
      * <p>This method returns any available object of the {@code org.jomc.sequences.SequenceDirectory} specification at specification level 1.0.</p>
+     * <p>That specification applies to {@code Singleton} scope. The singleton object is returned whenever requested and bound to this instance.</p>
      * @return The {@code SequenceDirectory} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
-    private org.jomc.sequences.SequenceDirectory getSequenceDirectory() throws org.jomc.ObjectManagementException
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+    private org.jomc.sequences.SequenceDirectory getSequenceDirectory()
     {
-        return (org.jomc.sequences.SequenceDirectory) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "SequenceDirectory" );
+        final org.jomc.sequences.SequenceDirectory _d = (org.jomc.sequences.SequenceDirectory) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "SequenceDirectory" );
+        assert _d != null : "'SequenceDirectory' dependency not found.";
+        return _d;
     }
+    // </editor-fold>
     // SECTION-END
     // SECTION-START[Properties]
+    // <editor-fold defaultstate="collapsed" desc=" Generated Properties ">
 
     /**
      * Gets the value of the {@code incrementColumnEditableByDefault} property.
-     * @return Flag indicating that the "increment" column is editable by default.
+     * @return Flag indicating that the &quot;increment&quot; column is editable by default.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
-    private java.lang.Boolean isIncrementColumnEditableByDefault() throws org.jomc.ObjectManagementException
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+    private java.lang.Boolean isIncrementColumnEditableByDefault()
     {
-        return (java.lang.Boolean) org.jomc.ObjectManagerFactory.getObjectManager().getProperty( this, "incrementColumnEditableByDefault" );
+        final java.lang.Boolean _p = (java.lang.Boolean) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getProperty( this, "incrementColumnEditableByDefault" );
+        assert _p != null : "'incrementColumnEditableByDefault' property not found.";
+        return _p;
     }
 
     /**
      * Gets the value of the {@code maximumColumnEditableByDefault} property.
-     * @return Flag indicating that the "maximum" column is editable by default.
+     * @return Flag indicating that the &quot;maximum&quot; column is editable by default.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
-    private java.lang.Boolean isMaximumColumnEditableByDefault() throws org.jomc.ObjectManagementException
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+    private java.lang.Boolean isMaximumColumnEditableByDefault()
     {
-        return (java.lang.Boolean) org.jomc.ObjectManagerFactory.getObjectManager().getProperty( this, "maximumColumnEditableByDefault" );
+        final java.lang.Boolean _p = (java.lang.Boolean) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getProperty( this, "maximumColumnEditableByDefault" );
+        assert _p != null : "'maximumColumnEditableByDefault' property not found.";
+        return _p;
     }
 
     /**
      * Gets the value of the {@code minimumColumnEditableByDefault} property.
-     * @return Flag indicating that the "minimum" column is editable by default.
+     * @return Flag indicating that the &quot;minimum&quot; column is editable by default.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
-    private java.lang.Boolean isMinimumColumnEditableByDefault() throws org.jomc.ObjectManagementException
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+    private java.lang.Boolean isMinimumColumnEditableByDefault()
     {
-        return (java.lang.Boolean) org.jomc.ObjectManagerFactory.getObjectManager().getProperty( this, "minimumColumnEditableByDefault" );
+        final java.lang.Boolean _p = (java.lang.Boolean) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getProperty( this, "minimumColumnEditableByDefault" );
+        assert _p != null : "'minimumColumnEditableByDefault' property not found.";
+        return _p;
     }
 
     /**
      * Gets the value of the {@code nameColumnEditableByDefault} property.
-     * @return Flag indicating that the "name" column is editable by default.
+     * @return Flag indicating that the &quot;name&quot; column is editable by default.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
-    private java.lang.Boolean isNameColumnEditableByDefault() throws org.jomc.ObjectManagementException
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+    private java.lang.Boolean isNameColumnEditableByDefault()
     {
-        return (java.lang.Boolean) org.jomc.ObjectManagerFactory.getObjectManager().getProperty( this, "nameColumnEditableByDefault" );
+        final java.lang.Boolean _p = (java.lang.Boolean) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getProperty( this, "nameColumnEditableByDefault" );
+        assert _p != null : "'nameColumnEditableByDefault' property not found.";
+        return _p;
     }
 
     /**
      * Gets the value of the {@code valueColumnEditableByDefault} property.
-     * @return Flag indicating that the "value" column is editable by default.
+     * @return Flag indicating that the &quot;value&quot; column is editable by default.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
-    private java.lang.Boolean isValueColumnEditableByDefault() throws org.jomc.ObjectManagementException
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+    private java.lang.Boolean isValueColumnEditableByDefault()
     {
-        return (java.lang.Boolean) org.jomc.ObjectManagerFactory.getObjectManager().getProperty( this, "valueColumnEditableByDefault" );
+        final java.lang.Boolean _p = (java.lang.Boolean) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getProperty( this, "valueColumnEditableByDefault" );
+        assert _p != null : "'valueColumnEditableByDefault' property not found.";
+        return _p;
     }
+    // </editor-fold>
     // SECTION-END
     // SECTION-START[Messages]
+    // <editor-fold defaultstate="collapsed" desc=" Generated Messages ">
 
     /**
      * Gets the text of the {@code illegalColumnIndex} message.
      * <p><b>Templates</b><br/><table>
      * <tr><td valign="top">English:</td><td valign="top"><pre>Illegal column index {0}. {1}</pre></td></tr>
-     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Ungültiger Spalten-Index {0}. {1}</pre></td></tr>
+     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Ung&uuml;ltiger Spalten-Index {0}. {1}</pre></td></tr>
      * </table></p>
      * @param locale The locale of the message to return.
      * @param columnIndex Format argument.
@@ -946,14 +922,13 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
-    private String getIllegalColumnIndexMessage( final java.util.Locale locale, final java.lang.Number columnIndex ) throws org.jomc.ObjectManagementException
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+    private String getIllegalColumnIndexMessage( final java.util.Locale locale, final java.lang.Number columnIndex )
     {
-        return org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "illegalColumnIndex", locale, new Object[] { columnIndex, null } );
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "illegalColumnIndex", locale, columnIndex );
+        assert _m != null : "'illegalColumnIndex' message not found.";
+        return _m;
     }
 
     /**
@@ -967,14 +942,13 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
-    private String getIncrementColumnTitleMessage( final java.util.Locale locale ) throws org.jomc.ObjectManagementException
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+    private String getIncrementColumnTitleMessage( final java.util.Locale locale )
     {
-        return org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "incrementColumnTitle", locale,  null );
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "incrementColumnTitle", locale );
+        assert _m != null : "'incrementColumnTitle' message not found.";
+        return _m;
     }
 
     /**
@@ -988,14 +962,13 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
-    private String getMaximumColumnTitleMessage( final java.util.Locale locale ) throws org.jomc.ObjectManagementException
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+    private String getMaximumColumnTitleMessage( final java.util.Locale locale )
     {
-        return org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "maximumColumnTitle", locale,  null );
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "maximumColumnTitle", locale );
+        assert _m != null : "'maximumColumnTitle' message not found.";
+        return _m;
     }
 
     /**
@@ -1009,14 +982,13 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
-    private String getMinimumColumnTitleMessage( final java.util.Locale locale ) throws org.jomc.ObjectManagementException
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+    private String getMinimumColumnTitleMessage( final java.util.Locale locale )
     {
-        return org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "minimumColumnTitle", locale,  null );
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "minimumColumnTitle", locale );
+        assert _m != null : "'minimumColumnTitle' message not found.";
+        return _m;
     }
 
     /**
@@ -1030,14 +1002,13 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
-    private String getNameColumnTitleMessage( final java.util.Locale locale ) throws org.jomc.ObjectManagementException
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+    private String getNameColumnTitleMessage( final java.util.Locale locale )
     {
-        return org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "nameColumnTitle", locale,  null );
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "nameColumnTitle", locale );
+        assert _m != null : "'nameColumnTitle' message not found.";
+        return _m;
     }
 
     /**
@@ -1051,14 +1022,14 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
-    )
-    private String getValueColumnTitleMessage( final java.util.Locale locale ) throws org.jomc.ObjectManagementException
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+    private String getValueColumnTitleMessage( final java.util.Locale locale )
     {
-        return org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "valueColumnTitle", locale,  null );
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "valueColumnTitle", locale );
+        assert _m != null : "'valueColumnTitle' message not found.";
+        return _m;
     }
+    // </editor-fold>
     // SECTION-END
 }

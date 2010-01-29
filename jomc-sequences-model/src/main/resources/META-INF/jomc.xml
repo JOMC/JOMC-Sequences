@@ -2,7 +2,7 @@
 <!--
 
   Copyright (c) 2009 The JOMC Project
-  Copyright (c) 2005 Christian Schulte <schulte2005@users.sourceforge.net>
+  Copyright (c) 2005 Christian Schulte <cs@jomc.org>
   All rights reserved.
 
   Redistribution and use in source and binary forms, with or without
@@ -35,45 +35,36 @@
 <module xmlns="http://jomc.org/model"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://jomc.org/model http://jomc.org/model/jomc-1.0.xsd
-                            http://jomc.org/sdk/model http://jomc.sourceforge.net/jomc-sdk/jomc-sdk-1.0.xsd"
-        name="${pom.name}"
-        version="${pom.version}"
-        vendor="${pom.organization.name}"
-        modelVersion="1.0">
+                            http://jomc.org/sdk/model http://jomc.org/sdk/model/jomc-sdk-1.0.xsd"
+        name="${project.name}" version="${project.version}" vendor="${project.organization.name}" modelVersion="1.0">
 
   <documentation defaultLanguage="en">
-    <text language="en"><![CDATA[${pom.description}]]></text>
+    <text language="en">${project.description}</text>
   </documentation>
 
   <implementations>
-    <!-- ******************************************************************* -->
-    <implementation identifier="org.jomc.sequences.model.SequencesModel"
-                    class="org.jomc.sdk.xml.XmlFramework"
-                    name="${pom.name}"
-                    version="${pom.version}"
-                    vendor="${pom.organization.name}"
-                    final="true"
-                    parent="org.jomc.sdk.xml.XmlFramework">
+    <!-- *********************************************************************************************************** -->
+    <implementation identifier="${project.name}" name="${project.name}" version="${project.version}"
+                    vendor="${project.organization.name}" final="true">
 
       <documentation defaultLanguage="en">
-        <text language="en"><![CDATA[Sequences model.]]></text>
+        <text language="en">Sequences model.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
-                createDate="2005-07-25T19:56:45Z"/>
-
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
       </authors>
+      <specifications>
+        <reference identifier="XML Schema Set" version="${xmlschemaset.specification.version}"/>
+      </specifications>
       <properties>
-        <property name="configuration" type="java.lang.Object">
-          <xml-framework-configuration xmlns="http://jomc.org/sdk/model">
-            <schemas>
-              <schema public-id="http://jomc.org/sequences/model"
-                      system-id="http://jomc.sourceforge.net/jomc-sequences/jomc-sequences-model/jomc-sequences-1.0.xsd"
-                      context-id="org.jomc.sequences.model"
-                      classpath-id="org/jomc/sequences/model/jomc-sequences-1.0.xsd"/>
+        <property name="schemas" type="org.jomc.sdk.model.SchemasType">
+          <schemas xmlns="http://jomc.org/sdk/model" language-id="http://www.w3.org/2001/XMLSchema">
+            <schema public-id="http://jomc.org/sequences/model"
+                    system-id="http://jomc.org/jomc-sequences/jomc-sequences-model/jomc-sequences-1.0.xsd"
+                    java-context-id="org.jomc.sequences.model"
+                    java-classpath-id="org/jomc/sequences/model/jomc-sequences-1.0.xsd"/>
 
-            </schemas>
-          </xml-framework-configuration>
+          </schemas>
         </property>
       </properties>
     </implementation>
