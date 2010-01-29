@@ -181,7 +181,7 @@
       <exclusions>
         <exclusion>
           <groupId>org.jomc.logging</groupId>
-          <artifactId>jomc-logging-log4j-logging</artifactId>
+          <artifactId>jomc-logging-jdk-logging</artifactId>
         </exclusion>
       </exclusions>
     </dependency>
