@@ -1204,6 +1204,11 @@
           <artifactId>jotm-core</artifactId>
           <scope>test</scope>
         </dependency>
+        <dependency>
+          <groupId>javax.resource</groupId>
+          <artifactId>connector-api</artifactId>
+          <scope>test</scope>
+        </dependency>
         <!--  XAPool -->
         <dependency>
           <groupId>com.experlog</groupId>
@@ -1258,6 +1263,11 @@
         <dependency>
           <groupId>org.ow2.jotm</groupId>
           <artifactId>jotm-core</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>javax.resource</groupId>
+          <artifactId>connector-api</artifactId>
           <scope>test</scope>
         </dependency>
         <!--  XAPool -->
@@ -1316,6 +1326,11 @@
           <artifactId>jotm-core</artifactId>
           <scope>test</scope>
         </dependency>
+        <dependency>
+          <groupId>javax.resource</groupId>
+          <artifactId>connector-api</artifactId>
+          <scope>test</scope>
+        </dependency>
         <!--  XAPool -->
         <dependency>
           <groupId>com.experlog</groupId>
@@ -1372,6 +1387,11 @@
           <artifactId>jotm-core</artifactId>
           <scope>test</scope>
         </dependency>
+        <dependency>
+          <groupId>javax.resource</groupId>
+          <artifactId>connector-api</artifactId>
+          <scope>test</scope>
+        </dependency>
         <!--  XAPool -->
         <dependency>
           <groupId>com.experlog</groupId>
@@ -1421,6 +1441,11 @@
         <dependency>
           <groupId>org.ow2.jotm</groupId>
           <artifactId>jotm-core</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>javax.resource</groupId>
+          <artifactId>connector-api</artifactId>
           <scope>test</scope>
         </dependency>
         <!--  XAPool -->
@@ -1474,6 +1499,11 @@
           <artifactId>jotm-core</artifactId>
           <scope>test</scope>
         </dependency>
+        <dependency>
+          <groupId>javax.resource</groupId>
+          <artifactId>connector-api</artifactId>
+          <scope>test</scope>
+        </dependency>
         <!--  XAPool -->
         <dependency>
           <groupId>com.experlog</groupId>
@@ -1523,6 +1553,11 @@
         <dependency>
           <groupId>org.ow2.jotm</groupId>
           <artifactId>jotm-core</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>javax.resource</groupId>
+          <artifactId>connector-api</artifactId>
           <scope>test</scope>
         </dependency>
         <!--  XAPool -->
@@ -1581,6 +1616,11 @@
           <artifactId>jotm-core</artifactId>
           <scope>test</scope>
         </dependency>
+        <dependency>
+          <groupId>javax.resource</groupId>
+          <artifactId>connector-api</artifactId>
+          <scope>test</scope>
+        </dependency>
         <!--  XAPool -->
         <dependency>
           <groupId>com.experlog</groupId>
@@ -1635,6 +1675,11 @@
         <dependency>
           <groupId>org.ow2.jotm</groupId>
           <artifactId>jotm-core</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>javax.resource</groupId>
+          <artifactId>connector-api</artifactId>
           <scope>test</scope>
         </dependency>
         <!--  XAPool -->
