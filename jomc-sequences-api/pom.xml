@@ -56,6 +56,16 @@
       <testResource>
         <filtering>true</filtering>
         <directory>src/test/resources</directory>
+        <excludes>
+          <exclude>**/*.ser</exclude>
+        </excludes>
+      </testResource>
+      <testResource>
+        <filtering>false</filtering>
+        <directory>src/test/resources</directory>
+        <includes>
+          <include>**/*.ser</include>
+        </includes>
       </testResource>
     </testResources>
     <plugins>
@@ -93,6 +103,11 @@
       <groupId>org.jomc</groupId>
       <artifactId>jomc-ri</artifactId>
       <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
     </dependency>
   </dependencies>
   <profiles>

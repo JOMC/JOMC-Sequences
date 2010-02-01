@@ -41,4 +41,103 @@
   <documentation defaultLanguage="en">
     <text language="en">${project.description}</text>
   </documentation>
+
+  <implementations>
+    <!-- *********************************************************************************************************** -->
+    <implementation identifier="org.jomc.sequences.test.CapacityLimitExceptionTest"
+                    class="org.jomc.sequences.test.CapacityLimitExceptionTest" classDeclaration="true"
+                    name="${project.name}" version="${project.version}" vendor="${project.organization.name}">
+
+      <documentation defaultLanguage="en">
+        <text language="en">Test cases for class {@code org.jomc.sequences.CapacityLimitException}.</text>
+      </documentation>
+      <authors>
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+      </authors>
+    </implementation>
+    <!-- *********************************************************************************************************** -->
+    <implementation identifier="org.jomc.sequences.test.ConcurrentModificationExceptionTest"
+                    class="org.jomc.sequences.test.ConcurrentModificationExceptionTest" classDeclaration="true"
+                    name="${project.name}" version="${project.version}" vendor="${project.organization.name}">
+
+      <documentation defaultLanguage="en">
+        <text language="en">Test cases for class {@code org.jomc.sequences.ConcurrentModificationException}.</text>
+      </documentation>
+      <authors>
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+      </authors>
+    </implementation>
+    <!-- *********************************************************************************************************** -->
+    <implementation identifier="org.jomc.sequences.test.DuplicateSequenceExceptionTest"
+                    class="org.jomc.sequences.test.DuplicateSequenceExceptionTest" classDeclaration="true"
+                    name="${project.name}" version="${project.version}" vendor="${project.organization.name}">
+
+      <documentation defaultLanguage="en">
+        <text language="en">Test cases for class {@code org.jomc.sequences.DuplicateSequenceException}.</text>
+      </documentation>
+      <authors>
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+      </authors>
+    </implementation>
+    <!-- *********************************************************************************************************** -->
+    <implementation identifier="org.jomc.sequences.test.SequenceTest"
+                    class="org.jomc.sequences.test.SequenceTest" classDeclaration="true"
+                    name="${project.name}" version="${project.version}" vendor="${project.organization.name}">
+
+      <documentation defaultLanguage="en">
+        <text language="en">Test cases for class {@code org.jomc.sequences.Sequence}.</text>
+      </documentation>
+      <authors>
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+      </authors>
+    </implementation>
+    <!-- *********************************************************************************************************** -->
+    <implementation identifier="org.jomc.sequences.test.SequenceChangeEventTest"
+                    class="org.jomc.sequences.test.SequenceChangeEventTest" classDeclaration="true"
+                    name="${project.name}" version="${project.version}" vendor="${project.organization.name}">
+
+      <documentation defaultLanguage="en">
+        <text language="en">Test cases for class {@code org.jomc.sequences.SequenceChangeEvent}.</text>
+      </documentation>
+      <authors>
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+      </authors>
+    </implementation>
+    <!-- *********************************************************************************************************** -->
+    <implementation identifier="org.jomc.sequences.test.SequenceLimitExceptionTest"
+                    class="org.jomc.sequences.test.SequenceLimitExceptionTest" classDeclaration="true"
+                    name="${project.name}" version="${project.version}" vendor="${project.organization.name}">
+
+      <documentation defaultLanguage="en">
+        <text language="en">Test cases for class {@code org.jomc.sequences.SequenceLimitException}.</text>
+      </documentation>
+      <authors>
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+      </authors>
+    </implementation>
+    <!-- *********************************************************************************************************** -->
+    <implementation identifier="org.jomc.sequences.test.SequenceNotFoundExceptionTest"
+                    class="org.jomc.sequences.test.SequenceNotFoundExceptionTest" classDeclaration="true"
+                    name="${project.name}" version="${project.version}" vendor="${project.organization.name}">
+
+      <documentation defaultLanguage="en">
+        <text language="en">Test cases for class {@code org.jomc.sequences.SequenceNotFoundException}.</text>
+      </documentation>
+      <authors>
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+      </authors>
+    </implementation>
+    <!-- *********************************************************************************************************** -->
+    <implementation identifier="org.jomc.sequences.test.SequenceVetoExceptionTest"
+                    class="org.jomc.sequences.test.SequenceVetoExceptionTest" classDeclaration="true"
+                    name="${project.name}" version="${project.version}" vendor="${project.organization.name}">
+
+      <documentation defaultLanguage="en">
+        <text language="en">Test cases for class {@code org.jomc.sequences.SequenceVetoException}.</text>
+      </documentation>
+      <authors>
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+      </authors>
+    </implementation>
+  </implementations>
 </module>
