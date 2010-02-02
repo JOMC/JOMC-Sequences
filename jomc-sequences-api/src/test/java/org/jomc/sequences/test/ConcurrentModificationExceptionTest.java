@@ -56,7 +56,7 @@ import static org.junit.Assert.assertNotNull;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public class ConcurrentModificationExceptionTest
@@ -88,7 +88,7 @@ public class ConcurrentModificationExceptionTest
 
     /** Creates a new {@code ConcurrentModificationExceptionTest} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
     public ConcurrentModificationExceptionTest()
     {
         // SECTION-START[Default Constructor]

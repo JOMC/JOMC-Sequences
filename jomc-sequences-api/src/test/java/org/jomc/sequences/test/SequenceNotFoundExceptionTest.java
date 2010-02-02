@@ -56,7 +56,7 @@ import static org.junit.Assert.assertNotNull;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public class SequenceNotFoundExceptionTest
@@ -81,7 +81,7 @@ public class SequenceNotFoundExceptionTest
 
     /** Creates a new {@code SequenceNotFoundExceptionTest} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
     public SequenceNotFoundExceptionTest()
     {
         // SECTION-START[Default Constructor]
