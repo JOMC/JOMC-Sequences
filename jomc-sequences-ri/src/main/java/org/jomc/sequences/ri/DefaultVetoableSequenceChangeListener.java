@@ -47,6 +47,16 @@ import org.jomc.sequences.SequenceVetoException;
  * <p><b>Specifications</b><ul>
  * <li>{@code org.jomc.sequences.VetoableSequenceChangeListener} {@code 1.0} {@code Multiton}</li>
  * </ul></p>
+ * <p><b>Properties</b><ul>
+ * <li>"{@link #getSequenceNameMaxLength sequenceNameMaxLength}"
+ * <blockquote>Property of type {@code int}.
+ * <p>Maximum allowed length of a sequence name.</p>
+ * </blockquote></li>
+ * <li>"{@link #getSequenceNameMinLength sequenceNameMinLength}"
+ * <blockquote>Property of type {@code int}.
+ * <p>Minimum required length of a sequence name.</p>
+ * </blockquote></li>
+ * </ul></p>
  *
  * @author <a href="mailto:cs@jomc.org">Christian Schulte</a> 1.0
  * @version $Id$
@@ -75,6 +85,12 @@ public class DefaultVetoableSequenceChangeListener
             {
                 valid = false;
                 evt.getStatus( Sequence.PROP_NAME ).add( SequenceChangeEvent.MANDATORY_VALUE );
+            }
+            else if ( evt.getNewSequence().getName().length() < this.getSequenceNameMinLength() ||
+                      evt.getNewSequence().getName().length() > this.getSequenceNameMaxLength() )
+            {
+                valid = false;
+                evt.getStatus( Sequence.PROP_NAME ).add( SequenceChangeEvent.ILLEGAL_LENGTH );
             }
             if ( evt.getNewSequence().getMaximum() < evt.getNewSequence().getMinimum() ||
                  evt.getNewSequence().getMinimum() > evt.getNewSequence().getMaximum() )
@@ -120,6 +136,36 @@ public class DefaultVetoableSequenceChangeListener
     // SECTION-START[Dependencies]
     // SECTION-END
     // SECTION-START[Properties]
+    // <editor-fold defaultstate="collapsed" desc=" Generated Properties ">
+
+    /**
+     * Gets the value of the {@code sequenceNameMaxLength} property.
+     * @return Maximum allowed length of a sequence name.
+     * @throws org.jomc.ObjectManagementException if getting the property instance fails.
+     */
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
+    private int getSequenceNameMaxLength()
+    {
+        final java.lang.Integer _p = (java.lang.Integer) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getProperty( this, "sequenceNameMaxLength" );
+        assert _p != null : "'sequenceNameMaxLength' property not found.";
+        return _p.intValue();
+    }
+
+    /**
+     * Gets the value of the {@code sequenceNameMinLength} property.
+     * @return Minimum required length of a sequence name.
+     * @throws org.jomc.ObjectManagementException if getting the property instance fails.
+     */
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
+    private int getSequenceNameMinLength()
+    {
+        final java.lang.Integer _p = (java.lang.Integer) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getProperty( this, "sequenceNameMinLength" );
+        assert _p != null : "'sequenceNameMinLength' property not found.";
+        return _p.intValue();
+    }
+    // </editor-fold>
     // SECTION-END
     // SECTION-START[Messages]
     // SECTION-END

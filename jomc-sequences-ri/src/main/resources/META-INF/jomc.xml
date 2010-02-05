@@ -215,6 +215,18 @@
       <specifications>
         <reference identifier="org.jomc.sequences.VetoableSequenceChangeListener" version="1.0"/>
       </specifications>
+      <properties>
+        <property name="sequenceNameMinLength" type="int" value="1">
+          <documentation defaultLanguage="en">
+            <text language="en">Minimum required length of a sequence name.</text>
+          </documentation>
+        </property>
+        <property name="sequenceNameMaxLength" type="int" value="200">
+          <documentation defaultLanguage="en">
+            <text language="en">Maximum allowed length of a sequence name.</text>
+          </documentation>
+        </property>
+      </properties>
     </implementation>
   </implementations>
   <messages>

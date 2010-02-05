@@ -184,6 +184,10 @@ public class SequenceChangeEvent extends EventObject
     public static final Status ILLEGAL_VALUE =
         new Status( Status.ERROR, Sequence.class.getName() + ".ILLEGAL_VALUE" );
 
+    /** A property value is of illegal length. */
+    public static final Status ILLEGAL_LENGTH =
+        new Status( Status.ERROR, Sequence.class.getName() + ".ILLEGAL_LENGTH" );
+
     /** Serial version UID for backwards compatibility with 1.0.x classes. */
     private static final long serialVersionUID = 4189816896435679868L;
 
