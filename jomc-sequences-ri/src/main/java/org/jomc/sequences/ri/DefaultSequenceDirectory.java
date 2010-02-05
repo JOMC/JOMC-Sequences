@@ -68,9 +68,21 @@ import org.jomc.sequences.model.SequencesType;
  * <li>{@code org.jomc.sequences.SequenceOperations} {@code 1.0} {@code Singleton}</li>
  * </ul></p>
  * <p><b>Properties</b><ul>
- * <li>"{@link #getDirectoryName directoryName}"
+ * <li>"{@link #getDefaultSequenceDirectoryCapacityLimit defaultSequenceDirectoryCapacityLimit}"
+ * <blockquote>Property of type {@code java.math.BigInteger}.
+ * <p>Default capacity limit when creating new sequence directory entities and no default value is provided otherwise.</p>
+ * </blockquote></li>
+ * <li>"{@link #getSequenceDirectoryName sequenceDirectoryName}"
  * <blockquote>Property of type {@code java.lang.String}.
  * <p>Name uniquely identifying the directory in a set of directories.</p>
+ * </blockquote></li>
+ * <li>"{@link #getSequenceDirectoryNameQueryParameterName sequenceDirectoryNameQueryParameterName}"
+ * <blockquote>Property of type {@code java.lang.String}.
+ * <p>Name of a JPA query parameter denoting the name of a sequence directory entity.</p>
+ * </blockquote></li>
+ * <li>"{@link #getSequenceNameQueryParameterName sequenceNameQueryParameterName}"
+ * <blockquote>Property of type {@code java.lang.String}.
+ * <p>Name of a JPA query parameter denoting the name of a sequence entity.</p>
  * </blockquote></li>
  * </ul></p>
  * <p><b>Dependencies</b><ul>
@@ -80,6 +92,16 @@ import org.jomc.sequences.model.SequencesType;
  * Dependency on {@code java.util.Locale} at specification level 1.1 bound to an instance.</blockquote></li>
  * <li>"{@link #getLogger Logger}"<blockquote>
  * Dependency on {@code org.jomc.logging.Logger} at specification level 1.0 bound to an instance.</blockquote></li>
+ * <li>"{@link #getSelectAllSequencesQuery SelectAllSequencesQuery}"<blockquote>
+ * Dependency on {@code javax.persistence.Query}.</blockquote></li>
+ * <li>"{@link #getSelectSequenceCountQuery SelectSequenceCountQuery}"<blockquote>
+ * Dependency on {@code javax.persistence.Query}.</blockquote></li>
+ * <li>"{@link #getSelectSequenceDirectoryQuery SelectSequenceDirectoryQuery}"<blockquote>
+ * Dependency on {@code javax.persistence.Query}.</blockquote></li>
+ * <li>"{@link #getSelectSequenceQuery SelectSequenceQuery}"<blockquote>
+ * Dependency on {@code javax.persistence.Query}.</blockquote></li>
+ * <li>"{@link #getSelectSequencesQuery SelectSequencesQuery}"<blockquote>
+ * Dependency on {@code javax.persistence.Query}.</blockquote></li>
  * <li>"{@link #getSequenceChangeListener SequenceChangeListener}"<blockquote>
  * Dependency on {@code org.jomc.sequences.SequenceChangeListener} at specification level 1.0 bound to an instance.</blockquote></li>
  * <li>"{@link #getSequenceMapper SequenceMapper}"<blockquote>
@@ -106,7 +128,7 @@ import org.jomc.sequences.model.SequencesType;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public class DefaultSequenceDirectory
@@ -116,14 +138,16 @@ public class DefaultSequenceDirectory
 
     public BigInteger getSequenceCount()
     {
-        final Query query = this.getEntityManager().createNamedQuery( COUNT_SEQUENCES_QUERY );
-        query.setParameter( 1, this.getSequencesList().getName() );
+        final Query query = this.getSelectSequenceCountQuery();
+        query.setParameter( this.getSequenceDirectoryNameQueryParameterName(),
+                            this.getSequencesType( this.getSequenceDirectoryName() ).getName() );
+
         return BigInteger.valueOf( ( (Long) query.getSingleResult() ).longValue() );
     }
 
     public BigInteger getCapacityLimit()
     {
-        return CAPACITY_LIMIT;
+        return this.getSequencesType( this.getSequenceDirectoryName() ).getCapacityLimit();
     }
 
     public Sequence getSequence( final String name )
@@ -133,7 +157,7 @@ public class DefaultSequenceDirectory
             throw new SequencesSystemException( this.getIllegalArgumentMessage( this.getLocale(), "name", null ) );
         }
 
-        final SequenceType sequenceType = this.getSequenceByName( name );
+        final SequenceType sequenceType = this.getSequenceType( name );
         if ( sequenceType != null )
         {
             return this.getSequenceMapper().map( sequenceType, new Sequence() );
@@ -152,7 +176,7 @@ public class DefaultSequenceDirectory
         this.assertMaximumCapacityNotReached();
         this.fireVetoableSequenceChange( null, sequence );
 
-        SequenceType sequenceType = this.getSequenceByName( sequence.getName() );
+        SequenceType sequenceType = this.getSequenceType( sequence.getName() );
 
         if ( sequenceType != null )
         {
@@ -162,7 +186,7 @@ public class DefaultSequenceDirectory
         sequenceType = this.getSequenceMapper().map( sequence, new SequenceType() );
         sequenceType.setJpaDate( Calendar.getInstance() );
 
-        final SequencesType sequences = this.getSequencesList();
+        final SequencesType sequences = this.getSequencesType( this.getSequenceDirectoryName() );
         this.getEntityManager().persist( sequenceType );
         sequences.getSequence().add( sequenceType );
         this.getEntityManager().merge( sequences );
@@ -183,7 +207,7 @@ public class DefaultSequenceDirectory
             throw new SequencesSystemException( this.getIllegalArgumentMessage( this.getLocale(), "sequence", null ) );
         }
 
-        SequenceType sequenceType = this.getSequenceByName( name );
+        SequenceType sequenceType = this.getSequenceType( name );
 
         if ( sequenceType == null )
         {
@@ -216,7 +240,7 @@ public class DefaultSequenceDirectory
             throw new SequencesSystemException( this.getIllegalArgumentMessage( this.getLocale(), "name", null ) );
         }
 
-        final SequenceType sequenceType = this.getSequenceByName( name );
+        final SequenceType sequenceType = this.getSequenceType( name );
 
         if ( sequenceType == null )
         {
@@ -232,7 +256,7 @@ public class DefaultSequenceDirectory
         final Sequence deleted = this.getSequenceMapper().map( sequenceType, new Sequence() );
         this.fireVetoableSequenceChange( deleted, null );
 
-        final SequencesType sequences = this.getSequencesList();
+        final SequencesType sequences = this.getSequencesType( this.getSequenceDirectoryName() );
         sequences.getSequence().remove( sequenceType );
         this.getEntityManager().remove( sequenceType );
 
@@ -252,14 +276,13 @@ public class DefaultSequenceDirectory
 
     public Set<Sequence> searchSequences( final String name )
     {
-        final Query query = this.getEntityManager().createNamedQuery(
-            name == null ? FIND_ALL_SEQUENCES_QUERY : SEARCH_SEQUENCES_QUERY );
-
-        query.setParameter( 1, this.getSequencesList().getName() );
+        final Query query = name == null ? this.getSelectAllSequencesQuery() : this.getSelectSequencesQuery();
+        query.setParameter( this.getSequenceDirectoryNameQueryParameterName(),
+                            this.getSequencesType( this.getSequenceDirectoryName() ).getName() );
 
         if ( name != null )
         {
-            query.setParameter( 2, "%" + name + "%" );
+            query.setParameter( this.getSequenceNameQueryParameterName(), name );
         }
 
         final List<SequenceType> resultList = (List<SequenceType>) query.getResultList();
@@ -284,7 +307,7 @@ public class DefaultSequenceDirectory
 
         }
 
-        final SequenceType sequenceType = this.getSequenceByName( sequenceName );
+        final SequenceType sequenceType = this.getSequenceType( sequenceName );
 
         if ( sequenceType == null )
         {
@@ -325,7 +348,7 @@ public class DefaultSequenceDirectory
 
         }
 
-        final SequenceType sequenceType = this.getSequenceByName( sequenceName );
+        final SequenceType sequenceType = this.getSequenceType( sequenceName );
 
         if ( sequenceType == null )
         {
@@ -360,38 +383,23 @@ public class DefaultSequenceDirectory
 
     // SECTION-END
     // SECTION-START[DefaultSequenceDirectory]
-    /** Constant for the name of the query for counting sequences. */
-    private static final String COUNT_SEQUENCES_QUERY = "jomc-sequences-model-count-sequences";
-
-    /** Constant for the name of the query for finding all sequences. */
-    private static final String FIND_ALL_SEQUENCES_QUERY = "jomc-sequences-model-find-all-sequences";
-
-    /** Constant for the name of the query for searching sequences. */
-    private static final String SEARCH_SEQUENCES_QUERY = "jomc-sequences-model-search-sequences";
-
-    /** Constant for the name of the query for finding a sequence by name. */
-    private static final String FIND_SEQUENCE_BY_NAME_QUERY = "jomc-sequences-model-find-sequence-by-name";
-
-    /** Constant for the name of the query for finding a sequence list by name. */
-    private static final String FIND_SEQUENCES_BY_NAME_QUERY = "jomc-sequences-model-find-sequences-by-name";
-
-    /** Capacity limit. */
-    private static final BigInteger CAPACITY_LIMIT = BigInteger.valueOf( Integer.MAX_VALUE );
-
     /**
-     * Gets a sequence for a given name.
+     * Gets a sequence entity for a given name.
      *
-     * @param name The name of the sequence to return.
+     * @param name The name of the sequence entity to return.
      *
-     * @return The sequence with name {@code name}, or {@code null} if no sequence matching {@code name} exists.
+     * @return The sequence entity with name {@code name}, or {@code null} if no sequence entity matching {@code name}
+     * is found.
      */
-    protected SequenceType getSequenceByName( final String name )
+    protected SequenceType getSequenceType( final String name )
     {
         try
         {
-            final Query query = this.getEntityManager().createNamedQuery( FIND_SEQUENCE_BY_NAME_QUERY );
-            query.setParameter( 1, this.getSequencesList().getName() );
-            query.setParameter( 2, name );
+            final Query query = this.getSelectSequenceQuery();
+            query.setParameter( this.getSequenceDirectoryNameQueryParameterName(),
+                                this.getSequencesType( this.getSequenceDirectoryName() ).getName() );
+
+            query.setParameter( this.getSequenceNameQueryParameterName(), name );
 
             return (SequenceType) query.getSingleResult();
         }
@@ -407,14 +415,17 @@ public class DefaultSequenceDirectory
     }
 
     /**
-     * Gets the list of sequences matching this implementations directory name.
+     * Gets a sequence directory entity for a given name.
      *
-     * @return The list of sequences matching this implementations directory name.
+     * @param name The name of the sequence directory entity to return.
+     *
+     * @return The sequence directory entity matching {@code name}; if no such sequence directory entity is found, a
+     * new entity is created.
      */
-    protected SequencesType getSequencesList()
+    protected SequencesType getSequencesType( final String name )
     {
-        final Query query = this.getEntityManager().createNamedQuery( FIND_SEQUENCES_BY_NAME_QUERY );
-        query.setParameter( 1, this.getDirectoryName() );
+        final Query query = this.getSelectSequenceDirectoryQuery();
+        query.setParameter( this.getSequenceDirectoryNameQueryParameterName(), name );
 
         SequencesType sequencesType = null;
 
@@ -430,15 +441,22 @@ public class DefaultSequenceDirectory
             }
 
             sequencesType = new SequencesType();
-            sequencesType.setName( this.getDirectoryName() );
+            sequencesType.setName( name );
+
+            BigInteger defaultCapacityLimit = sequencesType.getCapacityLimit();
+            if ( defaultCapacityLimit == null )
+            {
+                defaultCapacityLimit = this.getDefaultSequenceDirectoryCapacityLimit();
+            }
+
+            sequencesType.setCapacityLimit( defaultCapacityLimit );
             sequencesType.setJpaDate( Calendar.getInstance() );
+
             this.getEntityManager().persist( sequencesType );
 
-            if ( this.getLogger().isDebugEnabled() )
+            if ( this.getLogger().isInfoEnabled() )
             {
-                this.getLogger().debug( this.getSuccessfullyCreatedSequenceDirectoryMessage(
-                    this.getLocale(), this.getDirectoryName() ) );
-
+                this.getLogger().info( this.getSuccessfullyCreatedSequenceDirectoryMessage( this.getLocale(), name ) );
             }
         }
 
@@ -452,13 +470,11 @@ public class DefaultSequenceDirectory
      */
     protected void assertMaximumCapacityNotReached()
     {
-        final Query query = this.getEntityManager().createNamedQuery( COUNT_SEQUENCES_QUERY );
-        query.setParameter( 1, this.getSequencesList().getName() );
+        final BigInteger capacityLimit = this.getCapacityLimit();
 
-        final BigInteger count = BigInteger.valueOf( ( (Long) query.getSingleResult() ).longValue() );
-        if ( count.longValue() >= CAPACITY_LIMIT.longValue() )
+        if ( this.getSequenceCount().compareTo( capacityLimit ) >= 0 )
         {
-            throw new CapacityLimitException( CAPACITY_LIMIT );
+            throw new CapacityLimitException( capacityLimit );
         }
     }
 
@@ -529,7 +545,7 @@ public class DefaultSequenceDirectory
 
     /** Creates a new {@code DefaultSequenceDirectory} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
     public DefaultSequenceDirectory()
     {
         // SECTION-START[Default Constructor]
@@ -543,13 +559,13 @@ public class DefaultSequenceDirectory
 
     /**
      * Gets the {@code EntityManager} dependency.
-     * <p>This method returns the "{@code JOMC Standalone RI}" object of the {@code javax.persistence.EntityManager} specification.</p>
+     * <p>This method returns the "{@code JOMC SDK JPA}" object of the {@code javax.persistence.EntityManager} specification.</p>
      * <p>That specification does not apply to any scope. A new object is returned whenever requested.</p>
      * @return The {@code EntityManager} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
     private javax.persistence.EntityManager getEntityManager()
     {
         final javax.persistence.EntityManager _d = (javax.persistence.EntityManager) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "EntityManager" );
@@ -565,7 +581,7 @@ public class DefaultSequenceDirectory
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
     private java.util.Locale getLocale()
     {
         final java.util.Locale _d = (java.util.Locale) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "Locale" );
@@ -586,11 +602,91 @@ public class DefaultSequenceDirectory
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
     private org.jomc.logging.Logger getLogger()
     {
         final org.jomc.logging.Logger _d = (org.jomc.logging.Logger) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "Logger" );
         assert _d != null : "'Logger' dependency not found.";
+        return _d;
+    }
+
+    /**
+     * Gets the {@code SelectAllSequencesQuery} dependency.
+     * <p>This method returns the "{@code JOMC Sequences Model - Select All Sequences Query}" object of the {@code javax.persistence.Query} specification.</p>
+     * <p>That specification does not apply to any scope. A new object is returned whenever requested.</p>
+     * @return The {@code SelectAllSequencesQuery} dependency.
+     * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
+     */
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
+    private javax.persistence.Query getSelectAllSequencesQuery()
+    {
+        final javax.persistence.Query _d = (javax.persistence.Query) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "SelectAllSequencesQuery" );
+        assert _d != null : "'SelectAllSequencesQuery' dependency not found.";
+        return _d;
+    }
+
+    /**
+     * Gets the {@code SelectSequenceCountQuery} dependency.
+     * <p>This method returns the "{@code JOMC Sequences Model - Select Sequence Count Query}" object of the {@code javax.persistence.Query} specification.</p>
+     * <p>That specification does not apply to any scope. A new object is returned whenever requested.</p>
+     * @return The {@code SelectSequenceCountQuery} dependency.
+     * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
+     */
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
+    private javax.persistence.Query getSelectSequenceCountQuery()
+    {
+        final javax.persistence.Query _d = (javax.persistence.Query) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "SelectSequenceCountQuery" );
+        assert _d != null : "'SelectSequenceCountQuery' dependency not found.";
+        return _d;
+    }
+
+    /**
+     * Gets the {@code SelectSequenceDirectoryQuery} dependency.
+     * <p>This method returns the "{@code JOMC Sequences Model - Select Sequence Directory Query}" object of the {@code javax.persistence.Query} specification.</p>
+     * <p>That specification does not apply to any scope. A new object is returned whenever requested.</p>
+     * @return The {@code SelectSequenceDirectoryQuery} dependency.
+     * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
+     */
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
+    private javax.persistence.Query getSelectSequenceDirectoryQuery()
+    {
+        final javax.persistence.Query _d = (javax.persistence.Query) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "SelectSequenceDirectoryQuery" );
+        assert _d != null : "'SelectSequenceDirectoryQuery' dependency not found.";
+        return _d;
+    }
+
+    /**
+     * Gets the {@code SelectSequenceQuery} dependency.
+     * <p>This method returns the "{@code JOMC Sequences Model - Select Sequence Query}" object of the {@code javax.persistence.Query} specification.</p>
+     * <p>That specification does not apply to any scope. A new object is returned whenever requested.</p>
+     * @return The {@code SelectSequenceQuery} dependency.
+     * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
+     */
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
+    private javax.persistence.Query getSelectSequenceQuery()
+    {
+        final javax.persistence.Query _d = (javax.persistence.Query) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "SelectSequenceQuery" );
+        assert _d != null : "'SelectSequenceQuery' dependency not found.";
+        return _d;
+    }
+
+    /**
+     * Gets the {@code SelectSequencesQuery} dependency.
+     * <p>This method returns the "{@code JOMC Sequences Model - Select Sequences Query}" object of the {@code javax.persistence.Query} specification.</p>
+     * <p>That specification does not apply to any scope. A new object is returned whenever requested.</p>
+     * @return The {@code SelectSequencesQuery} dependency.
+     * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
+     */
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
+    private javax.persistence.Query getSelectSequencesQuery()
+    {
+        final javax.persistence.Query _d = (javax.persistence.Query) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "SelectSequencesQuery" );
+        assert _d != null : "'SelectSequencesQuery' dependency not found.";
         return _d;
     }
 
@@ -602,7 +698,7 @@ public class DefaultSequenceDirectory
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
     private org.jomc.sequences.SequenceChangeListener[] getSequenceChangeListener()
     {
         final org.jomc.sequences.SequenceChangeListener[] _d = (org.jomc.sequences.SequenceChangeListener[]) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "SequenceChangeListener" );
@@ -613,12 +709,12 @@ public class DefaultSequenceDirectory
     /**
      * Gets the {@code SequenceMapper} dependency.
      * <p>This method returns the "{@code JOMC Sequences RI}" object of the {@code org.jomc.sequences.ri.SequenceMapper} specification at specification level 1.0.</p>
-     * <p>That specification applies to {@code Singleton} scope. The singleton object is returned whenever requested and bound to this instance.</p>
+     * <p>That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.</p>
      * @return The {@code SequenceMapper} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
     private org.jomc.sequences.ri.SequenceMapper getSequenceMapper()
     {
         final org.jomc.sequences.ri.SequenceMapper _d = (org.jomc.sequences.ri.SequenceMapper) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "SequenceMapper" );
@@ -634,7 +730,7 @@ public class DefaultSequenceDirectory
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
     private org.jomc.sequences.VetoableSequenceChangeListener[] getVetoableSequenceChangeListener()
     {
         final org.jomc.sequences.VetoableSequenceChangeListener[] _d = (org.jomc.sequences.VetoableSequenceChangeListener[]) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "VetoableSequenceChangeListener" );
@@ -647,16 +743,58 @@ public class DefaultSequenceDirectory
     // <editor-fold defaultstate="collapsed" desc=" Generated Properties ">
 
     /**
-     * Gets the value of the {@code directoryName} property.
+     * Gets the value of the {@code defaultSequenceDirectoryCapacityLimit} property.
+     * @return Default capacity limit when creating new sequence directory entities and no default value is provided otherwise.
+     * @throws org.jomc.ObjectManagementException if getting the property instance fails.
+     */
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
+    private java.math.BigInteger getDefaultSequenceDirectoryCapacityLimit()
+    {
+        final java.math.BigInteger _p = (java.math.BigInteger) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getProperty( this, "defaultSequenceDirectoryCapacityLimit" );
+        assert _p != null : "'defaultSequenceDirectoryCapacityLimit' property not found.";
+        return _p;
+    }
+
+    /**
+     * Gets the value of the {@code sequenceDirectoryName} property.
      * @return Name uniquely identifying the directory in a set of directories.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
-    private java.lang.String getDirectoryName()
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
+    private java.lang.String getSequenceDirectoryName()
     {
-        final java.lang.String _p = (java.lang.String) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getProperty( this, "directoryName" );
-        assert _p != null : "'directoryName' property not found.";
+        final java.lang.String _p = (java.lang.String) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getProperty( this, "sequenceDirectoryName" );
+        assert _p != null : "'sequenceDirectoryName' property not found.";
+        return _p;
+    }
+
+    /**
+     * Gets the value of the {@code sequenceDirectoryNameQueryParameterName} property.
+     * @return Name of a JPA query parameter denoting the name of a sequence directory entity.
+     * @throws org.jomc.ObjectManagementException if getting the property instance fails.
+     */
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
+    private java.lang.String getSequenceDirectoryNameQueryParameterName()
+    {
+        final java.lang.String _p = (java.lang.String) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getProperty( this, "sequenceDirectoryNameQueryParameterName" );
+        assert _p != null : "'sequenceDirectoryNameQueryParameterName' property not found.";
+        return _p;
+    }
+
+    /**
+     * Gets the value of the {@code sequenceNameQueryParameterName} property.
+     * @return Name of a JPA query parameter denoting the name of a sequence entity.
+     * @throws org.jomc.ObjectManagementException if getting the property instance fails.
+     */
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
+    private java.lang.String getSequenceNameQueryParameterName()
+    {
+        final java.lang.String _p = (java.lang.String) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getProperty( this, "sequenceNameQueryParameterName" );
+        assert _p != null : "'sequenceNameQueryParameterName' property not found.";
         return _p;
     }
     // </editor-fold>
@@ -678,7 +816,7 @@ public class DefaultSequenceDirectory
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
     private String getIllegalArgumentMessage( final java.util.Locale locale, final java.lang.String argumentName, final java.lang.String argumentValue )
     {
         final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "illegalArgument", locale, argumentName, argumentValue );
@@ -699,7 +837,7 @@ public class DefaultSequenceDirectory
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
     private String getSuccessfullyCreatedSequenceDirectoryMessage( final java.util.Locale locale, final java.lang.String name )
     {
         final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "successfullyCreatedSequenceDirectory", locale, name );

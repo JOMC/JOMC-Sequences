@@ -50,7 +50,7 @@ import org.jomc.sequences.model.SequenceType;
 /**
  * SequenceMapper reference implementation.
  * <p><b>Specifications</b><ul>
- * <li>{@code org.jomc.sequences.ri.SequenceMapper} {@code 1.0} {@code Singleton}</li>
+ * <li>{@code org.jomc.sequences.ri.SequenceMapper} {@code 1.0} {@code Multiton}</li>
  * </ul></p>
  * <p><b>Dependencies</b><ul>
  * <li>"{@link #getLocale Locale}"<blockquote>
@@ -75,7 +75,7 @@ import org.jomc.sequences.model.SequenceType;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public class DefaultSequenceMapper implements SequenceMapper
@@ -200,7 +200,7 @@ public class DefaultSequenceMapper implements SequenceMapper
 
     /** Creates a new {@code DefaultSequenceMapper} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
     public DefaultSequenceMapper()
     {
         // SECTION-START[Default Constructor]
@@ -220,7 +220,7 @@ public class DefaultSequenceMapper implements SequenceMapper
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
     private java.util.Locale getLocale()
     {
         final java.util.Locale _d = (java.util.Locale) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "Locale" );
@@ -248,7 +248,7 @@ public class DefaultSequenceMapper implements SequenceMapper
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
     private String getIllegalArgumentMessage( final java.util.Locale locale, final java.lang.String argumentName, final java.lang.String argumentValue )
     {
         final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "illegalArgument", locale, argumentName, argumentValue );
@@ -268,7 +268,7 @@ public class DefaultSequenceMapper implements SequenceMapper
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
     private String getUnhandledExceptionMessage( final java.util.Locale locale )
     {
         final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "unhandledException", locale );

@@ -68,5 +68,120 @@
         </property>
       </properties>
     </implementation>
+    <!-- *********************************************************************************************************** -->
+    <implementation identifier="${project.name} - Select Sequence Directory Query"
+                    name="${project.name} - Select Sequence Directory Query"
+                    class="org.jomc.sdk.jpa.NamedQueryFactory"
+                    version="${project.version}" vendor="${project.organization.name}" final="true">
+
+      <documentation defaultLanguage="en">
+        <text language="en">Query selecting a single sequence directory entity.</text>
+      </documentation>
+      <authors>
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+      </authors>
+      <implementations>
+        <reference identifier="org.jomc.sdk.jpa.NamedQueryFactory" version="${jomc-sdk.version}"/>
+      </implementations>
+      <properties>
+        <property name="queryName" value="jomc-sequences-model-select-sequence-directory" override="true">
+          <documentation defaultLanguage="en">
+            <text language="en">Name of a JPA query for selecting a single sequence directory entity.</text>
+          </documentation>
+        </property>
+      </properties>
+    </implementation>
+    <!-- *********************************************************************************************************** -->
+    <implementation identifier="${project.name} - Select Sequence Query"
+                    name="${project.name} - Select Sequence Query"
+                    class="org.jomc.sdk.jpa.NamedQueryFactory"
+                    version="${project.version}" vendor="${project.organization.name}" final="true">
+
+      <documentation defaultLanguage="en">
+        <text language="en">Query selecting a single sequence entity.</text>
+      </documentation>
+      <authors>
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+      </authors>
+      <implementations>
+        <reference identifier="org.jomc.sdk.jpa.NamedQueryFactory" version="${jomc-sdk.version}"/>
+      </implementations>
+      <properties>
+        <property name="queryName" value="jomc-sequences-model-select-sequence" override="true">
+          <documentation defaultLanguage="en">
+            <text language="en">Name of a JPA query for selecting a single sequence entity.</text>
+          </documentation>
+        </property>
+      </properties>
+    </implementation>
+    <!-- *********************************************************************************************************** -->
+    <implementation identifier="${project.name} - Select All Sequences Query"
+                    name="${project.name} - Select All Sequences Query"
+                    class="org.jomc.sdk.jpa.NamedQueryFactory"
+                    version="${project.version}" vendor="${project.organization.name}" final="true">
+
+      <documentation defaultLanguage="en">
+        <text language="en">Query selecting all sequence entities in a sequence directory.</text>
+      </documentation>
+      <authors>
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+      </authors>
+      <implementations>
+        <reference identifier="org.jomc.sdk.jpa.NamedQueryFactory" version="${jomc-sdk.version}"/>
+      </implementations>
+      <properties>
+        <property name="queryName" value="jomc-sequences-model-select-all-sequences" override="true">
+          <documentation defaultLanguage="en">
+            <text language="en">Name of a JPA query for selecting all sequence entities in a sequence directory.</text>
+          </documentation>
+        </property>
+      </properties>
+    </implementation>
+    <!-- *********************************************************************************************************** -->
+    <implementation identifier="${project.name} - Select Sequences Query"
+                    name="${project.name} - Select Sequences Query"
+                    class="org.jomc.sdk.jpa.NamedQueryFactory"
+                    version="${project.version}" vendor="${project.organization.name}" final="true">
+
+      <documentation defaultLanguage="en">
+        <text language="en">Query selecting sequence entities in a sequence directory.</text>
+      </documentation>
+      <authors>
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+      </authors>
+      <implementations>
+        <reference identifier="org.jomc.sdk.jpa.NamedQueryFactory" version="${jomc-sdk.version}"/>
+      </implementations>
+      <properties>
+        <property name="queryName" value="jomc-sequences-model-select-sequences" override="true">
+          <documentation defaultLanguage="en">
+            <text language="en">Name of a JPA query for selecting sequence entities in a sequence directory.</text>
+          </documentation>
+        </property>
+      </properties>
+    </implementation>
+    <!-- *********************************************************************************************************** -->
+    <implementation identifier="${project.name} - Select Sequence Count Query"
+                    name="${project.name} - Select Sequence Count Query"
+                    class="org.jomc.sdk.jpa.NamedQueryFactory"
+                    version="${project.version}" vendor="${project.organization.name}" final="true">
+
+      <documentation defaultLanguage="en">
+        <text language="en">Query selecting the total number of sequence entities in a sequence directory.</text>
+      </documentation>
+      <authors>
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+      </authors>
+      <implementations>
+        <reference identifier="org.jomc.sdk.jpa.NamedQueryFactory" version="${jomc-sdk.version}"/>
+      </implementations>
+      <properties>
+        <property name="queryName" value="jomc-sequences-model-select-sequence-count" override="true">
+          <documentation defaultLanguage="en">
+            <text language="en">Name of a JPA query for selecting the total number of sequence entities in a sequence directory.</text>
+          </documentation>
+        </property>
+      </properties>
+    </implementation>
   </implementations>
 </module>

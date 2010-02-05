@@ -127,6 +127,11 @@
               <includeInApplicationXml>false</includeInApplicationXml>
             </jarModule>
             <jarModule>
+              <groupId>org.jomc.sdk</groupId>
+              <artifactId>jomc-sdk-jpa</artifactId>
+              <includeInApplicationXml>false</includeInApplicationXml>
+            </jarModule>
+            <jarModule>
               <groupId>org.jomc.sequences</groupId>
               <artifactId>jomc-sequences-api</artifactId>
               <includeInApplicationXml>false</includeInApplicationXml>

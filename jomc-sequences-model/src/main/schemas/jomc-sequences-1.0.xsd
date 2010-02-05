@@ -34,8 +34,6 @@
 -->
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
             xmlns:sequences="http://jomc.org/sequences/model"
-            xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
-            jaxb:version="2.0"
             targetNamespace="http://jomc.org/sequences/model"
             elementFormDefault="qualified"
             attributeFormDefault="unqualified">
@@ -73,11 +71,10 @@
 
   $Id$
 
-]]></xsd:documentation>
+]]>
+    </xsd:documentation>
   </xsd:annotation>
-  <!--                                                                       -->
-  <!-- Sequences                                                             -->
-  <!--                                                                       -->
+  <!-- ************************************************************************************************************* -->
   <xsd:element name="sequences" type="sequences:SequencesType">
     <xsd:key name="sequence-key">
       <xsd:selector xpath="sequences:sequence"/>
@@ -86,23 +83,14 @@
   </xsd:element>
   <xsd:complexType name="SequencesType">
     <xsd:annotation>
-      <xsd:appinfo>
-        <jaxb:class>
-          <jaxb:javadoc><![CDATA[List of sequences.]]></jaxb:javadoc>
-        </jaxb:class>
-      </xsd:appinfo>
+      <xsd:documentation xml:lang="en">List of sequences.</xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
-      <xsd:element ref="sequences:sequence" minOccurs="0"
-                   maxOccurs="unbounded"/>
+      <xsd:element ref="sequences:sequence" minOccurs="0" maxOccurs="unbounded"/>
     </xsd:sequence>
     <xsd:attribute name="name" use="required">
       <xsd:annotation>
-        <xsd:appinfo>
-          <jaxb:property>
-            <jaxb:javadoc><![CDATA[The name of this list of sequences.]]></jaxb:javadoc>
-          </jaxb:property>
-        </xsd:appinfo>
+        <xsd:documentation xml:lang="en">The name of this list of sequences.</xsd:documentation>
       </xsd:annotation>
       <xsd:simpleType>
         <xsd:restriction base="xsd:string">
@@ -112,42 +100,29 @@
     </xsd:attribute>
     <xsd:attribute name="revision" type="xsd:long" use="required">
       <xsd:annotation>
-        <xsd:appinfo>
-          <jaxb:property>
-            <jaxb:javadoc><![CDATA[The revision of the entity.]]></jaxb:javadoc>
-          </jaxb:property>
-        </xsd:appinfo>
+        <xsd:documentation xml:lang="en">The revision of the entity.</xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
     <xsd:attribute name="date" type="xsd:dateTime" use="required">
       <xsd:annotation>
-        <xsd:appinfo>
-          <jaxb:property>
-            <jaxb:javadoc><![CDATA[The date of the revision of the entity.]]></jaxb:javadoc>
-          </jaxb:property>
-        </xsd:appinfo>
+        <xsd:documentation xml:lang="en">The date of the revision of the entity.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="capacityLimit" type="xsd:nonNegativeInteger" use="optional" default="2147483647">
+      <xsd:annotation>
+        <xsd:documentation xml:lang="en">The capacity limit of this list of sequences.</xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>
-  <!--                                                                       -->
-  <!-- Sequence                                                              -->
-  <!--                                                                       -->
+  <!-- ************************************************************************************************************* -->
   <xsd:element name="sequence" type="sequences:SequenceType"/>
   <xsd:complexType name="SequenceType">
     <xsd:annotation>
-      <xsd:appinfo>
-        <jaxb:class>
-          <jaxb:javadoc><![CDATA[Sequence of numbers.]]></jaxb:javadoc>
-        </jaxb:class>
-      </xsd:appinfo>
+      <xsd:documentation xml:lang="en">Sequence of numbers.</xsd:documentation>
     </xsd:annotation>
     <xsd:attribute name="name" use="required">
       <xsd:annotation>
-        <xsd:appinfo>
-          <jaxb:property>
-            <jaxb:javadoc><![CDATA[The name of the sequence.]]></jaxb:javadoc>
-          </jaxb:property>
-        </xsd:appinfo>
+        <xsd:documentation xml:lang="en">The name of the sequence.</xsd:documentation>
       </xsd:annotation>
       <xsd:simpleType>
         <xsd:restriction base="xsd:string">
@@ -157,56 +132,32 @@
     </xsd:attribute>
     <xsd:attribute name="revision" type="xsd:long" use="required">
       <xsd:annotation>
-        <xsd:appinfo>
-          <jaxb:property>
-            <jaxb:javadoc><![CDATA[The revision of the entity.]]></jaxb:javadoc>
-          </jaxb:property>
-        </xsd:appinfo>
+        <xsd:documentation xml:lang="en">The revision of the entity.</xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
     <xsd:attribute name="date" type="xsd:dateTime" use="required">
       <xsd:annotation>
-        <xsd:appinfo>
-          <jaxb:property>
-            <jaxb:javadoc><![CDATA[The date of the revision of the entity.]]></jaxb:javadoc>
-          </jaxb:property>
-        </xsd:appinfo>
+        <xsd:documentation xml:lang="en">The date of the revision of the entity.</xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
     <xsd:attribute name="minimum" type="xsd:long" use="required">
       <xsd:annotation>
-        <xsd:appinfo>
-          <jaxb:property>
-            <jaxb:javadoc><![CDATA[The minimum value of the sequence.]]></jaxb:javadoc>
-          </jaxb:property>
-        </xsd:appinfo>
+        <xsd:documentation xml:lang="en">The minimum value of the sequence.</xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
     <xsd:attribute name="maximum" type="xsd:long" use="required">
       <xsd:annotation>
-        <xsd:appinfo>
-          <jaxb:property>
-            <jaxb:javadoc><![CDATA[The maximum value of the sequence.]]></jaxb:javadoc>
-          </jaxb:property>
-        </xsd:appinfo>
+        <xsd:documentation xml:lang="en">The maximum value of the sequence.</xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
     <xsd:attribute name="increment" type="xsd:long" use="required">
       <xsd:annotation>
-        <xsd:appinfo>
-          <jaxb:property>
-            <jaxb:javadoc><![CDATA[The delta to add to the value of the sequence to get the next value in the sequence.]]></jaxb:javadoc>
-          </jaxb:property>
-        </xsd:appinfo>
+        <xsd:documentation xml:lang="en">The delta to add to the value of the sequence to get the next value in the sequence.</xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
     <xsd:attribute name="value" type="xsd:long" use="required">
       <xsd:annotation>
-        <xsd:appinfo>
-          <jaxb:property>
-            <jaxb:javadoc><![CDATA[The value of the sequence.]]></jaxb:javadoc>
-          </jaxb:property>
-        </xsd:appinfo>
+        <xsd:documentation xml:lang="en">The value of the sequence.</xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>

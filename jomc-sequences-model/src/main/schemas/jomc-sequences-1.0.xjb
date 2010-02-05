@@ -56,20 +56,20 @@
 
     <!-- *********************************************************************************************************** -->
     <jaxb:bindings node="xs:complexType[@name='SequencesType']">
-      <orm:named-query name="jomc-sequences-model-find-sequences-by-name">
-        <orm:query><![CDATA[SELECT l FROM SequencesType l WHERE l.name = ?1]]></orm:query>
+      <orm:named-query name="jomc-sequences-model-select-sequence-directory">
+        <orm:query>SELECT l FROM SequencesType l WHERE l.name = :sequenceDirectoryName</orm:query>
       </orm:named-query>
-      <orm:named-query name="jomc-sequences-model-find-sequence-by-name">
-        <orm:query><![CDATA[SELECT s FROM SequenceType s, SequencesType l JOIN l.sequence j WHERE l.name = ?1 AND s.name = ?2 AND j.name = s.name]]></orm:query>
+      <orm:named-query name="jomc-sequences-model-select-sequence">
+        <orm:query>SELECT s FROM SequenceType s, SequencesType l JOIN l.sequence j WHERE l.name = :sequenceDirectoryName AND s.name = :sequenceName AND j.name = s.name</orm:query>
       </orm:named-query>
-      <orm:named-query name="jomc-sequences-model-find-all-sequences">
-        <orm:query><![CDATA[SELECT s FROM SequenceType s, SequencesType l JOIN l.sequence j WHERE l.name = ?1 AND j.name = s.name]]></orm:query>
+      <orm:named-query name="jomc-sequences-model-select-all-sequences">
+        <orm:query>SELECT s FROM SequenceType s, SequencesType l JOIN l.sequence j WHERE l.name = :sequenceDirectoryName AND j.name = s.name</orm:query>
       </orm:named-query>
-      <orm:named-query name="jomc-sequences-model-search-sequences">
-        <orm:query><![CDATA[SELECT s FROM SequenceType s, SequencesType l JOIN l.sequence j WHERE l.name = ?1 AND s.name LIKE ?2 AND j.name = s.name]]></orm:query>
+      <orm:named-query name="jomc-sequences-model-select-sequences">
+        <orm:query>SELECT s FROM SequenceType s, SequencesType l JOIN l.sequence j WHERE l.name = :sequenceDirectoryName AND s.name LIKE :sequenceName AND j.name = s.name</orm:query>
       </orm:named-query>
-      <orm:named-query name="jomc-sequences-model-count-sequences">
-        <orm:query><![CDATA[SELECT COUNT(s) FROM SequenceType s, SequencesType l JOIN l.sequence j WHERE l.name = ?1 AND j.name = s.name]]></orm:query>
+      <orm:named-query name="jomc-sequences-model-select-sequence-count">
+        <orm:query>SELECT COUNT(s) FROM SequenceType s, SequencesType l JOIN l.sequence j WHERE l.name = :sequenceDirectoryName AND j.name = s.name</orm:query>
       </orm:named-query>
     </jaxb:bindings>
 
@@ -101,10 +101,9 @@
         }
 
         return null;
-    }
-]]></ci:code>
+    }]]>
+      </ci:code>
     </jaxb:bindings>
-
     <!-- *********************************************************************************************************** -->
     <jaxb:bindings node="xs:complexType[@name='SequencesType']/xs:sequence/xs:element[@ref='sequences:sequence']">
       <orm:many-to-many fetch="LAZY">
@@ -113,6 +112,5 @@
         </orm:cascade>
       </orm:many-to-many>
     </jaxb:bindings>
-
   </jaxb:bindings>
 </jaxb:bindings>

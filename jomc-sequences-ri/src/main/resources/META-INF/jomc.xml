@@ -46,7 +46,7 @@
   <specifications>
     <!-- *********************************************************************************************************** -->
     <specification identifier="org.jomc.sequences.ri.SequenceMapper" class="org.jomc.sequences.ri.SequenceMapper"
-                   classDeclaration="true" version="1.0" vendor="${project.organization.name}" scope="Singleton">
+                   classDeclaration="true" version="1.0" vendor="${project.organization.name}">
 
       <documentation defaultLanguage="en">
         <text language="en">Maps model classes.</text>
@@ -82,13 +82,38 @@
         <dependency name="SequenceChangeListener" identifier="org.jomc.sequences.SequenceChangeListener" version="1.0"/>
         <dependency name="VetoableSequenceChangeListener" identifier="org.jomc.sequences.VetoableSequenceChangeListener" version="1.0"/>
         <dependency name="SequenceMapper" identifier="org.jomc.sequences.ri.SequenceMapper" version="1.0" implementationName="${project.name}"/>
-        <dependency name="EntityManager" identifier="javax.persistence.EntityManager" implementationName="JOMC Standalone RI" bound="false"/>
+        <dependency name="EntityManager" identifier="javax.persistence.EntityManager" implementationName="JOMC SDK JPA" bound="false"/>
         <dependency name="Locale" identifier="java.util.Locale" version="1.1" implementationName="default"/>
+        <dependency name="SelectSequenceDirectoryQuery" identifier="javax.persistence.Query"
+                    implementationName="JOMC Sequences Model - Select Sequence Directory Query" bound="false"/>
+        <dependency name="SelectSequenceQuery" identifier="javax.persistence.Query"
+                    implementationName="JOMC Sequences Model - Select Sequence Query" bound="false"/>
+        <dependency name="SelectAllSequencesQuery" identifier="javax.persistence.Query"
+                    implementationName="JOMC Sequences Model - Select All Sequences Query" bound="false"/>
+        <dependency name="SelectSequencesQuery" identifier="javax.persistence.Query"
+                    implementationName="JOMC Sequences Model - Select Sequences Query" bound="false"/>
+        <dependency name="SelectSequenceCountQuery" identifier="javax.persistence.Query"
+                    implementationName="JOMC Sequences Model - Select Sequence Count Query" bound="false"/>
       </dependencies>
       <properties>
-        <property name="directoryName" type="java.lang.String" value="${project.name}">
+        <property name="sequenceDirectoryName" value="${project.name}">
           <documentation defaultLanguage="en">
             <text language="en">Name uniquely identifying the directory in a set of directories.</text>
+          </documentation>
+        </property>
+        <property name="defaultSequenceDirectoryCapacityLimit" type="java.math.BigInteger" value="2147483647">
+          <documentation defaultLanguage="en">
+            <text language="en">Default capacity limit when creating new sequence directory entities and no default value is provided otherwise.</text>
+          </documentation>
+        </property>
+        <property name="sequenceDirectoryNameQueryParameterName" value="sequenceDirectoryName">
+          <documentation defaultLanguage="en">
+            <text language="en">Name of a JPA query parameter denoting the name of a sequence directory entity.</text>
+          </documentation>
+        </property>
+        <property name="sequenceNameQueryParameterName" value="sequenceName">
+          <documentation defaultLanguage="en">
+            <text language="en">Name of a JPA query parameter denoting the name of a sequence entity.</text>
           </documentation>
         </property>
       </properties>
@@ -96,7 +121,12 @@
         <reference name="illegalArgument"/>
         <reference name="successfullyCreatedSequenceDirectory"/>
       </messages>
-      <methods xmlns="http://jomc.org/standalone/model" system-exception="org.jomc.sequences.SequencesSystemException">
+      <methods xmlns="http://jomc.org/standalone/model">
+        <exceptions>
+          <exception class="org.jomc.sequences.SequencesException" rollback="true"/>
+          <exception class="org.jomc.sequences.SequencesSystemException" rollback="true"/>
+          <default-exception class="org.jomc.sequences.SequencesSystemException" rollback="true"/>
+        </exceptions>
         <transaction type="Required"/>
       </methods>
     </implementation>

@@ -195,7 +195,7 @@ public class SequenceDirectoryTest
 
         assertEquals( legal, this.getSequenceDirectory().getSequence( "TEST2" ) );
 
-        final Set<Sequence> result = this.getSequenceDirectory().searchSequences( "TEST" );
+        final Set<Sequence> result = this.getSequenceDirectory().searchSequences( "%TEST%" );
 
         assertEquals( 1, result.size() );
         assertEquals( legal, result.toArray()[0] );

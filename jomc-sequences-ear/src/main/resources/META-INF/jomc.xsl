@@ -55,10 +55,4 @@
     </xsl:copy>
   </xsl:template>
 
-  <xsl:template match="jomc:implementations/jomc:implementation[@identifier = 'org.jomc.sequences.ri.DefaultSequenceDirectory']/jomc:dependencies/jomc:dependency[@name='EntityManager']/@implementationName">
-    <xsl:attribute name="implementationName">
-      <xsl:value-of select="'${project.name}'"/>
-    </xsl:attribute>
-  </xsl:template>
-
 </xsl:stylesheet>
