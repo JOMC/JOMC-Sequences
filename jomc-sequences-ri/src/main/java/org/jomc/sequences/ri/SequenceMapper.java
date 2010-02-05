@@ -71,28 +71,28 @@ public interface SequenceMapper
     // SECTION-START[SequenceMapper]
 
     /**
-     * Maps an implementation model instance to a {@code Sequence} instance.
+     * Maps a {@code SequenceType} instance to a {@code Sequence} instance.
      *
-     * @param source The instance to map.
-     * @param target The target instance to map {@code source} to.
+     * @param sequenceType The instance to map.
+     * @param sequence The target instance to map {@code sequenceType} to.
      *
-     * @return {@code source} mapped to {@code target}.
+     * @return {@code sequenceType} mapped to {@code sequence}.
      *
      * @throws SequencesSystemException if mapping fails unexpectedly.
      */
-    Sequence map( SequenceType source, Sequence target ) throws SequencesSystemException;
+    Sequence map( SequenceType sequenceType, Sequence sequence ) throws SequencesSystemException;
 
     /**
-     * Maps a {@code Sequence} instance to an implementation model instance.
+     * Maps a {@code Sequence} instance to a {@code SequenceType} instance.
      *
-     * @param source The instance to map.
-     * @param target The target instance to map {@code source} to.
+     * @param sequence The instance to map.
+     * @param sequenceType The target instance to map {@code sequence} to.
      *
-     * @return {@code source} mapped to {@code target}.
+     * @return {@code sequence} mapped to {@code sequenceType}.
      *
      * @throws SequencesSystemException if mapping fails unexpectedly.
      */
-    SequenceType map( Sequence source, SequenceType target ) throws SequencesSystemException;
+    SequenceType map( Sequence sequence, SequenceType sequenceType ) throws SequencesSystemException;
 
     // SECTION-END
 }

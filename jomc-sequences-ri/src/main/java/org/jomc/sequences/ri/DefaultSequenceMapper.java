@@ -82,53 +82,55 @@ public class DefaultSequenceMapper implements SequenceMapper
 {
     // SECTION-START[SequenceMapper]
 
-    public Sequence map( final SequenceType source, final Sequence target )
+    public Sequence map( final SequenceType sequenceType, final Sequence sequence )
     {
-        if ( source == null )
+        if ( sequenceType == null )
         {
-            throw new SequencesSystemException( this.getIllegalArgumentMessage( this.getLocale(), "source", null ) );
+            throw new SequencesSystemException( this.getIllegalArgumentMessage(
+                this.getLocale(), "sequenceType", null ) );
+
         }
-        if ( target == null )
+        if ( sequence == null )
         {
-            throw new SequencesSystemException( this.getIllegalArgumentMessage( this.getLocale(), "target", null ) );
+            throw new SequencesSystemException( this.getIllegalArgumentMessage( this.getLocale(), "sequence", null ) );
         }
 
-        target.setIncrement( source.getIncrement() );
-        target.setMaximum( source.getMaximum() );
-        target.setMinimum( source.getMinimum() );
-        target.setName( source.getName() );
-        target.setValue( source.getValue() );
-        this.injectRevision( target, source.getRevision() );
-        this.injectDate( target, source.getJpaDate().getTimeInMillis() );
-
-        return target;
+        sequence.setIncrement( sequenceType.getIncrement() );
+        sequence.setMaximum( sequenceType.getMaximum() );
+        sequence.setMinimum( sequenceType.getMinimum() );
+        sequence.setName( sequenceType.getName() );
+        sequence.setValue( sequenceType.getValue() );
+        this.injectRevision( sequence, sequenceType.getRevision() );
+        this.injectDate( sequence, sequenceType.getJpaDate().getTimeInMillis() );
+        return sequence;
     }
 
-    public SequenceType map( final Sequence source, final SequenceType target )
+    public SequenceType map( final Sequence sequence, final SequenceType sequenceType )
     {
-        if ( source == null )
+        if ( sequence == null )
         {
-            throw new SequencesSystemException( this.getIllegalArgumentMessage( this.getLocale(), "source", null ) );
+            throw new SequencesSystemException( this.getIllegalArgumentMessage( this.getLocale(), "sequence", null ) );
         }
-        if ( target == null )
+        if ( sequenceType == null )
         {
-            throw new SequencesSystemException( this.getIllegalArgumentMessage( this.getLocale(), "target", null ) );
+            throw new SequencesSystemException( this.getIllegalArgumentMessage(
+                this.getLocale(), "sequenceType", null ) );
+
         }
 
-        target.setIncrement( source.getIncrement() );
-        target.setMaximum( source.getMaximum() );
-        target.setMinimum( source.getMinimum() );
-        target.setName( source.getName() );
-        target.setValue( source.getValue() );
-        target.setRevision( source.getRevision() );
+        sequenceType.setIncrement( sequence.getIncrement() );
+        sequenceType.setMaximum( sequence.getMaximum() );
+        sequenceType.setMinimum( sequence.getMinimum() );
+        sequenceType.setName( sequence.getName() );
+        sequenceType.setValue( sequence.getValue() );
+        sequenceType.setRevision( sequence.getRevision() );
 
         final Calendar c = Calendar.getInstance();
         c.setTimeZone( TimeZone.getTimeZone( "UTC" ) );
-        c.setTimeInMillis( source.getDate() );
+        c.setTimeInMillis( sequence.getDate() );
+        sequenceType.setJpaDate( c );
 
-        target.setJpaDate( c );
-
-        return target;
+        return sequenceType;
     }
 
     // SECTION-END

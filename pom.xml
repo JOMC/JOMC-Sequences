@@ -283,6 +283,28 @@
               -inferrel -inferdep -hide java.* -collpackages java.util.* -qualify -postfixpackage -nodefontsize 9
               -nodefontpackagesize 7
             </additionalparam>
+            <groups>
+              <group>
+                <title>Application Programming Interface</title>
+                <packages>org.jomc.sequences</packages>
+              </group>
+              <group>
+                <title>Tests</title>
+                <packages>org.jomc.sequences.it*</packages>
+              </group>
+              <group>
+                <title>Model</title>
+                <packages>org.jomc.sequences.model*</packages>
+              </group>
+              <group>
+                <title>Reference Implementation</title>
+                <packages>org.jomc.sequences.ri*</packages>
+              </group>
+              <group>
+                <title>Utilities</title>
+                <packages>org.jomc.sequences.util*</packages>
+              </group>
+            </groups>
             <archive>
               <index>true</index>
               <addMavenDescriptor>false</addMavenDescriptor>
@@ -641,6 +663,66 @@
                 -inferrel -inferdep -hide java.* -collpackages java.util.* -qualify -postfixpackage -nodefontsize 9
                 -nodefontpackagesize 7
               </additionalparam>
+              <archive>
+                <index>true</index>
+                <addMavenDescriptor>false</addMavenDescriptor>
+                <compress>true</compress>
+                <manifestEntries>
+                  <Build-Date>${buildNumber}</Build-Date>
+                  <Maven-Version>${maven.version}</Maven-Version>
+                </manifestEntries>
+              </archive>
+            </configuration>
+          </reportSet>
+          <reportSet>
+            <id>aggregate</id>
+            <inherited>false</inherited>
+            <reports>
+              <report>aggregate</report>
+            </reports>
+            <configuration>
+              <breakiterator>true</breakiterator>
+              <keywords>true</keywords>
+              <linksource>true</linksource>
+              <serialwarn>true</serialwarn>
+              <source>1.5</source>
+              <doctitle>${project.name} ${project.version}</doctitle>
+              <windowtitle>${project.name} ${project.version}</windowtitle>
+              <detectJavaApiLink>true</detectJavaApiLink>
+              <detectOfflineLinks>false</detectOfflineLinks>
+              <!-- <detectLinks>true</detectLinks> Disabled due to http://jira.codehaus.org/browse/MJAVADOC-273 -->
+              <doclet>gr.spinellis.umlgraph.doclet.UmlGraphDoc</doclet>
+              <docletArtifact>
+                <groupId>gr.spinellis</groupId>
+                <artifactId>UmlGraph</artifactId>
+                <version>4.6</version>
+              </docletArtifact>
+              <additionalparam>
+                -inferrel -inferdep -hide java.* -collpackages java.util.* -qualify -postfixpackage -nodefontsize 9
+                -nodefontpackagesize 7
+              </additionalparam>
+              <groups>
+                <group>
+                  <title>Application Programming Interface</title>
+                  <packages>org.jomc.sequences</packages>
+                </group>
+                <group>
+                  <title>Tests</title>
+                  <packages>org.jomc.sequences.it*</packages>
+                </group>
+                <group>
+                  <title>Model</title>
+                  <packages>org.jomc.sequences.model*</packages>
+                </group>
+                <group>
+                  <title>Reference Implementation</title>
+                  <packages>org.jomc.sequences.ri*</packages>
+                </group>
+                <group>
+                  <title>Utilities</title>
+                  <packages>org.jomc.sequences.util*</packages>
+                </group>
+              </groups>
               <archive>
                 <index>true</index>
                 <addMavenDescriptor>false</addMavenDescriptor>

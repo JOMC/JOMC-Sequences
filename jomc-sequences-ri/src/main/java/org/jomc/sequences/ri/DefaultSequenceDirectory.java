@@ -464,9 +464,9 @@ public class DefaultSequenceDirectory
     }
 
     /**
-     * Checks the model to not have reached its maximum capacity.
+     * Checks the capacity limit of the directory.
      *
-     * @throws CapacityLimitException if the model reached its maximum capacity.
+     * @throws CapacityLimitException if the directories capacity limit has been reached.
      */
     protected void assertMaximumCapacityNotReached()
     {
