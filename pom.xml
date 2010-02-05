@@ -38,7 +38,7 @@
   <artifactId>jomc-sequences</artifactId>
   <packaging>pom</packaging>
   <name>JOMC Sequences</name>
-  <version>1.0-alpha-1</version>
+  <version>1.0-alpha-2-SNAPSHOT</version>
   <description><![CDATA[
   This is the 'JOMC Sequences' parent project. The 'JOMC Sequences API' artifact provides application programming
   interfaces to a directory of sequences. Whenever that API is used at compile time, an application assembler needs to
@@ -97,9 +97,9 @@
     </mailingList>
   </mailingLists>
   <scm>
-    <connection>scm:svn:https://jomc.svn.sourceforge.net/svnroot/jomc/jomc-sequences/tags/jomc-sequences-1.0-alpha-1</connection>
-    <developerConnection>scm:svn:https://jomc.svn.sourceforge.net/svnroot/jomc/jomc-sequences/tags/jomc-sequences-1.0-alpha-1</developerConnection>
-    <url>http://jomc.svn.sourceforge.net/viewvc/jomc/jomc-sequences/tags/jomc-sequences-1.0-alpha-1</url>
+    <connection>scm:svn:https://jomc.svn.sourceforge.net/svnroot/jomc/jomc-sequences/trunk</connection>
+    <developerConnection>scm:svn:https://jomc.svn.sourceforge.net/svnroot/jomc/jomc-sequences/trunk</developerConnection>
+    <url>http://jomc.svn.sourceforge.net/viewvc/jomc/jomc-sequences/trunk/</url>
   </scm>
   <build>
     <extensions>
@@ -915,34 +915,34 @@
       <dependency>
         <groupId>org.jomc.sequences</groupId>
         <artifactId>jomc-sequences-api</artifactId>
-        <version>1.0-alpha-1</version>
+        <version>1.0-alpha-2-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.jomc.sequences</groupId>
         <artifactId>jomc-sequences-it</artifactId>
-        <version>1.0-alpha-1</version>
+        <version>1.0-alpha-2-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.jomc.sequences</groupId>
         <artifactId>jomc-sequences-model</artifactId>
-        <version>1.0-alpha-1</version>
+        <version>1.0-alpha-2-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.jomc.sequences</groupId>
         <artifactId>jomc-sequences-ri</artifactId>
-        <version>1.0-alpha-1</version>
+        <version>1.0-alpha-2-SNAPSHOT</version>
         <type>ejb</type>
       </dependency>
       <dependency>
         <groupId>org.jomc.sequences</groupId>
         <artifactId>jomc-sequences-ear</artifactId>
-        <version>1.0-alpha-1</version>
+        <version>1.0-alpha-2-SNAPSHOT</version>
         <type>ear</type>
       </dependency>
       <dependency>
         <groupId>org.jomc.sequences</groupId>
         <artifactId>jomc-sequences-utilities</artifactId>
-        <version>1.0-alpha-1</version>
+        <version>1.0-alpha-2-SNAPSHOT</version>
       </dependency>
 
       <!-- EE -->
