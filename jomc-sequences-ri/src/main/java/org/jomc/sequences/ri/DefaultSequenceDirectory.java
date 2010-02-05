@@ -173,7 +173,12 @@ public class DefaultSequenceDirectory
             throw new SequencesSystemException( this.getIllegalArgumentMessage( this.getLocale(), "sequence", null ) );
         }
 
-        this.assertMaximumCapacityNotReached();
+        final BigInteger capacityLimit = this.getCapacityLimit();
+        if ( this.getSequenceCount().compareTo( capacityLimit ) >= 0 )
+        {
+            throw new CapacityLimitException( capacityLimit );
+        }
+
         this.fireVetoableSequenceChange( null, sequence );
 
         SequenceType sequenceType = this.getSequenceType( sequence.getName() );
@@ -461,21 +466,6 @@ public class DefaultSequenceDirectory
         }
 
         return sequencesType;
-    }
-
-    /**
-     * Checks the capacity limit of the directory.
-     *
-     * @throws CapacityLimitException if the directories capacity limit has been reached.
-     */
-    protected void assertMaximumCapacityNotReached()
-    {
-        final BigInteger capacityLimit = this.getCapacityLimit();
-
-        if ( this.getSequenceCount().compareTo( capacityLimit ) >= 0 )
-        {
-            throw new CapacityLimitException( capacityLimit );
-        }
     }
 
     /**

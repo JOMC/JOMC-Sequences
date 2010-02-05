@@ -53,13 +53,11 @@ import org.jomc.sequences.SequenceChangeEvent;
  * </ul></p>
  * <p><b>Messages</b><ul>
  * <li>"{@link #getOperationInfoMessage operationInfo}"<table>
- * <tr><td valign="top">English:</td><td valign="top"><pre>Directory update
- *     --''{0}''
- *     ++''{1}''
+ * <tr><td valign="top">English:</td><td valign="top"><pre>--''{0}''
+ * ++''{1}''
  *             </pre></td></tr>
- * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Verzeichnis&auml;nderung
- *     --''{0}''
- *     ++''{1}''
+ * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>--''{0}''
+ * ++''{1}''
  *             </pre></td></tr>
  * </table>
  * </ul></p>
@@ -156,13 +154,11 @@ public class DefaultSequenceChangeListener
     /**
      * Gets the text of the {@code operationInfo} message.
      * <p><b>Templates</b><br/><table>
-     * <tr><td valign="top">English:</td><td valign="top"><pre>Directory update
-     *     --''{0}''
-     *     ++''{1}''
+     * <tr><td valign="top">English:</td><td valign="top"><pre>--''{0}''
+     * ++''{1}''
      *             </pre></td></tr>
-     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Verzeichnis&auml;nderung
-     *     --''{0}''
-     *     ++''{1}''
+     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>--''{0}''
+     * ++''{1}''
      *             </pre></td></tr>
      * </table></p>
      * @param locale The locale of the message to return.
