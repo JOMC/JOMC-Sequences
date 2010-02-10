@@ -46,8 +46,8 @@ import java.util.EventListener;
  * An application assembler may provide multiple implementations of this specification (including none).
  * Use of class {@link org.jomc.ObjectManager ObjectManager} is supported for getting these implementations or for
  * selecting a single implementation.<pre>
- * VetoableSequenceChangeListener[] objects = (VetoableSequenceChangeListener[]) ObjectManagerFactory.getObjectManager( getClassLoader() ).getObject( VetoableSequenceChangeListener.class );
- * VetoableSequenceChangeListener object = ObjectManagerFactory.getObjectManager( getClassLoader() ).getObject( VetoableSequenceChangeListener.class, "<i>implementation name</i>" );
+ * VetoableSequenceChangeListener[] objects = (VetoableSequenceChangeListener[]) ObjectManagerFactory.getObjectManager( getClass().getClassLoader() ).getObject( VetoableSequenceChangeListener.class );
+ * VetoableSequenceChangeListener object = ObjectManagerFactory.getObjectManager( getClass().getClassLoader() ).getObject( VetoableSequenceChangeListener.class, "<i>implementation name</i>" );
  * </pre>
  * </p>
  *
@@ -61,7 +61,7 @@ import java.util.EventListener;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public interface VetoableSequenceChangeListener extends EventListener

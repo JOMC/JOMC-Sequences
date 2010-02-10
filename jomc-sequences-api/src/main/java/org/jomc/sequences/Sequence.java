@@ -52,7 +52,7 @@ import java.util.Date;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public class Sequence implements Comparable<Sequence>, Cloneable, Serializable
@@ -258,8 +258,6 @@ public class Sequence implements Comparable<Sequence>, Cloneable, Serializable
 
     }
 
-    // SECTION-END
-    // SECTION-START[Comparable]
     /**
      * Compares this sequence with the specified sequence for order.
      * <p>Returns a negative integer, zero, or a positive integer as this sequence is less than, equal to, or greater
@@ -290,8 +288,6 @@ public class Sequence implements Comparable<Sequence>, Cloneable, Serializable
         return result;
     }
 
-    // SECTION-END
-    // SECTION-START[Cloneable]
     /**
      * Creates and returns a copy of this object.
      *
@@ -310,8 +306,6 @@ public class Sequence implements Comparable<Sequence>, Cloneable, Serializable
         }
     }
 
-    // SECTION-END
-    // SECTION-START[Object]
     /**
      * Indicates whether some other object is equal to this one by comparing the values of properties {@code name} and
      * {@code revision}.
@@ -367,7 +361,7 @@ public class Sequence implements Comparable<Sequence>, Cloneable, Serializable
 
     /** Creates a new {@code Sequence} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
     public Sequence()
     {
         // SECTION-START[Default Constructor]

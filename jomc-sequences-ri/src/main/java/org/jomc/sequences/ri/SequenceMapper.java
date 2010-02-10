@@ -48,8 +48,8 @@ import org.jomc.sequences.model.SequenceType;
  * An application assembler may provide multiple implementations of this specification (including none).
  * Use of class {@link org.jomc.ObjectManager ObjectManager} is supported for getting these implementations or for
  * selecting a single implementation.<pre>
- * SequenceMapper[] objects = (SequenceMapper[]) ObjectManagerFactory.getObjectManager( getClassLoader() ).getObject( SequenceMapper.class );
- * SequenceMapper object = ObjectManagerFactory.getObjectManager( getClassLoader() ).getObject( SequenceMapper.class, "<i>implementation name</i>" );
+ * SequenceMapper[] objects = (SequenceMapper[]) ObjectManagerFactory.getObjectManager( getClass().getClassLoader() ).getObject( SequenceMapper.class );
+ * SequenceMapper object = ObjectManagerFactory.getObjectManager( getClass().getClassLoader() ).getObject( SequenceMapper.class, "<i>implementation name</i>" );
  * </pre>
  * </p>
  *
@@ -63,7 +63,7 @@ import org.jomc.sequences.model.SequenceType;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public interface SequenceMapper

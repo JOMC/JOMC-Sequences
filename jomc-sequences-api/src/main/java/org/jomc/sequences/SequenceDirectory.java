@@ -46,7 +46,7 @@ import java.util.Set;
  * <p>This specification declares a multiplicity of {@code One}.
  * An application assembler is required to provide no more than one implementation of this specification (including none).
  * Use of class {@link org.jomc.ObjectManager ObjectManager} is supported for getting that implementation.<pre>
- * SequenceDirectory object = (SequenceDirectory) ObjectManagerFactory.getObjectManager( getClassLoader() ).getObject( SequenceDirectory.class );
+ * SequenceDirectory object = (SequenceDirectory) ObjectManagerFactory.getObjectManager( getClass().getClassLoader() ).getObject( SequenceDirectory.class );
  * </pre>
  * </p>
  *
@@ -60,7 +60,7 @@ import java.util.Set;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public interface SequenceDirectory

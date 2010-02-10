@@ -43,7 +43,7 @@ package org.jomc.sequences;
  * <p>This specification declares a multiplicity of {@code One}.
  * An application assembler is required to provide no more than one implementation of this specification (including none).
  * Use of class {@link org.jomc.ObjectManager ObjectManager} is supported for getting that implementation.<pre>
- * SequenceOperations object = (SequenceOperations) ObjectManagerFactory.getObjectManager( getClassLoader() ).getObject( SequenceOperations.class );
+ * SequenceOperations object = (SequenceOperations) ObjectManagerFactory.getObjectManager( getClass().getClassLoader() ).getObject( SequenceOperations.class );
  * </pre>
  * </p>
  *
@@ -57,7 +57,7 @@ package org.jomc.sequences;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public interface SequenceOperations

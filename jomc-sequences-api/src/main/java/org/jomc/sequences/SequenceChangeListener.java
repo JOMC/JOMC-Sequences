@@ -46,8 +46,8 @@ import java.util.EventListener;
  * An application assembler may provide multiple implementations of this specification (including none).
  * Use of class {@link org.jomc.ObjectManager ObjectManager} is supported for getting these implementations or for
  * selecting a single implementation.<pre>
- * SequenceChangeListener[] objects = (SequenceChangeListener[]) ObjectManagerFactory.getObjectManager( getClassLoader() ).getObject( SequenceChangeListener.class );
- * SequenceChangeListener object = ObjectManagerFactory.getObjectManager( getClassLoader() ).getObject( SequenceChangeListener.class, "<i>implementation name</i>" );
+ * SequenceChangeListener[] objects = (SequenceChangeListener[]) ObjectManagerFactory.getObjectManager( getClass().getClassLoader() ).getObject( SequenceChangeListener.class );
+ * SequenceChangeListener object = ObjectManagerFactory.getObjectManager( getClass().getClassLoader() ).getObject( SequenceChangeListener.class, "<i>implementation name</i>" );
  * </pre>
  * </p>
  *
@@ -61,7 +61,7 @@ import java.util.EventListener;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public interface SequenceChangeListener extends EventListener
