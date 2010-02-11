@@ -216,8 +216,8 @@
       </messages>
     </implementation>
     <!-- *********************************************************************************************************** -->
-    <implementation identifier="org.jomc.sequences.DuplicateSequenceException"
-                    class="org.jomc.sequences.DuplicateSequenceException" classDeclaration="true"
+    <implementation identifier="org.jomc.sequences.SequenceExistsException"
+                    class="org.jomc.sequences.SequenceExistsException" classDeclaration="true"
                     name="${project.name}" version="${project.version}" vendor="${project.organization.name}">
 
       <documentation defaultLanguage="en">

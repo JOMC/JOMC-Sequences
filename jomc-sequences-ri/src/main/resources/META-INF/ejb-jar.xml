@@ -125,7 +125,7 @@
       <rollback>true</rollback>
     </application-exception>
     <application-exception>
-      <exception-class>org.jomc.sequences.DuplicateSequenceException</exception-class>
+      <exception-class>org.jomc.sequences.SequenceExistsException</exception-class>
       <rollback>true</rollback>
     </application-exception>
     <application-exception>

@@ -62,12 +62,12 @@ package org.jomc.sequences;
                              comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
 // </editor-fold>
 // SECTION-END
-public class DuplicateSequenceException extends SequencesException
+public class SequenceExistsException extends SequencesException
 {
-    // SECTION-START[DuplicateSequenceException]
+    // SECTION-START[SequenceExistsException]
 
     /** Serial version UID for backwards compatibility with 1.0.x classes. */
-    private static final long serialVersionUID = 1729475832294961396L;
+    private static final long serialVersionUID = -2793698651762153200L;
 
     /**
      * The sequence already known.
@@ -76,11 +76,11 @@ public class DuplicateSequenceException extends SequencesException
     private final Sequence sequence;
 
     /**
-     * Creates a new {@code DuplicateSequenceException} taking the sequence already known.
+     * Creates a new {@code SequenceExistsException} taking the already existing sequence.
      *
      * @param sequence The sequence already known.
      */
-    public DuplicateSequenceException( final Sequence sequence )
+    public SequenceExistsException( final Sequence sequence )
     {
         super();
         this.sequence = sequence;

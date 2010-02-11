@@ -46,7 +46,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.logging.LogManager;
 import org.jomc.sequences.ConcurrentModificationException;
-import org.jomc.sequences.DuplicateSequenceException;
+import org.jomc.sequences.SequenceExistsException;
 import org.jomc.sequences.SequenceVetoException;
 import org.jomc.sequences.Sequence;
 import org.jomc.sequences.SequenceNotFoundException;
@@ -287,9 +287,9 @@ public class SequenceDirectoryTest
     }
 
     /**
-     * Tests that adding a sequence twice is prevented by throwing a corresponding {@code DuplicateSequenceException}.
+     * Tests that adding a sequence twice is prevented by throwing a corresponding {@code SequenceExistsException}.
      */
-    @Test public void testDuplicateSequenceException() throws Exception
+    @Test public void testSequenceExistsException() throws Exception
     {
         assert this.getSequenceDirectory() != null;
 
@@ -302,9 +302,9 @@ public class SequenceDirectoryTest
         try
         {
             this.getSequenceDirectory().addSequence( legal );
-            fail( "Expected DuplicateSequenceException not thrown." );
+            fail( "Expected SequenceExistsException not thrown." );
         }
-        catch ( final DuplicateSequenceException e )
+        catch ( final SequenceExistsException e )
         {
             assertNotNull( e.getMessage() );
             System.out.println( e.toString() );

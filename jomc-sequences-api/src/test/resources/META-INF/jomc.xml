@@ -68,12 +68,12 @@
       </authors>
     </implementation>
     <!-- *********************************************************************************************************** -->
-    <implementation identifier="org.jomc.sequences.test.DuplicateSequenceExceptionTest"
-                    class="org.jomc.sequences.test.DuplicateSequenceExceptionTest" classDeclaration="true"
+    <implementation identifier="org.jomc.sequences.test.SequenceExistsExceptionTest"
+                    class="org.jomc.sequences.test.SequenceExistsExceptionTest" classDeclaration="true"
                     name="${project.name}" version="${project.version}" vendor="${project.organization.name}">
 
       <documentation defaultLanguage="en">
-        <text language="en">Test cases for class {@code org.jomc.sequences.DuplicateSequenceException}.</text>
+        <text language="en">Test cases for class {@code org.jomc.sequences.SequenceExistsException}.</text>
       </documentation>
       <authors>
         <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>

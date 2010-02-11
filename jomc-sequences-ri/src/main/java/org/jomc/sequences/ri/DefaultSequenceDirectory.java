@@ -45,7 +45,7 @@ import javax.persistence.NoResultException;
 import javax.persistence.Query;
 import org.jomc.sequences.CapacityLimitException;
 import org.jomc.sequences.ConcurrentModificationException;
-import org.jomc.sequences.DuplicateSequenceException;
+import org.jomc.sequences.SequenceExistsException;
 import org.jomc.sequences.SequenceVetoException;
 import org.jomc.sequences.Sequence;
 import org.jomc.sequences.SequenceChangeEvent;
@@ -185,7 +185,7 @@ public class DefaultSequenceDirectory
 
         if ( sequenceType != null )
         {
-            throw new DuplicateSequenceException( this.getSequenceMapper().map( sequenceType, new Sequence() ) );
+            throw new SequenceExistsException( this.getSequenceMapper().map( sequenceType, new Sequence() ) );
         }
 
         sequenceType = this.getSequenceMapper().map( sequence, new SequenceType() );

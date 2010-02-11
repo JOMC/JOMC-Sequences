@@ -38,7 +38,7 @@ package org.jomc.sequences.test;
 
 import java.io.ObjectInputStream;
 import java.net.URL;
-import org.jomc.sequences.DuplicateSequenceException;
+import org.jomc.sequences.SequenceExistsException;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -46,7 +46,7 @@ import static org.junit.Assert.assertNotNull;
 // SECTION-START[Documentation]
 // <editor-fold defaultstate="collapsed" desc=" Generated Documentation ">
 /**
- * Test cases for class {@code org.jomc.sequences.DuplicateSequenceException}.
+ * Test cases for class {@code org.jomc.sequences.SequenceExistsException}.
  *
  * @author <a href="mailto:cs@jomc.org">Christian Schulte</a> 1.0
  * @version $Id$
@@ -59,17 +59,17 @@ import static org.junit.Assert.assertNotNull;
                              comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
 // </editor-fold>
 // SECTION-END
-public class DuplicateSequenceExceptionTest
+public class SequenceExistsExceptionTest
 {
-    // SECTION-START[DuplicateSequenceExceptionTest]
+    // SECTION-START[SequenceExistsExceptionTest]
 
     @Test public void testSerializable() throws Exception
     {
-        final URL ser = this.getClass().getResource( "DuplicateSequenceException.ser" );
+        final URL ser = this.getClass().getResource( "SequenceExistsException.ser" );
         assertNotNull( ser );
 
         final ObjectInputStream in = new ObjectInputStream( ser.openStream() );
-        final DuplicateSequenceException e = (DuplicateSequenceException) in.readObject();
+        final SequenceExistsException e = (SequenceExistsException) in.readObject();
         in.close();
 
         assertNotNull( e.getSequence() );
@@ -86,10 +86,10 @@ public class DuplicateSequenceExceptionTest
     // SECTION-START[Constructors]
     // <editor-fold defaultstate="collapsed" desc=" Generated Constructors ">
 
-    /** Creates a new {@code DuplicateSequenceExceptionTest} instance. */
+    /** Creates a new {@code SequenceExistsExceptionTest} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
-    public DuplicateSequenceExceptionTest()
+    public SequenceExistsExceptionTest()
     {
         // SECTION-START[Default Constructor]
         super();

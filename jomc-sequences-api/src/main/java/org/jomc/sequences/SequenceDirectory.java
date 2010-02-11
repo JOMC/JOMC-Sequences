@@ -105,12 +105,12 @@ public interface SequenceDirectory
      * @return The data of the sequence from the directory.
      *
      * @throws SequenceVetoException if {@code sequence} holds illegal values.
-     * @throws DuplicateSequenceException if a sequence with the same name already exists.
+     * @throws SequenceExistsException if a sequence with the same name already exists.
      * @throws CapacityLimitException if the directory's capacity limit has been reached.
      * @throws SequencesSystemException if adding the sequence fails.
      */
     Sequence addSequence( Sequence sequence )
-        throws SequenceVetoException, DuplicateSequenceException, CapacityLimitException, SequencesSystemException;
+        throws SequenceVetoException, SequenceExistsException, CapacityLimitException, SequencesSystemException;
 
     /**
      * Updates a sequence in the directory.
