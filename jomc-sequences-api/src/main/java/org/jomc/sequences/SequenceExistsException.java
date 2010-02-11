@@ -45,7 +45,7 @@ package org.jomc.sequences;
  * Dependency on {@code java.util.Locale} at specification level 1.1 bound to an instance.</blockquote></li>
  * </ul></p>
  * <p><b>Messages</b><ul>
- * <li>"{@link #getDuplicateSequenceMessage duplicateSequence}"<table>
+ * <li>"{@link #getSequenceExistsMessage sequenceExists}"<table>
  * <tr><td valign="top">English:</td><td valign="top"><pre>A sequence with the name ''{0}'' already exists.</pre></td></tr>
  * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Eine Sequenz mit Namen ''{0}'' existiert bereits.</pre></td></tr>
  * </table>
@@ -104,7 +104,7 @@ public class SequenceExistsException extends SequencesException
     @Override
     public String getMessage()
     {
-        return this.getDuplicateSequenceMessage(
+        return this.getSequenceExistsMessage(
             this.getLocale(), this.getSequence() != null ? this.getSequence().getName() : null );
 
     }
@@ -136,7 +136,7 @@ public class SequenceExistsException extends SequencesException
     // <editor-fold defaultstate="collapsed" desc=" Generated Messages ">
 
     /**
-     * Gets the text of the {@code duplicateSequence} message.
+     * Gets the text of the {@code sequenceExists} message.
      * <p><b>Templates</b><br/><table>
      * <tr><td valign="top">English:</td><td valign="top"><pre>A sequence with the name ''{0}'' already exists.</pre></td></tr>
      * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Eine Sequenz mit Namen ''{0}'' existiert bereits.</pre></td></tr>
@@ -149,10 +149,10 @@ public class SequenceExistsException extends SequencesException
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
-    private String getDuplicateSequenceMessage( final java.util.Locale locale, final java.lang.String sequenceName )
+    private String getSequenceExistsMessage( final java.util.Locale locale, final java.lang.String sequenceName )
     {
-        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "duplicateSequence", locale, sequenceName );
-        assert _m != null : "'duplicateSequence' message not found.";
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "sequenceExists", locale, sequenceName );
+        assert _m != null : "'sequenceExists' message not found.";
         return _m;
     }
     // </editor-fold>
