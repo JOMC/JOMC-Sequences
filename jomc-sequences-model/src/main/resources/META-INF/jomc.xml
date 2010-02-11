@@ -60,7 +60,7 @@
         <property name="schemas" type="org.jomc.sdk.model.SchemasType">
           <schemas xmlns="http://jomc.org/sdk/model" language-id="http://www.w3.org/2001/XMLSchema">
             <schema public-id="http://jomc.org/sequences/model"
-                    system-id="http://jomc.org/jomc-sequences/jomc-sequences-model/jomc-sequences-1.0.xsd"
+                    system-id="http://jomc.org/sequences/model/jomc-sequences-1.0.xsd"
                     java-context-id="org.jomc.sequences.model"
                     java-classpath-id="org/jomc/sequences/model/jomc-sequences-1.0.xsd"/>
 
