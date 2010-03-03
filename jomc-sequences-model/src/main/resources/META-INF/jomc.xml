@@ -2,7 +2,7 @@
 <!--
 
   Copyright (c) 2009 The JOMC Project
-  Copyright (c) 2005 Christian Schulte <cs@jomc.org>
+  Copyright (c) 2005 Christian Schulte <schulte2005@users.sourceforge.net>
   All rights reserved.
 
   Redistribution and use in source and binary forms, with or without
@@ -51,7 +51,9 @@
         <text language="en">Sequences model.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
       </authors>
       <specifications>
         <reference identifier="XML Schema Set" version="${xmlschemaset.specification.version}"/>
@@ -78,7 +80,9 @@
         <text language="en">Query selecting a single sequence directory entity.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
       </authors>
       <implementations>
         <reference identifier="org.jomc.sdk.jpa.NamedQueryFactory" version="${jomc-sdk.version}"/>
@@ -101,7 +105,9 @@
         <text language="en">Query selecting a single sequence entity.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
       </authors>
       <implementations>
         <reference identifier="org.jomc.sdk.jpa.NamedQueryFactory" version="${jomc-sdk.version}"/>
@@ -124,7 +130,9 @@
         <text language="en">Query selecting all sequence entities in a sequence directory.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
       </authors>
       <implementations>
         <reference identifier="org.jomc.sdk.jpa.NamedQueryFactory" version="${jomc-sdk.version}"/>
@@ -147,7 +155,9 @@
         <text language="en">Query selecting sequence entities in a sequence directory.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
       </authors>
       <implementations>
         <reference identifier="org.jomc.sdk.jpa.NamedQueryFactory" version="${jomc-sdk.version}"/>
@@ -170,7 +180,9 @@
         <text language="en">Query selecting the total number of sequence entities in a sequence directory.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
       </authors>
       <implementations>
         <reference identifier="org.jomc.sdk.jpa.NamedQueryFactory" version="${jomc-sdk.version}"/>

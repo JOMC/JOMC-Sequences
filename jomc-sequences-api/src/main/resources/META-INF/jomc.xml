@@ -2,7 +2,7 @@
 <!--
 
   Copyright (c) 2009 The JOMC Project
-  Copyright (c) 2005 Christian Schulte <cs@jomc.org>
+  Copyright (c) 2005 Christian Schulte <schulte2005@users.sourceforge.net>
   All rights reserved.
 
   Redistribution and use in source and binary forms, with or without
@@ -51,7 +51,9 @@
         <text language="en">Directory of sequences.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
       </authors>
     </specification>
     <!-- *********************************************************************************************************** -->
@@ -63,7 +65,9 @@
         <text language="en">Provides operations performed with sequences.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
       </authors>
     </specification>
     <!-- *********************************************************************************************************** -->
@@ -74,7 +78,9 @@
         <text language="en">Gets called whenever the state of a sequence changed.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
       </authors>
     </specification>
     <!-- *********************************************************************************************************** -->
@@ -86,7 +92,9 @@
         <text language="en">Gets called whenever the state of a sequence is about to change.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
       </authors>
     </specification>
   </specifications>
@@ -100,7 +108,9 @@
         <text language="en">Gets thrown whenever the directories capacity limit has been reached.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
       </authors>
       <dependencies>
         <dependency identifier="java.util.Locale" version="1.1" name="Locale" implementationName="default"/>
@@ -126,7 +136,9 @@
         <text language="en">Gets thrown whenever illegal sequence information is passed to a method expecting legal sequence data.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
       </authors>
       <dependencies>
         <dependency identifier="java.util.Locale" version="1.1" name="Locale" implementationName="default"/>
@@ -149,7 +161,9 @@
         <text language="en">Gets thrown whenever the next value of a sequence is requested although its maximum value has already been reached.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
       </authors>
       <dependencies>
         <dependency identifier="java.util.Locale" version="1.1" name="Locale" implementationName="default"/>
@@ -175,7 +189,9 @@
         <text language="en">Gets thrown when a sequence is not found for a given name.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
       </authors>
       <dependencies>
         <dependency identifier="java.util.Locale" version="1.1" name="Locale" implementationName="default"/>
@@ -201,7 +217,9 @@
         <text language="en">Gets thrown whenever a sequence is edited or removed using outdated data.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
       </authors>
       <dependencies>
         <dependency identifier="java.util.Locale" version="1.1" name="Locale" implementationName="default"/>
@@ -224,7 +242,9 @@
         <text language="en">Gets thrown when a sequence is about to be added to a directory although a sequence with the same name already exists.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
       </authors>
       <dependencies>
         <dependency identifier="java.util.Locale" version="1.1" name="Locale" implementationName="default"/>
@@ -253,7 +273,9 @@
         <text language="en">Gets thrown whenever an unexpected error condition is detected.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
       </authors>
     </implementation>
     <!-- *********************************************************************************************************** -->
@@ -265,7 +287,9 @@
         <text language="en">Recoverable exception base class.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
       </authors>
     </implementation>
     <!-- *********************************************************************************************************** -->
@@ -276,7 +300,9 @@
         <text language="en">Sequence of numbers.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
       </authors>
     </implementation>
     <!-- *********************************************************************************************************** -->
@@ -288,7 +314,9 @@
         <text language="en">A "SequenceChange" event gets delivered whenever the state of a sequence changes.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
       </authors>
     </implementation>
   </implementations>
