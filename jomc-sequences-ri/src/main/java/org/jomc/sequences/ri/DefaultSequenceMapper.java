@@ -74,7 +74,7 @@ import org.jomc.sequences.model.SequenceType;
 // SECTION-END
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
-@javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+@javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
                              comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
 // </editor-fold>
 // SECTION-END
@@ -201,7 +201,7 @@ public class DefaultSequenceMapper implements SequenceMapper
     // <editor-fold defaultstate="collapsed" desc=" Generated Constructors ">
 
     /** Creates a new {@code DefaultSequenceMapper} instance. */
-    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
     public DefaultSequenceMapper()
     {
@@ -221,7 +221,7 @@ public class DefaultSequenceMapper implements SequenceMapper
      * @return The {@code Locale} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
-    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
     private java.util.Locale getLocale()
     {
@@ -249,7 +249,7 @@ public class DefaultSequenceMapper implements SequenceMapper
      *
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
-    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
     private String getIllegalArgumentMessage( final java.util.Locale locale, final java.lang.String argumentName, final java.lang.String argumentValue )
     {
@@ -269,7 +269,7 @@ public class DefaultSequenceMapper implements SequenceMapper
      *
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
-    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
     private String getUnhandledExceptionMessage( final java.util.Locale locale )
     {

@@ -58,7 +58,7 @@ package org.jomc.sequences;
 // SECTION-END
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
-@javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+@javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
                              comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
 // </editor-fold>
 // SECTION-END
@@ -120,7 +120,7 @@ public class SequenceNotFoundException extends SequencesException
      * @return The {@code Locale} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
-    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
     private java.util.Locale getLocale()
     {
@@ -147,7 +147,7 @@ public class SequenceNotFoundException extends SequencesException
      *
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
-    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
     private String getSequenceNotFoundMessage( final java.util.Locale locale, final java.lang.String name )
     {

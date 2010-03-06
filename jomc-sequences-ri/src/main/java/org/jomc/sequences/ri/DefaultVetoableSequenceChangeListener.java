@@ -65,7 +65,7 @@ import org.jomc.sequences.SequenceVetoException;
 // SECTION-END
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
-@javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+@javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
                              comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
 // </editor-fold>
 // SECTION-END
@@ -125,7 +125,7 @@ public class DefaultVetoableSequenceChangeListener
     // <editor-fold defaultstate="collapsed" desc=" Generated Constructors ">
 
     /** Creates a new {@code DefaultVetoableSequenceChangeListener} instance. */
-    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
     public DefaultVetoableSequenceChangeListener()
     {
@@ -145,7 +145,7 @@ public class DefaultVetoableSequenceChangeListener
      * @return Maximum allowed length of a sequence name.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
-    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
     private int getSequenceNameMaxLength()
     {
@@ -159,7 +159,7 @@ public class DefaultVetoableSequenceChangeListener
      * @return Minimum required length of a sequence name.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
-    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
     private int getSequenceNameMinLength()
     {
