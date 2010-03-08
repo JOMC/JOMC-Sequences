@@ -42,5 +42,12 @@
   <body>
     <!-- *********************************************************************************************************** -->
     <release version="1.0-alpha-1" date="2009-09-19"/>
+    <!-- *********************************************************************************************************** -->
+    <release version="1.0-alpha-2" date="2010-03-08">
+      <action type="update" dev="schulte2005"><![CDATA[Renamed class
+      <code>org.jomc.sequences.DuplicateSequenceException</code> to
+      <code>org.jomc.sequences.SequenceExistsException</code>.]]>
+      </action>
+    </release>
   </body>
 </document>
