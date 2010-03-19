@@ -61,6 +61,16 @@ import static org.junit.Assert.fail;
 // <editor-fold defaultstate="collapsed" desc=" Generated Documentation ">
 /**
  * Testcase for SequenceDirectory implementations.
+ * <p><b>Properties</b><ul>
+ * <li>"{@link #getSequenceNameMaxLength sequenceNameMaxLength}"
+ * <blockquote>Property of type {@code int}.
+ * <p>Maximum allowed length of a sequence name.</p>
+ * </blockquote></li>
+ * <li>"{@link #getSequenceNameMinLength sequenceNameMinLength}"
+ * <blockquote>Property of type {@code int}.
+ * <p>Minimum required length of a sequence name.</p>
+ * </blockquote></li>
+ * </ul></p>
  * <p><b>Dependencies</b><ul>
  * <li>"{@link #getSequenceDirectory SequenceDirectory}"<blockquote>
  * Dependency on {@code org.jomc.sequences.SequenceDirectory} at specification level 1.0 bound to an instance.</blockquote></li>
@@ -74,7 +84,7 @@ import static org.junit.Assert.fail;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-18-SNAPSHOT/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-18/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public class SequenceDirectoryTest
@@ -253,7 +263,10 @@ public class SequenceDirectoryTest
         Sequence legal = getTestSequence();
 
         final Sequence illegal = new Sequence();
-        illegal.setName( "TEST" );
+        char[] name = new char[ this.getSequenceNameMaxLength() + 1 ];
+        Arrays.fill( name, 'T' );
+
+        illegal.setName( String.valueOf( name ) );
         illegal.setMinimum( 100L );
         illegal.setMaximum( 1L );
         illegal.setValue( 0L );
@@ -268,6 +281,36 @@ public class SequenceDirectoryTest
         {
             assertNotNull( e.getMessage() );
             System.out.println( e.toString() );
+        }
+
+        illegal.setName( null );
+
+        try
+        {
+            this.getSequenceDirectory().addSequence( illegal );
+            fail( "Expected SequenceVetoException not thrown." );
+        }
+        catch ( final SequenceVetoException e )
+        {
+            assertNotNull( e.getMessage() );
+            System.out.println( e.toString() );
+        }
+
+        if ( this.getSequenceNameMinLength() - 1 >= 0 )
+        {
+            try
+            {
+                name = new char[ this.getSequenceNameMinLength() - 1 ];
+                Arrays.fill( name, 'T' );
+                illegal.setName( String.valueOf( name ) );
+                this.getSequenceDirectory().addSequence( illegal );
+                fail( "Expected SequenceVetoException not thrown." );
+            }
+            catch ( final SequenceVetoException e )
+            {
+                assertNotNull( e.getMessage() );
+                System.out.println( e.toString() );
+            }
         }
 
         legal = this.getSequenceDirectory().addSequence( legal );
@@ -438,7 +481,7 @@ public class SequenceDirectoryTest
 
     /** Creates a new {@code SequenceDirectoryTest} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-18-SNAPSHOT/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-18/jomc-tools" )
     public SequenceDirectoryTest()
     {
         // SECTION-START[Default Constructor]
@@ -459,7 +502,7 @@ public class SequenceDirectoryTest
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-18-SNAPSHOT/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-18/jomc-tools" )
     private org.jomc.sequences.SequenceDirectory getSequenceDirectory()
     {
         return (org.jomc.sequences.SequenceDirectory) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "SequenceDirectory" );
@@ -467,6 +510,36 @@ public class SequenceDirectoryTest
     // </editor-fold>
     // SECTION-END
     // SECTION-START[Properties]
+    // <editor-fold defaultstate="collapsed" desc=" Generated Properties ">
+
+    /**
+     * Gets the value of the {@code sequenceNameMaxLength} property.
+     * @return Maximum allowed length of a sequence name.
+     * @throws org.jomc.ObjectManagementException if getting the property instance fails.
+     */
+    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-18/jomc-tools" )
+    private int getSequenceNameMaxLength()
+    {
+        final java.lang.Integer _p = (java.lang.Integer) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getProperty( this, "sequenceNameMaxLength" );
+        assert _p != null : "'sequenceNameMaxLength' property not found.";
+        return _p.intValue();
+    }
+
+    /**
+     * Gets the value of the {@code sequenceNameMinLength} property.
+     * @return Minimum required length of a sequence name.
+     * @throws org.jomc.ObjectManagementException if getting the property instance fails.
+     */
+    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-18/jomc-tools" )
+    private int getSequenceNameMinLength()
+    {
+        final java.lang.Integer _p = (java.lang.Integer) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getProperty( this, "sequenceNameMinLength" );
+        assert _p != null : "'sequenceNameMinLength' property not found.";
+        return _p.intValue();
+    }
+    // </editor-fold>
     // SECTION-END
     // SECTION-START[Messages]
     // SECTION-END

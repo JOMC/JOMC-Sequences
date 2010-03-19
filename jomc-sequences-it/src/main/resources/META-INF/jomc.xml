@@ -61,6 +61,18 @@
                     optional="true"/>
 
       </dependencies>
+      <properties>
+        <property name="sequenceNameMinLength" type="int" value="1">
+          <documentation defaultLanguage="en">
+            <text language="en">Minimum required length of a sequence name.</text>
+          </documentation>
+        </property>
+        <property name="sequenceNameMaxLength" type="int" value="200">
+          <documentation defaultLanguage="en">
+            <text language="en">Maximum allowed length of a sequence name.</text>
+          </documentation>
+        </property>
+      </properties>
     </implementation>
     <!-- *********************************************************************************************************** -->
     <implementation identifier="org.jomc.sequences.it.SequenceOperationsTest"

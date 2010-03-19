@@ -41,4 +41,25 @@
   <documentation defaultLanguage="en">
     <text language="en">${project.description}</text>
   </documentation>
+  <implementations>
+    <!-- *********************************************************************************************************** -->
+    <implementation identifier="org.jomc.sequences.ri.test.SequenceMapperTest"
+                    class="org.jomc.sequences.ri.test.SequenceMapperTest"
+                    classDeclaration="true" name="${project.name}" vendor="${project.organization.name}"
+                    version="${project.version}" stateless="true">
+
+      <documentation defaultLanguage="en">
+        <text language="en">Test cases for the {@code SequenceMapper} specification.</text>
+      </documentation>
+      <authors>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
+      </authors>
+      <dependencies>
+        <dependency name="SequenceMapper" identifier="org.jomc.sequences.ri.SequenceMapper" version="1.0"
+                    implementationName="${project.name}"/>
+      </dependencies>
+    </implementation>
+  </implementations>
 </module>

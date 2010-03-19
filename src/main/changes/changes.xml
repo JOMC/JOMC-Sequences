@@ -49,5 +49,12 @@
       <code>org.jomc.sequences.SequenceExistsException</code>.]]>
       </action>
     </release>
+    <!-- *********************************************************************************************************** -->
+    <release version="1.0-alpha-3" date="2010-03-19">
+      <action type="update" dev="schulte2005">Updated to JOMC 1.0-alpha-18.</action>
+      <action type="update" dev="schulte2005">Updated to JOMC Logging 1.0-alpha-11.</action>
+      <action type="update" dev="schulte2005">Updated to JOMC SDK 1.0-alpha-8.</action>
+      <action type="update" dev="schulte2005">Updated to JOMC Standalone 1.0-alpha-8.</action>
+    </release>
   </body>
 </document>
