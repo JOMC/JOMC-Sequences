@@ -44,16 +44,23 @@ import org.jomc.sequences.model.SequenceType;
 // <editor-fold defaultstate="collapsed" desc=" Generated Documentation ">
 /**
  * Maps model classes.
- * <p>This specification declares a multiplicity of {@code Many}.
- * An application assembler may provide multiple implementations of this specification (including none).
- * Use of class {@link org.jomc.ObjectManager ObjectManager} is supported for getting these implementations or for
- * selecting a single implementation.<pre>
- * SequenceMapper[] objects = (SequenceMapper[]) ObjectManagerFactory.getObjectManager( getClass().getClassLoader() ).getObject( SequenceMapper.class );
- * SequenceMapper object = ObjectManagerFactory.getObjectManager( getClass().getClassLoader() ).getObject( SequenceMapper.class, "<i>implementation name</i>" );
- * </pre>
+ *
+ * <p>
+ *   This specification declares a multiplicity of {@code Many}.
+ *   An application assembler may provide multiple implementations of this specification (including none).
  * </p>
  *
- * <p>This specification does not apply to any scope. A new object is returned whenever requested.</p>
+ * <p>
+ *   Use of class {@link org.jomc.ObjectManager ObjectManager} is supported for accessing implementations.
+ *   <pre>
+ * SequenceMapper[] objects = ObjectManagerFactory.getObjectManager( getClass().getClassLoader() ).getObject( SequenceMapper[].class );
+ * SequenceMapper object = ObjectManagerFactory.getObjectManager( getClass().getClassLoader() ).getObject( SequenceMapper.class, "<i>implementation name</i>" );
+ *   </pre>
+ * </p>
+ *
+ * <p>
+ *   This specification does not apply to any scope. A new object is returned whenever requested.
+ * </p>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
  * @version $Id$
@@ -63,7 +70,7 @@ import org.jomc.sequences.model.SequenceType;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-18/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public interface SequenceMapper

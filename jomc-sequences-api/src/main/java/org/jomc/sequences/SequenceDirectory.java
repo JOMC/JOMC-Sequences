@@ -43,14 +43,24 @@ import java.util.Set;
 // <editor-fold defaultstate="collapsed" desc=" Generated Documentation ">
 /**
  * Directory of sequences.
- * <p>This specification declares a multiplicity of {@code One}.
- * An application assembler is required to provide no more than one implementation of this specification (including none).
- * Use of class {@link org.jomc.ObjectManager ObjectManager} is supported for getting that implementation.<pre>
- * SequenceDirectory object = (SequenceDirectory) ObjectManagerFactory.getObjectManager( getClass().getClassLoader() ).getObject( SequenceDirectory.class );
- * </pre>
+ *
+ * <p>
+ *   This specification declares a multiplicity of {@code One}.
+ *   An application assembler may provide either no or one implementation of this specification.
  * </p>
  *
- * <p>This specification applies to {@code Singleton} scope. The same singleton object is returned whenever requested.</p>
+ * <p>
+ *   Use of class {@link org.jomc.ObjectManager ObjectManager} is supported for accessing implementations.
+ *   <pre>
+ * SequenceDirectory object = ObjectManagerFactory.getObjectManager( getClass().getClassLoader() ).getObject( SequenceDirectory.class );
+ * SequenceDirectory object = ObjectManagerFactory.getObjectManager( getClass().getClassLoader() ).getObject( SequenceDirectory.class, "<i>implementation name</i>" );
+ *   </pre>
+ * </p>
+ *
+ * <p>
+ *   This specification applies to {@code Singleton} scope.
+ *   The same singleton object is returned whenever requested.
+ * </p>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
  * @version $Id$
@@ -60,7 +70,7 @@ import java.util.Set;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-18/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public interface SequenceDirectory

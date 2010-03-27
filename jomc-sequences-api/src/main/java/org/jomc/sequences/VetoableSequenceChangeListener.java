@@ -42,16 +42,23 @@ import java.util.EventListener;
 // <editor-fold defaultstate="collapsed" desc=" Generated Documentation ">
 /**
  * Gets called whenever the state of a sequence is about to change.
- * <p>This specification declares a multiplicity of {@code Many}.
- * An application assembler may provide multiple implementations of this specification (including none).
- * Use of class {@link org.jomc.ObjectManager ObjectManager} is supported for getting these implementations or for
- * selecting a single implementation.<pre>
- * VetoableSequenceChangeListener[] objects = (VetoableSequenceChangeListener[]) ObjectManagerFactory.getObjectManager( getClass().getClassLoader() ).getObject( VetoableSequenceChangeListener.class );
- * VetoableSequenceChangeListener object = ObjectManagerFactory.getObjectManager( getClass().getClassLoader() ).getObject( VetoableSequenceChangeListener.class, "<i>implementation name</i>" );
- * </pre>
+ *
+ * <p>
+ *   This specification declares a multiplicity of {@code Many}.
+ *   An application assembler may provide multiple implementations of this specification (including none).
  * </p>
  *
- * <p>This specification does not apply to any scope. A new object is returned whenever requested.</p>
+ * <p>
+ *   Use of class {@link org.jomc.ObjectManager ObjectManager} is supported for accessing implementations.
+ *   <pre>
+ * VetoableSequenceChangeListener[] objects = ObjectManagerFactory.getObjectManager( getClass().getClassLoader() ).getObject( VetoableSequenceChangeListener[].class );
+ * VetoableSequenceChangeListener object = ObjectManagerFactory.getObjectManager( getClass().getClassLoader() ).getObject( VetoableSequenceChangeListener.class, "<i>implementation name</i>" );
+ *   </pre>
+ * </p>
+ *
+ * <p>
+ *   This specification does not apply to any scope. A new object is returned whenever requested.
+ * </p>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
  * @version $Id$
@@ -61,7 +68,7 @@ import java.util.EventListener;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-18/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public interface VetoableSequenceChangeListener extends EventListener

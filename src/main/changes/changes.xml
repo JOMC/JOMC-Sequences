@@ -56,5 +56,12 @@
       <action type="update" dev="schulte2005">Updated to JOMC SDK 1.0-alpha-8.</action>
       <action type="update" dev="schulte2005">Updated to JOMC Standalone 1.0-alpha-8.</action>
     </release>
+    <!-- *********************************************************************************************************** -->
+    <release version="1.0-alpha-4" date="2010-03-27">
+      <action type="update" dev="schulte2005">Updated to JOMC 1.0-alpha-19.</action>
+      <action type="update" dev="schulte2005">Updated to JOMC Logging 1.0-alpha-12.</action>
+      <action type="update" dev="schulte2005">Updated to JOMC SDK 1.0-alpha-9.</action>
+      <action type="update" dev="schulte2005">Updated to JOMC Standalone 1.0-alpha-9.</action>
+    </release>
   </body>
 </document>

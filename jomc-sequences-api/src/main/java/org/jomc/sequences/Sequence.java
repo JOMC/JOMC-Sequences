@@ -52,7 +52,7 @@ import java.util.Date;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-18/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public class Sequence implements Comparable<Sequence>, Cloneable, Serializable
@@ -361,7 +361,7 @@ public class Sequence implements Comparable<Sequence>, Cloneable, Serializable
 
     /** Creates a new {@code Sequence} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-18/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
     public Sequence()
     {
         // SECTION-START[Default Constructor]
