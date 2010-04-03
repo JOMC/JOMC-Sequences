@@ -57,11 +57,11 @@ import org.jomc.sequences.model.SequenceType;
  * Dependency on {@code java.util.Locale} at specification level 1.1 bound to an instance.</blockquote></li>
  * </ul></p>
  * <p><b>Messages</b><ul>
- * <li>"{@link #getIllegalArgumentMessage illegalArgument}"<table>
+ * <li>"{@link #getIllegalArgumentMessage illegalArgumentMessage}"<table>
  * <tr><td valign="top">English:</td><td valign="top"><pre>Illegal value ''{1}'' for argument ''{0}''.</pre></td></tr>
  * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Ung&uuml;ltiger Wert ''{1}'' f&uuml;r Parameter ''{0}''.</pre></td></tr>
  * </table>
- * <li>"{@link #getUnhandledExceptionMessage unhandledException}"<table>
+ * <li>"{@link #getUnhandledExceptionMessage unhandledExceptionMessage}"<table>
  * <tr><td valign="top">English:</td><td valign="top"><pre>Unhandled exception.</pre></td></tr>
  * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Unbehandelte Ausnahme.</pre></td></tr>
  * </table>
@@ -75,7 +75,7 @@ import org.jomc.sequences.model.SequenceType;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public class DefaultSequenceMapper implements SequenceMapper
@@ -202,7 +202,7 @@ public class DefaultSequenceMapper implements SequenceMapper
 
     /** Creates a new {@code DefaultSequenceMapper} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     public DefaultSequenceMapper()
     {
         // SECTION-START[Default Constructor]
@@ -222,7 +222,7 @@ public class DefaultSequenceMapper implements SequenceMapper
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private java.util.Locale getLocale()
     {
         final java.util.Locale _d = (java.util.Locale) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "Locale" );
@@ -237,7 +237,7 @@ public class DefaultSequenceMapper implements SequenceMapper
     // <editor-fold defaultstate="collapsed" desc=" Generated Messages ">
 
     /**
-     * Gets the text of the {@code illegalArgument} message.
+     * Gets the text of the {@code illegalArgumentMessage} message.
      * <p><b>Templates</b><br/><table>
      * <tr><td valign="top">English:</td><td valign="top"><pre>Illegal value ''{1}'' for argument ''{0}''.</pre></td></tr>
      * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Ung&uuml;ltiger Wert ''{1}'' f&uuml;r Parameter ''{0}''.</pre></td></tr>
@@ -245,36 +245,36 @@ public class DefaultSequenceMapper implements SequenceMapper
      * @param locale The locale of the message to return.
      * @param argumentName Format argument.
      * @param argumentValue Format argument.
-     * @return The text of the {@code illegalArgument} message.
+     * @return The text of the {@code illegalArgumentMessage} message.
      *
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private String getIllegalArgumentMessage( final java.util.Locale locale, final java.lang.String argumentName, final java.lang.String argumentValue )
     {
-        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "illegalArgument", locale, argumentName, argumentValue );
-        assert _m != null : "'illegalArgument' message not found.";
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "illegalArgumentMessage", locale, argumentName, argumentValue );
+        assert _m != null : "'illegalArgumentMessage' message not found.";
         return _m;
     }
 
     /**
-     * Gets the text of the {@code unhandledException} message.
+     * Gets the text of the {@code unhandledExceptionMessage} message.
      * <p><b>Templates</b><br/><table>
      * <tr><td valign="top">English:</td><td valign="top"><pre>Unhandled exception.</pre></td></tr>
      * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Unbehandelte Ausnahme.</pre></td></tr>
      * </table></p>
      * @param locale The locale of the message to return.
-     * @return The text of the {@code unhandledException} message.
+     * @return The text of the {@code unhandledExceptionMessage} message.
      *
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private String getUnhandledExceptionMessage( final java.util.Locale locale )
     {
-        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "unhandledException", locale );
-        assert _m != null : "'unhandledException' message not found.";
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "unhandledExceptionMessage", locale );
+        assert _m != null : "'unhandledExceptionMessage' message not found.";
         return _m;
     }
     // </editor-fold>

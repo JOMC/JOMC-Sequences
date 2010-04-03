@@ -45,7 +45,7 @@ package org.jomc.sequences;
  * Dependency on {@code java.util.Locale} at specification level 1.1 bound to an instance.</blockquote></li>
  * </ul></p>
  * <p><b>Messages</b><ul>
- * <li>"{@link #getSequenceExistsMessage sequenceExists}"<table>
+ * <li>"{@link #getSequenceExistsMessage sequenceExistsMessage}"<table>
  * <tr><td valign="top">English:</td><td valign="top"><pre>A sequence with the name ''{0}'' already exists.</pre></td></tr>
  * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Eine Sequenz mit Namen ''{0}'' existiert bereits.</pre></td></tr>
  * </table>
@@ -59,7 +59,7 @@ package org.jomc.sequences;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public class SequenceExistsException extends SequencesException
@@ -121,7 +121,7 @@ public class SequenceExistsException extends SequencesException
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private java.util.Locale getLocale()
     {
         final java.util.Locale _d = (java.util.Locale) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "Locale" );
@@ -136,7 +136,7 @@ public class SequenceExistsException extends SequencesException
     // <editor-fold defaultstate="collapsed" desc=" Generated Messages ">
 
     /**
-     * Gets the text of the {@code sequenceExists} message.
+     * Gets the text of the {@code sequenceExistsMessage} message.
      * <p><b>Templates</b><br/><table>
      * <tr><td valign="top">English:</td><td valign="top"><pre>A sequence with the name ''{0}'' already exists.</pre></td></tr>
      * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Eine Sequenz mit Namen ''{0}'' existiert bereits.</pre></td></tr>
@@ -148,11 +148,11 @@ public class SequenceExistsException extends SequencesException
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private String getSequenceExistsMessage( final java.util.Locale locale, final java.lang.String sequenceName )
     {
-        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "sequenceExists", locale, sequenceName );
-        assert _m != null : "'sequenceExists' message not found.";
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "sequenceExistsMessage", locale, sequenceName );
+        assert _m != null : "'sequenceExistsMessage' message not found.";
         return _m;
     }
     // </editor-fold>

@@ -110,11 +110,11 @@ import org.jomc.sequences.model.SequencesType;
  * Dependency on {@code org.jomc.sequences.VetoableSequenceChangeListener} at specification level 1.0 bound to an instance.</blockquote></li>
  * </ul></p>
  * <p><b>Messages</b><ul>
- * <li>"{@link #getIllegalArgumentMessage illegalArgument}"<table>
+ * <li>"{@link #getIllegalArgumentMessage illegalArgumentMessage}"<table>
  * <tr><td valign="top">English:</td><td valign="top"><pre>Illegal value ''{1}'' for argument ''{0}''.</pre></td></tr>
  * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Ung&uuml;ltiger Wert ''{1}'' f&uuml;r Parameter ''{0}''.</pre></td></tr>
  * </table>
- * <li>"{@link #getSuccessfullyCreatedSequenceDirectoryMessage successfullyCreatedSequenceDirectory}"<table>
+ * <li>"{@link #getSuccessfullyCreatedSequenceDirectoryMessage successfullyCreatedSequenceDirectoryMessage}"<table>
  * <tr><td valign="top">English:</td><td valign="top"><pre>Sequence directory ''{0}'' created.</pre></td></tr>
  * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Sequenzverzeichnis ''{0}'' erstellt.</pre></td></tr>
  * </table>
@@ -128,7 +128,7 @@ import org.jomc.sequences.model.SequencesType;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public class DefaultSequenceDirectory
@@ -535,7 +535,7 @@ public class DefaultSequenceDirectory
 
     /** Creates a new {@code DefaultSequenceDirectory} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     public DefaultSequenceDirectory()
     {
         // SECTION-START[Default Constructor]
@@ -555,7 +555,7 @@ public class DefaultSequenceDirectory
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private javax.persistence.EntityManager getEntityManager()
     {
         final javax.persistence.EntityManager _d = (javax.persistence.EntityManager) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "EntityManager" );
@@ -571,7 +571,7 @@ public class DefaultSequenceDirectory
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private java.util.Locale getLocale()
     {
         final java.util.Locale _d = (java.util.Locale) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "Locale" );
@@ -592,7 +592,7 @@ public class DefaultSequenceDirectory
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private org.jomc.logging.Logger getLogger()
     {
         final org.jomc.logging.Logger _d = (org.jomc.logging.Logger) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "Logger" );
@@ -608,7 +608,7 @@ public class DefaultSequenceDirectory
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private javax.persistence.Query getSelectAllSequencesQuery()
     {
         final javax.persistence.Query _d = (javax.persistence.Query) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "SelectAllSequencesQuery" );
@@ -624,7 +624,7 @@ public class DefaultSequenceDirectory
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private javax.persistence.Query getSelectSequenceCountQuery()
     {
         final javax.persistence.Query _d = (javax.persistence.Query) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "SelectSequenceCountQuery" );
@@ -640,7 +640,7 @@ public class DefaultSequenceDirectory
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private javax.persistence.Query getSelectSequenceDirectoryQuery()
     {
         final javax.persistence.Query _d = (javax.persistence.Query) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "SelectSequenceDirectoryQuery" );
@@ -656,7 +656,7 @@ public class DefaultSequenceDirectory
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private javax.persistence.Query getSelectSequenceQuery()
     {
         final javax.persistence.Query _d = (javax.persistence.Query) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "SelectSequenceQuery" );
@@ -672,7 +672,7 @@ public class DefaultSequenceDirectory
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private javax.persistence.Query getSelectSequencesQuery()
     {
         final javax.persistence.Query _d = (javax.persistence.Query) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "SelectSequencesQuery" );
@@ -688,7 +688,7 @@ public class DefaultSequenceDirectory
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private org.jomc.sequences.SequenceChangeListener[] getSequenceChangeListener()
     {
         final org.jomc.sequences.SequenceChangeListener[] _d = (org.jomc.sequences.SequenceChangeListener[]) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "SequenceChangeListener" );
@@ -704,7 +704,7 @@ public class DefaultSequenceDirectory
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private org.jomc.sequences.ri.SequenceMapper getSequenceMapper()
     {
         final org.jomc.sequences.ri.SequenceMapper _d = (org.jomc.sequences.ri.SequenceMapper) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "SequenceMapper" );
@@ -720,7 +720,7 @@ public class DefaultSequenceDirectory
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private org.jomc.sequences.VetoableSequenceChangeListener[] getVetoableSequenceChangeListener()
     {
         final org.jomc.sequences.VetoableSequenceChangeListener[] _d = (org.jomc.sequences.VetoableSequenceChangeListener[]) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "VetoableSequenceChangeListener" );
@@ -738,7 +738,7 @@ public class DefaultSequenceDirectory
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private java.math.BigInteger getDefaultSequenceDirectoryCapacityLimit()
     {
         final java.math.BigInteger _p = (java.math.BigInteger) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getProperty( this, "defaultSequenceDirectoryCapacityLimit" );
@@ -752,7 +752,7 @@ public class DefaultSequenceDirectory
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private java.lang.String getSequenceDirectoryName()
     {
         final java.lang.String _p = (java.lang.String) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getProperty( this, "sequenceDirectoryName" );
@@ -766,7 +766,7 @@ public class DefaultSequenceDirectory
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private java.lang.String getSequenceDirectoryNameQueryParameterName()
     {
         final java.lang.String _p = (java.lang.String) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getProperty( this, "sequenceDirectoryNameQueryParameterName" );
@@ -780,7 +780,7 @@ public class DefaultSequenceDirectory
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private java.lang.String getSequenceNameQueryParameterName()
     {
         final java.lang.String _p = (java.lang.String) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getProperty( this, "sequenceNameQueryParameterName" );
@@ -793,7 +793,7 @@ public class DefaultSequenceDirectory
     // <editor-fold defaultstate="collapsed" desc=" Generated Messages ">
 
     /**
-     * Gets the text of the {@code illegalArgument} message.
+     * Gets the text of the {@code illegalArgumentMessage} message.
      * <p><b>Templates</b><br/><table>
      * <tr><td valign="top">English:</td><td valign="top"><pre>Illegal value ''{1}'' for argument ''{0}''.</pre></td></tr>
      * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Ung&uuml;ltiger Wert ''{1}'' f&uuml;r Parameter ''{0}''.</pre></td></tr>
@@ -801,37 +801,37 @@ public class DefaultSequenceDirectory
      * @param locale The locale of the message to return.
      * @param argumentName Format argument.
      * @param argumentValue Format argument.
-     * @return The text of the {@code illegalArgument} message.
+     * @return The text of the {@code illegalArgumentMessage} message.
      *
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private String getIllegalArgumentMessage( final java.util.Locale locale, final java.lang.String argumentName, final java.lang.String argumentValue )
     {
-        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "illegalArgument", locale, argumentName, argumentValue );
-        assert _m != null : "'illegalArgument' message not found.";
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "illegalArgumentMessage", locale, argumentName, argumentValue );
+        assert _m != null : "'illegalArgumentMessage' message not found.";
         return _m;
     }
 
     /**
-     * Gets the text of the {@code successfullyCreatedSequenceDirectory} message.
+     * Gets the text of the {@code successfullyCreatedSequenceDirectoryMessage} message.
      * <p><b>Templates</b><br/><table>
      * <tr><td valign="top">English:</td><td valign="top"><pre>Sequence directory ''{0}'' created.</pre></td></tr>
      * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Sequenzverzeichnis ''{0}'' erstellt.</pre></td></tr>
      * </table></p>
      * @param locale The locale of the message to return.
      * @param name Format argument.
-     * @return The text of the {@code successfullyCreatedSequenceDirectory} message.
+     * @return The text of the {@code successfullyCreatedSequenceDirectoryMessage} message.
      *
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private String getSuccessfullyCreatedSequenceDirectoryMessage( final java.util.Locale locale, final java.lang.String name )
     {
-        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "successfullyCreatedSequenceDirectory", locale, name );
-        assert _m != null : "'successfullyCreatedSequenceDirectory' message not found.";
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "successfullyCreatedSequenceDirectoryMessage", locale, name );
+        assert _m != null : "'successfullyCreatedSequenceDirectoryMessage' message not found.";
         return _m;
     }
     // </editor-fold>

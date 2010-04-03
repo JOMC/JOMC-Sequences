@@ -127,8 +127,8 @@
         </property>
       </properties>
       <messages>
-        <reference name="illegalArgument"/>
-        <reference name="successfullyCreatedSequenceDirectory"/>
+        <reference name="illegalArgumentMessage"/>
+        <reference name="successfullyCreatedSequenceDirectoryMessage"/>
       </messages>
       <methods xmlns="http://jomc.org/standalone/model">
         <exceptions>
@@ -160,8 +160,8 @@
         <dependency name="Locale" identifier="java.util.Locale" version="1.1" implementationName="default"/>
       </dependencies>
       <messages>
-        <reference name="unhandledException"/>
-        <reference name="illegalArgument"/>
+        <reference name="unhandledExceptionMessage"/>
+        <reference name="illegalArgumentMessage"/>
       </messages>
     </implementation>
     <!-- *********************************************************************************************************** -->
@@ -240,13 +240,13 @@
     </implementation>
   </implementations>
   <messages>
-    <message name="unhandledException">
+    <message name="unhandledExceptionMessage">
       <template defaultLanguage="en">
         <text language="en">Unhandled exception.</text>
         <text language="de">Unbehandelte Ausnahme.</text>
       </template>
     </message>
-    <message name="illegalArgument">
+    <message name="illegalArgumentMessage">
       <template defaultLanguage="en">
         <text language="en">Illegal value ''{1}'' for argument ''{0}''.</text>
         <text language="de">Ungültiger Wert ''{1}'' für Parameter ''{0}''.</text>
@@ -256,13 +256,7 @@
         <argument index="1" name="argumentValue"/>
       </arguments>
     </message>
-    <message name="implementationInfo">
-      <template defaultLanguage="en">
-        <text language="en">DefaultSequenceDirectory Version ${project.version}</text>
-        <text language="de">DefaultSequenceDirectory Version ${project.version}</text>
-      </template>
-    </message>
-    <message name="successfullyCreatedSequenceDirectory">
+    <message name="successfullyCreatedSequenceDirectoryMessage">
       <template defaultLanguage="en">
         <text language="en">Sequence directory ''{0}'' created.</text>
         <text language="de">Sequenzverzeichnis ''{0}'' erstellt.</text>

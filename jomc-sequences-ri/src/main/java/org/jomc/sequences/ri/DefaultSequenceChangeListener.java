@@ -52,7 +52,7 @@ import org.jomc.sequences.SequenceChangeEvent;
  * Dependency on {@code org.jomc.logging.Logger} at specification level 1.0 bound to an instance.</blockquote></li>
  * </ul></p>
  * <p><b>Messages</b><ul>
- * <li>"{@link #getOperationInfoMessage operationInfo}"<table>
+ * <li>"{@link #getOperationInfo operationInfo}"<table>
  * <tr><td valign="top">English:</td><td valign="top"><pre>--''{0}''
  * ++''{1}''
  *             </pre></td></tr>
@@ -70,7 +70,7 @@ import org.jomc.sequences.SequenceChangeEvent;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public class DefaultSequenceChangeListener
@@ -83,7 +83,7 @@ public class DefaultSequenceChangeListener
     {
         if ( this.getLogger().isDebugEnabled() )
         {
-            this.getLogger().debug( this.getOperationInfoMessage(
+            this.getLogger().debug( this.getOperationInfo(
                 this.getLocale(), evt.getOldSequence() == null ? null : evt.getOldSequence().toString(),
                 evt.getNewSequence() == null ? null : evt.getNewSequence().toString() ) );
 
@@ -98,7 +98,7 @@ public class DefaultSequenceChangeListener
 
     /** Creates a new {@code DefaultSequenceChangeListener} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     public DefaultSequenceChangeListener()
     {
         // SECTION-START[Default Constructor]
@@ -118,7 +118,7 @@ public class DefaultSequenceChangeListener
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private java.util.Locale getLocale()
     {
         final java.util.Locale _d = (java.util.Locale) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "Locale" );
@@ -139,7 +139,7 @@ public class DefaultSequenceChangeListener
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private org.jomc.logging.Logger getLogger()
     {
         final org.jomc.logging.Logger _d = (org.jomc.logging.Logger) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "Logger" );
@@ -171,8 +171,8 @@ public class DefaultSequenceChangeListener
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
-    private String getOperationInfoMessage( final java.util.Locale locale, final java.lang.String oldSequenceInfo, final java.lang.String newSequenceInfo )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
+    private String getOperationInfo( final java.util.Locale locale, final java.lang.String oldSequenceInfo, final java.lang.String newSequenceInfo )
     {
         final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "operationInfo", locale, oldSequenceInfo, newSequenceInfo );
         assert _m != null : "'operationInfo' message not found.";

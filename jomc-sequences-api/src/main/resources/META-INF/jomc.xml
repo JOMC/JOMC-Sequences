@@ -116,7 +116,7 @@
         <dependency identifier="java.util.Locale" version="1.1" name="Locale" implementationName="default"/>
       </dependencies>
       <messages>
-        <message name="capacityLimit">
+        <message name="capacityLimitMessage">
           <template defaultLanguage="en">
             <text language="en">The capacity limit {0,number} of the sequence directory has been reached.</text>
             <text language="de">Kapazitätsgrenze {0,number} des Sequenz-Verzeichnisses erreicht.</text>
@@ -144,7 +144,7 @@
         <dependency identifier="java.util.Locale" version="1.1" name="Locale" implementationName="default"/>
       </dependencies>
       <messages>
-        <message name="illegalSequence">
+        <message name="illegalSequenceMessage">
           <template defaultLanguage="en">
             <text language="en">Illegal sequence data.</text>
             <text language="de">Ungültige Sequenzdaten.</text>
@@ -169,7 +169,7 @@
         <dependency identifier="java.util.Locale" version="1.1" name="Locale" implementationName="default"/>
       </dependencies>
       <messages>
-        <message name="sequenceLimit">
+        <message name="sequenceLimitMessage">
           <template defaultLanguage="en">
             <text language="en">The maximum sequence value {0,number} has been reached. No more sequence values available.</text>
             <text language="de">Der Maximalwert {0,number} der Sequenz wurde erreicht. Keine weiteren Sequenz-Werte verfügbar.</text>
@@ -197,7 +197,7 @@
         <dependency identifier="java.util.Locale" version="1.1" name="Locale" implementationName="default"/>
       </dependencies>
       <messages>
-        <message name="sequenceNotFound">
+        <message name="sequenceNotFoundMessage">
           <template defaultLanguage="en">
             <text language="en">No sequence found matching name ''{0}''.</text>
             <text language="de">Keine Sequenz mit Namen ''{0}'' vorhanden.</text>
@@ -225,7 +225,7 @@
         <dependency identifier="java.util.Locale" version="1.1" name="Locale" implementationName="default"/>
       </dependencies>
       <messages>
-        <message name="concurrentlyModified">
+        <message name="concurrentlyModifiedMessage">
           <template defaultLanguage="en">
             <text language="en">The sequence got concurrently modified.</text>
             <text language="de">Die Sequenz wurde zwischenzeitlich geändert.</text>
@@ -250,7 +250,7 @@
         <dependency identifier="java.util.Locale" version="1.1" name="Locale" implementationName="default"/>
       </dependencies>
       <messages>
-        <message name="sequenceExists">
+        <message name="sequenceExistsMessage">
           <documentation defaultLanguage="en">
             <text language="en">Message stating that a sequence already exists in the directory.</text>
           </documentation>

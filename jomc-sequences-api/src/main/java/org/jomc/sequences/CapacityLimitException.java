@@ -47,7 +47,7 @@ import java.math.BigInteger;
  * Dependency on {@code java.util.Locale} at specification level 1.1 bound to an instance.</blockquote></li>
  * </ul></p>
  * <p><b>Messages</b><ul>
- * <li>"{@link #getCapacityLimitMessage capacityLimit}"<table>
+ * <li>"{@link #getCapacityLimitMessage capacityLimitMessage}"<table>
  * <tr><td valign="top">English:</td><td valign="top"><pre>The capacity limit {0,number} of the sequence directory has been reached.</pre></td></tr>
  * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Kapazit&auml;tsgrenze {0,number} des Sequenz-Verzeichnisses erreicht.</pre></td></tr>
  * </table>
@@ -61,7 +61,7 @@ import java.math.BigInteger;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public class CapacityLimitException extends SequencesException
@@ -121,7 +121,7 @@ public class CapacityLimitException extends SequencesException
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private java.util.Locale getLocale()
     {
         final java.util.Locale _d = (java.util.Locale) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "Locale" );
@@ -136,23 +136,23 @@ public class CapacityLimitException extends SequencesException
     // <editor-fold defaultstate="collapsed" desc=" Generated Messages ">
 
     /**
-     * Gets the text of the {@code capacityLimit} message.
+     * Gets the text of the {@code capacityLimitMessage} message.
      * <p><b>Templates</b><br/><table>
      * <tr><td valign="top">English:</td><td valign="top"><pre>The capacity limit {0,number} of the sequence directory has been reached.</pre></td></tr>
      * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Kapazit&auml;tsgrenze {0,number} des Sequenz-Verzeichnisses erreicht.</pre></td></tr>
      * </table></p>
      * @param locale The locale of the message to return.
      * @param limit Format argument.
-     * @return The text of the {@code capacityLimit} message.
+     * @return The text of the {@code capacityLimitMessage} message.
      *
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private String getCapacityLimitMessage( final java.util.Locale locale, final java.lang.Number limit )
     {
-        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "capacityLimit", locale, limit );
-        assert _m != null : "'capacityLimit' message not found.";
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "capacityLimitMessage", locale, limit );
+        assert _m != null : "'capacityLimitMessage' message not found.";
         return _m;
     }
     // </editor-fold>

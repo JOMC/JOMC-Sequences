@@ -45,7 +45,7 @@ package org.jomc.sequences;
  * Dependency on {@code java.util.Locale} at specification level 1.1 bound to an instance.</blockquote></li>
  * </ul></p>
  * <p><b>Messages</b><ul>
- * <li>"{@link #getSequenceLimitMessage sequenceLimit}"<table>
+ * <li>"{@link #getSequenceLimitMessage sequenceLimitMessage}"<table>
  * <tr><td valign="top">English:</td><td valign="top"><pre>The maximum sequence value {0,number} has been reached. No more sequence values available.</pre></td></tr>
  * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Der Maximalwert {0,number} der Sequenz wurde erreicht. Keine weiteren Sequenz-Werte verf&uuml;gbar.</pre></td></tr>
  * </table>
@@ -59,7 +59,7 @@ package org.jomc.sequences;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public class SequenceLimitException extends SequencesException
@@ -119,7 +119,7 @@ public class SequenceLimitException extends SequencesException
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private java.util.Locale getLocale()
     {
         final java.util.Locale _d = (java.util.Locale) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "Locale" );
@@ -134,23 +134,23 @@ public class SequenceLimitException extends SequencesException
     // <editor-fold defaultstate="collapsed" desc=" Generated Messages ">
 
     /**
-     * Gets the text of the {@code sequenceLimit} message.
+     * Gets the text of the {@code sequenceLimitMessage} message.
      * <p><b>Templates</b><br/><table>
      * <tr><td valign="top">English:</td><td valign="top"><pre>The maximum sequence value {0,number} has been reached. No more sequence values available.</pre></td></tr>
      * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Der Maximalwert {0,number} der Sequenz wurde erreicht. Keine weiteren Sequenz-Werte verf&uuml;gbar.</pre></td></tr>
      * </table></p>
      * @param locale The locale of the message to return.
      * @param sequenceLimit Format argument.
-     * @return The text of the {@code sequenceLimit} message.
+     * @return The text of the {@code sequenceLimitMessage} message.
      *
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private String getSequenceLimitMessage( final java.util.Locale locale, final java.lang.Number sequenceLimit )
     {
-        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "sequenceLimit", locale, sequenceLimit );
-        assert _m != null : "'sequenceLimit' message not found.";
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "sequenceLimitMessage", locale, sequenceLimit );
+        assert _m != null : "'sequenceLimitMessage' message not found.";
         return _m;
     }
     // </editor-fold>

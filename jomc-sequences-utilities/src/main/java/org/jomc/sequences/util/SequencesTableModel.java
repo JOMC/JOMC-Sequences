@@ -90,27 +90,27 @@ import org.jomc.sequences.SequencesSystemException;
  * Dependency on {@code org.jomc.sequences.SequenceDirectory} at specification level 1.0 bound to an instance.</blockquote></li>
  * </ul></p>
  * <p><b>Messages</b><ul>
- * <li>"{@link #getIllegalColumnIndexMessage illegalColumnIndex}"<table>
+ * <li>"{@link #getIllegalColumnIndexMessage illegalColumnIndexMessage}"<table>
  * <tr><td valign="top">English:</td><td valign="top"><pre>Illegal column index {0}. {1}</pre></td></tr>
  * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Ung&uuml;ltiger Spalten-Index {0}. {1}</pre></td></tr>
  * </table>
- * <li>"{@link #getIncrementColumnTitleMessage incrementColumnTitle}"<table>
+ * <li>"{@link #getIncrementColumnTitle incrementColumnTitle}"<table>
  * <tr><td valign="top">English:</td><td valign="top"><pre>Increment</pre></td></tr>
  * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Inkrement</pre></td></tr>
  * </table>
- * <li>"{@link #getMaximumColumnTitleMessage maximumColumnTitle}"<table>
+ * <li>"{@link #getMaximumColumnTitle maximumColumnTitle}"<table>
  * <tr><td valign="top">English:</td><td valign="top"><pre>Maximum</pre></td></tr>
  * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Maximum</pre></td></tr>
  * </table>
- * <li>"{@link #getMinimumColumnTitleMessage minimumColumnTitle}"<table>
+ * <li>"{@link #getMinimumColumnTitle minimumColumnTitle}"<table>
  * <tr><td valign="top">English:</td><td valign="top"><pre>Minimum</pre></td></tr>
  * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Minimum</pre></td></tr>
  * </table>
- * <li>"{@link #getNameColumnTitleMessage nameColumnTitle}"<table>
+ * <li>"{@link #getNameColumnTitle nameColumnTitle}"<table>
  * <tr><td valign="top">English:</td><td valign="top"><pre>Name</pre></td></tr>
  * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Name</pre></td></tr>
  * </table>
- * <li>"{@link #getValueColumnTitleMessage valueColumnTitle}"<table>
+ * <li>"{@link #getValueColumnTitle valueColumnTitle}"<table>
  * <tr><td valign="top">English:</td><td valign="top"><pre>Value</pre></td></tr>
  * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Wert</pre></td></tr>
  * </table>
@@ -124,7 +124,7 @@ import org.jomc.sequences.SequencesSystemException;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public class SequencesTableModel extends AbstractTableModel implements Serializable
@@ -158,23 +158,23 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
         switch ( columnIndex )
         {
             case NAME_COLUMN_INDEX:
-                columnName = this.getNameColumnTitleMessage( this.getLocale() );
+                columnName = this.getNameColumnTitle( this.getLocale() );
                 break;
 
             case MINIMUM_COLUMN_INDEX:
-                columnName = this.getMinimumColumnTitleMessage( this.getLocale() );
+                columnName = this.getMinimumColumnTitle( this.getLocale() );
                 break;
 
             case MAXIMUM_COLUMN_INDEX:
-                columnName = this.getMaximumColumnTitleMessage( this.getLocale() );
+                columnName = this.getMaximumColumnTitle( this.getLocale() );
                 break;
 
             case INCREMENT_COLUMN_INDEX:
-                columnName = this.getIncrementColumnTitleMessage( this.getLocale() );
+                columnName = this.getIncrementColumnTitle( this.getLocale() );
                 break;
 
             case VALUE_COLUMN_INDEX:
-                columnName = this.getValueColumnTitleMessage( this.getLocale() );
+                columnName = this.getValueColumnTitle( this.getLocale() );
                 break;
 
             default:
@@ -752,7 +752,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
 
     /** Creates a new {@code SequencesTableModel} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     public SequencesTableModel()
     {
         // SECTION-START[Default Constructor]
@@ -773,7 +773,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private java.beans.ExceptionListener[] getExceptionListener()
     {
         return (java.beans.ExceptionListener[]) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "ExceptionListener" );
@@ -787,7 +787,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private java.util.Locale getLocale()
     {
         final java.util.Locale _d = (java.util.Locale) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "Locale" );
@@ -808,7 +808,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private org.jomc.logging.Logger getLogger()
     {
         final org.jomc.logging.Logger _d = (org.jomc.logging.Logger) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "Logger" );
@@ -824,7 +824,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private org.jomc.sequences.SequenceDirectory getSequenceDirectory()
     {
         final org.jomc.sequences.SequenceDirectory _d = (org.jomc.sequences.SequenceDirectory) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "SequenceDirectory" );
@@ -842,7 +842,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private java.lang.Boolean isIncrementColumnEditableByDefault()
     {
         final java.lang.Boolean _p = (java.lang.Boolean) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getProperty( this, "incrementColumnEditableByDefault" );
@@ -856,7 +856,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private java.lang.Boolean isMaximumColumnEditableByDefault()
     {
         final java.lang.Boolean _p = (java.lang.Boolean) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getProperty( this, "maximumColumnEditableByDefault" );
@@ -870,7 +870,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private java.lang.Boolean isMinimumColumnEditableByDefault()
     {
         final java.lang.Boolean _p = (java.lang.Boolean) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getProperty( this, "minimumColumnEditableByDefault" );
@@ -884,7 +884,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private java.lang.Boolean isNameColumnEditableByDefault()
     {
         final java.lang.Boolean _p = (java.lang.Boolean) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getProperty( this, "nameColumnEditableByDefault" );
@@ -898,7 +898,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private java.lang.Boolean isValueColumnEditableByDefault()
     {
         final java.lang.Boolean _p = (java.lang.Boolean) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getProperty( this, "valueColumnEditableByDefault" );
@@ -911,23 +911,23 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
     // <editor-fold defaultstate="collapsed" desc=" Generated Messages ">
 
     /**
-     * Gets the text of the {@code illegalColumnIndex} message.
+     * Gets the text of the {@code illegalColumnIndexMessage} message.
      * <p><b>Templates</b><br/><table>
      * <tr><td valign="top">English:</td><td valign="top"><pre>Illegal column index {0}. {1}</pre></td></tr>
      * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Ung&uuml;ltiger Spalten-Index {0}. {1}</pre></td></tr>
      * </table></p>
      * @param locale The locale of the message to return.
      * @param columnIndex Format argument.
-     * @return The text of the {@code illegalColumnIndex} message.
+     * @return The text of the {@code illegalColumnIndexMessage} message.
      *
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private String getIllegalColumnIndexMessage( final java.util.Locale locale, final java.lang.Number columnIndex )
     {
-        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "illegalColumnIndex", locale, columnIndex );
-        assert _m != null : "'illegalColumnIndex' message not found.";
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "illegalColumnIndexMessage", locale, columnIndex );
+        assert _m != null : "'illegalColumnIndexMessage' message not found.";
         return _m;
     }
 
@@ -943,8 +943,8 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
-    private String getIncrementColumnTitleMessage( final java.util.Locale locale )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
+    private String getIncrementColumnTitle( final java.util.Locale locale )
     {
         final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "incrementColumnTitle", locale );
         assert _m != null : "'incrementColumnTitle' message not found.";
@@ -963,8 +963,8 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
-    private String getMaximumColumnTitleMessage( final java.util.Locale locale )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
+    private String getMaximumColumnTitle( final java.util.Locale locale )
     {
         final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "maximumColumnTitle", locale );
         assert _m != null : "'maximumColumnTitle' message not found.";
@@ -983,8 +983,8 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
-    private String getMinimumColumnTitleMessage( final java.util.Locale locale )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
+    private String getMinimumColumnTitle( final java.util.Locale locale )
     {
         final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "minimumColumnTitle", locale );
         assert _m != null : "'minimumColumnTitle' message not found.";
@@ -1003,8 +1003,8 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
-    private String getNameColumnTitleMessage( final java.util.Locale locale )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
+    private String getNameColumnTitle( final java.util.Locale locale )
     {
         final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "nameColumnTitle", locale );
         assert _m != null : "'nameColumnTitle' message not found.";
@@ -1023,8 +1023,8 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
-    private String getValueColumnTitleMessage( final java.util.Locale locale )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
+    private String getValueColumnTitle( final java.util.Locale locale )
     {
         final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "valueColumnTitle", locale );
         assert _m != null : "'valueColumnTitle' message not found.";

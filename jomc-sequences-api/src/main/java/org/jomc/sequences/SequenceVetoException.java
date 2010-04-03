@@ -45,7 +45,7 @@ package org.jomc.sequences;
  * Dependency on {@code java.util.Locale} at specification level 1.1 bound to an instance.</blockquote></li>
  * </ul></p>
  * <p><b>Messages</b><ul>
- * <li>"{@link #getIllegalSequenceMessage illegalSequence}"<table>
+ * <li>"{@link #getIllegalSequenceMessage illegalSequenceMessage}"<table>
  * <tr><td valign="top">English:</td><td valign="top"><pre>Illegal sequence data.</pre></td></tr>
  * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Ung&uuml;ltige Sequenzdaten.</pre></td></tr>
  * </table>
@@ -59,7 +59,7 @@ package org.jomc.sequences;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public class SequenceVetoException extends SequencesException
@@ -113,7 +113,7 @@ public class SequenceVetoException extends SequencesException
 
     /** Creates a new {@code SequenceVetoException} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     public SequenceVetoException()
     {
         // SECTION-START[Default Constructor]
@@ -134,7 +134,7 @@ public class SequenceVetoException extends SequencesException
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private java.util.Locale getLocale()
     {
         final java.util.Locale _d = (java.util.Locale) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "Locale" );
@@ -149,22 +149,22 @@ public class SequenceVetoException extends SequencesException
     // <editor-fold defaultstate="collapsed" desc=" Generated Messages ">
 
     /**
-     * Gets the text of the {@code illegalSequence} message.
+     * Gets the text of the {@code illegalSequenceMessage} message.
      * <p><b>Templates</b><br/><table>
      * <tr><td valign="top">English:</td><td valign="top"><pre>Illegal sequence data.</pre></td></tr>
      * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Ung&uuml;ltige Sequenzdaten.</pre></td></tr>
      * </table></p>
      * @param locale The locale of the message to return.
-     * @return The text of the {@code illegalSequence} message.
+     * @return The text of the {@code illegalSequenceMessage} message.
      *
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private String getIllegalSequenceMessage( final java.util.Locale locale )
     {
-        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "illegalSequence", locale );
-        assert _m != null : "'illegalSequence' message not found.";
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "illegalSequenceMessage", locale );
+        assert _m != null : "'illegalSequenceMessage' message not found.";
         return _m;
     }
     // </editor-fold>

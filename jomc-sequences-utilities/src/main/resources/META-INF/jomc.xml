@@ -126,7 +126,7 @@
             <text language="de">Wert</text>
           </template>
         </message>
-        <message name="illegalColumnIndex">
+        <message name="illegalColumnIndexMessage">
           <template defaultLanguage="en">
             <text language="en">Illegal column index {0}. {1}</text>
             <text language="de">Ungültiger Spalten-Index {0}. {1}</text>
