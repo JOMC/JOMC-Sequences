@@ -36,7 +36,7 @@
   <parent>
     <artifactId>jomc-sequences</artifactId>
     <groupId>org.jomc.sequences</groupId>
-    <version>1.0-beta-1-SNAPSHOT</version>
+    <version>1.0-beta-1</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.jomc.sequences</groupId>
