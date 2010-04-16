@@ -66,7 +66,7 @@ import org.jomc.sequences.SequenceVetoException;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-2/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public class DefaultVetoableSequenceChangeListener
@@ -126,7 +126,7 @@ public class DefaultVetoableSequenceChangeListener
 
     /** Creates a new {@code DefaultVetoableSequenceChangeListener} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-2/jomc-tools" )
     public DefaultVetoableSequenceChangeListener()
     {
         // SECTION-START[Default Constructor]
@@ -146,7 +146,7 @@ public class DefaultVetoableSequenceChangeListener
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-2/jomc-tools" )
     private int getSequenceNameMaxLength()
     {
         final java.lang.Integer _p = (java.lang.Integer) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getProperty( this, "sequenceNameMaxLength" );
@@ -160,7 +160,7 @@ public class DefaultVetoableSequenceChangeListener
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-2/jomc-tools" )
     private int getSequenceNameMinLength()
     {
         final java.lang.Integer _p = (java.lang.Integer) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getProperty( this, "sequenceNameMinLength" );

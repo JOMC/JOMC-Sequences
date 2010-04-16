@@ -49,7 +49,7 @@ package org.jomc.sequences;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-2/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public class SequencesSystemException extends RuntimeException
@@ -96,7 +96,7 @@ public class SequencesSystemException extends RuntimeException
 
     /** Creates a new {@code SequencesSystemException} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-2/jomc-tools" )
     public SequencesSystemException()
     {
         // SECTION-START[Default Constructor]
