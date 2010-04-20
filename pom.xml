@@ -114,10 +114,8 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>2.1</version>
+          <version>2.3</version>
           <configuration>
-            <source>1.5</source>
-            <target>1.5</target>
             <optimize>true</optimize>
             <showDeprecation>true</showDeprecation>
             <showWarnings>true</showWarnings>
@@ -977,7 +975,7 @@
       <dependency>
         <groupId>org.ow2.jotm</groupId>
         <artifactId>jotm-core</artifactId>
-        <version>2.1.9</version>
+        <version>2.1.9</version> <!-- See #314929 http://forge.ow2.org/tracker/index.php?func=detail&aid=314929&group_id=19&atid=100019 -->
         <exclusions>
           <exclusion>
             <groupId>org.ow2.spec.ee</groupId>
