@@ -282,8 +282,8 @@
               <version>5.1</version>
             </docletArtifact>
             <additionalparam>
-              -inferrel -inferdep -hide java.* -collpackages java.util.* -qualify -postfixpackage -nodefontsize 9
-              -nodefontpackagesize 7
+              -inferrel -inferdep -hide java.* -collpackages java.util.* -qualify -postfixpackage -nodefontsize 10
+              -nodefontpackagesize 8 -outputencoding ${project.reporting.outputEncoding}
             </additionalparam>
             <groups>
               <group>
@@ -644,8 +644,8 @@
                 <version>5.1</version>
               </docletArtifact>
               <additionalparam>
-                -inferrel -inferdep -hide java.* -collpackages java.util.* -qualify -postfixpackage -nodefontsize 9
-                -nodefontpackagesize 7
+                -inferrel -inferdep -hide java.* -collpackages java.util.* -qualify -postfixpackage -nodefontsize 10
+                -nodefontpackagesize 8 -outputencoding ${project.reporting.outputEncoding}
               </additionalparam>
               <archive>
                 <index>true</index>
