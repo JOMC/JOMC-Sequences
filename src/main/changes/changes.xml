@@ -70,5 +70,12 @@
       <action type="update" dev="schulte2005">Updated to JOMC SDK 1.0-beta-1.</action>
       <action type="update" dev="schulte2005">Updated to JOMC Standalone 1.0-beta-1.</action>
     </release>
+    <!-- *********************************************************************************************************** -->
+    <release version="1.0-beta-2">
+      <action type="update" dev="schulte2005">Updated to JOMC 1.0-beta-5.</action>
+      <action type="update" dev="schulte2005">Updated to JOMC Logging 1.0-beta-2.</action>
+      <action type="update" dev="schulte2005">Updated to JOMC SDK 1.0-beta-2.</action>
+      <action type="update" dev="schulte2005">Updated to JOMC Standalone 1.0-beta-2.</action>
+    </release>
   </body>
 </document>

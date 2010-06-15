@@ -42,7 +42,7 @@
   <groupId>org.jomc.sequences</groupId>
   <artifactId>jomc-sequences-api</artifactId>
   <name>JOMC Sequences API</name>
-  <description>Sequences application programming interface.</description>
+  <description>Object management and configuration sequence directory application programming interface.</description>
   <build>
     <resources>
       <resource>
@@ -70,6 +70,18 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>build-helper-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.jomc</groupId>
+        <artifactId>maven-jomc-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>main-default</id>
+            <goals>
+              <goal>validate-main-modules</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>

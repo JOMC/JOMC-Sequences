@@ -43,12 +43,7 @@
   <artifactId>jomc-sequences-ri</artifactId>
   <packaging>ejb</packaging>
   <name>JOMC Sequences RI</name>
-  <description><![CDATA[
-  This artifact provides the 'JOMC Sequences' reference implementation. It is implemented using JPA 1.0 interfaces.
-  As such, this artifact may be used in any environment providing JPA 1.0 compatible entity management. See the
-  'JOMC Sequences EAR' artifact containing this implementation prepared for use in an EJB 3 compatible container.
-  The 'JOMC Sequences Test Suite' artifact provides a command line test client for testing from outside the container.]]>
-  </description>
+  <description>Object management and configuration sequence directory reference implementation.</description>
   <build>
     <resources>
       <resource>

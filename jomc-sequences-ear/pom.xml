@@ -43,7 +43,7 @@
   <artifactId>jomc-sequences-ear</artifactId>
   <packaging>ear</packaging>
   <name>JOMC Sequences EAR</name>
-  <description>Sequences enterprise application archive.</description>
+  <description>Object management and configuration sequence directory enterprise application archive.</description>
   <build>
     <resources>
       <resource>
@@ -161,6 +161,18 @@
           </modules>
           <earSourceDirectory>${project.build.directory}/jomc-ear</earSourceDirectory>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.jomc</groupId>
+        <artifactId>maven-jomc-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>main-default</id>
+            <goals>
+              <goal>validate-main-modules</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>

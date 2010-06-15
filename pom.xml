@@ -39,12 +39,7 @@
   <packaging>pom</packaging>
   <name>JOMC Sequences</name>
   <version>1.0-beta-2-SNAPSHOT</version>
-  <description><![CDATA[
-  This is the 'JOMC Sequences' parent project. The 'JOMC Sequences API' artifact provides application programming
-  interfaces to a directory of sequences. Whenever that API is used at compile time, an application assembler needs to
-  provide a corresponding implementation artifact at runtime. The 'JOMC Sequences Test Suite' artifact provides test
-  classes implementations are tested with.]]>
-  </description>
+  <description>JOMC Sequences is an application programming interface to a directory of sequences with corresponding reference implementation. This is the parent module of the JOMC Sequences artifacts.</description>
   <url>http://jomc.sourceforge.net/jomc-sequences/${project.version}</url>
   <inceptionYear>2005</inceptionYear>
   <organization>
@@ -331,11 +326,17 @@
           <version>${jomc.version}</version>
           <executions>
             <execution>
+              <id>main-default</id>
               <goals>
                 <goal>attach-main-module</goal>
                 <goal>manage-main-sources</goal>
                 <goal>commit-main-classes</goal>
                 <goal>validate-main-classes</goal>
+              </goals>
+            </execution>
+            <execution>
+              <id>test-default</id>
+              <goals>
                 <goal>attach-test-module</goal>
                 <goal>manage-test-sources</goal>
                 <goal>commit-test-classes</goal>
@@ -1257,7 +1258,7 @@
     <remoteResourcesOutputDirectory>${project.build.directory}/maven-shared-archive-resources</remoteResourcesOutputDirectory>
     <surefire.version>2.5</surefire.version>
     <emma-maven-plugin.version>1.0-alpha-2</emma-maven-plugin.version>
-    <jomc.version>1.0-beta-4</jomc.version>
+    <jomc.version>1.0-beta-5-SNAPSHOT</jomc.version>
     <jomc-build.version>1.4</jomc-build.version>
     <jomc-logging.version>1.0-beta-2-SNAPSHOT</jomc-logging.version>
     <jomc-standalone.version>1.0-beta-2-SNAPSHOT</jomc-standalone.version>

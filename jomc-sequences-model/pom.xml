@@ -42,7 +42,7 @@
   <groupId>org.jomc.sequences</groupId>
   <artifactId>jomc-sequences-model</artifactId>
   <name>JOMC Sequences Model</name>
-  <description>Sequences model.</description>
+  <description>Object management and configuration sequence directory model.</description>
   <build>
     <resources>
       <resource>
@@ -122,6 +122,18 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>jaxb2-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.jomc</groupId>
+        <artifactId>maven-jomc-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>main-default</id>
+            <goals>
+              <goal>validate-main-modules</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>

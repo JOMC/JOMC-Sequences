@@ -42,7 +42,7 @@
   <groupId>org.jomc.sequences</groupId>
   <artifactId>jomc-sequences-utilities</artifactId>
   <name>JOMC Sequences Utilities</name>
-  <description>Sequences utility components.</description>
+  <description>Object management and configuration sequence directory utilities.</description>
   <build>
     <resources>
       <resource>

@@ -48,7 +48,7 @@
                     vendor="${project.organization.name}" final="true">
 
       <documentation defaultLanguage="en">
-        <text language="en">Sequences model.</text>
+        <text language="en">${project.description}</text>
       </documentation>
       <authors>
         <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
@@ -85,7 +85,7 @@
 
       </authors>
       <implementations>
-        <reference identifier="org.jomc.sdk.jpa.NamedQueryFactory" version="${jomc-sdk.version}"/>
+        <reference identifier="JPA Named Query Factory" version="${jomc-sdk.version}"/>
       </implementations>
       <properties>
         <property name="queryName" value="jomc-sequences-model-select-sequence-directory" override="true">
@@ -110,7 +110,7 @@
 
       </authors>
       <implementations>
-        <reference identifier="org.jomc.sdk.jpa.NamedQueryFactory" version="${jomc-sdk.version}"/>
+        <reference identifier="JPA Named Query Factory" version="${jomc-sdk.version}"/>
       </implementations>
       <properties>
         <property name="queryName" value="jomc-sequences-model-select-sequence" override="true">
@@ -135,7 +135,7 @@
 
       </authors>
       <implementations>
-        <reference identifier="org.jomc.sdk.jpa.NamedQueryFactory" version="${jomc-sdk.version}"/>
+        <reference identifier="JPA Named Query Factory" version="${jomc-sdk.version}"/>
       </implementations>
       <properties>
         <property name="queryName" value="jomc-sequences-model-select-all-sequences" override="true">
@@ -160,7 +160,7 @@
 
       </authors>
       <implementations>
-        <reference identifier="org.jomc.sdk.jpa.NamedQueryFactory" version="${jomc-sdk.version}"/>
+        <reference identifier="JPA Named Query Factory" version="${jomc-sdk.version}"/>
       </implementations>
       <properties>
         <property name="queryName" value="jomc-sequences-model-select-sequences" override="true">
@@ -185,7 +185,7 @@
 
       </authors>
       <implementations>
-        <reference identifier="org.jomc.sdk.jpa.NamedQueryFactory" version="${jomc-sdk.version}"/>
+        <reference identifier="JPA Named Query Factory" version="${jomc-sdk.version}"/>
       </implementations>
       <properties>
         <property name="queryName" value="jomc-sequences-model-select-sequence-count" override="true">
