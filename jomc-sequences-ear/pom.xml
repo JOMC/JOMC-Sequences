@@ -124,6 +124,11 @@
               <includeInApplicationXml>false</includeInApplicationXml>
             </jarModule>
             <jarModule>
+              <groupId>org.jomc</groupId>
+              <artifactId>jomc-modlet</artifactId>
+              <includeInApplicationXml>false</includeInApplicationXml>
+            </jarModule>
+            <jarModule>
               <groupId>org.jomc.sdk</groupId>
               <artifactId>jomc-sdk-model</artifactId>
               <includeInApplicationXml>false</includeInApplicationXml>

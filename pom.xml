@@ -246,7 +246,7 @@
             <forkMode>once</forkMode>
             <redirectTestOutputToFile>true</redirectTestOutputToFile>
             <systemPropertyVariables>
-              <org.jomc.model.ModelContext.defaultLogLevel>ALL</org.jomc.model.ModelContext.defaultLogLevel>
+              <org.jomc.modlet.ModelContext.defaultLogLevel>ALL</org.jomc.modlet.ModelContext.defaultLogLevel>
               <org.jomc.ri.DefaultObjectManager.defaultLogLevel>ALL</org.jomc.ri.DefaultObjectManager.defaultLogLevel>
             </systemPropertyVariables>
           </configuration>
@@ -828,6 +828,11 @@
       <dependency>
         <groupId>org.jomc</groupId>
         <artifactId>jomc-ri</artifactId>
+        <version>${jomc.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.jomc</groupId>
+        <artifactId>jomc-modlet</artifactId>
         <version>${jomc.version}</version>
       </dependency>
       <dependency>
