@@ -45,7 +45,7 @@ import org.jomc.sequences.SequenceVetoException;
 /**
  * VetoableSequenceChangeListener reference implementation.
  * <p><b>Specifications</b><ul>
- * <li>{@code org.jomc.sequences.VetoableSequenceChangeListener} {@code 1.0} {@code Multiton}</li>
+ * <li>{@code 'org.jomc.sequences.VetoableSequenceChangeListener'} ({@code org.jomc.sequences.VetoableSequenceChangeListener}) {@code 1.0} {@code Multiton}</li>
  * </ul></p>
  * <p><b>Properties</b><ul>
  * <li>"{@link #getSequenceNameMaxLength sequenceNameMaxLength}"

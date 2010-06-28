@@ -64,8 +64,8 @@ import org.jomc.sequences.model.SequencesType;
 /**
  * SequenceDirectory reference implementation.
  * <p><b>Specifications</b><ul>
- * <li>{@code org.jomc.sequences.SequenceDirectory} {@code 1.0} {@code Singleton}</li>
- * <li>{@code org.jomc.sequences.SequenceOperations} {@code 1.0} {@code Singleton}</li>
+ * <li>{@code 'org.jomc.sequences.SequenceDirectory'} ({@code org.jomc.sequences.SequenceDirectory}) {@code 1.0} {@code Singleton}</li>
+ * <li>{@code 'org.jomc.sequences.SequenceOperations'} ({@code org.jomc.sequences.SequenceOperations}) {@code 1.0} {@code Singleton}</li>
  * </ul></p>
  * <p><b>Properties</b><ul>
  * <li>"{@link #getDefaultSequenceDirectoryCapacityLimit defaultSequenceDirectoryCapacityLimit}"
@@ -87,27 +87,27 @@ import org.jomc.sequences.model.SequencesType;
  * </ul></p>
  * <p><b>Dependencies</b><ul>
  * <li>"{@link #getEntityManager EntityManager}"<blockquote>
- * Dependency on {@code javax.persistence.EntityManager}.</blockquote></li>
+ * Dependency on {@code 'javax.persistence.EntityManager'} ({@code javax.persistence.EntityManager}).</blockquote></li>
  * <li>"{@link #getLocale Locale}"<blockquote>
- * Dependency on {@code java.util.Locale} at specification level 1.1 bound to an instance.</blockquote></li>
+ * Dependency on {@code 'java.util.Locale'} ({@code java.util.Locale}) at specification level 1.1 bound to an instance.</blockquote></li>
  * <li>"{@link #getLogger Logger}"<blockquote>
- * Dependency on {@code org.jomc.logging.Logger} at specification level 1.0 bound to an instance.</blockquote></li>
+ * Dependency on {@code 'org.jomc.logging.Logger'} ({@code org.jomc.logging.Logger}) at specification level 1.0 bound to an instance.</blockquote></li>
  * <li>"{@link #getSelectAllSequencesQuery SelectAllSequencesQuery}"<blockquote>
- * Dependency on {@code javax.persistence.Query}.</blockquote></li>
+ * Dependency on {@code 'javax.persistence.Query'} ({@code javax.persistence.Query}).</blockquote></li>
  * <li>"{@link #getSelectSequenceCountQuery SelectSequenceCountQuery}"<blockquote>
- * Dependency on {@code javax.persistence.Query}.</blockquote></li>
+ * Dependency on {@code 'javax.persistence.Query'} ({@code javax.persistence.Query}).</blockquote></li>
  * <li>"{@link #getSelectSequenceDirectoryQuery SelectSequenceDirectoryQuery}"<blockquote>
- * Dependency on {@code javax.persistence.Query}.</blockquote></li>
+ * Dependency on {@code 'javax.persistence.Query'} ({@code javax.persistence.Query}).</blockquote></li>
  * <li>"{@link #getSelectSequenceQuery SelectSequenceQuery}"<blockquote>
- * Dependency on {@code javax.persistence.Query}.</blockquote></li>
+ * Dependency on {@code 'javax.persistence.Query'} ({@code javax.persistence.Query}).</blockquote></li>
  * <li>"{@link #getSelectSequencesQuery SelectSequencesQuery}"<blockquote>
- * Dependency on {@code javax.persistence.Query}.</blockquote></li>
+ * Dependency on {@code 'javax.persistence.Query'} ({@code javax.persistence.Query}).</blockquote></li>
  * <li>"{@link #getSequenceChangeListener SequenceChangeListener}"<blockquote>
- * Dependency on {@code org.jomc.sequences.SequenceChangeListener} at specification level 1.0 bound to an instance.</blockquote></li>
+ * Dependency on {@code 'org.jomc.sequences.SequenceChangeListener'} ({@code org.jomc.sequences.SequenceChangeListener}) at specification level 1.0 bound to an instance.</blockquote></li>
  * <li>"{@link #getSequenceMapper SequenceMapper}"<blockquote>
- * Dependency on {@code org.jomc.sequences.ri.SequenceMapper} at specification level 1.0 bound to an instance.</blockquote></li>
+ * Dependency on {@code 'org.jomc.sequences.ri.SequenceMapper'} ({@code org.jomc.sequences.ri.SequenceMapper}) at specification level 1.0 bound to an instance.</blockquote></li>
  * <li>"{@link #getVetoableSequenceChangeListener VetoableSequenceChangeListener}"<blockquote>
- * Dependency on {@code org.jomc.sequences.VetoableSequenceChangeListener} at specification level 1.0 bound to an instance.</blockquote></li>
+ * Dependency on {@code 'org.jomc.sequences.VetoableSequenceChangeListener'} ({@code org.jomc.sequences.VetoableSequenceChangeListener}) at specification level 1.0 bound to an instance.</blockquote></li>
  * </ul></p>
  * <p><b>Messages</b><ul>
  * <li>"{@link #getIllegalArgumentMessage illegalArgumentMessage}"<table>
@@ -547,7 +547,7 @@ public class DefaultSequenceDirectory
 
     /**
      * Gets the {@code EntityManager} dependency.
-     * <p>This method returns the "{@code JOMC SDK JPA}" object of the {@code javax.persistence.EntityManager} specification.</p>
+     * <p>This method returns the "{@code JOMC SDK JPA}" object of the {@code 'javax.persistence.EntityManager'} specification.</p>
      * <p>That specification does not apply to any scope. A new object is returned whenever requested.</p>
      * @return The {@code EntityManager} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
@@ -562,7 +562,7 @@ public class DefaultSequenceDirectory
 
     /**
      * Gets the {@code Locale} dependency.
-     * <p>This method returns the "{@code default}" object of the {@code java.util.Locale} specification at specification level 1.1.</p>
+     * <p>This method returns the "{@code default}" object of the {@code 'java.util.Locale'} specification at specification level 1.1.</p>
      * <p>That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.</p>
      * @return The {@code Locale} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
@@ -577,7 +577,7 @@ public class DefaultSequenceDirectory
 
     /**
      * Gets the {@code Logger} dependency.
-     * <p>This method returns any available object of the {@code org.jomc.logging.Logger} specification at specification level 1.0.</p>
+     * <p>This method returns any available object of the {@code 'org.jomc.logging.Logger'} specification at specification level 1.0.</p>
      * <p>That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.</p>
      * <p><b>Properties</b><dl>
      * <dt>"{@code name}"</dt>
@@ -597,7 +597,7 @@ public class DefaultSequenceDirectory
 
     /**
      * Gets the {@code SelectAllSequencesQuery} dependency.
-     * <p>This method returns the "{@code JOMC Sequences Model - Select All Sequences Query}" object of the {@code javax.persistence.Query} specification.</p>
+     * <p>This method returns the "{@code JOMC Sequences Model - Select All Sequences Query}" object of the {@code 'javax.persistence.Query'} specification.</p>
      * <p>That specification does not apply to any scope. A new object is returned whenever requested.</p>
      * @return The {@code SelectAllSequencesQuery} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
@@ -612,7 +612,7 @@ public class DefaultSequenceDirectory
 
     /**
      * Gets the {@code SelectSequenceCountQuery} dependency.
-     * <p>This method returns the "{@code JOMC Sequences Model - Select Sequence Count Query}" object of the {@code javax.persistence.Query} specification.</p>
+     * <p>This method returns the "{@code JOMC Sequences Model - Select Sequence Count Query}" object of the {@code 'javax.persistence.Query'} specification.</p>
      * <p>That specification does not apply to any scope. A new object is returned whenever requested.</p>
      * @return The {@code SelectSequenceCountQuery} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
@@ -627,7 +627,7 @@ public class DefaultSequenceDirectory
 
     /**
      * Gets the {@code SelectSequenceDirectoryQuery} dependency.
-     * <p>This method returns the "{@code JOMC Sequences Model - Select Sequence Directory Query}" object of the {@code javax.persistence.Query} specification.</p>
+     * <p>This method returns the "{@code JOMC Sequences Model - Select Sequence Directory Query}" object of the {@code 'javax.persistence.Query'} specification.</p>
      * <p>That specification does not apply to any scope. A new object is returned whenever requested.</p>
      * @return The {@code SelectSequenceDirectoryQuery} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
@@ -642,7 +642,7 @@ public class DefaultSequenceDirectory
 
     /**
      * Gets the {@code SelectSequenceQuery} dependency.
-     * <p>This method returns the "{@code JOMC Sequences Model - Select Sequence Query}" object of the {@code javax.persistence.Query} specification.</p>
+     * <p>This method returns the "{@code JOMC Sequences Model - Select Sequence Query}" object of the {@code 'javax.persistence.Query'} specification.</p>
      * <p>That specification does not apply to any scope. A new object is returned whenever requested.</p>
      * @return The {@code SelectSequenceQuery} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
@@ -657,7 +657,7 @@ public class DefaultSequenceDirectory
 
     /**
      * Gets the {@code SelectSequencesQuery} dependency.
-     * <p>This method returns the "{@code JOMC Sequences Model - Select Sequences Query}" object of the {@code javax.persistence.Query} specification.</p>
+     * <p>This method returns the "{@code JOMC Sequences Model - Select Sequences Query}" object of the {@code 'javax.persistence.Query'} specification.</p>
      * <p>That specification does not apply to any scope. A new object is returned whenever requested.</p>
      * @return The {@code SelectSequencesQuery} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
@@ -672,7 +672,7 @@ public class DefaultSequenceDirectory
 
     /**
      * Gets the {@code SequenceChangeListener} dependency.
-     * <p>This method returns any available object of the {@code org.jomc.sequences.SequenceChangeListener} specification at specification level 1.0.</p>
+     * <p>This method returns any available object of the {@code 'org.jomc.sequences.SequenceChangeListener'} specification at specification level 1.0.</p>
      * <p>That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.</p>
      * @return The {@code SequenceChangeListener} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
@@ -687,7 +687,7 @@ public class DefaultSequenceDirectory
 
     /**
      * Gets the {@code SequenceMapper} dependency.
-     * <p>This method returns the "{@code JOMC Sequences RI}" object of the {@code org.jomc.sequences.ri.SequenceMapper} specification at specification level 1.0.</p>
+     * <p>This method returns the "{@code JOMC Sequences RI}" object of the {@code 'org.jomc.sequences.ri.SequenceMapper'} specification at specification level 1.0.</p>
      * <p>That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.</p>
      * @return The {@code SequenceMapper} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
@@ -702,7 +702,7 @@ public class DefaultSequenceDirectory
 
     /**
      * Gets the {@code VetoableSequenceChangeListener} dependency.
-     * <p>This method returns any available object of the {@code org.jomc.sequences.VetoableSequenceChangeListener} specification at specification level 1.0.</p>
+     * <p>This method returns any available object of the {@code 'org.jomc.sequences.VetoableSequenceChangeListener'} specification at specification level 1.0.</p>
      * <p>That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.</p>
      * @return The {@code VetoableSequenceChangeListener} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.

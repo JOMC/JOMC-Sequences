@@ -43,13 +43,13 @@ import org.jomc.sequences.SequenceChangeEvent;
 /**
  * SequenceChangeListener reference implementation.
  * <p><b>Specifications</b><ul>
- * <li>{@code org.jomc.sequences.SequenceChangeListener} {@code 1.0} {@code Multiton}</li>
+ * <li>{@code 'org.jomc.sequences.SequenceChangeListener'} ({@code org.jomc.sequences.SequenceChangeListener}) {@code 1.0} {@code Multiton}</li>
  * </ul></p>
  * <p><b>Dependencies</b><ul>
  * <li>"{@link #getLocale Locale}"<blockquote>
- * Dependency on {@code java.util.Locale} at specification level 1.1 bound to an instance.</blockquote></li>
+ * Dependency on {@code 'java.util.Locale'} ({@code java.util.Locale}) at specification level 1.1 bound to an instance.</blockquote></li>
  * <li>"{@link #getLogger Logger}"<blockquote>
- * Dependency on {@code org.jomc.logging.Logger} at specification level 1.0 bound to an instance.</blockquote></li>
+ * Dependency on {@code 'org.jomc.logging.Logger'} ({@code org.jomc.logging.Logger}) at specification level 1.0 bound to an instance.</blockquote></li>
  * </ul></p>
  * <p><b>Messages</b><ul>
  * <li>"{@link #getOperationInfo operationInfo}"<table>
@@ -110,7 +110,7 @@ public class DefaultSequenceChangeListener
 
     /**
      * Gets the {@code Locale} dependency.
-     * <p>This method returns the "{@code default}" object of the {@code java.util.Locale} specification at specification level 1.1.</p>
+     * <p>This method returns the "{@code default}" object of the {@code 'java.util.Locale'} specification at specification level 1.1.</p>
      * <p>That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.</p>
      * @return The {@code Locale} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
@@ -125,7 +125,7 @@ public class DefaultSequenceChangeListener
 
     /**
      * Gets the {@code Logger} dependency.
-     * <p>This method returns any available object of the {@code org.jomc.logging.Logger} specification at specification level 1.0.</p>
+     * <p>This method returns any available object of the {@code 'org.jomc.logging.Logger'} specification at specification level 1.0.</p>
      * <p>That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.</p>
      * <p><b>Properties</b><dl>
      * <dt>"{@code name}"</dt>
