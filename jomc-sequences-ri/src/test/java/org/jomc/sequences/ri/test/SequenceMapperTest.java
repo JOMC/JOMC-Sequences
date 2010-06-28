@@ -50,7 +50,7 @@ import org.junit.Test;
  * Test cases for the {@code SequenceMapper} specification.
  * <p><b>Dependencies</b><ul>
  * <li>"{@link #getSequenceMapper SequenceMapper}"<blockquote>
- * Dependency on {@code org.jomc.sequences.ri.SequenceMapper} at specification level 1.0 bound to an instance.</blockquote></li>
+ * Dependency on {@code 'org.jomc.sequences.ri.SequenceMapper'} ({@code org.jomc.sequences.ri.SequenceMapper}) at specification level 1.0 bound to an instance.</blockquote></li>
  * </ul></p>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
@@ -168,7 +168,7 @@ public class SequenceMapperTest
 
     /**
      * Gets the {@code SequenceMapper} dependency.
-     * <p>This method returns the "{@code JOMC Sequences RI}" object of the {@code org.jomc.sequences.ri.SequenceMapper} specification at specification level 1.0.</p>
+     * <p>This method returns the "{@code JOMC Sequences RI}" object of the {@code 'org.jomc.sequences.ri.SequenceMapper'} specification at specification level 1.0.</p>
      * <p>That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.</p>
      * @return The {@code SequenceMapper} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
