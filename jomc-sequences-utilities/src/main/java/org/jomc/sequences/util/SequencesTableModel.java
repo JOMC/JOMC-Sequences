@@ -55,7 +55,7 @@ import org.jomc.sequences.SequencesSystemException;
 /**
  * Swing TableModel Java Bean for displaying and editing a system's SequenceDirectory.
  * <p><b>Specifications</b><ul>
- * <li>{@code javax.swing.table.TableModel} {@code Multiton}</li>
+ * <li>{@code 'javax.swing.table.TableModel'} ({@code javax.swing.table.TableModel}) {@code Multiton}</li>
  * </ul></p>
  * <p><b>Properties</b><ul>
  * <li>"{@link #isIncrementColumnEditableByDefault incrementColumnEditableByDefault}"
@@ -81,13 +81,13 @@ import org.jomc.sequences.SequencesSystemException;
  * </ul></p>
  * <p><b>Dependencies</b><ul>
  * <li>"{@link #getExceptionListener ExceptionListener}"<blockquote>
- * Dependency on {@code java.beans.ExceptionListener} at specification level 1.4 bound to an instance.</blockquote></li>
+ * Dependency on {@code 'java.beans.ExceptionListener'} ({@code java.beans.ExceptionListener}) at specification level 1.4 bound to an instance.</blockquote></li>
  * <li>"{@link #getLocale Locale}"<blockquote>
- * Dependency on {@code java.util.Locale} at specification level 1.1 bound to an instance.</blockquote></li>
+ * Dependency on {@code 'java.util.Locale'} ({@code java.util.Locale}) at specification level 1.1 bound to an instance.</blockquote></li>
  * <li>"{@link #getLogger Logger}"<blockquote>
- * Dependency on {@code org.jomc.logging.Logger} at specification level 1.0 bound to an instance.</blockquote></li>
+ * Dependency on {@code 'org.jomc.logging.Logger'} ({@code org.jomc.logging.Logger}) at specification level 1.0 bound to an instance.</blockquote></li>
  * <li>"{@link #getSequenceDirectory SequenceDirectory}"<blockquote>
- * Dependency on {@code org.jomc.sequences.SequenceDirectory} at specification level 1.0 bound to an instance.</blockquote></li>
+ * Dependency on {@code 'org.jomc.sequences.SequenceDirectory'} ({@code org.jomc.sequences.SequenceDirectory}) at specification level 1.0 bound to an instance.</blockquote></li>
  * </ul></p>
  * <p><b>Messages</b><ul>
  * <li>"{@link #getIllegalColumnIndexMessage illegalColumnIndexMessage}"<table>
@@ -764,7 +764,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
 
     /**
      * Gets the {@code ExceptionListener} dependency.
-     * <p>This method returns any available object of the {@code java.beans.ExceptionListener} specification at specification level 1.4.</p>
+     * <p>This method returns any available object of the {@code 'java.beans.ExceptionListener'} specification at specification level 1.4.</p>
      * <p>That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.</p>
      * @return The {@code ExceptionListener} dependency.
      * {@code null} if no object is available.
@@ -778,7 +778,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
 
     /**
      * Gets the {@code Locale} dependency.
-     * <p>This method returns the "{@code default}" object of the {@code java.util.Locale} specification at specification level 1.1.</p>
+     * <p>This method returns the "{@code default}" object of the {@code 'java.util.Locale'} specification at specification level 1.1.</p>
      * <p>That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.</p>
      * @return The {@code Locale} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
@@ -793,7 +793,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
 
     /**
      * Gets the {@code Logger} dependency.
-     * <p>This method returns any available object of the {@code org.jomc.logging.Logger} specification at specification level 1.0.</p>
+     * <p>This method returns any available object of the {@code 'org.jomc.logging.Logger'} specification at specification level 1.0.</p>
      * <p>That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.</p>
      * <p><b>Properties</b><dl>
      * <dt>"{@code name}"</dt>
@@ -813,7 +813,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
 
     /**
      * Gets the {@code SequenceDirectory} dependency.
-     * <p>This method returns any available object of the {@code org.jomc.sequences.SequenceDirectory} specification at specification level 1.0.</p>
+     * <p>This method returns any available object of the {@code 'org.jomc.sequences.SequenceDirectory'} specification at specification level 1.0.</p>
      * <p>That specification applies to {@code Singleton} scope. The singleton object is returned whenever requested and bound to this instance.</p>
      * @return The {@code SequenceDirectory} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
