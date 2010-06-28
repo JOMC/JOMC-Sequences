@@ -59,9 +59,9 @@ import static org.junit.Assert.fail;
  * Testcase for SequenceOperations implementations.
  * <p><b>Dependencies</b><ul>
  * <li>"{@link #getSequenceDirectory SequenceDirectory}"<blockquote>
- * Dependency on {@code org.jomc.sequences.SequenceDirectory} at specification level 1.0 bound to an instance.</blockquote></li>
+ * Dependency on {@code 'org.jomc.sequences.SequenceDirectory'} ({@code org.jomc.sequences.SequenceDirectory}) at specification level 1.0 bound to an instance.</blockquote></li>
  * <li>"{@link #getSequenceOperations SequenceOperations}"<blockquote>
- * Dependency on {@code org.jomc.sequences.SequenceOperations} at specification level 1.0 bound to an instance.</blockquote></li>
+ * Dependency on {@code 'org.jomc.sequences.SequenceOperations'} ({@code org.jomc.sequences.SequenceOperations}) at specification level 1.0 bound to an instance.</blockquote></li>
  * </ul></p>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
@@ -272,7 +272,7 @@ public class SequenceOperationsTest
 
     /**
      * Gets the {@code SequenceDirectory} dependency.
-     * <p>This method returns any available object of the {@code org.jomc.sequences.SequenceDirectory} specification at specification level 1.0.</p>
+     * <p>This method returns any available object of the {@code 'org.jomc.sequences.SequenceDirectory'} specification at specification level 1.0.</p>
      * <p>That specification applies to {@code Singleton} scope. The singleton object is returned whenever requested and bound to this instance.</p>
      * @return The {@code SequenceDirectory} dependency.
      * {@code null} if no object is available.
@@ -286,7 +286,7 @@ public class SequenceOperationsTest
 
     /**
      * Gets the {@code SequenceOperations} dependency.
-     * <p>This method returns any available object of the {@code org.jomc.sequences.SequenceOperations} specification at specification level 1.0.</p>
+     * <p>This method returns any available object of the {@code 'org.jomc.sequences.SequenceOperations'} specification at specification level 1.0.</p>
      * <p>That specification applies to {@code Singleton} scope. The singleton object is returned whenever requested and bound to this instance.</p>
      * @return The {@code SequenceOperations} dependency.
      * {@code null} if no object is available.
