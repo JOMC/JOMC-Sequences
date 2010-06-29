@@ -78,7 +78,7 @@
         <reference identifier="org.jomc.sequences.SequenceDirectory" version="1.0"/>
       </specifications>
       <dependencies>
-        <dependency name="Logger" identifier="org.jomc.logging.Logger" version="1.0">
+        <dependency name="Logger" identifier="org.jomc.logging.Logger" version="${logger.specification.version}">
           <properties>
             <property name="name" type="java.lang.String" value="org.jomc.sequences.ri.DefaultSequenceDirectory"
                       override="true"/>
@@ -182,7 +182,7 @@
         <reference identifier="org.jomc.sequences.SequenceChangeListener" version="1.0"/>
       </specifications>
       <dependencies>
-        <dependency name="Logger" identifier="org.jomc.logging.Logger" version="1.0">
+        <dependency name="Logger" identifier="org.jomc.logging.Logger" version="${logger.specification.version}">
           <properties>
             <property name="name" type="java.lang.String" value="org.jomc.sequences.ri.DefaultSequenceChangeListener"
                       override="true"/>
