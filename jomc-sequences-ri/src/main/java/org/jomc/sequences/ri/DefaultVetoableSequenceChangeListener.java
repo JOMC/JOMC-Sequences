@@ -45,7 +45,7 @@ import org.jomc.sequences.SequenceVetoException;
 /**
  * VetoableSequenceChangeListener reference implementation.
  * <p><b>Specifications</b><ul>
- * <li>{@code 'org.jomc.sequences.VetoableSequenceChangeListener'} ({@code org.jomc.sequences.VetoableSequenceChangeListener}) {@code 1.0} {@code Multiton}</li>
+ * <li>{@code 'org.jomc.sequences.VetoableSequenceChangeListener'} {@code (org.jomc.sequences.VetoableSequenceChangeListener)} {@code 1.0} {@code Multiton}</li>
  * </ul></p>
  * <p><b>Properties</b><ul>
  * <li>"{@link #getSequenceNameMaxLength sequenceNameMaxLength}"
@@ -65,7 +65,7 @@ import org.jomc.sequences.SequenceVetoException;
 // SECTION-END
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
-@javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.0-beta-5-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-5-SNAPSHOT/jomc-tools" )
+@javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.0", comments = "See http://jomc.sourceforge.net/jomc/1.0/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public class DefaultVetoableSequenceChangeListener
@@ -124,7 +124,7 @@ public class DefaultVetoableSequenceChangeListener
     // <editor-fold defaultstate="collapsed" desc=" Generated Constructors ">
 
     /** Creates a new {@code DefaultVetoableSequenceChangeListener} instance. */
-    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.0-beta-5-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-5-SNAPSHOT/jomc-tools" )
+    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.0", comments = "See http://jomc.sourceforge.net/jomc/1.0/jomc-tools" )
     public DefaultVetoableSequenceChangeListener()
     {
         // SECTION-START[Default Constructor]
@@ -143,7 +143,7 @@ public class DefaultVetoableSequenceChangeListener
      * @return Maximum allowed length of a sequence name.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
-    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.0-beta-5-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-5-SNAPSHOT/jomc-tools" )
+    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.0", comments = "See http://jomc.sourceforge.net/jomc/1.0/jomc-tools" )
     private int getSequenceNameMaxLength()
     {
         final java.lang.Integer _p = (java.lang.Integer) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getProperty( this, "sequenceNameMaxLength" );
@@ -156,7 +156,7 @@ public class DefaultVetoableSequenceChangeListener
      * @return Minimum required length of a sequence name.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
-    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.0-beta-5-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-5-SNAPSHOT/jomc-tools" )
+    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.0", comments = "See http://jomc.sourceforge.net/jomc/1.0/jomc-tools" )
     private int getSequenceNameMinLength()
     {
         final java.lang.Integer _p = (java.lang.Integer) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getProperty( this, "sequenceNameMinLength" );
