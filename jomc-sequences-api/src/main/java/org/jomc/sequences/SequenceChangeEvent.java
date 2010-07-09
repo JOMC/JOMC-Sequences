@@ -227,7 +227,7 @@ public class SequenceChangeEvent extends EventObject
     /**
      * Gets the entity getting changed.
      *
-     * @return The entity getting changed or {@code null} if a new sequence is added to the source of.the event.
+     * @return The entity getting changed or {@code null} if a new sequence is added to the source of the event.
      */
     public Sequence getOldSequence()
     {
