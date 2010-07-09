@@ -40,7 +40,7 @@
   <name>JOMC Sequences</name>
   <version>1.0-beta-3-SNAPSHOT</version>
   <description>JOMC Sequences is an application programming interface to a directory of sequences with corresponding reference implementation. This is the parent module of the JOMC Sequences artifacts.</description>
-  <url>http://jomc.sourceforge.net/jomc-sequences/${project.version}</url>
+  <url>http://jomc.sourceforge.net/jomc-sequences/${jomc.site.version}</url>
   <inceptionYear>2005</inceptionYear>
   <organization>
     <name>The JOMC Project</name>
@@ -157,10 +157,11 @@
               <configuration>
                 <arguments>-jpa ${project.artifactId} ${project.build.outputDirectory} -copy-constructor -mark-generated -Xinject-code</arguments>
                 <bindingDirectory>src/main/schemas</bindingDirectory>
-                <schemaDirectory>src/main/schemas</schemaDirectory>
                 <extension>true</extension>
-                <outputDirectory>${xjcOutputDirectory}</outputDirectory>
+                <npa>true</npa>
+                <schemaDirectory>src/main/schemas</schemaDirectory>
                 <staleFile>${project.build.directory}/xjc.staleFile</staleFile> <!-- See http://jira.codehaus.org/browse/MJAXB-34 -->
+                <outputDirectory>${xjcOutputDirectory}</outputDirectory>
               </configuration>
             </execution>
           </executions>
@@ -345,10 +346,6 @@
               </goals>
             </execution>
           </executions>
-          <configuration>
-            <classesDirectory>${project.build.directory}/classes</classesDirectory>
-            <testClassesDirectory>${project.build.directory}/test-classes</testClassesDirectory>
-          </configuration>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -1135,7 +1132,7 @@
     <site>
       <id>jomc.sourceforge.net</id>
       <name>JOMC Site</name>
-      <url>scp://shell.sourceforge.net/home/groups/j/jo/jomc/htdocs/jomc-sequences/${project.version}</url>
+      <url>scp://shell.sourceforge.net/home/groups/j/jo/jomc/htdocs/jomc-sequences/${jomc.site.version}</url>
     </site>
   </distributionManagement>
   <profiles>
@@ -1155,8 +1152,8 @@
             <artifactId>maven-scm-plugin</artifactId>
             <executions>
               <execution>
-                <id>update-workdir</id>
-                <phase>validate</phase>
+                <id>initialize</id>
+                <phase>initialize</phase>
                 <goals>
                   <goal>update</goal>
                 </goals>
@@ -1165,6 +1162,7 @@
                 <id>main-sources</id>
                 <phase>process-resources</phase>
                 <goals>
+                  <goal>update</goal>
                   <goal>checkin</goal>
                 </goals>
               </execution>
@@ -1172,6 +1170,7 @@
                 <id>test-sources</id>
                 <phase>process-test-resources</phase>
                 <goals>
+                  <goal>update</goal>
                   <goal>checkin</goal>
                 </goals>
               </execution>
@@ -1268,6 +1267,7 @@
     <jomc-logging.version>1.0</jomc-logging.version>
     <jomc-standalone.version>1.0-beta-2</jomc-standalone.version>
     <jomc-sdk.version>1.0-beta-2</jomc-sdk.version>
+    <jomc.site.version>1.0.x</jomc.site.version>
     <xmlschemaset.specification.version>1.0</xmlschemaset.specification.version>
     <logger.specification.version>1.0</logger.specification.version>
   </properties>
