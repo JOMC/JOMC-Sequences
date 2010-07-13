@@ -44,6 +44,7 @@
   <packaging>ejb</packaging>
   <name>JOMC Sequences RI</name>
   <description>Object management and configuration sequence directory reference implementation.</description>
+  <url>${jomc.artifacts.url}/${project.artifactId}-${project.version}</url>
   <build>
     <resources>
       <resource>
@@ -59,10 +60,6 @@
     </testResources>
     <plugins>
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>build-helper-maven-plugin</artifactId>
-      </plugin>
-      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
         <executions>
@@ -77,7 +74,6 @@
                 <artifactItem>
                   <groupId>org.jomc.sequences</groupId>
                   <artifactId>jomc-sequences-it</artifactId>
-                  <version>${project.version}</version>
                   <type>jar</type>
                 </artifactItem>
               </artifactItems>
@@ -95,7 +91,7 @@
           <redirectTestOutputToFile>true</redirectTestOutputToFile>
           <systemPropertyVariables>
             <java.util.logging.config.file>${project.build.testOutputDirectory}/logging.properties</java.util.logging.config.file>
-            <org.jomc.model.ModelContext.defaultLogLevel>ALL</org.jomc.model.ModelContext.defaultLogLevel>
+            <org.jomc.modlet.ModelContext.defaultLogLevel>ALL</org.jomc.modlet.ModelContext.defaultLogLevel>
             <org.jomc.ri.DefaultObjectManager.defaultLogLevel>ALL</org.jomc.ri.DefaultObjectManager.defaultLogLevel>
           </systemPropertyVariables>
         </configuration>
@@ -167,6 +163,13 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <distributionManagement>
+    <site>
+      <id>jomc.sourceforge.net</id>
+      <name>JOMC Site</name>
+      <url>${jomc.artifacts.distribution.url}/${project.artifactId}-${project.version}</url>
+    </site>
+  </distributionManagement>
   <profiles>
     <profile>
       <id>jbossjta-hibernate-derby</id>

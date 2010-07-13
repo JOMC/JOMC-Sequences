@@ -48,7 +48,7 @@
       <filtered>false</filtered>
       <lineEnding>dos</lineEnding>
       <outputDirectory>/</outputDirectory>
-      <source>${project.build.directory}/changes.xhtml</source>
+      <source>${transformationsOutputDirectory}/changes.xml</source>
     </file>
   </files>
   <fileSets>
@@ -120,6 +120,15 @@
       <outputDirectory>/lib/endorsed</outputDirectory>
       <directoryMode>0755</directoryMode>
       <fileMode>0555</fileMode>
+    </fileSet>
+    <fileSet>
+      <directory>${project.build.directory}/jomc-changes</directory>
+      <fileMode>0555</fileMode>
+      <directoryMode>0755</directoryMode>
+      <outputDirectory>/lib</outputDirectory>
+      <includes>
+        <include>**/*.xhtml</include>
+      </includes>
     </fileSet>
   </fileSets>
   <dependencySets>
