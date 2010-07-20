@@ -194,11 +194,13 @@
       <messages>
         <message name="operationInfo">
           <template defaultLanguage="en">
-            <text language="en">--''{0}''
-++''{1}''
+            <text language="en">
+    --''{0}''
+    ++''{1}''
             </text>
-            <text language="de">--''{0}''
-++''{1}''
+            <text language="de">
+    --''{0}''
+    ++''{1}''
             </text>
           </template>
           <arguments>
