@@ -71,7 +71,14 @@ piwikTracker.enableLinkTracking();
       </noscript>
     </head>
     <menu ref="parent" inherit="top" inheritAsRef="false"/>
-    <menu ref="modules" inherit="top" inheritAsRef="false"/>
+    <menu name="Modules">
+      <item name="JOMC Sequences API" href="jomc-sequences-api/index.html" />
+      <item name="JOMC Sequences Test Suite" href="jomc-sequences-it/index.html" />
+      <item name="JOMC Sequences Model" href="jomc-sequences-model/index.html" />
+      <item name="JOMC Sequences RI" href="jomc-sequences-ri/index.html" />
+      <item name="JOMC Sequences EAR" href="jomc-sequences-ear/index.html" />
+      <item name="JOMC Sequences Utilities" href="jomc-sequences-utilities/index.html" />
+    </menu>
     <menu name="Sourceforge" inherit="bottom" inheritAsRef="false">
       <item name="Project Summary" href="http://sourceforge.net/projects/jomc/"/>
       <item name="Support" href="http://sourceforge.net/projects/jomc/support/"/>
