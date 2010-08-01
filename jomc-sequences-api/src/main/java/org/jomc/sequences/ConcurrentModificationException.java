@@ -46,8 +46,8 @@ package org.jomc.sequences;
  * </ul></p>
  * <p><b>Messages</b><ul>
  * <li>"{@link #getConcurrentlyModifiedMessage concurrentlyModifiedMessage}"<table>
- * <tr><td valign="top">English:</td><td valign="top"><pre>The sequence got concurrently modified.</pre></td></tr>
- * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Die Sequenz wurde zwischenzeitlich ge&auml;ndert.</pre></td></tr>
+ * <tr><td valign="top">English:</td><td valign="top"><pre>The ''{0}'' sequence got concurrently modified.</pre></td></tr>
+ * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Die ''{0}'' Sequenz wurde zwischenzeitlich ge&auml;ndert.</pre></td></tr>
  * </table>
  * </ul></p>
  *
@@ -104,7 +104,9 @@ public class ConcurrentModificationException extends SequencesException
     @Override
     public String getMessage()
     {
-        return this.getConcurrentlyModifiedMessage( this.getLocale() );
+        return this.getConcurrentlyModifiedMessage(
+            this.getLocale(), this.getMostRecentRevision() != null ? this.getMostRecentRevision().getName() : null );
+
     }
 
     // SECTION-END
@@ -135,18 +137,19 @@ public class ConcurrentModificationException extends SequencesException
     /**
      * Gets the text of the {@code concurrentlyModifiedMessage} message.
      * <p><b>Templates</b><br/><table>
-     * <tr><td valign="top">English:</td><td valign="top"><pre>The sequence got concurrently modified.</pre></td></tr>
-     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Die Sequenz wurde zwischenzeitlich ge&auml;ndert.</pre></td></tr>
+     * <tr><td valign="top">English:</td><td valign="top"><pre>The ''{0}'' sequence got concurrently modified.</pre></td></tr>
+     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Die ''{0}'' Sequenz wurde zwischenzeitlich ge&auml;ndert.</pre></td></tr>
      * </table></p>
      * @param locale The locale of the message to return.
+     * @param name Format argument.
      * @return The text of the {@code concurrentlyModifiedMessage} message.
      *
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.1", comments = "See http://jomc.sourceforge.net/jomc/1.1/jomc-tools-1.1" )
-    private String getConcurrentlyModifiedMessage( final java.util.Locale locale )
+    private String getConcurrentlyModifiedMessage( final java.util.Locale locale, final java.lang.String name )
     {
-        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "concurrentlyModifiedMessage", locale );
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "concurrentlyModifiedMessage", locale, name );
         assert _m != null : "'concurrentlyModifiedMessage' message not found.";
         return _m;
     }

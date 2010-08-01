@@ -227,9 +227,12 @@
       <messages>
         <message name="concurrentlyModifiedMessage">
           <template defaultLanguage="en">
-            <text language="en">The sequence got concurrently modified.</text>
-            <text language="de">Die Sequenz wurde zwischenzeitlich geändert.</text>
+            <text language="en">The ''{0}'' sequence got concurrently modified.</text>
+            <text language="de">Die ''{0}'' Sequenz wurde zwischenzeitlich geändert.</text>
           </template>
+          <arguments>
+            <argument index="0" name="name"/>
+          </arguments>
         </message>
       </messages>
     </implementation>

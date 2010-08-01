@@ -239,25 +239,6 @@ public class Sequence implements Comparable<Sequence>, Cloneable, Serializable
     }
 
     /**
-     * Creates a string representing the properties of the instance.
-     *
-     * @return A string representing the properties of the instance.
-     */
-    private String internalString()
-    {
-        return new StringBuffer( 150 ).append( '{' ).
-            append( "revision=" ).append( this.revision ).
-            append( ", date=" ).append( new Date( this.date ) ).
-            append( ", name=" ).append( this.name ).
-            append( ", minimum=" ).append( this.minimum ).
-            append( ", maximum=" ).append( this.maximum ).
-            append( ", increment=" ).append( this.increment ).
-            append( ", value=" ).append( this.value ).
-            append( '}' ).toString();
-
-    }
-
-    /**
      * Compares this sequence with the specified sequence for order.
      * <p>Returns a negative integer, zero, or a positive integer as this sequence is less than, equal to, or greater
      * than the specified sequence.</p>
@@ -321,8 +302,8 @@ public class Sequence implements Comparable<Sequence>, Cloneable, Serializable
         if ( !ret && o instanceof Sequence )
         {
             final Sequence that = (Sequence) o;
-            ret = ( this.getName() == null ? that.getName() == null : this.getName().equals( that.getName() ) ) &&
-                  ( this.getRevision() == that.getRevision() );
+            ret = ( this.getName() == null ? that.getName() == null : this.getName().equals( that.getName() ) )
+                  && ( this.getRevision() == that.getRevision() );
 
         }
 
@@ -352,6 +333,25 @@ public class Sequence implements Comparable<Sequence>, Cloneable, Serializable
     public String toString()
     {
         return super.toString() + this.internalString();
+    }
+
+    /**
+     * Creates a string representing the properties of the instance.
+     *
+     * @return A string representing the properties of the instance.
+     */
+    private String internalString()
+    {
+        return new StringBuilder( 150 ).append( '{' ).
+            append( "revision=" ).append( this.revision ).
+            append( ", date=" ).append( new Date( this.date ) ).
+            append( ", name=" ).append( this.name ).
+            append( ", minimum=" ).append( this.minimum ).
+            append( ", maximum=" ).append( this.maximum ).
+            append( ", increment=" ).append( this.increment ).
+            append( ", value=" ).append( this.value ).
+            append( '}' ).toString();
+
     }
 
     // SECTION-END

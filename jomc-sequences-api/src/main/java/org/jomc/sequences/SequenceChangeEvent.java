@@ -133,7 +133,7 @@ public class SequenceChangeEvent extends EventObject
         @Override
         public String toString()
         {
-            final StringBuffer str = new StringBuffer().append( "{" );
+            final StringBuilder str = new StringBuilder().append( "{" );
             str.append( "type=" ).append( this.type ).
                 append( ", identifier=" ).append( this.getIdentifier() ).
                 append( '}' );
@@ -247,6 +247,9 @@ public class SequenceChangeEvent extends EventObject
 
     /**
      * Gets status for a given key.
+     * <p>This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you make
+     * to the returned list will be present inside the object. This is why there is no {@code set} method for the
+     * status property.</p>
      *
      * @param key The key of the status to return.
      *
