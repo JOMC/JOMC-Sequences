@@ -1476,7 +1476,7 @@
     <xjcOutputDirectory>${project.build.directory}/generated-sources/jaxb</xjcOutputDirectory>
     <remoteResourcesOutputDirectory>${project.build.directory}/maven-shared-archive-resources</remoteResourcesOutputDirectory>
     <transformationsOutputDirectory>${project.build.directory}/generated-resources/xml/xslt</transformationsOutputDirectory>
-    <surefire.version>2.5</surefire.version>
+    <surefire.version>2.6</surefire.version>
     <emma-maven-plugin.version>1.0-alpha-2</emma-maven-plugin.version>
     <jomc.version>1.1</jomc.version>
     <jomc.build.version>1.5</jomc.build.version>
