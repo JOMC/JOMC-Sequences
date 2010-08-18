@@ -395,7 +395,7 @@
             <dependency>
               <groupId>net.sourceforge.jpaxjc</groupId>
               <artifactId>jpa-xjc-plugin</artifactId>
-              <version>1.0</version>
+              <version>1.0.1</version>
             </dependency>
           </dependencies>
           <executions>
@@ -980,7 +980,7 @@
         <type>txt</type>
         <version>1.0-beta-3-SNAPSHOT</version>
       </dependency>
-      
+
       <dependency>
         <groupId>org.jomc.sequences</groupId>
         <artifactId>jomc-sequences-it</artifactId>
@@ -1012,7 +1012,7 @@
         <type>txt</type>
         <version>1.0-beta-3-SNAPSHOT</version>
       </dependency>
-      
+
       <dependency>
         <groupId>org.jomc.sequences</groupId>
         <artifactId>jomc-sequences-model</artifactId>
@@ -1044,7 +1044,7 @@
         <type>txt</type>
         <version>1.0-beta-3-SNAPSHOT</version>
       </dependency>
-      
+
       <dependency>
         <groupId>org.jomc.sequences</groupId>
         <artifactId>jomc-sequences-ri</artifactId>
@@ -1077,7 +1077,7 @@
         <type>txt</type>
         <version>1.0-beta-3-SNAPSHOT</version>
       </dependency>
-      
+
       <dependency>
         <groupId>org.jomc.sequences</groupId>
         <artifactId>jomc-sequences-ear</artifactId>
