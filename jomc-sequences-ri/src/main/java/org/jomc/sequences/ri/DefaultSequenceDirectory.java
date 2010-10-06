@@ -411,7 +411,7 @@ public class DefaultSequenceDirectory
         {
             if ( this.getLogger().isDebugEnabled() )
             {
-                this.getLogger().debug( e.getMessage() );
+                this.getLogger().debug( getMessage( e ) );
             }
 
             return null;
@@ -441,7 +441,7 @@ public class DefaultSequenceDirectory
         {
             if ( this.getLogger().isDebugEnabled() )
             {
-                this.getLogger().debug( e.getMessage() );
+                this.getLogger().debug( getMessage( e ) );
             }
 
             sequencesType = new SequencesType();
@@ -517,7 +517,7 @@ public class DefaultSequenceDirectory
             }
             catch ( final SequenceVetoException e )
             {
-                this.getLogger().error( e.getMessage() );
+                this.getLogger().error( getMessage( e ) );
                 vetoed = true;
             }
         }
@@ -526,6 +526,11 @@ public class DefaultSequenceDirectory
         {
             throw new SequenceVetoException( sequenceChange );
         }
+    }
+
+    private static String getMessage( final Throwable t )
+    {
+        return t != null ? t.getMessage() != null ? t.getMessage() : getMessage( t.getCause() ) : null;
     }
 
     // SECTION-END
