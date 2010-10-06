@@ -177,15 +177,15 @@ public class SequenceChangeEvent extends EventObject
 
     /** A mandatory property is missing a value. */
     public static final Status MANDATORY_VALUE =
-        new Status( Status.ERROR, Sequence.class.getName() + ".MANDATORY_VALUE" );
+        new Status( Status.ERROR, "org.jomc.sequences.Sequence.MANDATORY_VALUE" );
 
     /** A property value is illegal. */
     public static final Status ILLEGAL_VALUE =
-        new Status( Status.ERROR, Sequence.class.getName() + ".ILLEGAL_VALUE" );
+        new Status( Status.ERROR, "org.jomc.sequences.Sequence.ILLEGAL_VALUE" );
 
     /** A property value is of illegal length. */
     public static final Status ILLEGAL_LENGTH =
-        new Status( Status.ERROR, Sequence.class.getName() + ".ILLEGAL_LENGTH" );
+        new Status( Status.ERROR, "org.jomc.sequences.Sequence.ILLEGAL_LENGTH" );
 
     /** Serial version UID for backwards compatibility with 1.0.x classes. */
     private static final long serialVersionUID = 4189816896435679868L;

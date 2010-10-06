@@ -41,6 +41,12 @@
   </properties>
   <body>
     <!-- *********************************************************************************************************** -->
-    <release version="1.0-beta-3"/>
+    <release version="1.0-beta-3">
+      <action dev="schulte2005" type="fix"><![CDATA[Updated static fields <code>MANDATORY_VALUE</code>,
+      <code>ILLEGAL_VALUE</code> and <code>ILLEGAL_LENGTH</code> of class
+      <code>org.jomc.sequences.SequenceChangeEvent</code> to use constants for the identifier property instead of
+      computing the identifier based on class <code>org.jomc.sequences.Sequence</code>.]]>
+      </action>
+    </release>
   </body>
 </document>
