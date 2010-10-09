@@ -81,9 +81,6 @@
       <fileMode>0644</fileMode>
       <lineEnding>dos</lineEnding>
       <filtered>true</filtered>
-      <excludes>
-        <exclude>**/*.formatted</exclude> <!-- See http://jira.codehaus.org/browse/MASSEMBLY-462 -->
-      </excludes>
     </fileSet>
     <fileSet>
       <directory>target/appassembler/bin</directory>
@@ -102,7 +99,6 @@
       <fileMode>0555</fileMode>
       <excludes>
         <exclude>*.bat</exclude>
-        <exclude>**/*.formatted</exclude> <!-- See http://jira.codehaus.org/browse/MASSEMBLY-462 -->
       </excludes>
       <lineEnding>unix</lineEnding>
     </fileSet>
