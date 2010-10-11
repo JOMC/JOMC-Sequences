@@ -254,6 +254,8 @@ public class SequenceChangeEvent extends EventObject
      * @param key The key of the status to return.
      *
      * @return The status for {@code key}.
+     *
+     * @see Sequence#PROP_NAME Sequence.PROP_XYZ
      */
     public List<Status> getStatus( final String key )
     {
