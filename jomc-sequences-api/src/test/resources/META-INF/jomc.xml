@@ -46,7 +46,8 @@
     <!-- *********************************************************************************************************** -->
     <implementation identifier="org.jomc.sequences.test.CapacityLimitExceptionTest"
                     class="org.jomc.sequences.test.CapacityLimitExceptionTest" classDeclaration="true"
-                    name="${project.name}" version="${project.version}" vendor="${project.organization.name}">
+                    name="${project.name}" version="${project.version}" vendor="${project.organization.name}"
+                    createDate="2009-07-27T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Test cases for class {@code org.jomc.sequences.CapacityLimitException}.</text>
@@ -60,7 +61,8 @@
     <!-- *********************************************************************************************************** -->
     <implementation identifier="org.jomc.sequences.test.ConcurrentModificationExceptionTest"
                     class="org.jomc.sequences.test.ConcurrentModificationExceptionTest" classDeclaration="true"
-                    name="${project.name}" version="${project.version}" vendor="${project.organization.name}">
+                    name="${project.name}" version="${project.version}" vendor="${project.organization.name}"
+                    createDate="2009-07-27T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Test cases for class {@code org.jomc.sequences.ConcurrentModificationException}.</text>
@@ -74,7 +76,8 @@
     <!-- *********************************************************************************************************** -->
     <implementation identifier="org.jomc.sequences.test.SequenceExistsExceptionTest"
                     class="org.jomc.sequences.test.SequenceExistsExceptionTest" classDeclaration="true"
-                    name="${project.name}" version="${project.version}" vendor="${project.organization.name}">
+                    name="${project.name}" version="${project.version}" vendor="${project.organization.name}"
+                    createDate="2009-07-27T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Test cases for class {@code org.jomc.sequences.SequenceExistsException}.</text>
@@ -88,7 +91,8 @@
     <!-- *********************************************************************************************************** -->
     <implementation identifier="org.jomc.sequences.test.SequenceTest"
                     class="org.jomc.sequences.test.SequenceTest" classDeclaration="true"
-                    name="${project.name}" version="${project.version}" vendor="${project.organization.name}">
+                    name="${project.name}" version="${project.version}" vendor="${project.organization.name}"
+                    createDate="2009-07-27T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Test cases for class {@code org.jomc.sequences.Sequence}.</text>
@@ -102,7 +106,8 @@
     <!-- *********************************************************************************************************** -->
     <implementation identifier="org.jomc.sequences.test.SequenceChangeEventTest"
                     class="org.jomc.sequences.test.SequenceChangeEventTest" classDeclaration="true"
-                    name="${project.name}" version="${project.version}" vendor="${project.organization.name}">
+                    name="${project.name}" version="${project.version}" vendor="${project.organization.name}"
+                    createDate="2009-07-27T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Test cases for class {@code org.jomc.sequences.SequenceChangeEvent}.</text>
@@ -116,7 +121,8 @@
     <!-- *********************************************************************************************************** -->
     <implementation identifier="org.jomc.sequences.test.SequenceLimitExceptionTest"
                     class="org.jomc.sequences.test.SequenceLimitExceptionTest" classDeclaration="true"
-                    name="${project.name}" version="${project.version}" vendor="${project.organization.name}">
+                    name="${project.name}" version="${project.version}" vendor="${project.organization.name}"
+                    createDate="2009-07-27T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Test cases for class {@code org.jomc.sequences.SequenceLimitException}.</text>
@@ -130,7 +136,8 @@
     <!-- *********************************************************************************************************** -->
     <implementation identifier="org.jomc.sequences.test.SequenceNotFoundExceptionTest"
                     class="org.jomc.sequences.test.SequenceNotFoundExceptionTest" classDeclaration="true"
-                    name="${project.name}" version="${project.version}" vendor="${project.organization.name}">
+                    name="${project.name}" version="${project.version}" vendor="${project.organization.name}"
+                    createDate="2009-07-27T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Test cases for class {@code org.jomc.sequences.SequenceNotFoundException}.</text>
@@ -144,7 +151,8 @@
     <!-- *********************************************************************************************************** -->
     <implementation identifier="org.jomc.sequences.test.SequenceVetoExceptionTest"
                     class="org.jomc.sequences.test.SequenceVetoExceptionTest" classDeclaration="true"
-                    name="${project.name}" version="${project.version}" vendor="${project.organization.name}">
+                    name="${project.name}" version="${project.version}" vendor="${project.organization.name}"
+                    createDate="2009-07-27T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Test cases for class {@code org.jomc.sequences.SequenceVetoException}.</text>

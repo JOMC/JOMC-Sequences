@@ -46,7 +46,8 @@
   <specifications>
     <!-- *********************************************************************************************************** -->
     <specification identifier="org.jomc.sequences.ri.SequenceMapper" class="org.jomc.sequences.ri.SequenceMapper"
-                   classDeclaration="true" version="1.0" vendor="${project.organization.name}">
+                   classDeclaration="true" version="1.0" vendor="${project.organization.name}"
+                   createDate="2009-07-27T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Maps model classes.</text>
@@ -63,7 +64,7 @@
     <implementation identifier="org.jomc.sequences.ri.DefaultSequenceDirectory"
                     class="org.jomc.sequences.ri.DefaultSequenceDirectory"
                     classDeclaration="true" name="${project.name}" vendor="${project.organization.name}"
-                    version="${project.version}" stateless="true">
+                    version="${project.version}" stateless="true" createDate="2009-07-27T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">SequenceDirectory reference implementation.</text>
@@ -143,7 +144,7 @@
     <implementation identifier="org.jomc.sequences.ri.DefaultSequenceMapper"
                     class="org.jomc.sequences.ri.DefaultSequenceMapper"
                     classDeclaration="true" name="${project.name}" version="${project.version}"
-                    vendor="${project.organization.name}" stateless="true">
+                    vendor="${project.organization.name}" stateless="true" createDate="2009-07-27T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">SequenceMapper reference implementation.</text>
@@ -168,7 +169,7 @@
     <implementation identifier="org.jomc.sequences.ri.DefaultSequenceChangeListener"
                     class="org.jomc.sequences.ri.DefaultSequenceChangeListener"
                     classDeclaration="true" name="${project.name}" version="${project.version}"
-                    vendor="${project.organization.name}" stateless="true">
+                    vendor="${project.organization.name}" stateless="true" createDate="2009-07-27T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">SequenceChangeListener reference implementation.</text>
@@ -214,7 +215,7 @@
     <implementation identifier="org.jomc.sequences.ri.DefaultVetoableSequenceChangeListener"
                     class="org.jomc.sequences.ri.DefaultVetoableSequenceChangeListener" classDeclaration="true"
                     name="${project.name}" version="${project.version}" vendor="${project.organization.name}"
-                    stateless="true">
+                    stateless="true" createDate="2009-07-27T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">VetoableSequenceChangeListener reference implementation.</text>

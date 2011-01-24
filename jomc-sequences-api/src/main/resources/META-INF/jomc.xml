@@ -45,7 +45,7 @@
     <!-- *********************************************************************************************************** -->
     <specification identifier="org.jomc.sequences.SequenceDirectory" class="org.jomc.sequences.SequenceDirectory"
                    classDeclaration="true" vendor="${project.organization.name}" version="1.0" scope="Singleton"
-                   multiplicity="One">
+                   multiplicity="One" createDate="2009-07-27T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Directory of sequences.</text>
@@ -59,7 +59,7 @@
     <!-- *********************************************************************************************************** -->
     <specification identifier="org.jomc.sequences.SequenceOperations" class="org.jomc.sequences.SequenceOperations"
                    classDeclaration="true" vendor="${project.organization.name}" version="1.0" scope="Singleton"
-                   multiplicity="One">
+                   multiplicity="One" createDate="2009-07-27T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Provides operations performed with sequences.</text>
@@ -72,7 +72,8 @@
     </specification>
     <!-- *********************************************************************************************************** -->
     <specification identifier="org.jomc.sequences.SequenceChangeListener" class="org.jomc.sequences.SequenceChangeListener"
-                   classDeclaration="true" vendor="${project.organization.name}" version="1.0">
+                   classDeclaration="true" vendor="${project.organization.name}" version="1.0"
+                   createDate="2009-07-27T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Gets called whenever the state of a sequence changed.</text>
@@ -86,7 +87,8 @@
     <!-- *********************************************************************************************************** -->
     <specification identifier="org.jomc.sequences.VetoableSequenceChangeListener"
                    class="org.jomc.sequences.VetoableSequenceChangeListener"
-                   classDeclaration="true" vendor="${project.organization.name}" version="1.0">
+                   classDeclaration="true" vendor="${project.organization.name}" version="1.0"
+                   createDate="2009-07-27T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Gets called whenever the state of a sequence is about to change.</text>
@@ -102,7 +104,8 @@
     <!-- *********************************************************************************************************** -->
     <implementation identifier="org.jomc.sequences.CapacityLimitException"
                     class="org.jomc.sequences.CapacityLimitException" classDeclaration="true" name="${project.name}"
-                    version="${project.version}" vendor="${project.organization.name}">
+                    version="${project.version}" vendor="${project.organization.name}"
+                    createDate="2009-07-27T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Gets thrown whenever the directories capacity limit has been reached.</text>
@@ -130,7 +133,8 @@
     <!-- *********************************************************************************************************** -->
     <implementation identifier="org.jomc.sequences.SequenceVetoException"
                     class="org.jomc.sequences.SequenceVetoException" classDeclaration="true" name="${project.name}"
-                    version="${project.version}" vendor="${project.organization.name}">
+                    version="${project.version}" vendor="${project.organization.name}"
+                    createDate="2009-07-27T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Gets thrown whenever illegal sequence information is passed to a method expecting legal sequence data.</text>
@@ -155,7 +159,8 @@
     <!-- *********************************************************************************************************** -->
     <implementation identifier="org.jomc.sequences.SequenceLimitException"
                     class="org.jomc.sequences.SequenceLimitException" classDeclaration="true" name="${project.name}"
-                    version="${project.version}" vendor="${project.organization.name}">
+                    version="${project.version}" vendor="${project.organization.name}"
+                    createDate="2009-07-27T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Gets thrown whenever the next value of a sequence is requested although its maximum value has already been reached.</text>
@@ -183,7 +188,8 @@
     <!-- *********************************************************************************************************** -->
     <implementation identifier="org.jomc.sequences.SequenceNotFoundException"
                     class="org.jomc.sequences.SequenceNotFoundException" classDeclaration="true" name="${project.name}"
-                    version="${project.version}" vendor="${project.organization.name}">
+                    version="${project.version}" vendor="${project.organization.name}"
+                    createDate="2009-07-27T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Gets thrown when a sequence is not found for a given name.</text>
@@ -211,7 +217,8 @@
     <!-- *********************************************************************************************************** -->
     <implementation identifier="org.jomc.sequences.ConcurrentModificationException"
                     class="org.jomc.sequences.ConcurrentModificationException" classDeclaration="true"
-                    name="${project.name}" version="${project.version}" vendor="${project.organization.name}">
+                    name="${project.name}" version="${project.version}" vendor="${project.organization.name}"
+                    createDate="2009-07-27T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Gets thrown whenever a sequence is edited or removed using outdated data.</text>
@@ -239,7 +246,8 @@
     <!-- *********************************************************************************************************** -->
     <implementation identifier="org.jomc.sequences.SequenceExistsException"
                     class="org.jomc.sequences.SequenceExistsException" classDeclaration="true"
-                    name="${project.name}" version="${project.version}" vendor="${project.organization.name}">
+                    name="${project.name}" version="${project.version}" vendor="${project.organization.name}"
+                    createDate="2009-07-27T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Gets thrown when a sequence is about to be added to a directory although a sequence with the same name already exists.</text>
@@ -270,7 +278,8 @@
     <!-- *********************************************************************************************************** -->
     <implementation identifier="org.jomc.sequences.SequencesSystemException"
                     class="org.jomc.sequences.SequencesSystemException" classDeclaration="true"
-                    name="${project.name}" version="${project.version}" vendor="${project.organization.name}">
+                    name="${project.name}" version="${project.version}" vendor="${project.organization.name}"
+                    createDate="2009-07-27T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Gets thrown whenever an unexpected error condition is detected.</text>
@@ -284,7 +293,7 @@
     <!-- *********************************************************************************************************** -->
     <implementation identifier="org.jomc.sequences.SequencesException" class="org.jomc.sequences.SequencesException"
                     classDeclaration="true" name="${project.name}" version="${project.version}"
-                    vendor="${project.organization.name}">
+                    vendor="${project.organization.name}" createDate="2009-07-27T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Recoverable exception base class.</text>
@@ -297,7 +306,8 @@
     </implementation>
     <!-- *********************************************************************************************************** -->
     <implementation identifier="org.jomc.sequences.Sequence" class="org.jomc.sequences.Sequence" classDeclaration="true"
-                    name="${project.name}" version="${project.version}" vendor="${project.organization.name}">
+                    name="${project.name}" version="${project.version}" vendor="${project.organization.name}"
+                    createDate="2009-07-27T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Sequence of numbers.</text>
@@ -311,7 +321,8 @@
     <!-- *********************************************************************************************************** -->
     <implementation identifier="org.jomc.sequences.SequenceChangeEvent"
                     class="org.jomc.sequences.SequenceChangeEvent" classDeclaration="true"
-                    name="${project.name}" version="${project.version}" vendor="${project.organization.name}">
+                    name="${project.name}" version="${project.version}" vendor="${project.organization.name}"
+                    createDate="2009-07-27T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">A "SequenceChange" event gets delivered whenever the state of a sequence changes.</text>

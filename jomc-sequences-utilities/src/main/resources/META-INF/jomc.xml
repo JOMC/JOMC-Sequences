@@ -45,7 +45,8 @@
     <!-- *********************************************************************************************************** -->
     <implementation identifier="org.jomc.sequences.util.SequencesTableModel"
                     class="org.jomc.sequences.util.SequencesTableModel" classDeclaration="true"
-                    name="${project.name}" version="${project.version}" vendor="${project.organization.name}" final="false">
+                    name="${project.name}" version="${project.version}" vendor="${project.organization.name}" final="false"
+                    createDate="2009-07-27T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Swing TableModel Java Bean for displaying and editing a system's SequenceDirectory.</text>

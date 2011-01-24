@@ -46,7 +46,7 @@
     <implementation identifier="org.jomc.sequences.ri.test.SequenceMapperTest"
                     class="org.jomc.sequences.ri.test.SequenceMapperTest"
                     classDeclaration="true" name="${project.name}" vendor="${project.organization.name}"
-                    version="${project.version}" stateless="true">
+                    version="${project.version}" stateless="true" createDate="2009-07-27T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Test cases for the {@code SequenceMapper} specification.</text>

@@ -45,7 +45,7 @@
   <implementations>
     <!-- *********************************************************************************************************** -->
     <implementation identifier="${project.name}" name="${project.name}" version="${project.version}"
-                    vendor="${project.organization.name}" final="true">
+                    vendor="${project.organization.name}" final="true" createDate="2009-07-27T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">${project.description}</text>
@@ -74,7 +74,8 @@
     <implementation identifier="${project.name} - Select Sequence Directory Query"
                     name="${project.name} - Select Sequence Directory Query"
                     class="org.jomc.sdk.jpa.NamedQueryFactory"
-                    version="${project.version}" vendor="${project.organization.name}" final="true">
+                    version="${project.version}" vendor="${project.organization.name}" final="true"
+                    createDate="2009-07-27T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Query selecting a single sequence directory entity.</text>
@@ -99,7 +100,8 @@
     <implementation identifier="${project.name} - Select Sequence Query"
                     name="${project.name} - Select Sequence Query"
                     class="org.jomc.sdk.jpa.NamedQueryFactory"
-                    version="${project.version}" vendor="${project.organization.name}" final="true">
+                    version="${project.version}" vendor="${project.organization.name}" final="true"
+                    createDate="2009-07-27T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Query selecting a single sequence entity.</text>
@@ -124,7 +126,8 @@
     <implementation identifier="${project.name} - Select All Sequences Query"
                     name="${project.name} - Select All Sequences Query"
                     class="org.jomc.sdk.jpa.NamedQueryFactory"
-                    version="${project.version}" vendor="${project.organization.name}" final="true">
+                    version="${project.version}" vendor="${project.organization.name}" final="true"
+                    createDate="2009-07-27T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Query selecting all sequence entities in a sequence directory.</text>
@@ -149,7 +152,8 @@
     <implementation identifier="${project.name} - Select Sequences Query"
                     name="${project.name} - Select Sequences Query"
                     class="org.jomc.sdk.jpa.NamedQueryFactory"
-                    version="${project.version}" vendor="${project.organization.name}" final="true">
+                    version="${project.version}" vendor="${project.organization.name}" final="true"
+                    createDate="2009-07-27T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Query selecting sequence entities in a sequence directory.</text>
@@ -174,7 +178,8 @@
     <implementation identifier="${project.name} - Select Sequence Count Query"
                     name="${project.name} - Select Sequence Count Query"
                     class="org.jomc.sdk.jpa.NamedQueryFactory"
-                    version="${project.version}" vendor="${project.organization.name}" final="true">
+                    version="${project.version}" vendor="${project.organization.name}" final="true"
+                    createDate="2009-07-27T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Query selecting the total number of sequence entities in a sequence directory.</text>
