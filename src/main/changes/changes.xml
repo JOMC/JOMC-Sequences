@@ -53,6 +53,7 @@
       <li>Updated the <code>maven-ejb-plugin</code> from <code>2.2.1</code> to <code>2.3</code>.</li>
       <li>Updated the <code>maven-assembly-plugin</code> from <code>2.2-beta-5</code> to <code>2.2</code>.</li>
       <li>Updated the <code>maven-release-plugin</code> from <code>2.0</code> to <code>2.1</code>.</li>
+      <li>Updated the <code>maven-site-plugin</code> from <code>2.1.1</code> to <code>2.2</code>.</li>
       <li>Updated the <code>appassembler-maven-plugin</code> from <code>1.0</code> to <code>1.1</code>.</li>
       <li>Updated the <code>clirr-maven-plugin</code> from <code>2.2.2</code> to <code>2.3</code>.</li>
       <li>Updated the <code>jpa-xjc-plugin</code> from <code>1.0</code> to <code>1.0.2</code>.</li>
