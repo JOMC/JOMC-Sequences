@@ -69,7 +69,8 @@ import java.util.Set;
 // SECTION-END
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
-@javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
+@javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments =
+"See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
 // </editor-fold>
 // SECTION-END
 public interface SequenceDirectory
@@ -113,13 +114,13 @@ public interface SequenceDirectory
      *
      * @return The data of the sequence from the directory.
      *
+     * @throws CapacityLimitException if the directory's capacity limit has been reached.
      * @throws SequenceVetoException if {@code sequence} holds illegal values.
      * @throws SequenceExistsException if a sequence with the same name already exists.
-     * @throws CapacityLimitException if the directory's capacity limit has been reached.
      * @throws SequencesSystemException if adding the sequence fails.
      */
     Sequence addSequence( Sequence sequence )
-        throws SequenceVetoException, SequenceExistsException, CapacityLimitException, SequencesSystemException;
+        throws CapacityLimitException, SequenceExistsException, SequenceVetoException, SequencesSystemException;
 
     /**
      * Updates a sequence in the directory.
@@ -130,14 +131,14 @@ public interface SequenceDirectory
      *
      * @return The data of the sequence from the directory.
      *
-     * @throws SequenceVetoException if {@code sequence} holds illegal values.
      * @throws SequenceNotFoundException if no sequence matching {@code name} exists in the directory.
      * @throws ConcurrentModificationException if the same sequence got concurrently modified in the directory, that is,
      * {@code revision} denotes outdated data.
+     * @throws SequenceVetoException if {@code sequence} holds illegal values.
      * @throws SequencesSystemException if editing the sequence fails.
      */
     Sequence editSequence( String name, long revision, Sequence sequence )
-        throws SequenceVetoException, SequenceNotFoundException, ConcurrentModificationException,
+        throws SequenceNotFoundException, ConcurrentModificationException, SequenceVetoException,
                SequencesSystemException;
 
     /**
@@ -151,10 +152,12 @@ public interface SequenceDirectory
      * @throws SequenceNotFoundException if no sequence matching {@code name} exists in the directory.
      * @throws ConcurrentModificationException if the same sequence got concurrently modified in the directory, that is,
      * {@code revision} denotes outdated data.
+     * @throws SequenceVetoException if removing the sequence is vetoed.
      * @throws SequencesSystemException if deleting the sequence fails.
      */
     Sequence deleteSequence( String name, long revision )
-        throws SequenceNotFoundException, ConcurrentModificationException, SequencesSystemException;
+        throws SequenceNotFoundException, ConcurrentModificationException, SequenceVetoException,
+               SequencesSystemException;
 
     /**
      * Searches the directory for sequences matching the given arguments.
