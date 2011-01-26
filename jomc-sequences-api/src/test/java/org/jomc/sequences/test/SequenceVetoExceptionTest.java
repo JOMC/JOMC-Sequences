@@ -36,6 +36,9 @@
 // SECTION-END
 package org.jomc.sequences.test;
 
+import org.jomc.sequences.SequenceChangeStatus;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import java.io.ObjectInputStream;
 import java.net.URL;
 import org.jomc.sequences.Sequence;
@@ -44,7 +47,6 @@ import org.jomc.sequences.SequenceVetoException;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
 
 // SECTION-START[Documentation]
 // <editor-fold defaultstate="collapsed" desc=" Generated Documentation ">
@@ -67,7 +69,7 @@ public class SequenceVetoExceptionTest
 
     @Test public void testSerializable() throws Exception
     {
-        final URL ser = this.getClass().getResource( "SequenceVetoException.ser" );
+        final URL ser = this.getClass().getResource( "/org/jomc/sequences/test/SequenceVetoException.ser" );
         assertNotNull( ser );
 
         final ObjectInputStream in = new ObjectInputStream( ser.openStream() );
@@ -82,7 +84,7 @@ public class SequenceVetoExceptionTest
         assertEquals( Long.MAX_VALUE, sequenceChange.getOldSequence().getIncrement() );
         assertEquals( Long.MAX_VALUE, sequenceChange.getOldSequence().getMaximum() );
         assertEquals( Long.MAX_VALUE, sequenceChange.getOldSequence().getMinimum() );
-        assertEquals( "Sequence 1", sequenceChange.getOldSequence().getName() );
+        assertEquals( "Old Sequence", sequenceChange.getOldSequence().getName() );
         assertEquals( 0L, sequenceChange.getOldSequence().getRevision() );
         assertEquals( Long.MAX_VALUE, sequenceChange.getOldSequence().getValue() );
 
@@ -91,29 +93,93 @@ public class SequenceVetoExceptionTest
         assertEquals( Long.MIN_VALUE, sequenceChange.getNewSequence().getIncrement() );
         assertEquals( Long.MIN_VALUE, sequenceChange.getNewSequence().getMaximum() );
         assertEquals( Long.MIN_VALUE, sequenceChange.getNewSequence().getMinimum() );
-        assertEquals( "Sequence 2", sequenceChange.getNewSequence().getName() );
+        assertEquals( "New Sequence", sequenceChange.getNewSequence().getName() );
         assertEquals( 0L, sequenceChange.getNewSequence().getRevision() );
         assertEquals( Long.MIN_VALUE, sequenceChange.getNewSequence().getValue() );
 
-        assertEquals( 2, sequenceChange.getStatus( Sequence.PROP_INCREMENT ).size() );
-        assertTrue( sequenceChange.getStatus( Sequence.PROP_INCREMENT ).contains( SequenceChangeEvent.ILLEGAL_VALUE ) );
-        assertTrue( sequenceChange.getStatus( Sequence.PROP_INCREMENT ).contains( SequenceChangeEvent.MANDATORY_VALUE ) );
+        assertInvalidNumberStatus( sequenceChange, Sequence.PROP_INCREMENT );
+        assertInvalidNumberStatus( sequenceChange, Sequence.PROP_MAXIMUM );
+        assertInvalidNumberStatus( sequenceChange, Sequence.PROP_MINIMUM );
+        assertInvalidNumberStatus( sequenceChange, Sequence.PROP_VALUE );
+        assertInvalidStringStatus( sequenceChange, Sequence.PROP_NAME );
+    }
 
-        assertEquals( 2, sequenceChange.getStatus( Sequence.PROP_MAXIMUM ).size() );
-        assertTrue( sequenceChange.getStatus( Sequence.PROP_MAXIMUM ).contains( SequenceChangeEvent.ILLEGAL_VALUE ) );
-        assertTrue( sequenceChange.getStatus( Sequence.PROP_MAXIMUM ).contains( SequenceChangeEvent.MANDATORY_VALUE ) );
+    private static void assertInvalidNumberStatus( final SequenceChangeEvent e, final String key )
+    {
+        assertEquals( 1, e.getStatus( key ).size() );
+        assertEquals( 1, e.getStatus( key, SequenceChangeStatus.InvalidNumber.class ).size() );
+        assertEquals( SequenceChangeStatus.InvalidNumber.IDENTIFIER, e.getStatus( key ).get( 0 ).getIdentifier() );
 
-        assertEquals( 2, sequenceChange.getStatus( Sequence.PROP_MINIMUM ).size() );
-        assertTrue( sequenceChange.getStatus( Sequence.PROP_MINIMUM ).contains( SequenceChangeEvent.ILLEGAL_VALUE ) );
-        assertTrue( sequenceChange.getStatus( Sequence.PROP_MINIMUM ).contains( SequenceChangeEvent.MANDATORY_VALUE ) );
+        final SequenceChangeStatus.InvalidNumber invalidNumber =
+            e.getStatus( key, SequenceChangeStatus.InvalidNumber.class ).get( 0 );
 
-        assertEquals( 2, sequenceChange.getStatus( Sequence.PROP_NAME ).size() );
-        assertTrue( sequenceChange.getStatus( Sequence.PROP_NAME ).contains( SequenceChangeEvent.ILLEGAL_VALUE ) );
-        assertTrue( sequenceChange.getStatus( Sequence.PROP_NAME ).contains( SequenceChangeEvent.MANDATORY_VALUE ) );
+        assertEquals( SequenceChangeStatus.InvalidNumber.IDENTIFIER, invalidNumber.getIdentifier() );
+        assertEquals( Long.MAX_VALUE, invalidNumber.getInvalidNumber() );
+        assertEquals( Long.MAX_VALUE, invalidNumber.getMaximum() );
+        assertEquals( 0L, invalidNumber.getMinimum() );
+        assertEquals( SequenceChangeStatus.ERROR, invalidNumber.getType() );
 
-        assertEquals( 2, sequenceChange.getStatus( Sequence.PROP_VALUE ).size() );
-        assertTrue( sequenceChange.getStatus( Sequence.PROP_VALUE ).contains( SequenceChangeEvent.ILLEGAL_VALUE ) );
-        assertTrue( sequenceChange.getStatus( Sequence.PROP_VALUE ).contains( SequenceChangeEvent.MANDATORY_VALUE ) );
+        System.out.println( invalidNumber );
+    }
+
+    private static void assertInvalidStringStatus( final SequenceChangeEvent e, final String key )
+    {
+        assertEquals( 1, e.getStatus( key ).size() );
+        assertEquals( 1, e.getStatus( key, SequenceChangeStatus.InvalidString.class ).size() );
+        assertEquals( SequenceChangeStatus.InvalidString.IDENTIFIER, e.getStatus( key ).get( 0 ).getIdentifier() );
+
+        final SequenceChangeStatus.InvalidString invalidString =
+            e.getStatus( key, SequenceChangeStatus.InvalidString.class ).get( 0 );
+
+        assertEquals( SequenceChangeStatus.InvalidString.IDENTIFIER, invalidString.getIdentifier() );
+        assertNotNull( invalidString.getInvalidCharacters() );
+        assertEquals( 0, invalidString.getInvalidCharacters().length );
+        assertEquals( "New Sequence", invalidString.getInvalidString() );
+        assertEquals( Long.MAX_VALUE, invalidString.getMaximumLength() );
+        assertEquals( Long.MAX_VALUE, invalidString.getMinimumLength() );
+        assertEquals( SequenceChangeStatus.ERROR, invalidString.getType() );
+
+        System.out.println( invalidString );
+    }
+
+    public static void main( final String... args ) throws Exception
+    {
+        final Sequence oldSequence = new Sequence();
+        oldSequence.setIncrement( Long.MAX_VALUE );
+        oldSequence.setMaximum( Long.MAX_VALUE );
+        oldSequence.setMinimum( Long.MAX_VALUE );
+        oldSequence.setName( "Old Sequence" );
+        oldSequence.setValue( Long.MAX_VALUE );
+
+        final Sequence newSequence = new Sequence();
+        newSequence.setIncrement( Long.MIN_VALUE );
+        newSequence.setMaximum( Long.MIN_VALUE );
+        newSequence.setMinimum( Long.MIN_VALUE );
+        newSequence.setName( "New Sequence" );
+        newSequence.setValue( Long.MIN_VALUE );
+
+        final SequenceChangeEvent e =
+            new SequenceChangeEvent( SequenceVetoExceptionTest.class, oldSequence, newSequence );
+
+        e.getStatus( Sequence.PROP_INCREMENT ).add( new SequenceChangeStatus.InvalidNumber(
+            SequenceChangeStatus.ERROR, Long.MAX_VALUE, 0L, Long.MAX_VALUE ) );
+
+        e.getStatus( Sequence.PROP_MAXIMUM ).add( new SequenceChangeStatus.InvalidNumber(
+            SequenceChangeStatus.ERROR, Long.MAX_VALUE, 0L, Long.MAX_VALUE ) );
+
+        e.getStatus( Sequence.PROP_MINIMUM ).add( new SequenceChangeStatus.InvalidNumber(
+            SequenceChangeStatus.ERROR, Long.MAX_VALUE, 0L, Long.MAX_VALUE ) );
+
+        e.getStatus( Sequence.PROP_VALUE ).add( new SequenceChangeStatus.InvalidNumber(
+            SequenceChangeStatus.ERROR, Long.MAX_VALUE, 0L, Long.MAX_VALUE ) );
+
+        e.getStatus( Sequence.PROP_NAME ).add( new SequenceChangeStatus.InvalidString(
+            SequenceChangeStatus.ERROR, "New Sequence", new char[ 0 ], Long.MAX_VALUE, Long.MAX_VALUE ) );
+
+        final SequenceVetoException o = new SequenceVetoException( e );
+        final ObjectOutputStream out = new ObjectOutputStream( new FileOutputStream( "SequenceVetoException.ser" ) );
+        out.writeObject( o );
+        out.close();
     }
 
     // SECTION-END

@@ -63,12 +63,12 @@ package org.jomc.sequences;
  *     <tr class="TableSubHeadingColor">
  *       <td align="left" scope="col" nowrap><b>Name</b></td>
  *       <td align="left" scope="col" nowrap><b>Languages</b></td>
- *       <td align="left" scope="col" nowrap><b>Default Template</b></td>
+ *       <td align="left" scope="col" nowrap><b>Default Templates</b></td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getSequenceLimitMessage sequenceLimitMessage}</td>
  *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
- *       <td align="left" valign="top" nowrap><pre><code>The maximum sequence value {0,number} has been reached. No more sequence values available.</code></pre></td>
+ *       <td align="left" valign="top" nowrap><pre><code>The maximum sequence value {0,number} has been reached. No more sequence values available.</code></pre><hr/><pre><code>Der Maximalwert {0,number} der Sequenz wurde erreicht. Keine weiteren Sequenz-Werte verf&uuml;gbar.</code></pre></td>
  *     </tr>
  *   </table>
  * </p>

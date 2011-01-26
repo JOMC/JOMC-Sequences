@@ -183,17 +183,17 @@ import org.jomc.sequences.model.SequencesType;
  *     <tr class="TableSubHeadingColor">
  *       <td align="left" scope="col" nowrap><b>Name</b></td>
  *       <td align="left" scope="col" nowrap><b>Languages</b></td>
- *       <td align="left" scope="col" nowrap><b>Default Template</b></td>
+ *       <td align="left" scope="col" nowrap><b>Default Templates</b></td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getIllegalArgumentMessage illegalArgumentMessage}</td>
  *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
- *       <td align="left" valign="top" nowrap><pre><code>Illegal value ''{1}'' for argument ''{0}''.</code></pre></td>
+ *       <td align="left" valign="top" nowrap><pre><code>Illegal value ''{1}'' for argument ''{0}''.</code></pre><hr/><pre><code>Ung&uuml;ltiger Wert ''{1}'' f&uuml;r Parameter ''{0}''.</code></pre></td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getSuccessfullyCreatedSequenceDirectoryMessage successfullyCreatedSequenceDirectoryMessage}</td>
  *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
- *       <td align="left" valign="top" nowrap><pre><code>Sequence directory ''{0}'' created.</code></pre></td>
+ *       <td align="left" valign="top" nowrap><pre><code>Sequence directory ''{0}'' created.</code></pre><hr/><pre><code>Sequenzverzeichnis ''{0}'' erstellt.</code></pre></td>
  *     </tr>
  *   </table>
  * </p>
@@ -297,9 +297,7 @@ public class DefaultSequenceDirectory
         }
         if ( sequenceType.getRevision() != revision )
         {
-            throw new ConcurrentModificationException(
-                this.getSequenceMapper().map( sequenceType, new Sequence() ) );
-
+            throw new ConcurrentModificationException( this.getSequenceMapper().map( sequenceType, new Sequence() ) );
         }
 
         final Sequence oldValue = this.getSequenceMapper().map( sequenceType, new Sequence() );
@@ -330,9 +328,7 @@ public class DefaultSequenceDirectory
         }
         if ( sequenceType.getRevision() != revision )
         {
-            throw new ConcurrentModificationException(
-                this.getSequenceMapper().map( sequenceType, new Sequence() ) );
-
+            throw new ConcurrentModificationException( this.getSequenceMapper().map( sequenceType, new Sequence() ) );
         }
 
         final Sequence deleted = this.getSequenceMapper().map( sequenceType, new Sequence() );

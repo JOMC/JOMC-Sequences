@@ -63,12 +63,12 @@ package org.jomc.sequences;
  *     <tr class="TableSubHeadingColor">
  *       <td align="left" scope="col" nowrap><b>Name</b></td>
  *       <td align="left" scope="col" nowrap><b>Languages</b></td>
- *       <td align="left" scope="col" nowrap><b>Default Template</b></td>
+ *       <td align="left" scope="col" nowrap><b>Default Templates</b></td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getSequenceExistsMessage sequenceExistsMessage}</td>
  *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
- *       <td align="left" valign="top" nowrap><pre><code>A sequence with the name ''{0}'' already exists.</code></pre></td>
+ *       <td align="left" valign="top" nowrap><pre><code>A sequence with the name ''{0}'' already exists.</code></pre><hr/><pre><code>Eine Sequenz mit Namen ''{0}'' existiert bereits.</code></pre></td>
  *     </tr>
  *   </table>
  * </p>

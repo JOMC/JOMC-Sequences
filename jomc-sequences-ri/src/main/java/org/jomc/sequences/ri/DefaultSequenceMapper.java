@@ -91,17 +91,17 @@ import org.jomc.sequences.model.SequenceType;
  *     <tr class="TableSubHeadingColor">
  *       <td align="left" scope="col" nowrap><b>Name</b></td>
  *       <td align="left" scope="col" nowrap><b>Languages</b></td>
- *       <td align="left" scope="col" nowrap><b>Default Template</b></td>
+ *       <td align="left" scope="col" nowrap><b>Default Templates</b></td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getIllegalArgumentMessage illegalArgumentMessage}</td>
  *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
- *       <td align="left" valign="top" nowrap><pre><code>Illegal value ''{1}'' for argument ''{0}''.</code></pre></td>
+ *       <td align="left" valign="top" nowrap><pre><code>Illegal value ''{1}'' for argument ''{0}''.</code></pre><hr/><pre><code>Ung&uuml;ltiger Wert ''{1}'' f&uuml;r Parameter ''{0}''.</code></pre></td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getUnhandledExceptionMessage unhandledExceptionMessage}</td>
  *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
- *       <td align="left" valign="top" nowrap><pre><code>Unhandled exception.</code></pre></td>
+ *       <td align="left" valign="top" nowrap><pre><code>Unhandled exception.</code></pre><hr/><pre><code>Unbehandelte Ausnahme.</code></pre></td>
  *     </tr>
  *   </table>
  * </p>

@@ -38,6 +38,7 @@ package org.jomc.sequences.ri;
 
 import org.jomc.sequences.Sequence;
 import org.jomc.sequences.SequenceChangeEvent;
+import org.jomc.sequences.SequenceChangeStatus;
 import org.jomc.sequences.SequenceVetoException;
 
 // SECTION-START[Documentation]
@@ -108,37 +109,51 @@ public class DefaultVetoableSequenceChangeListener
 
         if ( evt.getNewSequence() != null )
         {
-            if ( evt.getNewSequence().getName() == null )
+            if ( evt.getNewSequence().getName() == null
+                 || evt.getNewSequence().getName().length() < this.getSequenceNameMinLength()
+                 || evt.getNewSequence().getName().length() > this.getSequenceNameMaxLength() )
             {
                 valid = false;
-                evt.getStatus( Sequence.PROP_NAME ).add( SequenceChangeEvent.MANDATORY_VALUE );
-            }
-            else if ( evt.getNewSequence().getName().length() < this.getSequenceNameMinLength()
-                      || evt.getNewSequence().getName().length() > this.getSequenceNameMaxLength() )
-            {
-                valid = false;
-                evt.getStatus( Sequence.PROP_NAME ).add( SequenceChangeEvent.ILLEGAL_LENGTH );
+                evt.getStatus( Sequence.PROP_NAME ).add( new SequenceChangeStatus.InvalidString(
+                    SequenceChangeStatus.ERROR, evt.getNewSequence().getName(), null,
+                    this.getSequenceNameMinLength(), this.getSequenceNameMaxLength() ) );
+
             }
 
-            if ( evt.getNewSequence().getMaximum() < evt.getNewSequence().getMinimum()
-                 || evt.getNewSequence().getMinimum() > evt.getNewSequence().getMaximum() )
+            if ( evt.getNewSequence().getMaximum() < evt.getNewSequence().getMinimum() )
             {
                 valid = false;
-                evt.getStatus( Sequence.PROP_MINIMUM ).add( SequenceChangeEvent.ILLEGAL_VALUE );
-                evt.getStatus( Sequence.PROP_MAXIMUM ).add( SequenceChangeEvent.ILLEGAL_VALUE );
+                evt.getStatus( Sequence.PROP_MAXIMUM ).add( new SequenceChangeStatus.InvalidNumber(
+                    SequenceChangeStatus.ERROR, evt.getNewSequence().getMaximum(),
+                    evt.getNewSequence().getMinimum(), null ) );
+
+            }
+
+            if ( evt.getNewSequence().getMinimum() > evt.getNewSequence().getMaximum() )
+            {
+                valid = false;
+                evt.getStatus( Sequence.PROP_MINIMUM ).add( new SequenceChangeStatus.InvalidNumber(
+                    SequenceChangeStatus.ERROR, evt.getNewSequence().getMinimum(),
+                    evt.getNewSequence().getValue(), null ) );
+
             }
 
             if ( evt.getNewSequence().getValue() > evt.getNewSequence().getMaximum()
                  || evt.getNewSequence().getValue() < evt.getNewSequence().getMinimum() )
             {
                 valid = false;
-                evt.getStatus( Sequence.PROP_VALUE ).add( SequenceChangeEvent.ILLEGAL_VALUE );
+                evt.getStatus( Sequence.PROP_VALUE ).add( new SequenceChangeStatus.InvalidNumber(
+                    SequenceChangeStatus.ERROR, evt.getNewSequence().getValue(),
+                    evt.getNewSequence().getMinimum(), evt.getNewSequence().getMaximum() ) );
+
             }
 
             if ( evt.getNewSequence().getIncrement() <= 0L )
             {
                 valid = false;
-                evt.getStatus( Sequence.PROP_INCREMENT ).add( SequenceChangeEvent.ILLEGAL_VALUE );
+                evt.getStatus( Sequence.PROP_INCREMENT ).add( new SequenceChangeStatus.InvalidNumber(
+                    SequenceChangeStatus.ERROR, evt.getNewSequence().getIncrement(), 1L, null ) );
+
             }
         }
 

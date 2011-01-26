@@ -36,7 +36,8 @@
 // SECTION-END
 package org.jomc.sequences;
 
-import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.EventObject;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -62,133 +63,8 @@ public class SequenceChangeEvent extends EventObject
 {
     // SECTION-START[SequenceChangeEvent]
 
-    /** Status of a {@code SequenceChangeEvent}. */
-    public static class Status implements Serializable
-    {
-
-        /** Constant for an information. */
-        public static final int INFORMATION = 1;
-
-        /** Constant for a notification. */
-        public static final int NOTIFICATION = 2;
-
-        /** Constant for a warning. */
-        public static final int WARNING = 3;
-
-        /** Constant for an error. */
-        public static final int ERROR = 3;
-
-        /** Serial version UID for backwards compatibility with 1.0.x classes. */
-        private static final long serialVersionUID = 489933079268603831L;
-
-        /**
-         * Type of the status.
-         * @serial
-         */
-        private int type;
-
-        /**
-         * Identifier of the status.
-         * @serial
-         */
-        private String identifier;
-
-        /**
-         * Creates a new {@code Status} instance taking a type constant and an identifier of the instance.
-         *
-         * @param type The type of the new status.
-         * @param identifier The identifier of the status.
-         */
-        public Status( final int type, final String identifier )
-        {
-            this.type = type;
-            this.identifier = identifier;
-        }
-
-        /**
-         * Gets the type of the status.
-         *
-         * @return The type of the status.
-         */
-        public int getType()
-        {
-            return this.type;
-        }
-
-        /**
-         * Gets the identifier of status.
-         *
-         * @return The identifier of the status.
-         */
-        public String getIdentifier()
-        {
-            return this.identifier;
-        }
-
-        /**
-         * Returns a string representation of the object.
-         *
-         * @return A string representation of the object.
-         */
-        @Override
-        public String toString()
-        {
-            final StringBuilder str = new StringBuilder().append( "{" );
-            str.append( "type=" ).append( this.type ).
-                append( ", identifier=" ).append( this.getIdentifier() ).
-                append( '}' );
-
-            return super.toString() + str.toString();
-        }
-
-        /**
-         * Indicates whether some other object is "equal to" this one by comparing the value of property
-         * {@code identifier}.
-         *
-         * @param o The reference object with which to compare.
-         * @return {@code true} if this object is the same as the obj argument; {@code false} otherwise.
-         */
-        @Override
-        public boolean equals( final Object o )
-        {
-            boolean equal = this == o;
-            if ( !equal && o instanceof Status )
-            {
-                final Status that = (Status) o;
-                equal = this.getIdentifier().equals( that.getIdentifier() );
-            }
-            return equal;
-        }
-
-        /**
-         * Returns a hash code value for the object.
-         *
-         * @return A hash code value for this object.
-         */
-        @Override
-        public int hashCode()
-        {
-            int hash = 5;
-            hash = 47 * hash + ( this.identifier != null ? this.identifier.hashCode() : 0 );
-            return hash;
-        }
-
-    }
-
-    /** A mandatory property is missing a value. */
-    public static final Status MANDATORY_VALUE =
-        new Status( Status.ERROR, "org.jomc.sequences.Sequence.MANDATORY_VALUE" );
-
-    /** A property value is illegal. */
-    public static final Status ILLEGAL_VALUE =
-        new Status( Status.ERROR, "org.jomc.sequences.Sequence.ILLEGAL_VALUE" );
-
-    /** A property value is of illegal length. */
-    public static final Status ILLEGAL_LENGTH =
-        new Status( Status.ERROR, "org.jomc.sequences.Sequence.ILLEGAL_LENGTH" );
-
     /** Serial version UID for backwards compatibility with 1.0.x classes. */
-    private static final long serialVersionUID = 4189816896435679868L;
+    private static final long serialVersionUID = 3680953665033263363L;
 
     /**
      * The entity getting changed.
@@ -197,7 +73,7 @@ public class SequenceChangeEvent extends EventObject
     private Sequence oldSequence;
 
     /**
-     * The the entity the old sequence is changed to.
+     * The entity the old sequence is changed to.
      * @serial
      */
     private Sequence newSequence;
@@ -206,16 +82,16 @@ public class SequenceChangeEvent extends EventObject
      * The status of the event.
      * @serial
      */
-    private Map<String, List<Status>> status;
+    private Map<String, List<SequenceChangeStatus>> status;
 
     /**
      * Creates a new {@code SequenceChangeEvent} instance.
      *
      * @param source The source of the event.
-     * @param oldSequence The entity getting changed or {@code null} if {@code newValue} is about to be added to
+     * @param oldSequence The entity getting changed or {@code null} if {@code newSequence} is about to be added to
      * {@code source}.
-     * @param newSequence The value {@code oldValue} will be changed to or {@code null} if {@code oldValue} is about to
-     * be removed from {@code source}.
+     * @param newSequence The value {@code oldSequence} will be changed to or {@code null} if {@code oldSequence} is
+     * about to be removed from {@code source}.
      */
     public SequenceChangeEvent( final Object source, final Sequence oldSequence, final Sequence newSequence )
     {
@@ -229,7 +105,7 @@ public class SequenceChangeEvent extends EventObject
      *
      * @return The entity getting changed or {@code null} if a new sequence is added to the source of the event.
      */
-    public Sequence getOldSequence()
+    public final Sequence getOldSequence()
     {
         return this.oldSequence;
     }
@@ -240,7 +116,7 @@ public class SequenceChangeEvent extends EventObject
      * @return The entity the old sequence is changed to or {@code null} if the old sequence is removed from the source
      * of the event.
      */
-    public Sequence getNewSequence()
+    public final Sequence getNewSequence()
     {
         return this.newSequence;
     }
@@ -257,21 +133,60 @@ public class SequenceChangeEvent extends EventObject
      *
      * @see Sequence#PROP_NAME Sequence.PROP_XYZ
      */
-    public List<Status> getStatus( final String key )
+    public final List<SequenceChangeStatus> getStatus( final String key )
     {
         if ( this.status == null )
         {
-            this.status = new HashMap<String, List<Status>>();
+            this.status = new HashMap<String, List<SequenceChangeStatus>>();
         }
 
-        List<Status> list = this.status.get( key );
+        List<SequenceChangeStatus> list = this.status.get( key );
         if ( list == null )
         {
-            list = new LinkedList<Status>();
+            list = new LinkedList<SequenceChangeStatus>();
             this.status.put( key, list );
         }
 
         return list;
+    }
+
+    /**
+     * Gets status for a given key and type.
+     *
+     * @param key The key of the status to return.
+     * @param type The class of the type of status to return.
+     * @param <T> The type of status to return.
+     *
+     * @return An unmodifiable list of all status for {@code key} of type {@code T}.
+     *
+     * @throws NullPointerException if {@code type} is {@code null}.
+     *
+     * @see Sequence#PROP_NAME Sequence.PROP_XYZ
+     */
+    public final <T extends SequenceChangeStatus> List<T> getStatus( final String key, final Class<T> type )
+    {
+        if ( type == null )
+        {
+            throw new NullPointerException( "type" );
+        }
+
+        List<T> found = null;
+        final List<SequenceChangeStatus> list = this.status != null ? this.status.get( key ) : null;
+
+        if ( list != null )
+        {
+            found = new ArrayList<T>( list.size() );
+
+            for ( SequenceChangeStatus s : list )
+            {
+                if ( s.getClass() == type )
+                {
+                    found.add( type.cast( s ) );
+                }
+            }
+        }
+
+        return Collections.unmodifiableList( found );
     }
 
     // SECTION-END

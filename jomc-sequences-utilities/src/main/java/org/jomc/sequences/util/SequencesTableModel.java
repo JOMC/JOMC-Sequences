@@ -145,37 +145,37 @@ import org.jomc.sequences.SequencesSystemException;
  *     <tr class="TableSubHeadingColor">
  *       <td align="left" scope="col" nowrap><b>Name</b></td>
  *       <td align="left" scope="col" nowrap><b>Languages</b></td>
- *       <td align="left" scope="col" nowrap><b>Default Template</b></td>
+ *       <td align="left" scope="col" nowrap><b>Default Templates</b></td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getIllegalColumnIndexMessage illegalColumnIndexMessage}</td>
  *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
- *       <td align="left" valign="top" nowrap><pre><code>Illegal column index {0}. {1}</code></pre></td>
+ *       <td align="left" valign="top" nowrap><pre><code>Illegal column index {0}. {1}</code></pre><hr/><pre><code>Ung&uuml;ltiger Spalten-Index {0}. {1}</code></pre></td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getIncrementColumnTitle incrementColumnTitle}</td>
  *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
- *       <td align="left" valign="top" nowrap><pre><code>Increment</code></pre></td>
+ *       <td align="left" valign="top" nowrap><pre><code>Increment</code></pre><hr/><pre><code>Inkrement</code></pre></td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getMaximumColumnTitle maximumColumnTitle}</td>
  *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
- *       <td align="left" valign="top" nowrap><pre><code>Maximum</code></pre></td>
+ *       <td align="left" valign="top" nowrap><pre><code>Maximum</code></pre><hr/><pre><code>Maximum</code></pre></td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getMinimumColumnTitle minimumColumnTitle}</td>
  *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
- *       <td align="left" valign="top" nowrap><pre><code>Minimum</code></pre></td>
+ *       <td align="left" valign="top" nowrap><pre><code>Minimum</code></pre><hr/><pre><code>Minimum</code></pre></td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getNameColumnTitle nameColumnTitle}</td>
  *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
- *       <td align="left" valign="top" nowrap><pre><code>Name</code></pre></td>
+ *       <td align="left" valign="top" nowrap><pre><code>Name</code></pre><hr/><pre><code>Name</code></pre></td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getValueColumnTitle valueColumnTitle}</td>
  *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
- *       <td align="left" valign="top" nowrap><pre><code>Value</code></pre></td>
+ *       <td align="left" valign="top" nowrap><pre><code>Value</code></pre><hr/><pre><code>Wert</code></pre></td>
  *     </tr>
  *   </table>
  * </p>
@@ -253,7 +253,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
     @Override
     public Class<?> getColumnClass( final int columnIndex )
     {
-        final Class columnClass;
+        final Class<?> columnClass;
 
         switch ( columnIndex )
         {
@@ -523,7 +523,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *
      * @return {@code true} if the {@code name} column is editable; {@code false} if not.
      */
-    public Boolean getNameColumnEditable()
+    public final Boolean getNameColumnEditable()
     {
         if ( this.nameColumnEditable == null )
         {
@@ -539,7 +539,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *
      * @param value {@code true} if the {@code name} column should be editable; {@code false} if not.
      */
-    public void setNameColumnEditable( final Boolean value )
+    public final void setNameColumnEditable( final Boolean value )
     {
         final Boolean oldValue = this.nameColumnEditable;
         this.nameColumnEditable = value;
@@ -551,7 +551,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *
      * @return {@code true} if the {@code minimum} column is editable;{@code false} if not.
      */
-    public Boolean getMinimumColumnEditable()
+    public final Boolean getMinimumColumnEditable()
     {
         if ( this.minimumColumnEditable == null )
         {
@@ -567,7 +567,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *
      * @param value {@code true} if the {@code minimum} column should be editable; {@code false} if not.
      */
-    public void setMinimumColumnEditable( final Boolean value )
+    public final void setMinimumColumnEditable( final Boolean value )
     {
         final Boolean oldValue = this.minimumColumnEditable;
         this.minimumColumnEditable = value;
@@ -579,7 +579,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *
      * @return {@code true} if the {@code maximum} column is editable; {@code false} if not.
      */
-    public Boolean getMaximumColumnEditable()
+    public final Boolean getMaximumColumnEditable()
     {
         if ( this.maximumColumnEditable == null )
         {
@@ -595,7 +595,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *
      * @param value {@code true} if the {@code maximum} column should be editable; {@code false} if not.
      */
-    public void setMaximumColumnEditable( final Boolean value )
+    public final void setMaximumColumnEditable( final Boolean value )
     {
         final Boolean oldValue = this.maximumColumnEditable;
         this.maximumColumnEditable = value;
@@ -607,7 +607,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *
      * @return {@code true} if the {@code increment} column is editable; {@code false} if not.
      */
-    public Boolean getIncrementColumnEditable()
+    public final Boolean getIncrementColumnEditable()
     {
         if ( this.incrementColumnEditable == null )
         {
@@ -623,7 +623,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *
      * @param value {@code true} if the {@code increment} column should be editable; {@code false} if not.
      */
-    public void setIncrementColumnEditable( final Boolean value )
+    public final void setIncrementColumnEditable( final Boolean value )
     {
         final Boolean oldValue = this.incrementColumnEditable;
         this.incrementColumnEditable = value;
@@ -635,7 +635,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *
      * @return {@code true} if the {@code value} column is editable; {@code false} if not.
      */
-    public Boolean getValueColumnEditable()
+    public final Boolean getValueColumnEditable()
     {
         if ( this.valueColumnEditable == null )
         {
@@ -651,7 +651,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *
      * @param value {@code true} if the {@code value} column should be editable; {@code false} if not.
      */
-    public void setValueColumnEditable( final Boolean value )
+    public final void setValueColumnEditable( final Boolean value )
     {
         final Boolean oldValue = this.valueColumnEditable;
         this.valueColumnEditable = value;
@@ -663,7 +663,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *
      * @return Entity used for filtering sequences or {@code null}.
      */
-    public Sequence getSequenceFilter()
+    public final Sequence getSequenceFilter()
     {
         return this.sequenceFilter;
     }
@@ -673,7 +673,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *
      * @param value Entity to use for filtering sequences or {@code null}.
      */
-    public void setSequenceFilter( final Sequence value )
+    public final void setSequenceFilter( final Sequence value )
     {
         final Sequence oldValue = this.sequenceFilter;
         this.sequenceFilter = value;
@@ -690,7 +690,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *
      * @param listener The listener to be added.
      */
-    public void addPropertyChangeListener( final PropertyChangeListener listener )
+    public final void addPropertyChangeListener( final PropertyChangeListener listener )
     {
         this.changeSupport.addPropertyChangeListener( listener );
     }
@@ -703,7 +703,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *
      * @param listener The listener to be removed.
      */
-    public void removePropertyChangeListener( final PropertyChangeListener listener )
+    public final void removePropertyChangeListener( final PropertyChangeListener listener )
     {
         this.changeSupport.removePropertyChangeListener( listener );
     }
@@ -719,7 +719,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *
      * @see PropertyChangeSupport#getPropertyChangeListeners()
      */
-    public PropertyChangeListener[] getPropertyChangeListeners()
+    public final PropertyChangeListener[] getPropertyChangeListeners()
     {
         return this.changeSupport.getPropertyChangeListeners();
     }
@@ -734,7 +734,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      * @param propertyName The name of the property to listen on.
      * @param listener The listener to be added.
      */
-    public void addPropertyChangeListener( final String propertyName, final PropertyChangeListener listener )
+    public final void addPropertyChangeListener( final String propertyName, final PropertyChangeListener listener )
     {
         this.changeSupport.addPropertyChangeListener( propertyName, listener );
     }
@@ -749,7 +749,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      * @param propertyName The name of the property that was listened on.
      * @param listener The listener to be removed.
      */
-    public void removePropertyChangeListener( final String propertyName, final PropertyChangeListener listener )
+    public final void removePropertyChangeListener( final String propertyName, final PropertyChangeListener listener )
     {
         this.changeSupport.removePropertyChangeListener( propertyName, listener );
     }
@@ -762,19 +762,21 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      * @return All of the {@code PropertyChangeListeners} associated with the named property. If no such listeners have
      * been added, or if {@code propertyName} is {@code null}, an empty array is returned.
      */
-    public PropertyChangeListener[] getPropertyChangeListeners( final String propertyName )
+    public final PropertyChangeListener[] getPropertyChangeListeners( final String propertyName )
     {
         return this.changeSupport.getPropertyChangeListeners( propertyName );
     }
 
     /**
      * Gets the entities of the model.
+     * <p>This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you make
+     * to the returned list will be present inside the object.</p>
      *
      * @return The entities of the model.
      *
      * @throws SequencesSystemException if searching entities fails.
      */
-    public List<Sequence> getSequences()
+    protected List<Sequence> getSequences()
     {
         if ( this.sequences == null )
         {

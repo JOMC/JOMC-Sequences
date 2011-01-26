@@ -63,12 +63,12 @@ package org.jomc.sequences;
  *     <tr class="TableSubHeadingColor">
  *       <td align="left" scope="col" nowrap><b>Name</b></td>
  *       <td align="left" scope="col" nowrap><b>Languages</b></td>
- *       <td align="left" scope="col" nowrap><b>Default Template</b></td>
+ *       <td align="left" scope="col" nowrap><b>Default Templates</b></td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getIllegalSequenceMessage illegalSequenceMessage}</td>
  *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
- *       <td align="left" valign="top" nowrap><pre><code>Illegal sequence data.</code></pre></td>
+ *       <td align="left" valign="top" nowrap><pre><code>Illegal sequence data.</code></pre><hr/><pre><code>Ung&uuml;ltige Sequenzdaten.</code></pre></td>
  *     </tr>
  *   </table>
  * </p>

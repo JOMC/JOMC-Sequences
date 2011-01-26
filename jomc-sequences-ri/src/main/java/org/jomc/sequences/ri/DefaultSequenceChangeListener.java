@@ -88,12 +88,15 @@ import org.jomc.sequences.SequenceChangeEvent;
  *     <tr class="TableSubHeadingColor">
  *       <td align="left" scope="col" nowrap><b>Name</b></td>
  *       <td align="left" scope="col" nowrap><b>Languages</b></td>
- *       <td align="left" scope="col" nowrap><b>Default Template</b></td>
+ *       <td align="left" scope="col" nowrap><b>Default Templates</b></td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getOperationInfo operationInfo}</td>
  *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
  *       <td align="left" valign="top" nowrap><pre><code>
+ *     --''{0}''
+ *     ++''{1}''
+ *             </code></pre><hr/><pre><code>
  *     --''{0}''
  *     ++''{1}''
  *             </code></pre></td>
