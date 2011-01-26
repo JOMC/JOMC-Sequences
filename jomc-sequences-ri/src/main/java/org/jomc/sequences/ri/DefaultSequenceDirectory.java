@@ -542,7 +542,7 @@ public class DefaultSequenceDirectory
     }
 
     /**
-     * Notifies all available {@code SequenceChangeListener}s about a changed sequence.
+     * Notifies all available {@code SequenceChangeListener}s that a sequence changed.
      *
      * @param oldValue The entity having been changed or {@code null} if {@code newValue} got added to the directory.
      * @param newValue The value {@code oldValue} got changed to or {@code null} if {@code oldValue} got removed from
@@ -563,7 +563,7 @@ public class DefaultSequenceDirectory
     }
 
     /**
-     * Notifies all available {@code SequenceChangeListener}s about a sequence about to change.
+     * Notifies all available {@code SequenceChangeListener}s that a sequence is about to change.
      *
      * @param oldValue The entity about to change or {@code null} if {@code newValue} is about to be added to the
      * directory.
