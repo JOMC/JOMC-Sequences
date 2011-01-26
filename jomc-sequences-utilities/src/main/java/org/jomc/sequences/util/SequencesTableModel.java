@@ -210,7 +210,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
 
     public int getColumnCount()
     {
-        return COLUMN_COUNT;
+        return DEFAULT_COLUMN_COUNT;
     }
 
     @Override
@@ -431,9 +431,6 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
 
     // SECTION-END
     // SECTION-START[SequencesTableModel]
-    /** Number of table columns. */
-    public static final int COLUMN_COUNT = 5;
-
     /** Index of the column displaying a sequence's name. */
     public static final int NAME_COLUMN_INDEX = 0;
 
@@ -472,6 +469,9 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
     /** Name of property {@code sequenceFilter}. */
     public static final String SEQUENCE_FILTER =
         "org.jomc.sequences.util.SequencesTableModel.SEQUENCE_FILTER";
+
+    /** Default number of table columns. */
+    private static final int DEFAULT_COLUMN_COUNT = 5;
 
     /**
      * Flag indicating that the {@code name} column is editable.
