@@ -91,7 +91,7 @@ public class ConcurrentModificationException extends SequencesException
     private static final long serialVersionUID = -3756736032000979967L;
 
     /**
-     * Most recent revision of the correspondent reported.
+     * The reported most recent revision of the sequence.
      * @serial
      */
     private final Sequence mostRecentRevision;

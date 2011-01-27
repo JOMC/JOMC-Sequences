@@ -108,7 +108,7 @@ public abstract class SequenceChangeStatus implements Serializable
     }
 
     /**
-     * Gets the identifier of status.
+     * Gets the identifier of the status.
      *
      * @return The identifier of the status.
      */

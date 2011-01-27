@@ -39,7 +39,7 @@ package org.jomc.sequences;
 // SECTION-START[Documentation]
 // <editor-fold defaultstate="collapsed" desc=" Generated Documentation ">
 /**
- * Gets thrown whenever illegal sequence information is passed to a method expecting legal sequence data.
+ * Gets thrown whenever invalid sequence information is passed to a method expecting valid sequence information.
  * <p>
  *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
  *     <tr class="TableHeadingColor">
@@ -68,7 +68,7 @@ package org.jomc.sequences;
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getIllegalSequenceMessage illegalSequenceMessage}</td>
  *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
- *       <td align="left" valign="top" nowrap><pre><code>Illegal sequence data.</code></pre><hr/><pre><code>Ung&uuml;ltige Sequenzdaten.</code></pre></td>
+ *       <td align="left" valign="top" nowrap><pre><code>Invalid sequence data.</code></pre><hr/><pre><code>Ung&uuml;ltige Sequenzdaten.</code></pre></td>
  *     </tr>
  *   </table>
  * </p>
@@ -177,7 +177,7 @@ public class SequenceVetoException extends SequencesException
      *     </tr>
      *     <tr class="TableRow">
      *       <td align="left" valign="top" nowrap>English (default)</td>
-     *       <td align="left" valign="top" nowrap><pre><code>Illegal sequence data.</code></pre></td>
+     *       <td align="left" valign="top" nowrap><pre><code>Invalid sequence data.</code></pre></td>
      *     </tr>
      *     <tr class="TableRow">
      *       <td align="left" valign="top" nowrap>Deutsch</td>
