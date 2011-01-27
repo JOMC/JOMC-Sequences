@@ -121,7 +121,7 @@ import org.jomc.sequences.SequencesSystemException;
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" nowrap>{@link #getExceptionListener ExceptionListener}</td>
- *       <td align="left">Dependency on {@code 'java.beans.ExceptionListener'} {@code (java.beans.ExceptionListener)} at specification level 1.4 bound to an instance.</td>
+ *       <td align="left">Dependency on {@code 'JOMC :: Sequences :: ExceptionListener'} {@code (java.beans.ExceptionListener)} at specification level 1.0 bound to an instance.</td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" nowrap>{@link #getLocale Locale}</td>
@@ -830,7 +830,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
 
     /**
      * Gets the {@code ExceptionListener} dependency.
-     * <p>This method returns any available object of the {@code 'java.beans.ExceptionListener'} {@code (java.beans.ExceptionListener)} specification at specification level 1.4.</p>
+     * <p>This method returns any available object of the {@code 'JOMC :: Sequences :: ExceptionListener'} {@code (java.beans.ExceptionListener)} specification at specification level 1.0.</p>
      * <p>That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.</p>
      * @return The {@code ExceptionListener} dependency.
      * {@code null} if no object is available.
