@@ -114,7 +114,7 @@ public interface SequenceDirectory
      * @return The data of the sequence from the directory.
      *
      * @throws CapacityLimitException if the directory's capacity limit has been reached.
-     * @throws SequenceVetoException if {@code sequence} holds illegal values.
+     * @throws SequenceVetoException if adding the sequence is vetoed.
      * @throws SequenceExistsException if a sequence with the same name already exists.
      * @throws SequencesSystemException if adding the sequence fails.
      */
@@ -133,7 +133,7 @@ public interface SequenceDirectory
      * @throws SequenceNotFoundException if no sequence matching {@code name} exists in the directory.
      * @throws ConcurrentModificationException if the same sequence got concurrently modified in the directory, that is,
      * {@code revision} denotes outdated data.
-     * @throws SequenceVetoException if {@code sequence} holds illegal values.
+     * @throws SequenceVetoException if editing the sequence is vetoed.
      * @throws SequencesSystemException if editing the sequence fails.
      */
     Sequence editSequence( String name, long revision, Sequence sequence )
