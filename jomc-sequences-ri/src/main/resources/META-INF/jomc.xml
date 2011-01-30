@@ -128,6 +128,25 @@
         </property>
       </properties>
       <messages>
+        <message name="illegalResultObjectError">
+          <template defaultLanguage="en">
+            <text language="en">Illegal object ''{1}'' searching sequence directory ''{0}''.</text>
+            <text language="de">Ungültiges Objekt ''{1}'' bei Abfrage des ''{0}'' Sequenzverzeichnisses.</text>
+          </template>
+          <arguments>
+            <argument index="0" name="directoryInfo"/>
+            <argument index="1" name="objectInfo"/>
+          </arguments>
+        </message>
+        <message name="missingResultObjectError">
+          <template defaultLanguage="en">
+            <text language="en">No object searching directory ''{0}''.</text>
+            <text language="de">Kein Objekt bei Abfrage des ''{0}'' Sequenzverzeichnisses.</text>
+          </template>
+          <arguments>
+            <argument index="0" name="directoryInfo"/>
+          </arguments>
+        </message>
         <reference name="illegalArgumentMessage"/>
         <reference name="successfullyCreatedSequenceDirectoryMessage"/>
       </messages>

@@ -191,6 +191,16 @@ import org.jomc.sequences.model.SequencesType;
  *       <td align="left" valign="top" nowrap><pre><code>Illegal value ''{1}'' for argument ''{0}''.</code></pre><hr/><pre><code>Ung&uuml;ltiger Wert ''{1}'' f&uuml;r Parameter ''{0}''.</code></pre></td>
  *     </tr>
  *     <tr class="TableRowColor">
+ *       <td align="left" valign="top" nowrap>{@link #getIllegalResultObjectError illegalResultObjectError}</td>
+ *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
+ *       <td align="left" valign="top" nowrap><pre><code>Illegal object ''{1}'' searching sequence directory ''{0}''.</code></pre><hr/><pre><code>Ung&uuml;ltiges Objekt ''{1}'' bei Abfrage des ''{0}'' Sequenzverzeichnisses.</code></pre></td>
+ *     </tr>
+ *     <tr class="TableRowColor">
+ *       <td align="left" valign="top" nowrap>{@link #getMissingResultObjectError missingResultObjectError}</td>
+ *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
+ *       <td align="left" valign="top" nowrap><pre><code>No object searching directory ''{0}''.</code></pre><hr/><pre><code>Kein Objekt bei Abfrage des ''{0}'' Sequenzverzeichnisses.</code></pre></td>
+ *     </tr>
+ *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getSuccessfullyCreatedSequenceDirectoryMessage successfullyCreatedSequenceDirectoryMessage}</td>
  *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
  *       <td align="left" valign="top" nowrap><pre><code>Sequence directory ''{0}'' created.</code></pre><hr/><pre><code>Sequenzverzeichnis ''{0}'' erstellt.</code></pre></td>
@@ -256,7 +266,8 @@ public class DefaultSequenceDirectory
             throw new CapacityLimitException( capacityLimit );
         }
 
-        this.fireVetoableSequenceChange( null, sequence );
+        final SequenceChangeEvent sequenceChange = new SequenceChangeEvent( this, null, sequence );
+        this.fireVetoableSequenceChange( sequenceChange );
 
         SequenceType sequenceType = this.getSequenceType( sequence.getName() );
 
@@ -274,7 +285,14 @@ public class DefaultSequenceDirectory
         this.getEntityManager().merge( sequences );
 
         final Sequence persistent = this.getSequenceMapper().map( sequenceType, new Sequence() );
-        this.fireSequenceChange( null, persistent );
+        final SequenceChangeEvent sequenceChanged = new SequenceChangeEvent( this, null, persistent );
+
+        for ( String k : sequenceChange.getStatusKeys() )
+        {
+            sequenceChanged.getStatus( k ).addAll( sequenceChange.getStatus( k ) );
+        }
+
+        this.fireSequenceChange( sequenceChanged );
         return persistent;
     }
 
@@ -301,7 +319,8 @@ public class DefaultSequenceDirectory
         }
 
         final Sequence oldValue = this.getSequenceMapper().map( sequenceType, new Sequence() );
-        this.fireVetoableSequenceChange( oldValue, sequence );
+        final SequenceChangeEvent sequenceChange = new SequenceChangeEvent( this, oldValue, sequence );
+        this.fireVetoableSequenceChange( sequenceChange );
 
         sequenceType = this.getSequenceMapper().map( sequence, sequenceType );
         sequenceType.setRevision( sequenceType.getRevision() + 1L );
@@ -309,7 +328,14 @@ public class DefaultSequenceDirectory
         this.getEntityManager().merge( sequenceType );
 
         final Sequence edited = this.getSequenceMapper().map( sequenceType, new Sequence() );
-        this.fireSequenceChange( oldValue, edited );
+        final SequenceChangeEvent sequenceChanged = new SequenceChangeEvent( this, oldValue, edited );
+
+        for ( String k : sequenceChange.getStatusKeys() )
+        {
+            sequenceChanged.getStatus( k ).addAll( sequenceChange.getStatus( k ) );
+        }
+
+        this.fireSequenceChange( sequenceChanged );
         return edited;
     }
 
@@ -332,7 +358,8 @@ public class DefaultSequenceDirectory
         }
 
         final Sequence deleted = this.getSequenceMapper().map( sequenceType, new Sequence() );
-        this.fireVetoableSequenceChange( deleted, null );
+        final SequenceChangeEvent sequenceChange = new SequenceChangeEvent( this, deleted, null );
+        this.fireVetoableSequenceChange( sequenceChange );
 
         final SequencesType sequences = this.getSequencesType( this.getSequenceDirectoryName() );
         sequences.getSequence().remove( sequenceType );
@@ -348,7 +375,14 @@ public class DefaultSequenceDirectory
         }
 
         final Sequence s = this.getSequenceMapper().map( sequenceType, new Sequence() );
-        this.fireSequenceChange( s, null );
+        final SequenceChangeEvent sequenceChanged = new SequenceChangeEvent( this, s, null );
+
+        for ( String k : sequenceChange.getStatusKeys() )
+        {
+            sequenceChanged.getStatus( k ).addAll( sequenceChange.getStatus( k ) );
+        }
+
+        this.fireSequenceChange( sequenceChanged );
         return deleted;
     }
 
@@ -363,12 +397,26 @@ public class DefaultSequenceDirectory
             query.setParameter( this.getSequenceNameQueryParameterName(), name );
         }
 
-        final List<SequenceType> resultList = (List<SequenceType>) query.getResultList();
+        final List<?> resultList = query.getResultList();
         final Set<Sequence> sequences = new HashSet<Sequence>( resultList.size() );
 
-        for ( SequenceType s : resultList )
+        for ( Object o : resultList )
         {
-            sequences.add( this.getSequenceMapper().map( s, new Sequence() ) );
+            if ( o == null )
+            {
+                throw new SequencesSystemException( getMissingResultObjectError(
+                    this.getLocale(), this.getSequenceDirectoryName() ) );
+
+            }
+
+            if ( !( o instanceof SequenceType ) )
+            {
+                throw new SequencesSystemException( getIllegalResultObjectError(
+                    this.getLocale(), this.getSequenceDirectoryName(), o.toString() ) );
+
+            }
+
+            sequences.add( this.getSequenceMapper().map( (SequenceType) o, new Sequence() ) );
         }
 
         return sequences;
@@ -407,7 +455,7 @@ public class DefaultSequenceDirectory
         this.getEntityManager().merge( sequenceType );
 
         final Sequence s = this.getSequenceMapper().map( sequenceType, new Sequence() );
-        this.fireSequenceChange( oldValue, s );
+        this.fireSequenceChange( new SequenceChangeEvent( this, oldValue, s ) );
         return s.getValue();
     }
 
@@ -455,7 +503,7 @@ public class DefaultSequenceDirectory
         this.getEntityManager().merge( sequenceType );
 
         final Sequence s = this.getSequenceMapper().map( sequenceType, new Sequence() );
-        this.fireSequenceChange( oldValue, s );
+        this.fireSequenceChange( new SequenceChangeEvent( this, oldValue, s ) );
         return values;
     }
 
@@ -544,20 +592,19 @@ public class DefaultSequenceDirectory
     /**
      * Notifies all available {@code SequenceChangeListener}s that a sequence changed.
      *
-     * @param oldValue The entity having been changed or {@code null} if {@code newValue} got added to the directory.
-     * @param newValue The value {@code oldValue} got changed to or {@code null} if {@code oldValue} got removed from
-     * the directory.
+     * @param sequenceChange The event to notify listeners about.
+     *
+     * @throws NullPointerException if {@code sequenceChange} is {@code null}.
      */
-    protected void fireSequenceChange( final Sequence oldValue, final Sequence newValue )
+    protected void fireSequenceChange( final SequenceChangeEvent sequenceChange )
     {
-        SequenceChangeEvent sequenceChange = null;
+        if ( sequenceChange == null )
+        {
+            throw new NullPointerException( "sequenceChange" );
+        }
+
         for ( SequenceChangeListener l : this.getSequenceChangeListener() )
         {
-            if ( sequenceChange == null )
-            {
-                sequenceChange = new SequenceChangeEvent( this, oldValue, newValue );
-            }
-
             l.sequenceChange( sequenceChange );
         }
     }
@@ -565,26 +612,23 @@ public class DefaultSequenceDirectory
     /**
      * Notifies all available {@code SequenceChangeListener}s that a sequence is about to change.
      *
-     * @param oldValue The entity about to change or {@code null} if {@code newValue} is about to be added to the
-     * directory.
-     * @param newValue The value {@code oldValue} will change to or {@code null} if {@code oldValue} will be removed
-     * from the directory.
+     * @param sequenceChange The event to notify listeners about.
      *
+     * @throws NullPointerException if {@code sequenceChange} is {@code null}.
      * @throws SequenceVetoException if any available {@code SequenceChangeListener} chooses to veto the sequence
      * change.
      */
-    protected void fireVetoableSequenceChange( final Sequence oldValue, final Sequence newValue )
+    protected void fireVetoableSequenceChange( final SequenceChangeEvent sequenceChange )
     {
-        SequenceChangeEvent sequenceChange = null;
+        if ( sequenceChange == null )
+        {
+            throw new NullPointerException( "sequenceChange" );
+        }
+
         boolean vetoed = false;
 
         for ( VetoableSequenceChangeListener l : this.getVetoableSequenceChangeListener() )
         {
-            if ( sequenceChange == null )
-            {
-                sequenceChange = new SequenceChangeEvent( this, oldValue, newValue );
-            }
-
             try
             {
                 l.vetoableSequenceChange( sequenceChange );
@@ -884,6 +928,71 @@ public class DefaultSequenceDirectory
     {
         final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "illegalArgumentMessage", locale, argumentName, argumentValue );
         assert _m != null : "'illegalArgumentMessage' message not found.";
+        return _m;
+    }
+
+    /**
+     * Gets the text of the {@code illegalResultObjectError} message.
+     * <p><strong>Templates:</strong>
+     *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
+     *     <tr class="TableSubHeadingColor">
+     *       <th align="left" scope="col" nowrap><b>Language</b></th>
+     *       <th align="left" scope="col" nowrap><b>Template</b></th>
+     *     </tr>
+     *     <tr class="TableRow">
+     *       <td align="left" valign="top" nowrap>English (default)</td>
+     *       <td align="left" valign="top" nowrap><pre><code>Illegal object ''{1}'' searching sequence directory ''{0}''.</code></pre></td>
+     *     </tr>
+     *     <tr class="TableRow">
+     *       <td align="left" valign="top" nowrap>Deutsch</td>
+     *       <td align="left" valign="top" nowrap><pre><code>Ung&uuml;ltiges Objekt ''{1}'' bei Abfrage des ''{0}'' Sequenzverzeichnisses.</code></pre></td>
+     *     </tr>
+     *   </table>
+     * </p>
+     *
+     * @param locale The locale of the message to return.
+     * @param directoryInfo Format argument.
+     * @param objectInfo Format argument.
+     * @return The text of the {@code illegalResultObjectError} message for {@code locale}.
+     * @throws org.jomc.ObjectManagementException if getting the message instance fails.
+     */
+    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
+    private String getIllegalResultObjectError( final java.util.Locale locale, final java.lang.String directoryInfo, final java.lang.String objectInfo )
+    {
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "illegalResultObjectError", locale, directoryInfo, objectInfo );
+        assert _m != null : "'illegalResultObjectError' message not found.";
+        return _m;
+    }
+
+    /**
+     * Gets the text of the {@code missingResultObjectError} message.
+     * <p><strong>Templates:</strong>
+     *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
+     *     <tr class="TableSubHeadingColor">
+     *       <th align="left" scope="col" nowrap><b>Language</b></th>
+     *       <th align="left" scope="col" nowrap><b>Template</b></th>
+     *     </tr>
+     *     <tr class="TableRow">
+     *       <td align="left" valign="top" nowrap>English (default)</td>
+     *       <td align="left" valign="top" nowrap><pre><code>No object searching directory ''{0}''.</code></pre></td>
+     *     </tr>
+     *     <tr class="TableRow">
+     *       <td align="left" valign="top" nowrap>Deutsch</td>
+     *       <td align="left" valign="top" nowrap><pre><code>Kein Objekt bei Abfrage des ''{0}'' Sequenzverzeichnisses.</code></pre></td>
+     *     </tr>
+     *   </table>
+     * </p>
+     *
+     * @param locale The locale of the message to return.
+     * @param directoryInfo Format argument.
+     * @return The text of the {@code missingResultObjectError} message for {@code locale}.
+     * @throws org.jomc.ObjectManagementException if getting the message instance fails.
+     */
+    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
+    private String getMissingResultObjectError( final java.util.Locale locale, final java.lang.String directoryInfo )
+    {
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "missingResultObjectError", locale, directoryInfo );
+        assert _m != null : "'missingResultObjectError' message not found.";
         return _m;
     }
 

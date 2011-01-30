@@ -43,6 +43,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 // SECTION-START[Documentation]
 // <editor-fold defaultstate="collapsed" desc=" Generated Documentation ">
@@ -122,6 +123,59 @@ public class SequenceChangeEvent extends EventObject
     }
 
     /**
+     * Gets a set of all status keys of the instance.
+     *
+     * @return An unmodifiable set of all status keys of the instance.
+     */
+    public final Set<String> getStatusKeys()
+    {
+        return this.status == null
+               ? Collections.<String>emptySet()
+               : Collections.unmodifiableSet( this.status.keySet() );
+
+    }
+
+    /**
+     * Gets status for a given key and type.
+     *
+     * @param key The key of the status to return.
+     * @param type The class of the type of status to return.
+     * @param <T> The type of status to return.
+     *
+     * @return An unmodifiable list of all status for {@code key} of type {@code T}.
+     *
+     * @throws NullPointerException if {@code type} is {@code null}.
+     *
+     * @see Sequence#PROP_NAME Sequence.PROP_XYZ
+     * @see #getStatus(java.lang.String)
+     */
+    public final <T extends SequenceChangeStatus> List<T> getStatus( final String key, final Class<T> type )
+    {
+        if ( type == null )
+        {
+            throw new NullPointerException( "type" );
+        }
+
+        List<T> found = null;
+        final List<SequenceChangeStatus> list = this.status != null ? this.status.get( key ) : null;
+
+        if ( list != null )
+        {
+            found = new ArrayList<T>( list.size() );
+
+            for ( SequenceChangeStatus s : list )
+            {
+                if ( s.getClass() == type )
+                {
+                    found.add( type.cast( s ) );
+                }
+            }
+        }
+
+        return Collections.unmodifiableList( found );
+    }
+
+    /**
      * Gets status for a given key.
      * <p>This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you make
      * to the returned list will be present inside the object. This is why there is no {@code set} method for the
@@ -148,45 +202,6 @@ public class SequenceChangeEvent extends EventObject
         }
 
         return list;
-    }
-
-    /**
-     * Gets status for a given key and type.
-     *
-     * @param key The key of the status to return.
-     * @param type The class of the type of status to return.
-     * @param <T> The type of status to return.
-     *
-     * @return An unmodifiable list of all status for {@code key} of type {@code T}.
-     *
-     * @throws NullPointerException if {@code type} is {@code null}.
-     *
-     * @see Sequence#PROP_NAME Sequence.PROP_XYZ
-     */
-    public final <T extends SequenceChangeStatus> List<T> getStatus( final String key, final Class<T> type )
-    {
-        if ( type == null )
-        {
-            throw new NullPointerException( "type" );
-        }
-
-        List<T> found = null;
-        final List<SequenceChangeStatus> list = this.status != null ? this.status.get( key ) : null;
-
-        if ( list != null )
-        {
-            found = new ArrayList<T>( list.size() );
-
-            for ( SequenceChangeStatus s : list )
-            {
-                if ( s.getClass() == type )
-                {
-                    found.add( type.cast( s ) );
-                }
-            }
-        }
-
-        return Collections.unmodifiableList( found );
     }
 
     // SECTION-END
