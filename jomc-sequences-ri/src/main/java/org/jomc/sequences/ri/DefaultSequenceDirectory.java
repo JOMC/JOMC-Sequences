@@ -143,23 +143,23 @@ import org.jomc.sequences.model.SequencesType;
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getSelectAllSequencesQuery SelectAllSequencesQuery}</td>
- *       <td align="left" valign="top">Dependency on the {@code 'JOMC Sequences Model - Select All Sequences Query'} object of the {@code 'javax.persistence.Query'} {@code (javax.persistence.Query)} specification.</td>
+ *       <td align="left" valign="top">Dependency on the {@code 'JOMC Sequences Model :: Select All Sequences Query'} object of the {@code 'javax.persistence.Query'} {@code (javax.persistence.Query)} specification.</td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getSelectSequenceCountQuery SelectSequenceCountQuery}</td>
- *       <td align="left" valign="top">Dependency on the {@code 'JOMC Sequences Model - Select Sequence Count Query'} object of the {@code 'javax.persistence.Query'} {@code (javax.persistence.Query)} specification.</td>
+ *       <td align="left" valign="top">Dependency on the {@code 'JOMC Sequences Model :: Select Sequence Count Query'} object of the {@code 'javax.persistence.Query'} {@code (javax.persistence.Query)} specification.</td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getSelectSequenceDirectoryQuery SelectSequenceDirectoryQuery}</td>
- *       <td align="left" valign="top">Dependency on the {@code 'JOMC Sequences Model - Select Sequence Directory Query'} object of the {@code 'javax.persistence.Query'} {@code (javax.persistence.Query)} specification.</td>
+ *       <td align="left" valign="top">Dependency on the {@code 'JOMC Sequences Model :: Select Sequence Directory Query'} object of the {@code 'javax.persistence.Query'} {@code (javax.persistence.Query)} specification.</td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getSelectSequenceQuery SelectSequenceQuery}</td>
- *       <td align="left" valign="top">Dependency on the {@code 'JOMC Sequences Model - Select Sequence Query'} object of the {@code 'javax.persistence.Query'} {@code (javax.persistence.Query)} specification.</td>
+ *       <td align="left" valign="top">Dependency on the {@code 'JOMC Sequences Model :: Select Sequence Query'} object of the {@code 'javax.persistence.Query'} {@code (javax.persistence.Query)} specification.</td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getSelectSequencesQuery SelectSequencesQuery}</td>
- *       <td align="left" valign="top">Dependency on the {@code 'JOMC Sequences Model - Select Sequences Query'} object of the {@code 'javax.persistence.Query'} {@code (javax.persistence.Query)} specification.</td>
+ *       <td align="left" valign="top">Dependency on the {@code 'JOMC Sequences Model :: Select Sequences Query'} object of the {@code 'javax.persistence.Query'} {@code (javax.persistence.Query)} specification.</td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getSequenceChangeListener SequenceChangeListener}</td>
@@ -729,7 +729,7 @@ public class DefaultSequenceDirectory
 
     /**
      * Gets the {@code SelectAllSequencesQuery} dependency.
-     * <p>This method returns the {@code 'JOMC Sequences Model - Select All Sequences Query'} object of the {@code 'javax.persistence.Query'} {@code (javax.persistence.Query)} specification.</p>
+     * <p>This method returns the {@code 'JOMC Sequences Model :: Select All Sequences Query'} object of the {@code 'javax.persistence.Query'} {@code (javax.persistence.Query)} specification.</p>
      * <p>That specification does not apply to any scope. A new object is returned whenever requested.</p>
      * @return The {@code SelectAllSequencesQuery} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
@@ -744,7 +744,7 @@ public class DefaultSequenceDirectory
 
     /**
      * Gets the {@code SelectSequenceCountQuery} dependency.
-     * <p>This method returns the {@code 'JOMC Sequences Model - Select Sequence Count Query'} object of the {@code 'javax.persistence.Query'} {@code (javax.persistence.Query)} specification.</p>
+     * <p>This method returns the {@code 'JOMC Sequences Model :: Select Sequence Count Query'} object of the {@code 'javax.persistence.Query'} {@code (javax.persistence.Query)} specification.</p>
      * <p>That specification does not apply to any scope. A new object is returned whenever requested.</p>
      * @return The {@code SelectSequenceCountQuery} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
@@ -759,7 +759,7 @@ public class DefaultSequenceDirectory
 
     /**
      * Gets the {@code SelectSequenceDirectoryQuery} dependency.
-     * <p>This method returns the {@code 'JOMC Sequences Model - Select Sequence Directory Query'} object of the {@code 'javax.persistence.Query'} {@code (javax.persistence.Query)} specification.</p>
+     * <p>This method returns the {@code 'JOMC Sequences Model :: Select Sequence Directory Query'} object of the {@code 'javax.persistence.Query'} {@code (javax.persistence.Query)} specification.</p>
      * <p>That specification does not apply to any scope. A new object is returned whenever requested.</p>
      * @return The {@code SelectSequenceDirectoryQuery} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
@@ -774,7 +774,7 @@ public class DefaultSequenceDirectory
 
     /**
      * Gets the {@code SelectSequenceQuery} dependency.
-     * <p>This method returns the {@code 'JOMC Sequences Model - Select Sequence Query'} object of the {@code 'javax.persistence.Query'} {@code (javax.persistence.Query)} specification.</p>
+     * <p>This method returns the {@code 'JOMC Sequences Model :: Select Sequence Query'} object of the {@code 'javax.persistence.Query'} {@code (javax.persistence.Query)} specification.</p>
      * <p>That specification does not apply to any scope. A new object is returned whenever requested.</p>
      * @return The {@code SelectSequenceQuery} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
@@ -789,7 +789,7 @@ public class DefaultSequenceDirectory
 
     /**
      * Gets the {@code SelectSequencesQuery} dependency.
-     * <p>This method returns the {@code 'JOMC Sequences Model - Select Sequences Query'} object of the {@code 'javax.persistence.Query'} {@code (javax.persistence.Query)} specification.</p>
+     * <p>This method returns the {@code 'JOMC Sequences Model :: Select Sequences Query'} object of the {@code 'javax.persistence.Query'} {@code (javax.persistence.Query)} specification.</p>
      * <p>That specification does not apply to any scope. A new object is returned whenever requested.</p>
      * @return The {@code SelectSequencesQuery} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
