@@ -72,13 +72,13 @@ import static org.junit.Assert.fail;
  *       <td align="left" scope="col" nowrap><b>Documentation</b></td>
  *     </tr>
  *     <tr class="TableRowColor">
- *       <td align="left" nowrap>{@link #getSequenceNameMaxLength sequenceNameMaxLength}</td>
- *       <td align="left" nowrap>{@code int}</td>
+ *       <td align="left" valign="top" nowrap>{@link #getSequenceNameMaxLength sequenceNameMaxLength}</td>
+ *       <td align="left" valign="top" nowrap>{@code int}</td>
  *       <td align="left" valign="top">Maximum allowed length of a sequence name.</td>
  *     </tr>
  *     <tr class="TableRowColor">
- *       <td align="left" nowrap>{@link #getSequenceNameMinLength sequenceNameMinLength}</td>
- *       <td align="left" nowrap>{@code int}</td>
+ *       <td align="left" valign="top" nowrap>{@link #getSequenceNameMinLength sequenceNameMinLength}</td>
+ *       <td align="left" valign="top" nowrap>{@code int}</td>
  *       <td align="left" valign="top">Minimum required length of a sequence name.</td>
  *     </tr>
  *   </table>
@@ -93,8 +93,8 @@ import static org.junit.Assert.fail;
  *       <td align="left" scope="col" nowrap><b>Description</b></td>
  *     </tr>
  *     <tr class="TableRowColor">
- *       <td align="left" nowrap>{@link #getSequenceDirectory SequenceDirectory}</td>
- *       <td align="left">Dependency on {@code 'org.jomc.sequences.SequenceDirectory'} {@code (org.jomc.sequences.SequenceDirectory)} at specification level 1.0 bound to an instance.</td>
+ *       <td align="left" valign="top" nowrap>{@link #getSequenceDirectory SequenceDirectory}</td>
+ *       <td align="left" valign="top">Dependency on any object of the {@code 'org.jomc.sequences.SequenceDirectory'} {@code (org.jomc.sequences.SequenceDirectory)} specification at specification level 1.0 applying to {@code Singleton} scope bound to an instance.</td>
  *     </tr>
  *   </table>
  * </p>

@@ -67,12 +67,12 @@ import static org.junit.Assert.fail;
  *       <td align="left" scope="col" nowrap><b>Description</b></td>
  *     </tr>
  *     <tr class="TableRowColor">
- *       <td align="left" nowrap>{@link #getSequenceDirectory SequenceDirectory}</td>
- *       <td align="left">Dependency on {@code 'org.jomc.sequences.SequenceDirectory'} {@code (org.jomc.sequences.SequenceDirectory)} at specification level 1.0 bound to an instance.</td>
+ *       <td align="left" valign="top" nowrap>{@link #getSequenceDirectory SequenceDirectory}</td>
+ *       <td align="left" valign="top">Dependency on any object of the {@code 'org.jomc.sequences.SequenceDirectory'} {@code (org.jomc.sequences.SequenceDirectory)} specification at specification level 1.0 applying to {@code Singleton} scope bound to an instance.</td>
  *     </tr>
  *     <tr class="TableRowColor">
- *       <td align="left" nowrap>{@link #getSequenceOperations SequenceOperations}</td>
- *       <td align="left">Dependency on {@code 'org.jomc.sequences.SequenceOperations'} {@code (org.jomc.sequences.SequenceOperations)} at specification level 1.0 bound to an instance.</td>
+ *       <td align="left" valign="top" nowrap>{@link #getSequenceOperations SequenceOperations}</td>
+ *       <td align="left" valign="top">Dependency on any object of the {@code 'org.jomc.sequences.SequenceOperations'} {@code (org.jomc.sequences.SequenceOperations)} specification at specification level 1.0 applying to {@code Singleton} scope bound to an instance.</td>
  *     </tr>
  *   </table>
  * </p>
