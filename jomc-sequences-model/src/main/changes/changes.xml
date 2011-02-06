@@ -47,6 +47,8 @@
       <code>@XmlNs</code> annotation to the <code>@XmlSchema</code> annotation of the
       <code>org.jomc.sequences.model</code> package.]]>
       </action>
+      <action dev="schulte2005" type="add"><![CDATA[Added a <code>META-INF/sun-jaxb.episode</code> file.]]>
+      </action>
       <action dev="schulte2005" type="fix"><![CDATA[Added a <code>@XmlTransient</code> annotation to the
       <code>jpaDate</code>, <code>jpaId</code> and <code>jpaVersion</code> properties of classes
       <code>org.jomc.sequences.model.SequenceType</code> and <code>org.jomc.sequences.model.SequencesType</code>.]]>
