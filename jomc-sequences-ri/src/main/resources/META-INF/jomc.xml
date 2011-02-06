@@ -95,15 +95,15 @@
                     bound="false"/>
         <dependency name="Locale" identifier="java.util.Locale" version="1.1" implementationName="default"/>
         <dependency name="SelectSequenceDirectoryQuery" identifier="javax.persistence.Query"
-                    implementationName="JOMC Sequences Model - Select Sequence Directory Query" bound="false"/>
+                    implementationName="JOMC Sequences Model :: Select Sequence Directory Query" bound="false"/>
         <dependency name="SelectSequenceQuery" identifier="javax.persistence.Query"
-                    implementationName="JOMC Sequences Model - Select Sequence Query" bound="false"/>
+                    implementationName="JOMC Sequences Model :: Select Sequence Query" bound="false"/>
         <dependency name="SelectAllSequencesQuery" identifier="javax.persistence.Query"
-                    implementationName="JOMC Sequences Model - Select All Sequences Query" bound="false"/>
+                    implementationName="JOMC Sequences Model :: Select All Sequences Query" bound="false"/>
         <dependency name="SelectSequencesQuery" identifier="javax.persistence.Query"
-                    implementationName="JOMC Sequences Model - Select Sequences Query" bound="false"/>
+                    implementationName="JOMC Sequences Model :: Select Sequences Query" bound="false"/>
         <dependency name="SelectSequenceCountQuery" identifier="javax.persistence.Query"
-                    implementationName="JOMC Sequences Model - Select Sequence Count Query" bound="false"/>
+                    implementationName="JOMC Sequences Model :: Select Sequence Count Query" bound="false"/>
       </dependencies>
       <properties>
         <property name="sequenceDirectoryName" value="${project.name}">
