@@ -84,28 +84,28 @@ import org.jomc.sequences.SequencesSystemException;
  *       <td align="left" scope="col" nowrap><b>Documentation</b></td>
  *     </tr>
  *     <tr class="TableRowColor">
- *       <td align="left" nowrap>{@link #isIncrementColumnEditableByDefault incrementColumnEditableByDefault}</td>
- *       <td align="left" nowrap>{@code java.lang.Boolean}</td>
+ *       <td align="left" valign="top" nowrap>{@link #isIncrementColumnEditableByDefault incrementColumnEditableByDefault}</td>
+ *       <td align="left" valign="top" nowrap>{@code java.lang.Boolean}</td>
  *       <td align="left" valign="top">Flag indicating that the &quot;increment&quot; column is editable by default.</td>
  *     </tr>
  *     <tr class="TableRowColor">
- *       <td align="left" nowrap>{@link #isMaximumColumnEditableByDefault maximumColumnEditableByDefault}</td>
- *       <td align="left" nowrap>{@code java.lang.Boolean}</td>
+ *       <td align="left" valign="top" nowrap>{@link #isMaximumColumnEditableByDefault maximumColumnEditableByDefault}</td>
+ *       <td align="left" valign="top" nowrap>{@code java.lang.Boolean}</td>
  *       <td align="left" valign="top">Flag indicating that the &quot;maximum&quot; column is editable by default.</td>
  *     </tr>
  *     <tr class="TableRowColor">
- *       <td align="left" nowrap>{@link #isMinimumColumnEditableByDefault minimumColumnEditableByDefault}</td>
- *       <td align="left" nowrap>{@code java.lang.Boolean}</td>
+ *       <td align="left" valign="top" nowrap>{@link #isMinimumColumnEditableByDefault minimumColumnEditableByDefault}</td>
+ *       <td align="left" valign="top" nowrap>{@code java.lang.Boolean}</td>
  *       <td align="left" valign="top">Flag indicating that the &quot;minimum&quot; column is editable by default.</td>
  *     </tr>
  *     <tr class="TableRowColor">
- *       <td align="left" nowrap>{@link #isNameColumnEditableByDefault nameColumnEditableByDefault}</td>
- *       <td align="left" nowrap>{@code java.lang.Boolean}</td>
+ *       <td align="left" valign="top" nowrap>{@link #isNameColumnEditableByDefault nameColumnEditableByDefault}</td>
+ *       <td align="left" valign="top" nowrap>{@code java.lang.Boolean}</td>
  *       <td align="left" valign="top">Flag indicating that the &quot;name&quot; column is editable by default.</td>
  *     </tr>
  *     <tr class="TableRowColor">
- *       <td align="left" nowrap>{@link #isValueColumnEditableByDefault valueColumnEditableByDefault}</td>
- *       <td align="left" nowrap>{@code java.lang.Boolean}</td>
+ *       <td align="left" valign="top" nowrap>{@link #isValueColumnEditableByDefault valueColumnEditableByDefault}</td>
+ *       <td align="left" valign="top" nowrap>{@code java.lang.Boolean}</td>
  *       <td align="left" valign="top">Flag indicating that the &quot;value&quot; column is editable by default.</td>
  *     </tr>
  *   </table>
@@ -120,20 +120,20 @@ import org.jomc.sequences.SequencesSystemException;
  *       <td align="left" scope="col" nowrap><b>Description</b></td>
  *     </tr>
  *     <tr class="TableRowColor">
- *       <td align="left" nowrap>{@link #getExceptionListener ExceptionListener}</td>
- *       <td align="left">Dependency on {@code 'JOMC :: Sequences :: ExceptionListener'} {@code (java.beans.ExceptionListener)} at specification level 1.0 bound to an instance.</td>
+ *       <td align="left" valign="top" nowrap>{@link #getExceptionListener ExceptionListener}</td>
+ *       <td align="left" valign="top">Dependency on any object of the {@code 'JOMC :: Sequences :: ExceptionListener'} {@code (java.beans.ExceptionListener)} specification at specification level 1.0 bound to an instance.</td>
  *     </tr>
  *     <tr class="TableRowColor">
- *       <td align="left" nowrap>{@link #getLocale Locale}</td>
- *       <td align="left">Dependency on {@code 'java.util.Locale'} {@code (java.util.Locale)} at specification level 1.1 bound to an instance.</td>
+ *       <td align="left" valign="top" nowrap>{@link #getLocale Locale}</td>
+ *       <td align="left" valign="top">Dependency on the {@code 'default'} object of the {@code 'java.util.Locale'} {@code (java.util.Locale)} specification at specification level 1.1 bound to an instance.</td>
  *     </tr>
  *     <tr class="TableRowColor">
- *       <td align="left" nowrap>{@link #getLogger Logger}</td>
- *       <td align="left">Dependency on {@code 'org.jomc.logging.Logger'} {@code (org.jomc.logging.Logger)} at specification level 1.0 bound to an instance.</td>
+ *       <td align="left" valign="top" nowrap>{@link #getLogger Logger}</td>
+ *       <td align="left" valign="top">Dependency on any object of the {@code 'org.jomc.logging.Logger'} {@code (org.jomc.logging.Logger)} specification at specification level 1.0 bound to an instance.</td>
  *     </tr>
  *     <tr class="TableRowColor">
- *       <td align="left" nowrap>{@link #getSequenceDirectory SequenceDirectory}</td>
- *       <td align="left">Dependency on {@code 'org.jomc.sequences.SequenceDirectory'} {@code (org.jomc.sequences.SequenceDirectory)} at specification level 1.0 bound to an instance.</td>
+ *       <td align="left" valign="top" nowrap>{@link #getSequenceDirectory SequenceDirectory}</td>
+ *       <td align="left" valign="top">Dependency on any object of the {@code 'org.jomc.sequences.SequenceDirectory'} {@code (org.jomc.sequences.SequenceDirectory)} specification at specification level 1.0 applying to {@code Singleton} scope bound to an instance.</td>
  *     </tr>
  *   </table>
  * </p>
@@ -861,11 +861,20 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      * Gets the {@code Logger} dependency.
      * <p>This method returns any available object of the {@code 'org.jomc.logging.Logger'} {@code (org.jomc.logging.Logger)} specification at specification level 1.0.</p>
      * <p>That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.</p>
-     * <p><b>Properties</b><dl>
-     * <dt>"{@code name}"</dt>
-     * <dd>Property of type {@code java.lang.String}.
-     * </dd>
-     * </dl>
+     * <p><strong>Properties:</strong>
+     *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
+     *     <tr class="TableSubHeadingColor">
+     *       <th align="left" scope="col" nowrap><b>Name</b></th>
+     *       <th align="left" scope="col" nowrap><b>Type</b></th>
+     *       <th align="left" scope="col" nowrap><b>Documentation</b></th>
+     *     </tr>
+     *     <tr class="TableRow">
+     *       <td align="left" valign="top" nowrap>{@code name}</td>
+     *       <td align="left" valign="top" nowrap>{@code java.lang.String}</td>
+     *       <td align="left" valign="top"></td>
+     *     </tr>
+     *   </table>
+     * </p>
      * @return The {@code Logger} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
