@@ -75,13 +75,13 @@ import org.jomc.sequences.SequenceVetoException;
  *       <td align="left" scope="col" nowrap><b>Documentation</b></td>
  *     </tr>
  *     <tr class="TableRowColor">
- *       <td align="left" nowrap>{@link #getSequenceNameMaxLength sequenceNameMaxLength}</td>
- *       <td align="left" nowrap>{@code int}</td>
+ *       <td align="left" valign="top" nowrap>{@link #getSequenceNameMaxLength sequenceNameMaxLength}</td>
+ *       <td align="left" valign="top" nowrap>{@code int}</td>
  *       <td align="left" valign="top">Maximum allowed length of a sequence name.</td>
  *     </tr>
  *     <tr class="TableRowColor">
- *       <td align="left" nowrap>{@link #getSequenceNameMinLength sequenceNameMinLength}</td>
- *       <td align="left" nowrap>{@code int}</td>
+ *       <td align="left" valign="top" nowrap>{@link #getSequenceNameMinLength sequenceNameMinLength}</td>
+ *       <td align="left" valign="top" nowrap>{@code int}</td>
  *       <td align="left" valign="top">Minimum required length of a sequence name.</td>
  *     </tr>
  *   </table>
