@@ -58,8 +58,8 @@ import org.junit.Test;
  *       <td align="left" scope="col" nowrap><b>Description</b></td>
  *     </tr>
  *     <tr class="TableRowColor">
- *       <td align="left" nowrap>{@link #getSequenceMapper SequenceMapper}</td>
- *       <td align="left">Dependency on {@code 'org.jomc.sequences.ri.SequenceMapper'} {@code (org.jomc.sequences.ri.SequenceMapper)} at specification level 1.0 bound to an instance.</td>
+ *       <td align="left" valign="top" nowrap>{@link #getSequenceMapper SequenceMapper}</td>
+ *       <td align="left" valign="top">Dependency on the {@code 'JOMC Sequences RI'} object of the {@code 'org.jomc.sequences.ri.SequenceMapper'} {@code (org.jomc.sequences.ri.SequenceMapper)} specification at specification level 1.0 bound to an instance.</td>
  *     </tr>
  *   </table>
  * </p>
