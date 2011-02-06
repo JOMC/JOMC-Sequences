@@ -449,16 +449,22 @@
           <version>1.6</version>
           <executions>
             <execution>
-              <id>check-jdk15-compat</id>
+              <id>check</id>
               <phase>verify</phase>
               <goals>
                 <goal>check</goal>
               </goals>
               <configuration>
+                <ignoreDependencies>false</ignoreDependencies>
+                <ignores>
+                  <ignore>javax.persistence*</ignore>
+                  <ignore>org.jomc*</ignore>
+                  <ignore>org.junit*</ignore>
+                </ignores>
                 <signature>
-                  <groupId>org.codehaus.mojo.signature</groupId>
-                  <artifactId>java15</artifactId>
-                  <version>1.0</version>
+                  <groupId>org.jomc.build</groupId>
+                  <artifactId>jdk15-jaxb21-signature</artifactId>
+                  <version>${jomc.build.version}</version>
                 </signature>
               </configuration>
             </execution>
@@ -1581,7 +1587,7 @@
     <maven-changes-plugin.version>2.4</maven-changes-plugin.version>
     <slf4j.version>1.6.1</slf4j.version>
     <jomc.version>1.2-SNAPSHOT</jomc.version>
-    <jomc.build.version>1.5</jomc.build.version>
+    <jomc.build.version>1.6-SNAPSHOT</jomc.build.version>
     <jomc-logging.version>1.1-SNAPSHOT</jomc-logging.version>
     <jomc-standalone.version>1.0-beta-3-SNAPSHOT</jomc-standalone.version>
     <jomc-sdk.version>1.0-beta-3-SNAPSHOT</jomc-sdk.version>
