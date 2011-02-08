@@ -457,7 +457,6 @@
               <configuration>
                 <ignoreDependencies>false</ignoreDependencies>
                 <ignores>
-                  <ignore>javax.persistence*</ignore>
                   <ignore>org.jomc*</ignore>
                   <ignore>org.junit*</ignore>
                 </ignores>

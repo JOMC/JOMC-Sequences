@@ -60,6 +60,31 @@
     </testResources>
     <plugins>
       <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>animal-sniffer-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>check</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+            <configuration>
+              <ignoreDependencies>false</ignoreDependencies>
+              <ignores>
+                <ignore>org.jomc*</ignore>
+                <ignore>org.junit*</ignore>
+              </ignores>
+              <signature>
+                <groupId>org.jomc.build</groupId>
+                <artifactId>jdk15-jpa10-signature</artifactId>
+                <version>${jomc.build.version}</version>
+              </signature>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
         <executions>
