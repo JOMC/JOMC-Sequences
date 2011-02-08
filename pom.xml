@@ -1586,7 +1586,7 @@
     <maven-changes-plugin.version>2.4</maven-changes-plugin.version>
     <slf4j.version>1.6.1</slf4j.version>
     <jomc.version>1.2-SNAPSHOT</jomc.version>
-    <jomc.build.version>1.6-SNAPSHOT</jomc.build.version>
+    <jomc.build.version>1.6</jomc.build.version>
     <jomc-logging.version>1.1-SNAPSHOT</jomc-logging.version>
     <jomc-standalone.version>1.0-beta-3-SNAPSHOT</jomc-standalone.version>
     <jomc-sdk.version>1.0-beta-3-SNAPSHOT</jomc-sdk.version>
