@@ -113,7 +113,7 @@
     </fileSet>
     <fileSet>
       <directory>${project.build.directory}/jomc-endorsed</directory>
-      <outputDirectory>/lib/endorsed</outputDirectory>
+      <outputDirectory>/lib/jdk5/endorsed</outputDirectory>
       <directoryMode>0755</directoryMode>
       <fileMode>0555</fileMode>
     </fileSet>
@@ -131,7 +131,7 @@
     <dependencySet>
       <directoryMode>0755</directoryMode>
       <fileMode>0555</fileMode>
-      <outputDirectory>/lib/ext</outputDirectory>
+      <outputDirectory>/lib/jdk5/ext</outputDirectory>
       <scope>provided</scope>
       <useProjectArtifact>false</useProjectArtifact>
       <useProjectAttachments>false</useProjectAttachments>
