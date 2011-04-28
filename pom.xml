@@ -496,12 +496,12 @@
               <configuration>
                 <args>
                   <arg>-npa</arg>
-                  <arg>-copy-constructor</arg>
                   <arg>-jpa</arg>
                   <arg>${project.artifactId}</arg>
                   <arg>${project.build.outputDirectory}</arg>
-                  <arg>-mark-generated</arg>
+                  <arg>-copy-constructor</arg>
                   <arg>-Xinject-code</arg>
+                  <arg>-mark-generated</arg>
                 </args>
                 <bindingDirectory>src/main/schemas</bindingDirectory>
                 <extension>true</extension>
