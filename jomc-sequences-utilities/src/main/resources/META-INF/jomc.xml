@@ -147,7 +147,7 @@
         <message name="illegalColumnIndexMessage">
           <template defaultLanguage="en">
             <text language="en">Illegal column index {0}. {1}</text>
-            <text language="de">UngÃ¼ltiger Spalten-Index {0}. {1}</text>
+            <text language="de">Ungültiger Spalten-Index {0}. {1}</text>
           </template>
           <arguments>
             <argument index="0" name="columnIndex" type="Number"/>
