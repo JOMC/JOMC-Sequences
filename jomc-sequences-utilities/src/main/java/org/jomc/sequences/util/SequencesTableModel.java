@@ -99,36 +99,42 @@ import org.jomc.sequences.SequencesSystemException;
  * <p>
  *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
  *     <tr class="TableHeadingColor">
- *       <th align="left" scope="col" colspan="3" nowrap><font size="+2">Properties</font></th>
+ *       <th align="left" scope="col" colspan="4" nowrap><font size="+2">Properties</font></th>
  *     </tr>
  *     <tr class="TableSubHeadingColor">
  *       <td align="left" scope="col" nowrap><b>Name</b></td>
  *       <td align="left" scope="col" nowrap><b>Type</b></td>
+ *       <td align="left" scope="col" nowrap><b>Flags</b></td>
  *       <td align="left" scope="col" nowrap><b>Documentation</b></td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #isIncrementColumnEditableByDefault incrementColumnEditableByDefault}</td>
  *       <td align="left" valign="top" nowrap>{@code java.lang.Boolean}</td>
+ *       <td align="left" valign="top" nowrap>{@code none}</td>
  *       <td align="left" valign="top">Flag indicating that the &quot;increment&quot; column is editable by default.</td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #isMaximumColumnEditableByDefault maximumColumnEditableByDefault}</td>
  *       <td align="left" valign="top" nowrap>{@code java.lang.Boolean}</td>
+ *       <td align="left" valign="top" nowrap>{@code none}</td>
  *       <td align="left" valign="top">Flag indicating that the &quot;maximum&quot; column is editable by default.</td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #isMinimumColumnEditableByDefault minimumColumnEditableByDefault}</td>
  *       <td align="left" valign="top" nowrap>{@code java.lang.Boolean}</td>
+ *       <td align="left" valign="top" nowrap>{@code none}</td>
  *       <td align="left" valign="top">Flag indicating that the &quot;minimum&quot; column is editable by default.</td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #isNameColumnEditableByDefault nameColumnEditableByDefault}</td>
  *       <td align="left" valign="top" nowrap>{@code java.lang.Boolean}</td>
+ *       <td align="left" valign="top" nowrap>{@code none}</td>
  *       <td align="left" valign="top">Flag indicating that the &quot;name&quot; column is editable by default.</td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #isValueColumnEditableByDefault valueColumnEditableByDefault}</td>
  *       <td align="left" valign="top" nowrap>{@code java.lang.Boolean}</td>
+ *       <td align="left" valign="top" nowrap>{@code none}</td>
  *       <td align="left" valign="top">Flag indicating that the &quot;value&quot; column is editable by default.</td>
  *     </tr>
  *   </table>
@@ -136,26 +142,31 @@ import org.jomc.sequences.SequencesSystemException;
  * <p>
  *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
  *     <tr class="TableHeadingColor">
- *       <th align="left" scope="col" colspan="2" nowrap><font size="+2">Dependencies</font></th>
+ *       <th align="left" scope="col" colspan="3" nowrap><font size="+2">Dependencies</font></th>
  *     </tr>
  *     <tr class="TableSubHeadingColor">
  *       <td align="left" scope="col" nowrap><b>Name</b></td>
+ *       <td align="left" scope="col" nowrap><b>Flags</b></td>
  *       <td align="left" scope="col" nowrap><b>Description</b></td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getExceptionListener ExceptionListener}</td>
+ *       <td align="left" valign="top" nowrap>{@code none}</td>
  *       <td align="left" valign="top">Dependency on any object of the {@code 'JOMC :: Sequences :: ExceptionListener'} {@code (java.beans.ExceptionListener)} specification at specification level 1.0 bound to an instance.</td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getLocale Locale}</td>
+ *       <td align="left" valign="top" nowrap>{@code none}</td>
  *       <td align="left" valign="top">Dependency on the {@code 'default'} object of the {@code 'java.util.Locale'} {@code (java.util.Locale)} specification at specification level 1.1 bound to an instance.</td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getLogger Logger}</td>
+ *       <td align="left" valign="top" nowrap>{@code none}</td>
  *       <td align="left" valign="top">Dependency on any object of the {@code 'org.jomc.logging.Logger'} {@code (org.jomc.logging.Logger)} specification at specification level 1.0 bound to an instance.</td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getSequenceDirectory SequenceDirectory}</td>
+ *       <td align="left" valign="top" nowrap>{@code none}</td>
  *       <td align="left" valign="top">Dependency on any object of the {@code 'org.jomc.sequences.SequenceDirectory'} {@code (org.jomc.sequences.SequenceDirectory)} specification at specification level 1.0 applying to {@code Singleton} scope bound to an instance.</td>
  *     </tr>
  *   </table>
@@ -163,40 +174,47 @@ import org.jomc.sequences.SequencesSystemException;
  * <p>
  *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
  *     <tr class="TableHeadingColor">
- *       <th align="left" scope="col" colspan="3" nowrap><font size="+2">Messages</font></th>
+ *       <th align="left" scope="col" colspan="4" nowrap><font size="+2">Messages</font></th>
  *     </tr>
  *     <tr class="TableSubHeadingColor">
  *       <td align="left" scope="col" nowrap><b>Name</b></td>
+ *       <td align="left" scope="col" nowrap><b>Flags</b></td>
  *       <td align="left" scope="col" nowrap><b>Languages</b></td>
  *       <td align="left" scope="col" nowrap><b>Default Templates</b></td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getIllegalColumnIndexMessage illegalColumnIndexMessage}</td>
+ *       <td align="left" valign="top" nowrap>{@code none}</td>
  *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
  *       <td align="left" valign="top" nowrap><pre><code>Illegal column index {0}. {1}</code></pre><hr/><pre><code>Ung&uuml;ltiger Spalten-Index {0}. {1}</code></pre></td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getIncrementColumnTitle incrementColumnTitle}</td>
+ *       <td align="left" valign="top" nowrap>{@code none}</td>
  *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
  *       <td align="left" valign="top" nowrap><pre><code>Increment</code></pre><hr/><pre><code>Inkrement</code></pre></td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getMaximumColumnTitle maximumColumnTitle}</td>
+ *       <td align="left" valign="top" nowrap>{@code none}</td>
  *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
  *       <td align="left" valign="top" nowrap><pre><code>Maximum</code></pre><hr/><pre><code>Maximum</code></pre></td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getMinimumColumnTitle minimumColumnTitle}</td>
+ *       <td align="left" valign="top" nowrap>{@code none}</td>
  *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
  *       <td align="left" valign="top" nowrap><pre><code>Minimum</code></pre><hr/><pre><code>Minimum</code></pre></td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getNameColumnTitle nameColumnTitle}</td>
+ *       <td align="left" valign="top" nowrap>{@code none}</td>
  *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
  *       <td align="left" valign="top" nowrap><pre><code>Name</code></pre><hr/><pre><code>Name</code></pre></td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getValueColumnTitle valueColumnTitle}</td>
+ *       <td align="left" valign="top" nowrap>{@code none}</td>
  *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
  *       <td align="left" valign="top" nowrap><pre><code>Value</code></pre><hr/><pre><code>Wert</code></pre></td>
  *     </tr>
