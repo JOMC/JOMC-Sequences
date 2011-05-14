@@ -173,7 +173,7 @@ import org.jomc.sequences.SequencesSystemException;
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getIllegalColumnIndexMessage illegalColumnIndexMessage}</td>
  *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
- *       <td align="left" valign="top" nowrap><pre><code>Illegal column index {0}. {1}</code></pre><hr/><pre><code>Ung&Atilde;&frac14;ltiger Spalten-Index {0}. {1}</code></pre></td>
+ *       <td align="left" valign="top" nowrap><pre><code>Illegal column index {0}. {1}</code></pre><hr/><pre><code>Ung&uuml;ltiger Spalten-Index {0}. {1}</code></pre></td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getIncrementColumnTitle incrementColumnTitle}</td>
@@ -1011,7 +1011,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *     </tr>
      *     <tr class="TableRow">
      *       <td align="left" valign="top" nowrap>Deutsch</td>
-     *       <td align="left" valign="top" nowrap><pre><code>Ung&Atilde;&frac14;ltiger Spalten-Index {0}. {1}</code></pre></td>
+     *       <td align="left" valign="top" nowrap><pre><code>Ung&uuml;ltiger Spalten-Index {0}. {1}</code></pre></td>
      *     </tr>
      *   </table>
      * </p>
