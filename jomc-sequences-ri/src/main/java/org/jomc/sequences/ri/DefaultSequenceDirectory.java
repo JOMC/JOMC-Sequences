@@ -218,37 +218,32 @@ import org.jomc.sequences.model.SequencesType;
  * <p>
  *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
  *     <tr class="TableHeadingColor">
- *       <th align="left" scope="col" colspan="4" nowrap><font size="+2">Messages</font></th>
+ *       <th align="left" scope="col" colspan="3" nowrap><font size="+2">Messages</font></th>
  *     </tr>
  *     <tr class="TableSubHeadingColor">
  *       <td align="left" scope="col" nowrap><b>Name</b></td>
  *       <td align="left" scope="col" nowrap><b>Flags</b></td>
  *       <td align="left" scope="col" nowrap><b>Languages</b></td>
- *       <td align="left" scope="col" nowrap><b>Default Templates</b></td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getIllegalArgumentMessage illegalArgumentMessage}</td>
  *       <td align="left" valign="top" nowrap>{@code none}</td>
  *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
- *       <td align="left" valign="top" nowrap><pre><code>Illegal value ''{1}'' for argument ''{0}''.</code></pre><hr/><pre><code>Ung&uuml;ltiger Wert ''{1}'' f&uuml;r Parameter ''{0}''.</code></pre></td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getIllegalResultObjectError illegalResultObjectError}</td>
  *       <td align="left" valign="top" nowrap>{@code none}</td>
  *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
- *       <td align="left" valign="top" nowrap><pre><code>Illegal object ''{1}'' searching sequence directory ''{0}''.</code></pre><hr/><pre><code>Ung&uuml;ltiges Objekt ''{1}'' bei Abfrage des ''{0}'' Sequenzverzeichnisses.</code></pre></td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getMissingResultObjectError missingResultObjectError}</td>
  *       <td align="left" valign="top" nowrap>{@code none}</td>
  *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
- *       <td align="left" valign="top" nowrap><pre><code>No object searching directory ''{0}''.</code></pre><hr/><pre><code>Kein Objekt bei Abfrage des ''{0}'' Sequenzverzeichnisses.</code></pre></td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getSuccessfullyCreatedSequenceDirectoryMessage successfullyCreatedSequenceDirectoryMessage}</td>
  *       <td align="left" valign="top" nowrap>{@code none}</td>
  *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
- *       <td align="left" valign="top" nowrap><pre><code>Sequence directory ''{0}'' created.</code></pre><hr/><pre><code>Sequenzverzeichnis ''{0}'' erstellt.</code></pre></td>
  *     </tr>
  *   </table>
  * </p>
