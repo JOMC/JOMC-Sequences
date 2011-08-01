@@ -77,12 +77,12 @@
       <li>Removed the <code>maven-antrun-plugin</code> from the plugin management section.</li>
       <li>Removed the <code>jaxb2-maven-plugin</code>.</li>
       <li>Updated <code>commons-lang</code> from <code>2.5</code> to <code>2.6</code>.</li>
-      <li>Updated <code>derby</code> from <code>10.6.1.0</code> to <code>10.7.1.1</code>.</li>
+      <li>Updated <code>derby</code> from <code>10.6.1.0</code> to <code>10.8.1.2</code>.</li>
       <li>Updated <code>slf4j</code> from <code>1.6.0</code> to <code>1.6.1</code>.</li>
       <li>Updated <code>junit</code> from <code>4.8.1</code> to <code>4.8.2</code>.</li>
       <li>Updated <code>jaxb-api</code> from <code>2.2.1</code> to <code>2.2.2</code>.</li>
       <li>Updated <code>jaxb-impl</code> from <code>2.2.1.1</code> to <code>2.2.2</code>.</li>
-      <li>Updated <code>mysql-connector-java</code> from <code>5.1.12</code> to <code>5.1.14</code>.</li>
+      <li>Updated <code>mysql-connector-java</code> from <code>5.1.12</code> to <code>5.1.17</code>.</li>
       <li>Updated <code>jomc-build-resources</code> from <code>1.5</code> to <code>1.6</code>.</li>
       <li>Added a Sourceforge logo to the generated Javadoc.</li>
       <li>Updated Javadoc Java API links to new location at Oracle.</li>
