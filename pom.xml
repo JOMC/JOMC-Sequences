@@ -1549,7 +1549,7 @@
     <jomc-sdk.version>1.0-beta-3-SNAPSHOT</jomc-sdk.version>
     <jomc.base.version>1.0</jomc.base.version>
     <jomc.artifacts.url>http://jomc.sourceforge.net/jomc-sequences/${jomc.base.version}</jomc.artifacts.url>
-    <jomc.artifacts.distribution.base.url>sftp://web.sourceforge.net/home/project-web/jomc/htdocs</jomc.artifacts.distribution.base.url>
+    <jomc.artifacts.distribution.base.url>scp://shell.sourceforge.net/home/project-web/jomc/htdocs</jomc.artifacts.distribution.base.url>
     <jomc.artifacts.distribution.url>${jomc.artifacts.distribution.base.url}/jomc-sequences/${jomc.base.version}</jomc.artifacts.distribution.url>
     <xmlschemaset.specification.version>1.0</xmlschemaset.specification.version>
     <logger.specification.version>1.0</logger.specification.version>
