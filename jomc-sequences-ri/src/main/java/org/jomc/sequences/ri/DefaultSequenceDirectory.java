@@ -63,193 +63,21 @@ import org.jomc.sequences.model.SequencesType;
 // <editor-fold defaultstate="collapsed" desc=" Generated Documentation ">
 /**
  * SequenceDirectory reference implementation.
+ *
  * <p>
- *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
- *     <tr class="TableHeadingColor">
- *       <th align="left" scope="col" colspan="2" nowrap><font size="+2">Implementation</font></th>
- *     </tr>
- *     <tr>
- *       <td class="TableSubHeadingColor" align="left" nowrap><b>Identifier:</b></td>
- *       <td class="TableRowColor" align="left" nowrap>{@code org.jomc.sequences.ri.DefaultSequenceDirectory}</td>
- *     </tr>
- *     <tr>
- *       <td class="TableSubHeadingColor" align="left" nowrap><b>Name:</b></td>
- *       <td class="TableRowColor" align="left" nowrap>{@code JOMC Sequences RI}</td>
- *     </tr>
- *     <tr>
- *       <td class="TableSubHeadingColor" align="left" nowrap><b>Flags:</b></td>
- *       <td class="TableRowColor" align="left" nowrap> {@code stateless}</td>
- *     </tr>
- *     <tr>
- *       <td class="TableSubHeadingColor" align="left" nowrap><b>Version:</b></td>
- *       <td class="TableRowColor" align="left" nowrap>{@code 1.0-beta-3-SNAPSHOT}</td>
- *     </tr>
- *   </table>
- * </p>
- * <p>
- *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
- *     <tr class="TableHeadingColor">
- *       <th align="left" scope="col" colspan="4" nowrap><font size="+2">Specifications</font></th>
- *     </tr>
- *     <tr class="TableSubHeadingColor">
- *       <td align="left" scope="col" nowrap><b>Identifier</b></td>
- *       <td align="left" scope="col" nowrap><b>Class</b></td>
- *       <td align="left" scope="col" nowrap><b>Scope</b></td>
- *       <td align="left" scope="col" nowrap><b>Version</b></td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" nowrap>{@code org.jomc.sequences.SequenceDirectory}</td>
- *       <td align="left" nowrap>{@code org.jomc.sequences.SequenceDirectory}</td>
- *       <td align="left" nowrap>{@code Singleton}</td>
- *       <td align="left" nowrap>{@code 1.0}</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" nowrap>{@code org.jomc.sequences.SequenceOperations}</td>
- *       <td align="left" nowrap>{@code org.jomc.sequences.SequenceOperations}</td>
- *       <td align="left" nowrap>{@code Singleton}</td>
- *       <td align="left" nowrap>{@code 1.0}</td>
- *     </tr>
- *   </table>
- * </p>
- * <p>
- *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
- *     <tr class="TableHeadingColor">
- *       <th align="left" scope="col" colspan="4" nowrap><font size="+2">Properties</font></th>
- *     </tr>
- *     <tr class="TableSubHeadingColor">
- *       <td align="left" scope="col" nowrap><b>Name</b></td>
- *       <td align="left" scope="col" nowrap><b>Type</b></td>
- *       <td align="left" scope="col" nowrap><b>Flags</b></td>
- *       <td align="left" scope="col" nowrap><b>Documentation</b></td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getDefaultSequenceDirectoryCapacityLimit defaultSequenceDirectoryCapacityLimit}</td>
- *       <td align="left" valign="top" nowrap>{@code java.math.BigInteger}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top">Default capacity limit when creating new sequence directory entities and no default value is provided otherwise.</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getSequenceDirectoryName sequenceDirectoryName}</td>
- *       <td align="left" valign="top" nowrap>{@code java.lang.String}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top">Name uniquely identifying the directory in a set of directories.</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getSequenceDirectoryNameQueryParameterName sequenceDirectoryNameQueryParameterName}</td>
- *       <td align="left" valign="top" nowrap>{@code java.lang.String}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top">Name of a JPA query parameter denoting the name of a sequence directory entity.</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getSequenceNameQueryParameterName sequenceNameQueryParameterName}</td>
- *       <td align="left" valign="top" nowrap>{@code java.lang.String}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top">Name of a JPA query parameter denoting the name of a sequence entity.</td>
- *     </tr>
- *   </table>
- * </p>
- * <p>
- *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
- *     <tr class="TableHeadingColor">
- *       <th align="left" scope="col" colspan="3" nowrap><font size="+2">Dependencies</font></th>
- *     </tr>
- *     <tr class="TableSubHeadingColor">
- *       <td align="left" scope="col" nowrap><b>Name</b></td>
- *       <td align="left" scope="col" nowrap><b>Flags</b></td>
- *       <td align="left" scope="col" nowrap><b>Description</b></td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getEntityManager EntityManager}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top">Dependency on the {@code 'JOMC SDK JPA'} object of the {@code 'javax.persistence.EntityManager'} {@code (javax.persistence.EntityManager)} specification.</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getLocale Locale}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top">Dependency on the {@code 'default'} object of the {@code 'java.util.Locale'} {@code (java.util.Locale)} specification at specification level 1.1 bound to an instance.</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getLogger Logger}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top">Dependency on any object of the {@code 'org.jomc.logging.Logger'} {@code (org.jomc.logging.Logger)} specification at specification level 1.0 bound to an instance.</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getSelectAllSequencesQuery SelectAllSequencesQuery}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top">Dependency on the {@code 'JOMC Sequences Model :: Select All Sequences Query'} object of the {@code 'javax.persistence.Query'} {@code (javax.persistence.Query)} specification.</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getSelectSequenceCountQuery SelectSequenceCountQuery}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top">Dependency on the {@code 'JOMC Sequences Model :: Select Sequence Count Query'} object of the {@code 'javax.persistence.Query'} {@code (javax.persistence.Query)} specification.</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getSelectSequenceDirectoryQuery SelectSequenceDirectoryQuery}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top">Dependency on the {@code 'JOMC Sequences Model :: Select Sequence Directory Query'} object of the {@code 'javax.persistence.Query'} {@code (javax.persistence.Query)} specification.</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getSelectSequenceQuery SelectSequenceQuery}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top">Dependency on the {@code 'JOMC Sequences Model :: Select Sequence Query'} object of the {@code 'javax.persistence.Query'} {@code (javax.persistence.Query)} specification.</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getSelectSequencesQuery SelectSequencesQuery}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top">Dependency on the {@code 'JOMC Sequences Model :: Select Sequences Query'} object of the {@code 'javax.persistence.Query'} {@code (javax.persistence.Query)} specification.</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getSequenceChangeListener SequenceChangeListener}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top">Dependency on any object of the {@code 'org.jomc.sequences.SequenceChangeListener'} {@code (org.jomc.sequences.SequenceChangeListener)} specification at specification level 1.0 bound to an instance.</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getSequenceMapper SequenceMapper}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top">Dependency on the {@code 'JOMC Sequences RI'} object of the {@code 'org.jomc.sequences.ri.SequenceMapper'} {@code (org.jomc.sequences.ri.SequenceMapper)} specification at specification level 1.0 bound to an instance.</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getVetoableSequenceChangeListener VetoableSequenceChangeListener}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top">Dependency on any object of the {@code 'org.jomc.sequences.VetoableSequenceChangeListener'} {@code (org.jomc.sequences.VetoableSequenceChangeListener)} specification at specification level 1.0 bound to an instance.</td>
- *     </tr>
- *   </table>
- * </p>
- * <p>
- *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
- *     <tr class="TableHeadingColor">
- *       <th align="left" scope="col" colspan="3" nowrap><font size="+2">Messages</font></th>
- *     </tr>
- *     <tr class="TableSubHeadingColor">
- *       <td align="left" scope="col" nowrap><b>Name</b></td>
- *       <td align="left" scope="col" nowrap><b>Flags</b></td>
- *       <td align="left" scope="col" nowrap><b>Languages</b></td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getIllegalArgumentMessage illegalArgumentMessage}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getIllegalResultObjectError illegalResultObjectError}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getMissingResultObjectError missingResultObjectError}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getSuccessfullyCreatedSequenceDirectoryMessage successfullyCreatedSequenceDirectoryMessage}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
- *     </tr>
- *   </table>
+ *   This implementation is identified by identifier {@code <org.jomc.sequences.ri.DefaultSequenceDirectory>}.
+ *   It provides objects named {@code <JOMC Sequences RI>} of the following specifications:
+ *
+ *   <ul>
+ *     <li>{@code <org.jomc.sequences.SequenceDirectory>} at specification level 1.0 applying to {@code <Singleton>} scope.</li>
+ *     <li>{@code <org.jomc.sequences.SequenceOperations>} at specification level 1.0 applying to {@code <Singleton>} scope.</li>
+ *   </ul>
+ *
+ *   No state is retained across operations due to flag {@code <stateless>}.
  * </p>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
- * @version $Id$
+ * @version 1.0-beta-3-SNAPSHOT
  */
 // </editor-fold>
 // SECTION-END
@@ -709,10 +537,12 @@ public class DefaultSequenceDirectory
     // <editor-fold defaultstate="collapsed" desc=" Generated Dependencies ">
 
     /**
-     * Gets the {@code EntityManager} dependency.
-     * <p>This method returns the {@code 'JOMC SDK JPA'} object of the {@code 'javax.persistence.EntityManager'} {@code (javax.persistence.EntityManager)} specification.</p>
-     * <p>That specification does not apply to any scope. A new object is returned whenever requested.</p>
-     * @return The {@code EntityManager} dependency.
+     * Gets the {@code <EntityManager>} dependency.
+     * <p>
+     *   This method returns the {@code <JOMC SDK JPA>} object of the {@code <javax.persistence.EntityManager>} specification at any specification level.
+     *   That specification does not apply to any scope. A new object is returned whenever requested.
+     * </p>
+     * @return The {@code <EntityManager>} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
@@ -724,10 +554,12 @@ public class DefaultSequenceDirectory
     }
 
     /**
-     * Gets the {@code Locale} dependency.
-     * <p>This method returns the {@code 'default'} object of the {@code 'java.util.Locale'} {@code (java.util.Locale)} specification at specification level 1.1.</p>
-     * <p>That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.</p>
-     * @return The {@code Locale} dependency.
+     * Gets the {@code <Locale>} dependency.
+     * <p>
+     *   This method returns the {@code <default>} object of the {@code <java.util.Locale>} specification at specification level 1.1.
+     *   That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.
+     * </p>
+     * @return The {@code <Locale>} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
@@ -739,9 +571,11 @@ public class DefaultSequenceDirectory
     }
 
     /**
-     * Gets the {@code Logger} dependency.
-     * <p>This method returns any available object of the {@code 'org.jomc.logging.Logger'} {@code (org.jomc.logging.Logger)} specification at specification level 1.0.</p>
-     * <p>That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.</p>
+     * Gets the {@code <Logger>} dependency.
+     * <p>
+     *   This method returns any available object of the {@code <org.jomc.logging.Logger>} specification at specification level 1.0.
+     *   That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.
+     * </p>
      * <p><strong>Properties:</strong>
      *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
      *     <tr class="TableSubHeadingColor">
@@ -750,13 +584,13 @@ public class DefaultSequenceDirectory
      *       <th align="left" scope="col" nowrap><b>Documentation</b></th>
      *     </tr>
      *     <tr class="TableRow">
-     *       <td align="left" valign="top" nowrap>{@code name}</td>
+     *       <td align="left" valign="top" nowrap>{@code <name>}</td>
      *       <td align="left" valign="top" nowrap>{@code java.lang.String}</td>
      *       <td align="left" valign="top"></td>
      *     </tr>
      *   </table>
      * </p>
-     * @return The {@code Logger} dependency.
+     * @return The {@code <Logger>} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
@@ -768,10 +602,12 @@ public class DefaultSequenceDirectory
     }
 
     /**
-     * Gets the {@code SelectAllSequencesQuery} dependency.
-     * <p>This method returns the {@code 'JOMC Sequences Model :: Select All Sequences Query'} object of the {@code 'javax.persistence.Query'} {@code (javax.persistence.Query)} specification.</p>
-     * <p>That specification does not apply to any scope. A new object is returned whenever requested.</p>
-     * @return The {@code SelectAllSequencesQuery} dependency.
+     * Gets the {@code <SelectAllSequencesQuery>} dependency.
+     * <p>
+     *   This method returns the {@code <JOMC Sequences Model :: Select All Sequences Query>} object of the {@code <javax.persistence.Query>} specification at any specification level.
+     *   That specification does not apply to any scope. A new object is returned whenever requested.
+     * </p>
+     * @return The {@code <SelectAllSequencesQuery>} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
@@ -783,10 +619,12 @@ public class DefaultSequenceDirectory
     }
 
     /**
-     * Gets the {@code SelectSequenceCountQuery} dependency.
-     * <p>This method returns the {@code 'JOMC Sequences Model :: Select Sequence Count Query'} object of the {@code 'javax.persistence.Query'} {@code (javax.persistence.Query)} specification.</p>
-     * <p>That specification does not apply to any scope. A new object is returned whenever requested.</p>
-     * @return The {@code SelectSequenceCountQuery} dependency.
+     * Gets the {@code <SelectSequenceCountQuery>} dependency.
+     * <p>
+     *   This method returns the {@code <JOMC Sequences Model :: Select Sequence Count Query>} object of the {@code <javax.persistence.Query>} specification at any specification level.
+     *   That specification does not apply to any scope. A new object is returned whenever requested.
+     * </p>
+     * @return The {@code <SelectSequenceCountQuery>} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
@@ -798,10 +636,12 @@ public class DefaultSequenceDirectory
     }
 
     /**
-     * Gets the {@code SelectSequenceDirectoryQuery} dependency.
-     * <p>This method returns the {@code 'JOMC Sequences Model :: Select Sequence Directory Query'} object of the {@code 'javax.persistence.Query'} {@code (javax.persistence.Query)} specification.</p>
-     * <p>That specification does not apply to any scope. A new object is returned whenever requested.</p>
-     * @return The {@code SelectSequenceDirectoryQuery} dependency.
+     * Gets the {@code <SelectSequenceDirectoryQuery>} dependency.
+     * <p>
+     *   This method returns the {@code <JOMC Sequences Model :: Select Sequence Directory Query>} object of the {@code <javax.persistence.Query>} specification at any specification level.
+     *   That specification does not apply to any scope. A new object is returned whenever requested.
+     * </p>
+     * @return The {@code <SelectSequenceDirectoryQuery>} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
@@ -813,10 +653,12 @@ public class DefaultSequenceDirectory
     }
 
     /**
-     * Gets the {@code SelectSequenceQuery} dependency.
-     * <p>This method returns the {@code 'JOMC Sequences Model :: Select Sequence Query'} object of the {@code 'javax.persistence.Query'} {@code (javax.persistence.Query)} specification.</p>
-     * <p>That specification does not apply to any scope. A new object is returned whenever requested.</p>
-     * @return The {@code SelectSequenceQuery} dependency.
+     * Gets the {@code <SelectSequenceQuery>} dependency.
+     * <p>
+     *   This method returns the {@code <JOMC Sequences Model :: Select Sequence Query>} object of the {@code <javax.persistence.Query>} specification at any specification level.
+     *   That specification does not apply to any scope. A new object is returned whenever requested.
+     * </p>
+     * @return The {@code <SelectSequenceQuery>} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
@@ -828,10 +670,12 @@ public class DefaultSequenceDirectory
     }
 
     /**
-     * Gets the {@code SelectSequencesQuery} dependency.
-     * <p>This method returns the {@code 'JOMC Sequences Model :: Select Sequences Query'} object of the {@code 'javax.persistence.Query'} {@code (javax.persistence.Query)} specification.</p>
-     * <p>That specification does not apply to any scope. A new object is returned whenever requested.</p>
-     * @return The {@code SelectSequencesQuery} dependency.
+     * Gets the {@code <SelectSequencesQuery>} dependency.
+     * <p>
+     *   This method returns the {@code <JOMC Sequences Model :: Select Sequences Query>} object of the {@code <javax.persistence.Query>} specification at any specification level.
+     *   That specification does not apply to any scope. A new object is returned whenever requested.
+     * </p>
+     * @return The {@code <SelectSequencesQuery>} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
@@ -843,10 +687,12 @@ public class DefaultSequenceDirectory
     }
 
     /**
-     * Gets the {@code SequenceChangeListener} dependency.
-     * <p>This method returns any available object of the {@code 'org.jomc.sequences.SequenceChangeListener'} {@code (org.jomc.sequences.SequenceChangeListener)} specification at specification level 1.0.</p>
-     * <p>That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.</p>
-     * @return The {@code SequenceChangeListener} dependency.
+     * Gets the {@code <SequenceChangeListener>} dependency.
+     * <p>
+     *   This method returns any available object of the {@code <org.jomc.sequences.SequenceChangeListener>} specification at specification level 1.0.
+     *   That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.
+     * </p>
+     * @return The {@code <SequenceChangeListener>} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
@@ -858,10 +704,12 @@ public class DefaultSequenceDirectory
     }
 
     /**
-     * Gets the {@code SequenceMapper} dependency.
-     * <p>This method returns the {@code 'JOMC Sequences RI'} object of the {@code 'org.jomc.sequences.ri.SequenceMapper'} {@code (org.jomc.sequences.ri.SequenceMapper)} specification at specification level 1.0.</p>
-     * <p>That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.</p>
-     * @return The {@code SequenceMapper} dependency.
+     * Gets the {@code <SequenceMapper>} dependency.
+     * <p>
+     *   This method returns the {@code <JOMC Sequences RI>} object of the {@code <org.jomc.sequences.ri.SequenceMapper>} specification at specification level 1.0.
+     *   That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.
+     * </p>
+     * @return The {@code <SequenceMapper>} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
@@ -873,10 +721,12 @@ public class DefaultSequenceDirectory
     }
 
     /**
-     * Gets the {@code VetoableSequenceChangeListener} dependency.
-     * <p>This method returns any available object of the {@code 'org.jomc.sequences.VetoableSequenceChangeListener'} {@code (org.jomc.sequences.VetoableSequenceChangeListener)} specification at specification level 1.0.</p>
-     * <p>That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.</p>
-     * @return The {@code VetoableSequenceChangeListener} dependency.
+     * Gets the {@code <VetoableSequenceChangeListener>} dependency.
+     * <p>
+     *   This method returns any available object of the {@code <org.jomc.sequences.VetoableSequenceChangeListener>} specification at specification level 1.0.
+     *   That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.
+     * </p>
+     * @return The {@code <VetoableSequenceChangeListener>} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
@@ -892,7 +742,7 @@ public class DefaultSequenceDirectory
     // <editor-fold defaultstate="collapsed" desc=" Generated Properties ">
 
     /**
-     * Gets the value of the {@code defaultSequenceDirectoryCapacityLimit} property.
+     * Gets the value of the {@code <defaultSequenceDirectoryCapacityLimit>} property.
      * @return Default capacity limit when creating new sequence directory entities and no default value is provided otherwise.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -905,7 +755,7 @@ public class DefaultSequenceDirectory
     }
 
     /**
-     * Gets the value of the {@code sequenceDirectoryName} property.
+     * Gets the value of the {@code <sequenceDirectoryName>} property.
      * @return Name uniquely identifying the directory in a set of directories.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -918,7 +768,7 @@ public class DefaultSequenceDirectory
     }
 
     /**
-     * Gets the value of the {@code sequenceDirectoryNameQueryParameterName} property.
+     * Gets the value of the {@code <sequenceDirectoryNameQueryParameterName>} property.
      * @return Name of a JPA query parameter denoting the name of a sequence directory entity.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -931,7 +781,7 @@ public class DefaultSequenceDirectory
     }
 
     /**
-     * Gets the value of the {@code sequenceNameQueryParameterName} property.
+     * Gets the value of the {@code <sequenceNameQueryParameterName>} property.
      * @return Name of a JPA query parameter denoting the name of a sequence entity.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -948,28 +798,18 @@ public class DefaultSequenceDirectory
     // <editor-fold defaultstate="collapsed" desc=" Generated Messages ">
 
     /**
-     * Gets the text of the {@code illegalArgumentMessage} message.
-     * <p><strong>Templates:</strong>
-     *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
-     *     <tr class="TableSubHeadingColor">
-     *       <th align="left" scope="col" nowrap><b>Language</b></th>
-     *       <th align="left" scope="col" nowrap><b>Template</b></th>
-     *     </tr>
-     *     <tr class="TableRow">
-     *       <td align="left" valign="top" nowrap>English (default)</td>
-     *       <td align="left" valign="top" nowrap><pre><code>Illegal value ''{1}'' for argument ''{0}''.</code></pre></td>
-     *     </tr>
-     *     <tr class="TableRow">
-     *       <td align="left" valign="top" nowrap>Deutsch</td>
-     *       <td align="left" valign="top" nowrap><pre><code>Ung&uuml;ltiger Wert ''{1}'' f&uuml;r Parameter ''{0}''.</code></pre></td>
-     *     </tr>
-     *   </table>
+     * Gets the text of the {@code <illegalArgumentMessage>} message.
+     * <p><strong>Languages:</strong>
+     *   <ul>
+     *     <li>English (default)</li>
+     *     <li>Deutsch</li>
+     *   </ul>
      * </p>
      *
      * @param locale The locale of the message to return.
      * @param argumentName Format argument.
      * @param argumentValue Format argument.
-     * @return The text of the {@code illegalArgumentMessage} message for {@code locale}.
+     * @return The text of the {@code <illegalArgumentMessage>} message for {@code locale}.
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
@@ -981,28 +821,18 @@ public class DefaultSequenceDirectory
     }
 
     /**
-     * Gets the text of the {@code illegalResultObjectError} message.
-     * <p><strong>Templates:</strong>
-     *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
-     *     <tr class="TableSubHeadingColor">
-     *       <th align="left" scope="col" nowrap><b>Language</b></th>
-     *       <th align="left" scope="col" nowrap><b>Template</b></th>
-     *     </tr>
-     *     <tr class="TableRow">
-     *       <td align="left" valign="top" nowrap>English (default)</td>
-     *       <td align="left" valign="top" nowrap><pre><code>Illegal object ''{1}'' searching sequence directory ''{0}''.</code></pre></td>
-     *     </tr>
-     *     <tr class="TableRow">
-     *       <td align="left" valign="top" nowrap>Deutsch</td>
-     *       <td align="left" valign="top" nowrap><pre><code>Ung&uuml;ltiges Objekt ''{1}'' bei Abfrage des ''{0}'' Sequenzverzeichnisses.</code></pre></td>
-     *     </tr>
-     *   </table>
+     * Gets the text of the {@code <illegalResultObjectError>} message.
+     * <p><strong>Languages:</strong>
+     *   <ul>
+     *     <li>English (default)</li>
+     *     <li>Deutsch</li>
+     *   </ul>
      * </p>
      *
      * @param locale The locale of the message to return.
      * @param directoryInfo Format argument.
      * @param objectInfo Format argument.
-     * @return The text of the {@code illegalResultObjectError} message for {@code locale}.
+     * @return The text of the {@code <illegalResultObjectError>} message for {@code locale}.
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
@@ -1014,27 +844,17 @@ public class DefaultSequenceDirectory
     }
 
     /**
-     * Gets the text of the {@code missingResultObjectError} message.
-     * <p><strong>Templates:</strong>
-     *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
-     *     <tr class="TableSubHeadingColor">
-     *       <th align="left" scope="col" nowrap><b>Language</b></th>
-     *       <th align="left" scope="col" nowrap><b>Template</b></th>
-     *     </tr>
-     *     <tr class="TableRow">
-     *       <td align="left" valign="top" nowrap>English (default)</td>
-     *       <td align="left" valign="top" nowrap><pre><code>No object searching directory ''{0}''.</code></pre></td>
-     *     </tr>
-     *     <tr class="TableRow">
-     *       <td align="left" valign="top" nowrap>Deutsch</td>
-     *       <td align="left" valign="top" nowrap><pre><code>Kein Objekt bei Abfrage des ''{0}'' Sequenzverzeichnisses.</code></pre></td>
-     *     </tr>
-     *   </table>
+     * Gets the text of the {@code <missingResultObjectError>} message.
+     * <p><strong>Languages:</strong>
+     *   <ul>
+     *     <li>English (default)</li>
+     *     <li>Deutsch</li>
+     *   </ul>
      * </p>
      *
      * @param locale The locale of the message to return.
      * @param directoryInfo Format argument.
-     * @return The text of the {@code missingResultObjectError} message for {@code locale}.
+     * @return The text of the {@code <missingResultObjectError>} message for {@code locale}.
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
@@ -1046,27 +866,17 @@ public class DefaultSequenceDirectory
     }
 
     /**
-     * Gets the text of the {@code successfullyCreatedSequenceDirectoryMessage} message.
-     * <p><strong>Templates:</strong>
-     *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
-     *     <tr class="TableSubHeadingColor">
-     *       <th align="left" scope="col" nowrap><b>Language</b></th>
-     *       <th align="left" scope="col" nowrap><b>Template</b></th>
-     *     </tr>
-     *     <tr class="TableRow">
-     *       <td align="left" valign="top" nowrap>English (default)</td>
-     *       <td align="left" valign="top" nowrap><pre><code>Sequence directory ''{0}'' created.</code></pre></td>
-     *     </tr>
-     *     <tr class="TableRow">
-     *       <td align="left" valign="top" nowrap>Deutsch</td>
-     *       <td align="left" valign="top" nowrap><pre><code>Sequenzverzeichnis ''{0}'' erstellt.</code></pre></td>
-     *     </tr>
-     *   </table>
+     * Gets the text of the {@code <successfullyCreatedSequenceDirectoryMessage>} message.
+     * <p><strong>Languages:</strong>
+     *   <ul>
+     *     <li>English (default)</li>
+     *     <li>Deutsch</li>
+     *   </ul>
      * </p>
      *
      * @param locale The locale of the message to return.
      * @param name Format argument.
-     * @return The text of the {@code successfullyCreatedSequenceDirectoryMessage} message for {@code locale}.
+     * @return The text of the {@code <successfullyCreatedSequenceDirectoryMessage>} message for {@code locale}.
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
