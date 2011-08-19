@@ -57,54 +57,15 @@ import static org.junit.Assert.fail;
 // <editor-fold defaultstate="collapsed" desc=" Generated Documentation ">
 /**
  * Testcase for SequenceOperations implementations.
+ *
  * <p>
- *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
- *     <tr class="TableHeadingColor">
- *       <th align="left" scope="col" colspan="2" nowrap><font size="+2">Implementation</font></th>
- *     </tr>
- *     <tr>
- *       <td class="TableSubHeadingColor" align="left" nowrap><b>Identifier:</b></td>
- *       <td class="TableRowColor" align="left" nowrap>{@code org.jomc.sequences.it.SequenceOperationsTest}</td>
- *     </tr>
- *     <tr>
- *       <td class="TableSubHeadingColor" align="left" nowrap><b>Name:</b></td>
- *       <td class="TableRowColor" align="left" nowrap>{@code JOMC Sequences Test Suite}</td>
- *     </tr>
- *     <tr>
- *       <td class="TableSubHeadingColor" align="left" nowrap><b>Flags:</b></td>
- *       <td class="TableRowColor" align="left" nowrap> {@code final}</td>
- *     </tr>
- *     <tr>
- *       <td class="TableSubHeadingColor" align="left" nowrap><b>Version:</b></td>
- *       <td class="TableRowColor" align="left" nowrap>{@code 1.0-beta-3-SNAPSHOT}</td>
- *     </tr>
- *   </table>
- * </p>
- * <p>
- *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
- *     <tr class="TableHeadingColor">
- *       <th align="left" scope="col" colspan="3" nowrap><font size="+2">Dependencies</font></th>
- *     </tr>
- *     <tr class="TableSubHeadingColor">
- *       <td align="left" scope="col" nowrap><b>Name</b></td>
- *       <td align="left" scope="col" nowrap><b>Flags</b></td>
- *       <td align="left" scope="col" nowrap><b>Description</b></td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getSequenceDirectory SequenceDirectory}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top">Dependency on any object of the {@code 'org.jomc.sequences.SequenceDirectory'} {@code (org.jomc.sequences.SequenceDirectory)} specification at specification level 1.0 applying to {@code Singleton} scope bound to an instance.</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getSequenceOperations SequenceOperations}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top">Dependency on any object of the {@code 'org.jomc.sequences.SequenceOperations'} {@code (org.jomc.sequences.SequenceOperations)} specification at specification level 1.0 applying to {@code Singleton} scope bound to an instance.</td>
- *     </tr>
- *   </table>
+ *   This implementation is identified by identifier {@code <org.jomc.sequences.it.SequenceOperationsTest>}.
+ *   It does not provide any specified objects.
+ *   This implementation is flagged the {@code <final>} node in an inheritance hierarchy.
  * </p>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
- * @version $Id$
+ * @version 1.0-beta-3-SNAPSHOT
  */
 // </editor-fold>
 // SECTION-END
@@ -310,10 +271,12 @@ public class SequenceOperationsTest
     // <editor-fold defaultstate="collapsed" desc=" Generated Dependencies ">
 
     /**
-     * Gets the {@code SequenceDirectory} dependency.
-     * <p>This method returns any available object of the {@code 'org.jomc.sequences.SequenceDirectory'} {@code (org.jomc.sequences.SequenceDirectory)} specification at specification level 1.0.</p>
-     * <p>That specification applies to {@code Singleton} scope. The singleton object is returned whenever requested and bound to this instance.</p>
-     * @return The {@code SequenceDirectory} dependency.
+     * Gets the {@code <SequenceDirectory>} dependency.
+     * <p>
+     *   This method returns any available object of the {@code <org.jomc.sequences.SequenceDirectory>} specification at specification level 1.0.
+     *   That specification applies to {@code <Singleton>} scope. The singleton object is returned whenever requested and bound to this instance.
+     * </p>
+     * @return The {@code <SequenceDirectory>} dependency.
      * {@code null} if no object is available.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
@@ -324,10 +287,12 @@ public class SequenceOperationsTest
     }
 
     /**
-     * Gets the {@code SequenceOperations} dependency.
-     * <p>This method returns any available object of the {@code 'org.jomc.sequences.SequenceOperations'} {@code (org.jomc.sequences.SequenceOperations)} specification at specification level 1.0.</p>
-     * <p>That specification applies to {@code Singleton} scope. The singleton object is returned whenever requested and bound to this instance.</p>
-     * @return The {@code SequenceOperations} dependency.
+     * Gets the {@code <SequenceOperations>} dependency.
+     * <p>
+     *   This method returns any available object of the {@code <org.jomc.sequences.SequenceOperations>} specification at specification level 1.0.
+     *   That specification applies to {@code <Singleton>} scope. The singleton object is returned whenever requested and bound to this instance.
+     * </p>
+     * @return The {@code <SequenceOperations>} dependency.
      * {@code null} if no object is available.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
