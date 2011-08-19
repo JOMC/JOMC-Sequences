@@ -54,168 +54,19 @@ import org.jomc.sequences.SequencesSystemException;
 // <editor-fold defaultstate="collapsed" desc=" Generated Documentation ">
 /**
  * Swing TableModel Java Bean for displaying and editing a system's SequenceDirectory.
+ *
  * <p>
- *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
- *     <tr class="TableHeadingColor">
- *       <th align="left" scope="col" colspan="2" nowrap><font size="+2">Implementation</font></th>
- *     </tr>
- *     <tr>
- *       <td class="TableSubHeadingColor" align="left" nowrap><b>Identifier:</b></td>
- *       <td class="TableRowColor" align="left" nowrap>{@code org.jomc.sequences.util.SequencesTableModel}</td>
- *     </tr>
- *     <tr>
- *       <td class="TableSubHeadingColor" align="left" nowrap><b>Name:</b></td>
- *       <td class="TableRowColor" align="left" nowrap>{@code JOMC Sequences Utilities}</td>
- *     </tr>
- *     <tr>
- *       <td class="TableSubHeadingColor" align="left" nowrap><b>Flags:</b></td>
- *       <td class="TableRowColor" align="left" nowrap>{@code none}</td>
- *     </tr>
- *     <tr>
- *       <td class="TableSubHeadingColor" align="left" nowrap><b>Version:</b></td>
- *       <td class="TableRowColor" align="left" nowrap>{@code 1.0-beta-3-SNAPSHOT}</td>
- *     </tr>
- *   </table>
- * </p>
- * <p>
- *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
- *     <tr class="TableHeadingColor">
- *       <th align="left" scope="col" colspan="4" nowrap><font size="+2">Specifications</font></th>
- *     </tr>
- *     <tr class="TableSubHeadingColor">
- *       <td align="left" scope="col" nowrap><b>Identifier</b></td>
- *       <td align="left" scope="col" nowrap><b>Class</b></td>
- *       <td align="left" scope="col" nowrap><b>Scope</b></td>
- *       <td align="left" scope="col" nowrap><b>Version</b></td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" nowrap>{@code javax.swing.table.TableModel}</td>
- *       <td align="left" nowrap>{@code javax.swing.table.TableModel}</td>
- *       <td align="left" nowrap>{@code Multiton}</td>
- *       <td align="left" nowrap></td>
- *     </tr>
- *   </table>
- * </p>
- * <p>
- *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
- *     <tr class="TableHeadingColor">
- *       <th align="left" scope="col" colspan="4" nowrap><font size="+2">Properties</font></th>
- *     </tr>
- *     <tr class="TableSubHeadingColor">
- *       <td align="left" scope="col" nowrap><b>Name</b></td>
- *       <td align="left" scope="col" nowrap><b>Type</b></td>
- *       <td align="left" scope="col" nowrap><b>Flags</b></td>
- *       <td align="left" scope="col" nowrap><b>Documentation</b></td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #isIncrementColumnEditableByDefault incrementColumnEditableByDefault}</td>
- *       <td align="left" valign="top" nowrap>{@code java.lang.Boolean}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top">Flag indicating that the &quot;increment&quot; column is editable by default.</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #isMaximumColumnEditableByDefault maximumColumnEditableByDefault}</td>
- *       <td align="left" valign="top" nowrap>{@code java.lang.Boolean}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top">Flag indicating that the &quot;maximum&quot; column is editable by default.</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #isMinimumColumnEditableByDefault minimumColumnEditableByDefault}</td>
- *       <td align="left" valign="top" nowrap>{@code java.lang.Boolean}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top">Flag indicating that the &quot;minimum&quot; column is editable by default.</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #isNameColumnEditableByDefault nameColumnEditableByDefault}</td>
- *       <td align="left" valign="top" nowrap>{@code java.lang.Boolean}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top">Flag indicating that the &quot;name&quot; column is editable by default.</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #isValueColumnEditableByDefault valueColumnEditableByDefault}</td>
- *       <td align="left" valign="top" nowrap>{@code java.lang.Boolean}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top">Flag indicating that the &quot;value&quot; column is editable by default.</td>
- *     </tr>
- *   </table>
- * </p>
- * <p>
- *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
- *     <tr class="TableHeadingColor">
- *       <th align="left" scope="col" colspan="3" nowrap><font size="+2">Dependencies</font></th>
- *     </tr>
- *     <tr class="TableSubHeadingColor">
- *       <td align="left" scope="col" nowrap><b>Name</b></td>
- *       <td align="left" scope="col" nowrap><b>Flags</b></td>
- *       <td align="left" scope="col" nowrap><b>Description</b></td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getExceptionListener ExceptionListener}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top">Dependency on any object of the {@code 'JOMC :: Sequences :: ExceptionListener'} {@code (java.beans.ExceptionListener)} specification at specification level 1.0 bound to an instance.</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getLocale Locale}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top">Dependency on the {@code 'default'} object of the {@code 'java.util.Locale'} {@code (java.util.Locale)} specification at specification level 1.1 bound to an instance.</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getLogger Logger}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top">Dependency on any object of the {@code 'org.jomc.logging.Logger'} {@code (org.jomc.logging.Logger)} specification at specification level 1.0 bound to an instance.</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getSequenceDirectory SequenceDirectory}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top">Dependency on any object of the {@code 'org.jomc.sequences.SequenceDirectory'} {@code (org.jomc.sequences.SequenceDirectory)} specification at specification level 1.0 applying to {@code Singleton} scope bound to an instance.</td>
- *     </tr>
- *   </table>
- * </p>
- * <p>
- *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
- *     <tr class="TableHeadingColor">
- *       <th align="left" scope="col" colspan="3" nowrap><font size="+2">Messages</font></th>
- *     </tr>
- *     <tr class="TableSubHeadingColor">
- *       <td align="left" scope="col" nowrap><b>Name</b></td>
- *       <td align="left" scope="col" nowrap><b>Flags</b></td>
- *       <td align="left" scope="col" nowrap><b>Languages</b></td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getIllegalColumnIndexMessage illegalColumnIndexMessage}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getIncrementColumnTitle incrementColumnTitle}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getMaximumColumnTitle maximumColumnTitle}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getMinimumColumnTitle minimumColumnTitle}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getNameColumnTitle nameColumnTitle}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getValueColumnTitle valueColumnTitle}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
- *     </tr>
- *   </table>
+ *   This implementation is identified by identifier {@code <org.jomc.sequences.util.SequencesTableModel>}.
+ *   It provides objects named {@code <JOMC Sequences Utilities>} of the following specifications:
+ *
+ *   <ul>
+ *     <li>{@code <javax.swing.table.TableModel>} at any specification level.</li>
+ *   </ul>
+ *
  * </p>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
- * @version $Id$
+ * @version 1.0-beta-3-SNAPSHOT
  */
 // </editor-fold>
 // SECTION-END
@@ -863,10 +714,12 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
     // <editor-fold defaultstate="collapsed" desc=" Generated Dependencies ">
 
     /**
-     * Gets the {@code ExceptionListener} dependency.
-     * <p>This method returns any available object of the {@code 'JOMC :: Sequences :: ExceptionListener'} {@code (java.beans.ExceptionListener)} specification at specification level 1.0.</p>
-     * <p>That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.</p>
-     * @return The {@code ExceptionListener} dependency.
+     * Gets the {@code <ExceptionListener>} dependency.
+     * <p>
+     *   This method returns any available object of the {@code <JOMC :: Sequences :: ExceptionListener>} specification at specification level 1.0.
+     *   That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.
+     * </p>
+     * @return The {@code <ExceptionListener>} dependency.
      * {@code null} if no object is available.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
@@ -877,10 +730,12 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
     }
 
     /**
-     * Gets the {@code Locale} dependency.
-     * <p>This method returns the {@code 'default'} object of the {@code 'java.util.Locale'} {@code (java.util.Locale)} specification at specification level 1.1.</p>
-     * <p>That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.</p>
-     * @return The {@code Locale} dependency.
+     * Gets the {@code <Locale>} dependency.
+     * <p>
+     *   This method returns the {@code <default>} object of the {@code <java.util.Locale>} specification at specification level 1.1.
+     *   That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.
+     * </p>
+     * @return The {@code <Locale>} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
@@ -892,9 +747,11 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
     }
 
     /**
-     * Gets the {@code Logger} dependency.
-     * <p>This method returns any available object of the {@code 'org.jomc.logging.Logger'} {@code (org.jomc.logging.Logger)} specification at specification level 1.0.</p>
-     * <p>That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.</p>
+     * Gets the {@code <Logger>} dependency.
+     * <p>
+     *   This method returns any available object of the {@code <org.jomc.logging.Logger>} specification at specification level 1.0.
+     *   That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.
+     * </p>
      * <p><strong>Properties:</strong>
      *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
      *     <tr class="TableSubHeadingColor">
@@ -903,13 +760,13 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *       <th align="left" scope="col" nowrap><b>Documentation</b></th>
      *     </tr>
      *     <tr class="TableRow">
-     *       <td align="left" valign="top" nowrap>{@code name}</td>
+     *       <td align="left" valign="top" nowrap>{@code <name>}</td>
      *       <td align="left" valign="top" nowrap>{@code java.lang.String}</td>
      *       <td align="left" valign="top"></td>
      *     </tr>
      *   </table>
      * </p>
-     * @return The {@code Logger} dependency.
+     * @return The {@code <Logger>} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
@@ -921,10 +778,12 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
     }
 
     /**
-     * Gets the {@code SequenceDirectory} dependency.
-     * <p>This method returns any available object of the {@code 'org.jomc.sequences.SequenceDirectory'} {@code (org.jomc.sequences.SequenceDirectory)} specification at specification level 1.0.</p>
-     * <p>That specification applies to {@code Singleton} scope. The singleton object is returned whenever requested and bound to this instance.</p>
-     * @return The {@code SequenceDirectory} dependency.
+     * Gets the {@code <SequenceDirectory>} dependency.
+     * <p>
+     *   This method returns any available object of the {@code <org.jomc.sequences.SequenceDirectory>} specification at specification level 1.0.
+     *   That specification applies to {@code <Singleton>} scope. The singleton object is returned whenever requested and bound to this instance.
+     * </p>
+     * @return The {@code <SequenceDirectory>} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
@@ -940,7 +799,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
     // <editor-fold defaultstate="collapsed" desc=" Generated Properties ">
 
     /**
-     * Gets the value of the {@code incrementColumnEditableByDefault} property.
+     * Gets the value of the {@code <incrementColumnEditableByDefault>} property.
      * @return Flag indicating that the &quot;increment&quot; column is editable by default.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -953,7 +812,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
     }
 
     /**
-     * Gets the value of the {@code maximumColumnEditableByDefault} property.
+     * Gets the value of the {@code <maximumColumnEditableByDefault>} property.
      * @return Flag indicating that the &quot;maximum&quot; column is editable by default.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -966,7 +825,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
     }
 
     /**
-     * Gets the value of the {@code minimumColumnEditableByDefault} property.
+     * Gets the value of the {@code <minimumColumnEditableByDefault>} property.
      * @return Flag indicating that the &quot;minimum&quot; column is editable by default.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -979,7 +838,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
     }
 
     /**
-     * Gets the value of the {@code nameColumnEditableByDefault} property.
+     * Gets the value of the {@code <nameColumnEditableByDefault>} property.
      * @return Flag indicating that the &quot;name&quot; column is editable by default.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -992,7 +851,7 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
     }
 
     /**
-     * Gets the value of the {@code valueColumnEditableByDefault} property.
+     * Gets the value of the {@code <valueColumnEditableByDefault>} property.
      * @return Flag indicating that the &quot;value&quot; column is editable by default.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -1009,27 +868,17 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
     // <editor-fold defaultstate="collapsed" desc=" Generated Messages ">
 
     /**
-     * Gets the text of the {@code illegalColumnIndexMessage} message.
-     * <p><strong>Templates:</strong>
-     *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
-     *     <tr class="TableSubHeadingColor">
-     *       <th align="left" scope="col" nowrap><b>Language</b></th>
-     *       <th align="left" scope="col" nowrap><b>Template</b></th>
-     *     </tr>
-     *     <tr class="TableRow">
-     *       <td align="left" valign="top" nowrap>English (default)</td>
-     *       <td align="left" valign="top" nowrap><pre><code>Illegal column index {0}. {1}</code></pre></td>
-     *     </tr>
-     *     <tr class="TableRow">
-     *       <td align="left" valign="top" nowrap>Deutsch</td>
-     *       <td align="left" valign="top" nowrap><pre><code>Ung&uuml;ltiger Spalten-Index {0}. {1}</code></pre></td>
-     *     </tr>
-     *   </table>
+     * Gets the text of the {@code <illegalColumnIndexMessage>} message.
+     * <p><strong>Languages:</strong>
+     *   <ul>
+     *     <li>English (default)</li>
+     *     <li>Deutsch</li>
+     *   </ul>
      * </p>
      *
      * @param locale The locale of the message to return.
      * @param columnIndex Format argument.
-     * @return The text of the {@code illegalColumnIndexMessage} message for {@code locale}.
+     * @return The text of the {@code <illegalColumnIndexMessage>} message for {@code locale}.
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
@@ -1041,26 +890,16 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
     }
 
     /**
-     * Gets the text of the {@code incrementColumnTitle} message.
-     * <p><strong>Templates:</strong>
-     *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
-     *     <tr class="TableSubHeadingColor">
-     *       <th align="left" scope="col" nowrap><b>Language</b></th>
-     *       <th align="left" scope="col" nowrap><b>Template</b></th>
-     *     </tr>
-     *     <tr class="TableRow">
-     *       <td align="left" valign="top" nowrap>English (default)</td>
-     *       <td align="left" valign="top" nowrap><pre><code>Increment</code></pre></td>
-     *     </tr>
-     *     <tr class="TableRow">
-     *       <td align="left" valign="top" nowrap>Deutsch</td>
-     *       <td align="left" valign="top" nowrap><pre><code>Inkrement</code></pre></td>
-     *     </tr>
-     *   </table>
+     * Gets the text of the {@code <incrementColumnTitle>} message.
+     * <p><strong>Languages:</strong>
+     *   <ul>
+     *     <li>English (default)</li>
+     *     <li>Deutsch</li>
+     *   </ul>
      * </p>
      *
      * @param locale The locale of the message to return.
-     * @return The text of the {@code incrementColumnTitle} message for {@code locale}.
+     * @return The text of the {@code <incrementColumnTitle>} message for {@code locale}.
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
@@ -1072,26 +911,16 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
     }
 
     /**
-     * Gets the text of the {@code maximumColumnTitle} message.
-     * <p><strong>Templates:</strong>
-     *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
-     *     <tr class="TableSubHeadingColor">
-     *       <th align="left" scope="col" nowrap><b>Language</b></th>
-     *       <th align="left" scope="col" nowrap><b>Template</b></th>
-     *     </tr>
-     *     <tr class="TableRow">
-     *       <td align="left" valign="top" nowrap>English (default)</td>
-     *       <td align="left" valign="top" nowrap><pre><code>Maximum</code></pre></td>
-     *     </tr>
-     *     <tr class="TableRow">
-     *       <td align="left" valign="top" nowrap>Deutsch</td>
-     *       <td align="left" valign="top" nowrap><pre><code>Maximum</code></pre></td>
-     *     </tr>
-     *   </table>
+     * Gets the text of the {@code <maximumColumnTitle>} message.
+     * <p><strong>Languages:</strong>
+     *   <ul>
+     *     <li>English (default)</li>
+     *     <li>Deutsch</li>
+     *   </ul>
      * </p>
      *
      * @param locale The locale of the message to return.
-     * @return The text of the {@code maximumColumnTitle} message for {@code locale}.
+     * @return The text of the {@code <maximumColumnTitle>} message for {@code locale}.
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
@@ -1103,26 +932,16 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
     }
 
     /**
-     * Gets the text of the {@code minimumColumnTitle} message.
-     * <p><strong>Templates:</strong>
-     *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
-     *     <tr class="TableSubHeadingColor">
-     *       <th align="left" scope="col" nowrap><b>Language</b></th>
-     *       <th align="left" scope="col" nowrap><b>Template</b></th>
-     *     </tr>
-     *     <tr class="TableRow">
-     *       <td align="left" valign="top" nowrap>English (default)</td>
-     *       <td align="left" valign="top" nowrap><pre><code>Minimum</code></pre></td>
-     *     </tr>
-     *     <tr class="TableRow">
-     *       <td align="left" valign="top" nowrap>Deutsch</td>
-     *       <td align="left" valign="top" nowrap><pre><code>Minimum</code></pre></td>
-     *     </tr>
-     *   </table>
+     * Gets the text of the {@code <minimumColumnTitle>} message.
+     * <p><strong>Languages:</strong>
+     *   <ul>
+     *     <li>English (default)</li>
+     *     <li>Deutsch</li>
+     *   </ul>
      * </p>
      *
      * @param locale The locale of the message to return.
-     * @return The text of the {@code minimumColumnTitle} message for {@code locale}.
+     * @return The text of the {@code <minimumColumnTitle>} message for {@code locale}.
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
@@ -1134,26 +953,16 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
     }
 
     /**
-     * Gets the text of the {@code nameColumnTitle} message.
-     * <p><strong>Templates:</strong>
-     *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
-     *     <tr class="TableSubHeadingColor">
-     *       <th align="left" scope="col" nowrap><b>Language</b></th>
-     *       <th align="left" scope="col" nowrap><b>Template</b></th>
-     *     </tr>
-     *     <tr class="TableRow">
-     *       <td align="left" valign="top" nowrap>English (default)</td>
-     *       <td align="left" valign="top" nowrap><pre><code>Name</code></pre></td>
-     *     </tr>
-     *     <tr class="TableRow">
-     *       <td align="left" valign="top" nowrap>Deutsch</td>
-     *       <td align="left" valign="top" nowrap><pre><code>Name</code></pre></td>
-     *     </tr>
-     *   </table>
+     * Gets the text of the {@code <nameColumnTitle>} message.
+     * <p><strong>Languages:</strong>
+     *   <ul>
+     *     <li>English (default)</li>
+     *     <li>Deutsch</li>
+     *   </ul>
      * </p>
      *
      * @param locale The locale of the message to return.
-     * @return The text of the {@code nameColumnTitle} message for {@code locale}.
+     * @return The text of the {@code <nameColumnTitle>} message for {@code locale}.
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
@@ -1165,26 +974,16 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
     }
 
     /**
-     * Gets the text of the {@code valueColumnTitle} message.
-     * <p><strong>Templates:</strong>
-     *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
-     *     <tr class="TableSubHeadingColor">
-     *       <th align="left" scope="col" nowrap><b>Language</b></th>
-     *       <th align="left" scope="col" nowrap><b>Template</b></th>
-     *     </tr>
-     *     <tr class="TableRow">
-     *       <td align="left" valign="top" nowrap>English (default)</td>
-     *       <td align="left" valign="top" nowrap><pre><code>Value</code></pre></td>
-     *     </tr>
-     *     <tr class="TableRow">
-     *       <td align="left" valign="top" nowrap>Deutsch</td>
-     *       <td align="left" valign="top" nowrap><pre><code>Wert</code></pre></td>
-     *     </tr>
-     *   </table>
+     * Gets the text of the {@code <valueColumnTitle>} message.
+     * <p><strong>Languages:</strong>
+     *   <ul>
+     *     <li>English (default)</li>
+     *     <li>Deutsch</li>
+     *   </ul>
      * </p>
      *
      * @param locale The locale of the message to return.
-     * @return The text of the {@code valueColumnTitle} message for {@code locale}.
+     * @return The text of the {@code <valueColumnTitle>} message for {@code locale}.
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
