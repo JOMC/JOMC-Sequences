@@ -65,14 +65,16 @@ _gaq.push(['_trackPageview']);
 })();
       </script>
     </head>
-    <menu ref="parent" inherit="top" inheritAsRef="false"/>
+    <menu name="JOMC Sequences" inherit="top">
+      <item name="Home" href="${project.url}/index.html"/>
+    </menu>
     <menu name="Modules">
-      <item name="API" href="jomc-sequences-api/index.html" />
-      <item name="Test Suite" href="jomc-sequences-it/index.html" />
-      <item name="Model" href="jomc-sequences-model/index.html" />
-      <item name="RI" href="jomc-sequences-ri/index.html" />
-      <item name="EAR" href="jomc-sequences-ear/index.html" />
-      <item name="Utilities" href="jomc-sequences-utilities/index.html" />
+      <item name="API" href="${project.url}/jomc-sequences-api/index.html" />
+      <item name="Test Suite" href="${project.url}/jomc-sequences-it/index.html" />
+      <item name="Model" href="${project.url}/jomc-sequences-model/index.html" />
+      <item name="RI" href="${project.url}/jomc-sequences-ri/index.html" />
+      <item name="EAR" href="${project.url}/jomc-sequences-ear/index.html" />
+      <item name="Utilities" href="${project.url}/jomc-sequences-utilities/index.html" />
     </menu>
     <menu name="Sourceforge" inherit="bottom" inheritAsRef="false">
       <item name="Home" href="http://jomc.sourceforge.net/project/home"/>

@@ -43,6 +43,42 @@
   </documentation>
   <implementations>
     <!-- *********************************************************************************************************** -->
+    <implementation identifier="org.jomc.sequences.ri.test.DefaultSequenceDirectoryTest"
+                    class="org.jomc.sequences.ri.test.DefaultSequenceDirectoryTest"
+                    classDeclaration="true" name="${project.name}" vendor="${project.organization.name}"
+                    version="${project.version}" stateless="true" createDate="2009-07-27T19:56:45Z">
+
+      <documentation defaultLanguage="en">
+        <text language="en">Test cases for class {@code org.jomc.sequences.ri.DefaultSequenceDirectory}.</text>
+      </documentation>
+      <authors>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
+      </authors>
+      <implementations>
+        <reference identifier="org.jomc.sequences.it.SequenceDirectoryTest" version="${project.version}"/>
+      </implementations>
+    </implementation>
+    <!-- *********************************************************************************************************** -->
+    <implementation identifier="org.jomc.sequences.ri.test.DefaultSequenceOperationsTest"
+                    class="org.jomc.sequences.ri.test.DefaultSequenceOperationsTest"
+                    classDeclaration="true" name="${project.name}" vendor="${project.organization.name}"
+                    version="${project.version}" stateless="true" createDate="2009-07-27T19:56:45Z">
+
+      <documentation defaultLanguage="en">
+        <text language="en">Test cases for class {@code org.jomc.sequences.ri.DefaultSequenceDirectory}.</text>
+      </documentation>
+      <authors>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
+      </authors>
+      <implementations>
+        <reference identifier="org.jomc.sequences.it.SequenceOperationsTest" version="${project.version}"/>
+      </implementations>
+    </implementation>
+    <!-- *********************************************************************************************************** -->
     <implementation identifier="org.jomc.sequences.ri.test.SequenceMapperTest"
                     class="org.jomc.sequences.ri.test.SequenceMapperTest"
                     classDeclaration="true" name="${project.name}" vendor="${project.organization.name}"

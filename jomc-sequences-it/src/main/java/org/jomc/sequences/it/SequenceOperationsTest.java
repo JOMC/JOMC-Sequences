@@ -61,7 +61,6 @@ import static org.junit.Assert.fail;
  * <p>
  *   This implementation is identified by identifier {@code <org.jomc.sequences.it.SequenceOperationsTest>}.
  *   It does not provide any specified objects.
- *   This implementation is flagged the {@code <final>} node in an inheritance hierarchy.
  * </p>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
