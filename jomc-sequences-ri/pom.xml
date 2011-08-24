@@ -191,23 +191,23 @@
         </dependency>
         <!-- Logging -->
         <dependency>
-          <groupId>commons-logging</groupId>
-          <artifactId>commons-logging</artifactId>
-          <scope>test</scope>
-        </dependency>
-        <dependency>
-          <groupId>log4j</groupId>
-          <artifactId>log4j</artifactId>
-          <scope>test</scope>
-        </dependency>
-        <dependency>
-          <groupId>org.jomc.logging</groupId>
-          <artifactId>jomc-logging-log4j-logging</artifactId>
+          <groupId>org.slf4j</groupId>
+          <artifactId>jcl-over-slf4j</artifactId>
           <scope>test</scope>
         </dependency>
         <dependency>
           <groupId>org.slf4j</groupId>
-          <artifactId>slf4j-log4j12</artifactId>
+          <artifactId>log4j-over-slf4j</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-jdk14</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.jomc.logging</groupId>
+          <artifactId>jomc-logging-jdk-logging</artifactId>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -247,23 +247,23 @@
 
         <!-- Logging -->
         <dependency>
-          <groupId>commons-logging</groupId>
-          <artifactId>commons-logging</artifactId>
-          <scope>test</scope>
-        </dependency>
-        <dependency>
-          <groupId>log4j</groupId>
-          <artifactId>log4j</artifactId>
-          <scope>test</scope>
-        </dependency>
-        <dependency>
-          <groupId>org.jomc.logging</groupId>
-          <artifactId>jomc-logging-log4j-logging</artifactId>
+          <groupId>org.slf4j</groupId>
+          <artifactId>jcl-over-slf4j</artifactId>
           <scope>test</scope>
         </dependency>
         <dependency>
           <groupId>org.slf4j</groupId>
-          <artifactId>slf4j-log4j12</artifactId>
+          <artifactId>log4j-over-slf4j</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-jdk14</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.jomc.logging</groupId>
+          <artifactId>jomc-logging-jdk-logging</artifactId>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -302,23 +302,23 @@
         </dependency>
         <!-- Logging -->
         <dependency>
-          <groupId>commons-logging</groupId>
-          <artifactId>commons-logging</artifactId>
-          <scope>test</scope>
-        </dependency>
-        <dependency>
-          <groupId>log4j</groupId>
-          <artifactId>log4j</artifactId>
-          <scope>test</scope>
-        </dependency>
-        <dependency>
-          <groupId>org.jomc.logging</groupId>
-          <artifactId>jomc-logging-log4j-logging</artifactId>
+          <groupId>org.slf4j</groupId>
+          <artifactId>jcl-over-slf4j</artifactId>
           <scope>test</scope>
         </dependency>
         <dependency>
           <groupId>org.slf4j</groupId>
-          <artifactId>slf4j-log4j12</artifactId>
+          <artifactId>log4j-over-slf4j</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-jdk14</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.jomc.logging</groupId>
+          <artifactId>jomc-logging-jdk-logging</artifactId>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -357,18 +357,23 @@
         </dependency>
         <!-- Logging -->
         <dependency>
-          <groupId>commons-logging</groupId>
-          <artifactId>commons-logging</artifactId>
+          <groupId>org.slf4j</groupId>
+          <artifactId>jcl-over-slf4j</artifactId>
           <scope>test</scope>
         </dependency>
         <dependency>
-          <groupId>log4j</groupId>
-          <artifactId>log4j</artifactId>
+          <groupId>org.slf4j</groupId>
+          <artifactId>log4j-over-slf4j</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-jdk14</artifactId>
           <scope>test</scope>
         </dependency>
         <dependency>
           <groupId>org.jomc.logging</groupId>
-          <artifactId>jomc-logging-log4j-logging</artifactId>
+          <artifactId>jomc-logging-jdk-logging</artifactId>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -407,18 +412,23 @@
         </dependency>
         <!-- Logging -->
         <dependency>
-          <groupId>commons-logging</groupId>
-          <artifactId>commons-logging</artifactId>
+          <groupId>org.slf4j</groupId>
+          <artifactId>jcl-over-slf4j</artifactId>
           <scope>test</scope>
         </dependency>
         <dependency>
-          <groupId>log4j</groupId>
-          <artifactId>log4j</artifactId>
+          <groupId>org.slf4j</groupId>
+          <artifactId>log4j-over-slf4j</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-jdk14</artifactId>
           <scope>test</scope>
         </dependency>
         <dependency>
           <groupId>org.jomc.logging</groupId>
-          <artifactId>jomc-logging-log4j-logging</artifactId>
+          <artifactId>jomc-logging-jdk-logging</artifactId>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -457,18 +467,23 @@
         </dependency>
         <!-- Logging -->
         <dependency>
-          <groupId>commons-logging</groupId>
-          <artifactId>commons-logging</artifactId>
+          <groupId>org.slf4j</groupId>
+          <artifactId>jcl-over-slf4j</artifactId>
           <scope>test</scope>
         </dependency>
         <dependency>
-          <groupId>log4j</groupId>
-          <artifactId>log4j</artifactId>
+          <groupId>org.slf4j</groupId>
+          <artifactId>log4j-over-slf4j</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-jdk14</artifactId>
           <scope>test</scope>
         </dependency>
         <dependency>
           <groupId>org.jomc.logging</groupId>
-          <artifactId>jomc-logging-log4j-logging</artifactId>
+          <artifactId>jomc-logging-jdk-logging</artifactId>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -512,18 +527,23 @@
         </dependency>
         <!-- Logging -->
         <dependency>
-          <groupId>commons-logging</groupId>
-          <artifactId>commons-logging</artifactId>
+          <groupId>org.slf4j</groupId>
+          <artifactId>jcl-over-slf4j</artifactId>
           <scope>test</scope>
         </dependency>
         <dependency>
-          <groupId>log4j</groupId>
-          <artifactId>log4j</artifactId>
+          <groupId>org.slf4j</groupId>
+          <artifactId>log4j-over-slf4j</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-jdk14</artifactId>
           <scope>test</scope>
         </dependency>
         <dependency>
           <groupId>org.jomc.logging</groupId>
-          <artifactId>jomc-logging-log4j-logging</artifactId>
+          <artifactId>jomc-logging-jdk-logging</artifactId>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -567,18 +587,23 @@
         </dependency>
         <!-- Logging -->
         <dependency>
-          <groupId>commons-logging</groupId>
-          <artifactId>commons-logging</artifactId>
+          <groupId>org.slf4j</groupId>
+          <artifactId>jcl-over-slf4j</artifactId>
           <scope>test</scope>
         </dependency>
         <dependency>
-          <groupId>log4j</groupId>
-          <artifactId>log4j</artifactId>
+          <groupId>org.slf4j</groupId>
+          <artifactId>log4j-over-slf4j</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-jdk14</artifactId>
           <scope>test</scope>
         </dependency>
         <dependency>
           <groupId>org.jomc.logging</groupId>
-          <artifactId>jomc-logging-log4j-logging</artifactId>
+          <artifactId>jomc-logging-jdk-logging</artifactId>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -622,18 +647,23 @@
         </dependency>
         <!-- Logging -->
         <dependency>
-          <groupId>commons-logging</groupId>
-          <artifactId>commons-logging</artifactId>
+          <groupId>org.slf4j</groupId>
+          <artifactId>jcl-over-slf4j</artifactId>
           <scope>test</scope>
         </dependency>
         <dependency>
-          <groupId>log4j</groupId>
-          <artifactId>log4j</artifactId>
+          <groupId>org.slf4j</groupId>
+          <artifactId>log4j-over-slf4j</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-jdk14</artifactId>
           <scope>test</scope>
         </dependency>
         <dependency>
           <groupId>org.jomc.logging</groupId>
-          <artifactId>jomc-logging-log4j-logging</artifactId>
+          <artifactId>jomc-logging-jdk-logging</artifactId>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -677,18 +707,18 @@
         </dependency>
         <!-- Logging -->
         <dependency>
-          <groupId>commons-logging</groupId>
-          <artifactId>commons-logging</artifactId>
-          <scope>test</scope>
-        </dependency>
-        <dependency>
-          <groupId>org.jomc.logging</groupId>
-          <artifactId>jomc-logging-jdk-logging</artifactId>
+          <groupId>org.slf4j</groupId>
+          <artifactId>jcl-over-slf4j</artifactId>
           <scope>test</scope>
         </dependency>
         <dependency>
           <groupId>org.slf4j</groupId>
           <artifactId>slf4j-jdk14</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.jomc.logging</groupId>
+          <artifactId>jomc-logging-jdk-logging</artifactId>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -732,18 +762,18 @@
         </dependency>
         <!-- Logging -->
         <dependency>
-          <groupId>commons-logging</groupId>
-          <artifactId>commons-logging</artifactId>
-          <scope>test</scope>
-        </dependency>
-        <dependency>
-          <groupId>org.jomc.logging</groupId>
-          <artifactId>jomc-logging-jdk-logging</artifactId>
+          <groupId>org.slf4j</groupId>
+          <artifactId>jcl-over-slf4j</artifactId>
           <scope>test</scope>
         </dependency>
         <dependency>
           <groupId>org.slf4j</groupId>
           <artifactId>slf4j-jdk14</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.jomc.logging</groupId>
+          <artifactId>jomc-logging-jdk-logging</artifactId>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -787,18 +817,18 @@
         </dependency>
         <!-- Logging -->
         <dependency>
-          <groupId>commons-logging</groupId>
-          <artifactId>commons-logging</artifactId>
-          <scope>test</scope>
-        </dependency>
-        <dependency>
-          <groupId>org.jomc.logging</groupId>
-          <artifactId>jomc-logging-jdk-logging</artifactId>
+          <groupId>org.slf4j</groupId>
+          <artifactId>jcl-over-slf4j</artifactId>
           <scope>test</scope>
         </dependency>
         <dependency>
           <groupId>org.slf4j</groupId>
           <artifactId>slf4j-jdk14</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.jomc.logging</groupId>
+          <artifactId>jomc-logging-jdk-logging</artifactId>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -842,18 +872,18 @@
         </dependency>
         <!-- Logging -->
         <dependency>
-          <groupId>commons-logging</groupId>
-          <artifactId>commons-logging</artifactId>
-          <scope>test</scope>
-        </dependency>
-        <dependency>
-          <groupId>org.jomc.logging</groupId>
-          <artifactId>jomc-logging-jdk-logging</artifactId>
+          <groupId>org.slf4j</groupId>
+          <artifactId>jcl-over-slf4j</artifactId>
           <scope>test</scope>
         </dependency>
         <dependency>
           <groupId>org.slf4j</groupId>
           <artifactId>slf4j-jdk14</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.jomc.logging</groupId>
+          <artifactId>jomc-logging-jdk-logging</artifactId>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -897,18 +927,18 @@
         </dependency>
         <!-- Logging -->
         <dependency>
-          <groupId>commons-logging</groupId>
-          <artifactId>commons-logging</artifactId>
-          <scope>test</scope>
-        </dependency>
-        <dependency>
-          <groupId>org.jomc.logging</groupId>
-          <artifactId>jomc-logging-jdk-logging</artifactId>
+          <groupId>org.slf4j</groupId>
+          <artifactId>jcl-over-slf4j</artifactId>
           <scope>test</scope>
         </dependency>
         <dependency>
           <groupId>org.slf4j</groupId>
           <artifactId>slf4j-jdk14</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.jomc.logging</groupId>
+          <artifactId>jomc-logging-jdk-logging</artifactId>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -952,18 +982,18 @@
         </dependency>
         <!-- Logging -->
         <dependency>
-          <groupId>commons-logging</groupId>
-          <artifactId>commons-logging</artifactId>
-          <scope>test</scope>
-        </dependency>
-        <dependency>
-          <groupId>org.jomc.logging</groupId>
-          <artifactId>jomc-logging-jdk-logging</artifactId>
+          <groupId>org.slf4j</groupId>
+          <artifactId>jcl-over-slf4j</artifactId>
           <scope>test</scope>
         </dependency>
         <dependency>
           <groupId>org.slf4j</groupId>
           <artifactId>slf4j-jdk14</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.jomc.logging</groupId>
+          <artifactId>jomc-logging-jdk-logging</artifactId>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -1012,18 +1042,18 @@
         </dependency>
         <!-- Logging -->
         <dependency>
-          <groupId>commons-logging</groupId>
-          <artifactId>commons-logging</artifactId>
-          <scope>test</scope>
-        </dependency>
-        <dependency>
-          <groupId>org.jomc.logging</groupId>
-          <artifactId>jomc-logging-jdk-logging</artifactId>
+          <groupId>org.slf4j</groupId>
+          <artifactId>jcl-over-slf4j</artifactId>
           <scope>test</scope>
         </dependency>
         <dependency>
           <groupId>org.slf4j</groupId>
           <artifactId>slf4j-jdk14</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.jomc.logging</groupId>
+          <artifactId>jomc-logging-jdk-logging</artifactId>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -1072,18 +1102,18 @@
         </dependency>
         <!-- Logging -->
         <dependency>
-          <groupId>commons-logging</groupId>
-          <artifactId>commons-logging</artifactId>
-          <scope>test</scope>
-        </dependency>
-        <dependency>
-          <groupId>org.jomc.logging</groupId>
-          <artifactId>jomc-logging-jdk-logging</artifactId>
+          <groupId>org.slf4j</groupId>
+          <artifactId>jcl-over-slf4j</artifactId>
           <scope>test</scope>
         </dependency>
         <dependency>
           <groupId>org.slf4j</groupId>
           <artifactId>slf4j-jdk14</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.jomc.logging</groupId>
+          <artifactId>jomc-logging-jdk-logging</artifactId>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -1132,18 +1162,18 @@
         </dependency>
         <!-- Logging -->
         <dependency>
-          <groupId>commons-logging</groupId>
-          <artifactId>commons-logging</artifactId>
-          <scope>test</scope>
-        </dependency>
-        <dependency>
-          <groupId>org.jomc.logging</groupId>
-          <artifactId>jomc-logging-jdk-logging</artifactId>
+          <groupId>org.slf4j</groupId>
+          <artifactId>jcl-over-slf4j</artifactId>
           <scope>test</scope>
         </dependency>
         <dependency>
           <groupId>org.slf4j</groupId>
           <artifactId>slf4j-jdk14</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.jomc.logging</groupId>
+          <artifactId>jomc-logging-jdk-logging</artifactId>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -1193,18 +1223,18 @@
         </dependency>
         <!-- Logging -->
         <dependency>
-          <groupId>commons-logging</groupId>
-          <artifactId>commons-logging</artifactId>
-          <scope>test</scope>
-        </dependency>
-        <dependency>
-          <groupId>org.jomc.logging</groupId>
-          <artifactId>jomc-logging-jdk-logging</artifactId>
+          <groupId>org.slf4j</groupId>
+          <artifactId>jcl-over-slf4j</artifactId>
           <scope>test</scope>
         </dependency>
         <dependency>
           <groupId>org.slf4j</groupId>
           <artifactId>slf4j-jdk14</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.jomc.logging</groupId>
+          <artifactId>jomc-logging-jdk-logging</artifactId>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -1254,18 +1284,18 @@
         </dependency>
         <!-- Logging -->
         <dependency>
-          <groupId>commons-logging</groupId>
-          <artifactId>commons-logging</artifactId>
-          <scope>test</scope>
-        </dependency>
-        <dependency>
-          <groupId>org.jomc.logging</groupId>
-          <artifactId>jomc-logging-jdk-logging</artifactId>
+          <groupId>org.slf4j</groupId>
+          <artifactId>jcl-over-slf4j</artifactId>
           <scope>test</scope>
         </dependency>
         <dependency>
           <groupId>org.slf4j</groupId>
           <artifactId>slf4j-jdk14</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.jomc.logging</groupId>
+          <artifactId>jomc-logging-jdk-logging</artifactId>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -1315,18 +1345,18 @@
         </dependency>
         <!-- Logging -->
         <dependency>
-          <groupId>commons-logging</groupId>
-          <artifactId>commons-logging</artifactId>
-          <scope>test</scope>
-        </dependency>
-        <dependency>
-          <groupId>org.jomc.logging</groupId>
-          <artifactId>jomc-logging-jdk-logging</artifactId>
+          <groupId>org.slf4j</groupId>
+          <artifactId>jcl-over-slf4j</artifactId>
           <scope>test</scope>
         </dependency>
         <dependency>
           <groupId>org.slf4j</groupId>
           <artifactId>slf4j-jdk14</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.jomc.logging</groupId>
+          <artifactId>jomc-logging-jdk-logging</artifactId>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -1376,8 +1406,13 @@
         </dependency>
         <!-- Logging -->
         <dependency>
-          <groupId>commons-logging</groupId>
-          <artifactId>commons-logging</artifactId>
+          <groupId>org.slf4j</groupId>
+          <artifactId>jcl-over-slf4j</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-jdk14</artifactId>
           <scope>test</scope>
         </dependency>
         <dependency>
@@ -1432,8 +1467,13 @@
         </dependency>
         <!-- Logging -->
         <dependency>
-          <groupId>commons-logging</groupId>
-          <artifactId>commons-logging</artifactId>
+          <groupId>org.slf4j</groupId>
+          <artifactId>jcl-over-slf4j</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-jdk14</artifactId>
           <scope>test</scope>
         </dependency>
         <dependency>
@@ -1488,8 +1528,13 @@
         </dependency>
         <!-- Logging -->
         <dependency>
-          <groupId>commons-logging</groupId>
-          <artifactId>commons-logging</artifactId>
+          <groupId>org.slf4j</groupId>
+          <artifactId>jcl-over-slf4j</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-jdk14</artifactId>
           <scope>test</scope>
         </dependency>
         <dependency>
@@ -1549,8 +1594,13 @@
         </dependency>
         <!-- Logging -->
         <dependency>
-          <groupId>commons-logging</groupId>
-          <artifactId>commons-logging</artifactId>
+          <groupId>org.slf4j</groupId>
+          <artifactId>jcl-over-slf4j</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-jdk14</artifactId>
           <scope>test</scope>
         </dependency>
         <dependency>
@@ -1610,8 +1660,13 @@
         </dependency>
         <!-- Logging -->
         <dependency>
-          <groupId>commons-logging</groupId>
-          <artifactId>commons-logging</artifactId>
+          <groupId>org.slf4j</groupId>
+          <artifactId>jcl-over-slf4j</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-jdk14</artifactId>
           <scope>test</scope>
         </dependency>
         <dependency>
@@ -1671,8 +1726,13 @@
         </dependency>
         <!-- Logging -->
         <dependency>
-          <groupId>commons-logging</groupId>
-          <artifactId>commons-logging</artifactId>
+          <groupId>org.slf4j</groupId>
+          <artifactId>jcl-over-slf4j</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-jdk14</artifactId>
           <scope>test</scope>
         </dependency>
         <dependency>
