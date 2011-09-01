@@ -177,9 +177,18 @@ public abstract class SequenceChangeStatus implements Serializable
         {
             super( type, IDENTIFIER );
             this.invalidString = invalidString;
-            this.invalidCharacters = invalidCharacters;
             this.minimumLength = minimumLength;
             this.maximumLength = maximumLength;
+
+            if ( invalidCharacters != null )
+            {
+                this.invalidCharacters = new char[ invalidCharacters.length ];
+                System.arraycopy( invalidCharacters, 0, this.invalidCharacters, 0, invalidCharacters.length );
+            }
+            else
+            {
+                this.invalidCharacters = null;
+            }
         }
 
         /**
