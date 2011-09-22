@@ -67,11 +67,6 @@
             <execution>
               <id>default-check</id>
               <configuration>
-                <ignoreDependencies>false</ignoreDependencies>
-                <ignores>
-                  <ignore>org.jomc*</ignore>
-                  <ignore>org.junit*</ignore>
-                </ignores>
                 <signature>
                   <groupId>org.jomc.build</groupId>
                   <artifactId>jdk15-jpa10-signature</artifactId>
