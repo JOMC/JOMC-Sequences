@@ -29,7 +29,7 @@
  *   OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
  *   ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- *   $Id$
+ *   $JOMC$
  *
  */
 // </editor-fold>
@@ -126,7 +126,7 @@ public abstract class SequenceChangeStatus implements Serializable
      * {@code SequenceChangeStatus} denoting an invalid string.
      *
      * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
-     * @version $Id$
+     * @version $JOMC$
      * @see SequenceChangeEvent#getStatus(java.lang.String, java.lang.Class)
      */
     public static final class InvalidString extends SequenceChangeStatus implements Serializable
@@ -278,7 +278,7 @@ public abstract class SequenceChangeStatus implements Serializable
      * {@code SequenceChangeStatus} denoting an invalid number.
      *
      * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
-     * @version $Id$
+     * @version $JOMC$
      * @see SequenceChangeEvent#getStatus(java.lang.String, java.lang.Class)
      */
     public static final class InvalidNumber extends SequenceChangeStatus implements Serializable
