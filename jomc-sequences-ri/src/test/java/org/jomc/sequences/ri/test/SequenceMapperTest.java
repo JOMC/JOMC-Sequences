@@ -38,9 +38,9 @@ import java.util.Calendar;
 import org.jomc.sequences.Sequence;
 import org.jomc.sequences.SequencesSystemException;
 import org.jomc.sequences.model.SequenceType;
+import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import org.junit.Test;
 
 // SECTION-START[Documentation]
 // <editor-fold defaultstate="collapsed" desc=" Generated Documentation ">

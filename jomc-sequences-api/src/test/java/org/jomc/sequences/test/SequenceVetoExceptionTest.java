@@ -34,13 +34,13 @@
 // SECTION-END
 package org.jomc.sequences.test;
 
-import org.jomc.sequences.SequenceChangeStatus;
 import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.URL;
 import org.jomc.sequences.Sequence;
 import org.jomc.sequences.SequenceChangeEvent;
+import org.jomc.sequences.SequenceChangeStatus;
 import org.jomc.sequences.SequenceVetoException;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
