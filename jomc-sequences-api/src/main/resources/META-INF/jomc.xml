@@ -97,21 +97,6 @@
 
       </authors>
     </specification>
-    <!-- *********************************************************************************************************** -->
-    <specification identifier="org.jomc.sequences.Sequence"
-                   class="org.jomc.sequences.Sequence"
-                   classDeclaration="true" vendor="${project.organization.name}" version="1.0"
-                   createDate="2009-07-27T19:56:45Z">
-
-      <documentation defaultLanguage="en">
-        <text language="en">Sequence of numbers.</text>
-      </documentation>
-      <authors>
-        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
-                createDate="2005-07-25T19:56:45Z"/>
-
-      </authors>
-    </specification>
   </specifications>
   <implementations>
     <!-- *********************************************************************************************************** -->
@@ -310,6 +295,20 @@
 
       <documentation defaultLanguage="en">
         <text language="en">Recoverable exception base class.</text>
+      </documentation>
+      <authors>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
+      </authors>
+    </implementation>
+    <!-- *********************************************************************************************************** -->
+    <implementation identifier="org.jomc.sequences.Sequence" class="org.jomc.sequences.Sequence" classDeclaration="true"
+                    name="${project.name}" version="${project.version}" vendor="${project.organization.name}"
+                    createDate="2009-07-27T19:56:45Z">
+
+      <documentation defaultLanguage="en">
+        <text language="en">Sequence of numbers.</text>
       </documentation>
       <authors>
         <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"

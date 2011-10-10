@@ -34,30 +34,21 @@
 // SECTION-END
 package org.jomc.sequences;
 
+import java.io.Serializable;
+import java.util.Date;
+
 // SECTION-START[Documentation]
 // <editor-fold defaultstate="collapsed" desc=" Generated Documentation ">
 /**
  * Sequence of numbers.
  *
  * <p>
- *   This specification is identified by identifier {@code <org.jomc.sequences.Sequence>}.
- *   An application assembler may provide multiple implementations of this specification (including none) due to
- *   multiplicity {@code <Many>}.
- *   This specification does not apply to any scope. A new object is returned whenever requested.
- * </p>
- *
- * <p>
- *   Use of class {@code ObjectManager} is supported for accessing implementations.
- *   <blockquote><pre>
- * Sequence[] objects = ObjectManagerFactory.getObjectManager( getClass().getClassLoader() ).getObject( Sequence[].class );
- * Sequence object = ObjectManagerFactory.getObjectManager( getClass().getClassLoader() ).getObject( Sequence.class, "<i>implementation name</i>" );
- *   </pre></blockquote>
+ *   This implementation is identified by identifier {@code <org.jomc.sequences.Sequence>}.
+ *   It does not provide any specified objects.
  * </p>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
- * @version 1.0
- * @see org.jomc.ObjectManagerFactory
- * @see org.jomc.ObjectManager
+ * @version 1.0-beta-3-SNAPSHOT
  */
 // </editor-fold>
 // SECTION-END
@@ -66,73 +57,324 @@ package org.jomc.sequences;
 @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
 // </editor-fold>
 // SECTION-END
-public interface Sequence
+public class Sequence implements Comparable<Sequence>, Cloneable, Serializable
 {
     // SECTION-START[Sequence]
 
     /** Constant for the name of property {@code name}. */
-    String PROP_NAME = "org.jomc.sequences.Sequence.PROP_NAME";
+    public static final String PROP_NAME = "org.jomc.sequences.Sequence.PROP_NAME";
 
     /** Constant for the name of property {@code minimum}. */
-    String PROP_MINIMUM = "org.jomc.sequences.Sequence.PROP_MINIMUM";
+    public static final String PROP_MINIMUM = "org.jomc.sequences.Sequence.PROP_MINIMUM";
 
     /** Constant for the name of property {@code maximum}. */
-    String PROP_MAXIMUM = "org.jomc.sequences.Sequence.PROP_MAXIMUM";
+    public static final String PROP_MAXIMUM = "org.jomc.sequences.Sequence.PROP_MAXIMUM";
 
     /** Constant for the name of property {@code increment}. */
-    String PROP_INCREMENT = "org.jomc.sequences.Sequence.PROP_INCREMENT";
+    public static final String PROP_INCREMENT = "org.jomc.sequences.Sequence.PROP_INCREMENT";
 
     /** Constant for the name of property {@code value}. */
-    String PROP_VALUE = "org.jomc.sequences.Sequence.PROP_VALUE";
+    public static final String PROP_VALUE = "org.jomc.sequences.Sequence.PROP_VALUE";
+
+    /** Serial version UID for backwards compatibility with 1.0.x classes. */
+    private static final long serialVersionUID = 4782576402999874315L;
+
+    /**
+     * Revision of the sequence.
+     * @serial
+     */
+    private long revision;
+
+    /**
+     * Date of the revision.
+     * @serial
+     */
+    private long date;
+
+    /**
+     * Logical name of the sequence.
+     * @serial
+     */
+    private String name;
+
+    /**
+     * Minimum value of property {@code value}.
+     * @serial
+     */
+    private long minimum;
+
+    /**
+     * Maximum value of property {@code value}.
+     * @serial
+     */
+    private long maximum;
+
+    /**
+     * Delta to add to the value of property {@code value} for the next value in the sequence.
+     * @serial
+     */
+    private long increment;
+
+    /**
+     * Current value of the sequence.
+     * @serial
+     */
+    private long value;
 
     /**
      * Gets the revision of the entity.
      *
      * @return The revision of the entity.
      */
-    long getRevision();
+    public long getRevision()
+    {
+        return this.revision;
+    }
 
     /**
      * Gets the date of the revision of the entity.
      *
      * @return The date of the revision of the entity.
      */
-    long getDate();
+    public long getDate()
+    {
+        return this.date;
+    }
 
     /**
      * Gets the logical name of the sequence.
      *
      * @return The logical name of the sequence.
      */
-    String getName();
+    public String getName()
+    {
+        return this.name;
+    }
+
+    /**
+     * Sets the logical name of the sequence.
+     *
+     * @param value The new logical name of the sequence.
+     */
+    public void setName( final String value )
+    {
+        this.name = value;
+    }
 
     /**
      * Gets the minimum value of property {@code value}.
      *
      * @return The minimum value of property {@code value}.
      */
-    long getMinimum();
+    public long getMinimum()
+    {
+        return this.minimum;
+    }
+
+    /**
+     * Sets the minimum value of property {@code value}.
+     *
+     * @param value The new minimum value of property {@code value}.
+     */
+    public void setMinimum( final long value )
+    {
+        this.minimum = value;
+    }
 
     /**
      * Gets the maximum value of property {@code value}.
      *
      * @return The maximum value of property {@code value}.
      */
-    long getMaximum();
+    public long getMaximum()
+    {
+        return this.maximum;
+    }
+
+    /**
+     * Sets the maximum value of property {@code value}.
+     *
+     * @param value The new maximum value of property {@code value}.
+     */
+    public void setMaximum( final long value )
+    {
+        this.maximum = value;
+    }
 
     /**
      * Gets the delta to add to the value of property {@code value} for the next value in the sequence.
      *
      * @return The the delta to add to the value of property {@code value} for the next value in the sequence.
      */
-    long getIncrement();
+    public long getIncrement()
+    {
+        return this.increment;
+    }
+
+    /**
+     * Sets the delta to add to the value of property {@code value} for the next value in the sequence.
+     *
+     * @param value The new delta to add to the value of property {@code value} for the next value in the sequence.
+     */
+    public void setIncrement( final long value )
+    {
+        this.increment = value;
+    }
 
     /**
      * Gets the current value of the sequence.
      *
      * @return The current value of the sequence.
      */
-    long getValue();
+    public long getValue()
+    {
+        return this.value;
+    }
 
+    /**
+     * Sets the current value of the sequence.
+     *
+     * @param value The current value of the sequence.
+     */
+    public void setValue( final long value )
+    {
+        this.value = value;
+    }
+
+    /**
+     * Compares this sequence with the specified sequence for order.
+     * <p>Returns a negative integer, zero, or a positive integer as this sequence is less than, equal to, or greater
+     * than the specified sequence.</p>
+     * <p><b>Note:</b><br/>This class has a natural ordering that is inconsistent with equals.</p>
+     *
+     * @param s The sequence to be compared.
+     *
+     * @return A negative integer, zero, or a positive integer as this sequence is less than, equal to, or greater than
+     * the specified sequence.
+     */
+    public int compareTo( final Sequence s )
+    {
+        int result = s == null ? 1 : 0;
+
+        if ( result == 0 )
+        {
+            if ( this.getName() == null )
+            {
+                result = s.getName() == null ? 0 : -1;
+            }
+            else
+            {
+                result = s.getName() == null ? 1 : this.getName().compareTo( s.getName() );
+            }
+        }
+
+        return result;
+    }
+
+    /**
+     * Creates and returns a copy of this object.
+     *
+     * @return A clone of this instance.
+     */
+    @Override
+    public Sequence clone()
+    {
+        try
+        {
+            return (Sequence) super.clone();
+        }
+        catch ( final CloneNotSupportedException e )
+        {
+            throw new AssertionError( e );
+        }
+    }
+
+    /**
+     * Indicates whether some other object is equal to this one by comparing the values of properties {@code name} and
+     * {@code revision}.
+     *
+     * @param o The reference object with which to compare.
+     *
+     * @return {@code true} if this object is the same as {@code o}; {@code false} otherwise.
+     */
+    @Override
+    public boolean equals( final Object o )
+    {
+        boolean ret = o == this;
+
+        if ( !ret && o instanceof Sequence )
+        {
+            final Sequence that = (Sequence) o;
+            ret = ( this.getName() == null ? that.getName() == null : this.getName().equals( that.getName() ) )
+                  && ( this.getRevision() == that.getRevision() );
+
+        }
+
+        return ret;
+    }
+
+    /**
+     * Returns a hash code value for this object.
+     *
+     * @return A hash code value for this object.
+     */
+    @Override
+    public int hashCode()
+    {
+        int hc = 23;
+        hc = 37 * hc + ( this.getName() == null ? 0 : this.getName().hashCode() );
+        hc = 37 * hc + (int) ( this.getRevision() ^ ( this.getRevision() >>> 32 ) );
+        return hc;
+    }
+
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return A string representation of the object.
+     */
+    @Override
+    public String toString()
+    {
+        return super.toString() + this.internalString();
+    }
+
+    /**
+     * Creates a string representing the properties of the instance.
+     *
+     * @return A string representing the properties of the instance.
+     */
+    private String internalString()
+    {
+        return new StringBuilder( 150 ).append( '{' ).
+            append( "revision=" ).append( this.revision ).
+            append( ", date=" ).append( new Date( this.date ) ).
+            append( ", name=" ).append( this.name ).
+            append( ", minimum=" ).append( this.minimum ).
+            append( ", maximum=" ).append( this.maximum ).
+            append( ", increment=" ).append( this.increment ).
+            append( ", value=" ).append( this.value ).
+            append( '}' ).toString();
+
+    }
+
+    // SECTION-END
+    // SECTION-START[Constructors]
+    // <editor-fold defaultstate="collapsed" desc=" Generated Constructors ">
+
+    /** Creates a new {@code Sequence} instance. */
+    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
+    public Sequence()
+    {
+        // SECTION-START[Default Constructor]
+        super();
+        // SECTION-END
+    }
+    // </editor-fold>
+    // SECTION-END
+    // SECTION-START[Dependencies]
+    // SECTION-END
+    // SECTION-START[Properties]
+    // SECTION-END
+    // SECTION-START[Messages]
     // SECTION-END
 }
