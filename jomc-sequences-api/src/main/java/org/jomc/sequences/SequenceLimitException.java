@@ -102,7 +102,6 @@ public class SequenceLimitException extends SequencesException
     // SECTION-END
     // SECTION-START[Dependencies]
     // <editor-fold defaultstate="collapsed" desc=" Generated Dependencies ">
-
     /**
      * Gets the {@code <Locale>} dependency.
      * <p>
@@ -125,7 +124,6 @@ public class SequenceLimitException extends SequencesException
     // SECTION-END
     // SECTION-START[Messages]
     // <editor-fold defaultstate="collapsed" desc=" Generated Messages ">
-
     /**
      * Gets the text of the {@code <sequenceLimitMessage>} message.
      * <p><strong>Languages:</strong>
