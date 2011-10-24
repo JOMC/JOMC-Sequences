@@ -62,7 +62,6 @@ public class DefaultSequenceDirectoryTest extends SequenceDirectoryTest
     // SECTION-END
     // SECTION-START[Constructors]
     // <editor-fold defaultstate="collapsed" desc=" Generated Constructors ">
-
     /** Creates a new {@code DefaultSequenceDirectoryTest} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
     public DefaultSequenceDirectoryTest()
@@ -75,7 +74,6 @@ public class DefaultSequenceDirectoryTest extends SequenceDirectoryTest
     // SECTION-END
     // SECTION-START[Dependencies]
     // <editor-fold defaultstate="collapsed" desc=" Generated Dependencies ">
-
     /**
      * Gets the {@code <SequenceDirectory>} dependency.
      * <p>
@@ -95,7 +93,6 @@ public class DefaultSequenceDirectoryTest extends SequenceDirectoryTest
     // SECTION-END
     // SECTION-START[Properties]
     // <editor-fold defaultstate="collapsed" desc=" Generated Properties ">
-
     /**
      * Gets the value of the {@code <sequenceNameMaxLength>} property.
      * @return Maximum allowed length of a sequence name.
@@ -108,7 +105,6 @@ public class DefaultSequenceDirectoryTest extends SequenceDirectoryTest
         assert _p != null : "'sequenceNameMaxLength' property not found.";
         return _p.intValue();
     }
-
     /**
      * Gets the value of the {@code <sequenceNameMinLength>} property.
      * @return Minimum required length of a sequence name.

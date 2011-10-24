@@ -62,7 +62,6 @@ public class DefaultSequenceOperationsTest extends SequenceOperationsTest
     // SECTION-END
     // SECTION-START[Constructors]
     // <editor-fold defaultstate="collapsed" desc=" Generated Constructors ">
-
     /** Creates a new {@code DefaultSequenceOperationsTest} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
     public DefaultSequenceOperationsTest()
@@ -75,7 +74,6 @@ public class DefaultSequenceOperationsTest extends SequenceOperationsTest
     // SECTION-END
     // SECTION-START[Dependencies]
     // <editor-fold defaultstate="collapsed" desc=" Generated Dependencies ">
-
     /**
      * Gets the {@code <SequenceDirectory>} dependency.
      * <p>
@@ -91,7 +89,6 @@ public class DefaultSequenceOperationsTest extends SequenceOperationsTest
     {
         return (org.jomc.sequences.SequenceDirectory) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "SequenceDirectory" );
     }
-
     /**
      * Gets the {@code <SequenceOperations>} dependency.
      * <p>
