@@ -136,7 +136,6 @@ public class DefaultVetoableSequenceChangeListener
     // SECTION-END
     // SECTION-START[Constructors]
     // <editor-fold defaultstate="collapsed" desc=" Generated Constructors ">
-
     /** Creates a new {@code DefaultVetoableSequenceChangeListener} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
     public DefaultVetoableSequenceChangeListener()
@@ -151,7 +150,6 @@ public class DefaultVetoableSequenceChangeListener
     // SECTION-END
     // SECTION-START[Properties]
     // <editor-fold defaultstate="collapsed" desc=" Generated Properties ">
-
     /**
      * Gets the value of the {@code <sequenceNameMaxLength>} property.
      * @return Maximum allowed length of a sequence name.
@@ -164,7 +162,6 @@ public class DefaultVetoableSequenceChangeListener
         assert _p != null : "'sequenceNameMaxLength' property not found.";
         return _p.intValue();
     }
-
     /**
      * Gets the value of the {@code <sequenceNameMinLength>} property.
      * @return Minimum required length of a sequence name.

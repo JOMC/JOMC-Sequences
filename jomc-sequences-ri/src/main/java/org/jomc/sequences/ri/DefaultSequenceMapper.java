@@ -190,7 +190,6 @@ public class DefaultSequenceMapper implements SequenceMapper
     // SECTION-END
     // SECTION-START[Constructors]
     // <editor-fold defaultstate="collapsed" desc=" Generated Constructors ">
-
     /** Creates a new {@code DefaultSequenceMapper} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
     public DefaultSequenceMapper()
@@ -203,7 +202,6 @@ public class DefaultSequenceMapper implements SequenceMapper
     // SECTION-END
     // SECTION-START[Dependencies]
     // <editor-fold defaultstate="collapsed" desc=" Generated Dependencies ">
-
     /**
      * Gets the {@code <Locale>} dependency.
      * <p>
@@ -226,7 +224,6 @@ public class DefaultSequenceMapper implements SequenceMapper
     // SECTION-END
     // SECTION-START[Messages]
     // <editor-fold defaultstate="collapsed" desc=" Generated Messages ">
-
     /**
      * Gets the text of the {@code <illegalArgumentMessage>} message.
      * <p><strong>Languages:</strong>
@@ -249,7 +246,6 @@ public class DefaultSequenceMapper implements SequenceMapper
         assert _m != null : "'illegalArgumentMessage' message not found.";
         return _m;
     }
-
     /**
      * Gets the text of the {@code <unhandledExceptionMessage>} message.
      * <p><strong>Languages:</strong>

@@ -84,7 +84,6 @@ public class DefaultSequenceChangeListener
     // SECTION-END
     // SECTION-START[Constructors]
     // <editor-fold defaultstate="collapsed" desc=" Generated Constructors ">
-
     /** Creates a new {@code DefaultSequenceChangeListener} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
     public DefaultSequenceChangeListener()
@@ -97,7 +96,6 @@ public class DefaultSequenceChangeListener
     // SECTION-END
     // SECTION-START[Dependencies]
     // <editor-fold defaultstate="collapsed" desc=" Generated Dependencies ">
-
     /**
      * Gets the {@code <Locale>} dependency.
      * <p>
@@ -114,7 +112,6 @@ public class DefaultSequenceChangeListener
         assert _d != null : "'Locale' dependency not found.";
         return _d;
     }
-
     /**
      * Gets the {@code <Logger>} dependency.
      * <p>
@@ -151,7 +148,6 @@ public class DefaultSequenceChangeListener
     // SECTION-END
     // SECTION-START[Messages]
     // <editor-fold defaultstate="collapsed" desc=" Generated Messages ">
-
     /**
      * Gets the text of the {@code <operationInfo>} message.
      * <p><strong>Languages:</strong>

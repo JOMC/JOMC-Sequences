@@ -520,7 +520,6 @@ public class DefaultSequenceDirectory
     // SECTION-END
     // SECTION-START[Constructors]
     // <editor-fold defaultstate="collapsed" desc=" Generated Constructors ">
-
     /** Creates a new {@code DefaultSequenceDirectory} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
     public DefaultSequenceDirectory()
@@ -533,7 +532,6 @@ public class DefaultSequenceDirectory
     // SECTION-END
     // SECTION-START[Dependencies]
     // <editor-fold defaultstate="collapsed" desc=" Generated Dependencies ">
-
     /**
      * Gets the {@code <EntityManager>} dependency.
      * <p>
@@ -550,7 +548,6 @@ public class DefaultSequenceDirectory
         assert _d != null : "'EntityManager' dependency not found.";
         return _d;
     }
-
     /**
      * Gets the {@code <Locale>} dependency.
      * <p>
@@ -567,7 +564,6 @@ public class DefaultSequenceDirectory
         assert _d != null : "'Locale' dependency not found.";
         return _d;
     }
-
     /**
      * Gets the {@code <Logger>} dependency.
      * <p>
@@ -598,7 +594,6 @@ public class DefaultSequenceDirectory
         assert _d != null : "'Logger' dependency not found.";
         return _d;
     }
-
     /**
      * Gets the {@code <SelectAllSequencesQuery>} dependency.
      * <p>
@@ -615,7 +610,6 @@ public class DefaultSequenceDirectory
         assert _d != null : "'SelectAllSequencesQuery' dependency not found.";
         return _d;
     }
-
     /**
      * Gets the {@code <SelectSequenceCountQuery>} dependency.
      * <p>
@@ -632,7 +626,6 @@ public class DefaultSequenceDirectory
         assert _d != null : "'SelectSequenceCountQuery' dependency not found.";
         return _d;
     }
-
     /**
      * Gets the {@code <SelectSequenceDirectoryQuery>} dependency.
      * <p>
@@ -649,7 +642,6 @@ public class DefaultSequenceDirectory
         assert _d != null : "'SelectSequenceDirectoryQuery' dependency not found.";
         return _d;
     }
-
     /**
      * Gets the {@code <SelectSequenceQuery>} dependency.
      * <p>
@@ -666,7 +658,6 @@ public class DefaultSequenceDirectory
         assert _d != null : "'SelectSequenceQuery' dependency not found.";
         return _d;
     }
-
     /**
      * Gets the {@code <SelectSequencesQuery>} dependency.
      * <p>
@@ -683,7 +674,6 @@ public class DefaultSequenceDirectory
         assert _d != null : "'SelectSequencesQuery' dependency not found.";
         return _d;
     }
-
     /**
      * Gets the {@code <SequenceChangeListener>} dependency.
      * <p>
@@ -700,7 +690,6 @@ public class DefaultSequenceDirectory
         assert _d != null : "'SequenceChangeListener' dependency not found.";
         return _d;
     }
-
     /**
      * Gets the {@code <SequenceMapper>} dependency.
      * <p>
@@ -717,7 +706,6 @@ public class DefaultSequenceDirectory
         assert _d != null : "'SequenceMapper' dependency not found.";
         return _d;
     }
-
     /**
      * Gets the {@code <VetoableSequenceChangeListener>} dependency.
      * <p>
@@ -738,7 +726,6 @@ public class DefaultSequenceDirectory
     // SECTION-END
     // SECTION-START[Properties]
     // <editor-fold defaultstate="collapsed" desc=" Generated Properties ">
-
     /**
      * Gets the value of the {@code <defaultSequenceDirectoryCapacityLimit>} property.
      * @return Default capacity limit when creating new sequence directory entities and no default value is provided otherwise.
@@ -751,7 +738,6 @@ public class DefaultSequenceDirectory
         assert _p != null : "'defaultSequenceDirectoryCapacityLimit' property not found.";
         return _p;
     }
-
     /**
      * Gets the value of the {@code <sequenceDirectoryName>} property.
      * @return Name uniquely identifying the directory in a set of directories.
@@ -764,7 +750,6 @@ public class DefaultSequenceDirectory
         assert _p != null : "'sequenceDirectoryName' property not found.";
         return _p;
     }
-
     /**
      * Gets the value of the {@code <sequenceDirectoryNameQueryParameterName>} property.
      * @return Name of a JPA query parameter denoting the name of a sequence directory entity.
@@ -777,7 +762,6 @@ public class DefaultSequenceDirectory
         assert _p != null : "'sequenceDirectoryNameQueryParameterName' property not found.";
         return _p;
     }
-
     /**
      * Gets the value of the {@code <sequenceNameQueryParameterName>} property.
      * @return Name of a JPA query parameter denoting the name of a sequence entity.
@@ -794,7 +778,6 @@ public class DefaultSequenceDirectory
     // SECTION-END
     // SECTION-START[Messages]
     // <editor-fold defaultstate="collapsed" desc=" Generated Messages ">
-
     /**
      * Gets the text of the {@code <illegalArgumentMessage>} message.
      * <p><strong>Languages:</strong>
@@ -817,7 +800,6 @@ public class DefaultSequenceDirectory
         assert _m != null : "'illegalArgumentMessage' message not found.";
         return _m;
     }
-
     /**
      * Gets the text of the {@code <illegalResultObjectError>} message.
      * <p><strong>Languages:</strong>
@@ -840,7 +822,6 @@ public class DefaultSequenceDirectory
         assert _m != null : "'illegalResultObjectError' message not found.";
         return _m;
     }
-
     /**
      * Gets the text of the {@code <missingResultObjectError>} message.
      * <p><strong>Languages:</strong>
@@ -862,7 +843,6 @@ public class DefaultSequenceDirectory
         assert _m != null : "'missingResultObjectError' message not found.";
         return _m;
     }
-
     /**
      * Gets the text of the {@code <successfullyCreatedSequenceDirectoryMessage>} message.
      * <p><strong>Languages:</strong>
