@@ -697,7 +697,6 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
     // SECTION-END
     // SECTION-START[Constructors]
     // <editor-fold defaultstate="collapsed" desc=" Generated Constructors ">
-
     /** Creates a new {@code SequencesTableModel} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
     public SequencesTableModel()
@@ -710,7 +709,6 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
     // SECTION-END
     // SECTION-START[Dependencies]
     // <editor-fold defaultstate="collapsed" desc=" Generated Dependencies ">
-
     /**
      * Gets the {@code <ExceptionListener>} dependency.
      * <p>
@@ -726,7 +724,6 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
     {
         return (java.beans.ExceptionListener[]) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "ExceptionListener" );
     }
-
     /**
      * Gets the {@code <Locale>} dependency.
      * <p>
@@ -743,7 +740,6 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
         assert _d != null : "'Locale' dependency not found.";
         return _d;
     }
-
     /**
      * Gets the {@code <Logger>} dependency.
      * <p>
@@ -774,7 +770,6 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
         assert _d != null : "'Logger' dependency not found.";
         return _d;
     }
-
     /**
      * Gets the {@code <SequenceDirectory>} dependency.
      * <p>
@@ -795,7 +790,6 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
     // SECTION-END
     // SECTION-START[Properties]
     // <editor-fold defaultstate="collapsed" desc=" Generated Properties ">
-
     /**
      * Gets the value of the {@code <incrementColumnEditableByDefault>} property.
      * @return Flag indicating that the &quot;increment&quot; column is editable by default.
@@ -808,7 +802,6 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
         assert _p != null : "'incrementColumnEditableByDefault' property not found.";
         return _p;
     }
-
     /**
      * Gets the value of the {@code <maximumColumnEditableByDefault>} property.
      * @return Flag indicating that the &quot;maximum&quot; column is editable by default.
@@ -821,7 +814,6 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
         assert _p != null : "'maximumColumnEditableByDefault' property not found.";
         return _p;
     }
-
     /**
      * Gets the value of the {@code <minimumColumnEditableByDefault>} property.
      * @return Flag indicating that the &quot;minimum&quot; column is editable by default.
@@ -834,7 +826,6 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
         assert _p != null : "'minimumColumnEditableByDefault' property not found.";
         return _p;
     }
-
     /**
      * Gets the value of the {@code <nameColumnEditableByDefault>} property.
      * @return Flag indicating that the &quot;name&quot; column is editable by default.
@@ -847,7 +838,6 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
         assert _p != null : "'nameColumnEditableByDefault' property not found.";
         return _p;
     }
-
     /**
      * Gets the value of the {@code <valueColumnEditableByDefault>} property.
      * @return Flag indicating that the &quot;value&quot; column is editable by default.
@@ -864,7 +854,6 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
     // SECTION-END
     // SECTION-START[Messages]
     // <editor-fold defaultstate="collapsed" desc=" Generated Messages ">
-
     /**
      * Gets the text of the {@code <illegalColumnIndexMessage>} message.
      * <p><strong>Languages:</strong>
@@ -886,7 +875,6 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
         assert _m != null : "'illegalColumnIndexMessage' message not found.";
         return _m;
     }
-
     /**
      * Gets the text of the {@code <incrementColumnTitle>} message.
      * <p><strong>Languages:</strong>
@@ -907,7 +895,6 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
         assert _m != null : "'incrementColumnTitle' message not found.";
         return _m;
     }
-
     /**
      * Gets the text of the {@code <maximumColumnTitle>} message.
      * <p><strong>Languages:</strong>
@@ -928,7 +915,6 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
         assert _m != null : "'maximumColumnTitle' message not found.";
         return _m;
     }
-
     /**
      * Gets the text of the {@code <minimumColumnTitle>} message.
      * <p><strong>Languages:</strong>
@@ -949,7 +935,6 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
         assert _m != null : "'minimumColumnTitle' message not found.";
         return _m;
     }
-
     /**
      * Gets the text of the {@code <nameColumnTitle>} message.
      * <p><strong>Languages:</strong>
@@ -970,7 +955,6 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
         assert _m != null : "'nameColumnTitle' message not found.";
         return _m;
     }
-
     /**
      * Gets the text of the {@code <valueColumnTitle>} message.
      * <p><strong>Languages:</strong>
