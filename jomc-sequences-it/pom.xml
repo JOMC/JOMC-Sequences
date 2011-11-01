@@ -119,6 +119,7 @@
                 <repositoryLayout>flat</repositoryLayout>
                 <repositoryName>lib</repositoryName>
                 <assembleDirectory>${appassemblerAssembleDirectory}</assembleDirectory>
+                <extraJvmArguments>-client</extraJvmArguments>
               </configuration>
             </execution>
           </executions>
