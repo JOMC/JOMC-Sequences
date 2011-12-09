@@ -58,7 +58,7 @@
         <reference identifier="JOMC :: XML Schema Set" version="${xmlschemaset.specification.version}"/>
       </specifications>
       <properties>
-        <property name="schemas" type="org.jomc.sdk.model.SchemasType">
+        <property name="schemas" type="org.jomc.sdk.model.SchemasType" override="true">
           <schemas xmlns="http://jomc.org/sdk/model" language-id="http://www.w3.org/2001/XMLSchema">
             <schema public-id="http://jomc.org/sequences/model"
                     system-id="http://jomc.sourceforge.net/sequences/model/jomc-sequences-1.0.xsd"
