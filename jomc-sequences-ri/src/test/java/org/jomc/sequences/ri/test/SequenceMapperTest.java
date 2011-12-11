@@ -48,9 +48,11 @@ import static org.junit.Assert.assertNotNull;
  * Test cases for the {@code SequenceMapper} specification.
  *
  * <p>
- *   This implementation is identified by identifier {@code <org.jomc.sequences.ri.test.SequenceMapperTest>}.
- *   It does not provide any specified objects.
+ *   This implementation is identified by {@code <org.jomc.sequences.ri.test.SequenceMapperTest>}.
  * </p>
+ * <dl>
+ *   <dt><b>Stateless:</b></dt><dd>No state is retained.</dd>
+ * </dl>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
  * @version 1.0-beta-3-SNAPSHOT
