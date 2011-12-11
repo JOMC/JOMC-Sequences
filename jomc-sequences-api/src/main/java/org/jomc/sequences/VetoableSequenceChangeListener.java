@@ -42,12 +42,8 @@ import java.util.EventListener;
  * Gets called whenever the state of a sequence is about to change.
  *
  * <p>
- *   This specification is identified by identifier {@code <org.jomc.sequences.VetoableSequenceChangeListener>}.
- *   An application assembler may provide multiple implementations of this specification (including none) due to
- *   multiplicity {@code <Many>}.
- *   This specification does not apply to any scope. A new object is returned whenever requested.
+ *   This specification is identified by {@code <org.jomc.sequences.VetoableSequenceChangeListener>}.
  * </p>
- *
  * <p>
  *   Use of class {@code ObjectManager} is supported for accessing implementations.
  *   <blockquote><pre>
@@ -55,6 +51,10 @@ import java.util.EventListener;
  * VetoableSequenceChangeListener object = ObjectManagerFactory.getObjectManager( getClass().getClassLoader() ).getObject( VetoableSequenceChangeListener.class, "<i>implementation name</i>" );
  *   </pre></blockquote>
  * </p>
+ * <dl>
+ *   <dt><b>Multiplicity:</b></dt><dd>Many</dd>
+ *   <dt><b>Scope:</b></dt><dd>None</dd>
+ * </dl>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
  * @version 1.0

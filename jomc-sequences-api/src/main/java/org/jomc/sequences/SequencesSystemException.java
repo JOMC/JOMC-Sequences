@@ -40,8 +40,7 @@ package org.jomc.sequences;
  * Gets thrown whenever an unexpected error condition is detected.
  *
  * <p>
- *   This implementation is identified by identifier {@code <org.jomc.sequences.SequencesSystemException>}.
- *   It does not provide any specified objects.
+ *   This implementation is identified by {@code <org.jomc.sequences.SequencesSystemException>}.
  * </p>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0

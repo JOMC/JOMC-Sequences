@@ -40,8 +40,7 @@ package org.jomc.sequences;
  * Gets thrown when a sequence is not found for a given name.
  *
  * <p>
- *   This implementation is identified by identifier {@code <org.jomc.sequences.SequenceNotFoundException>}.
- *   It does not provide any specified objects.
+ *   This implementation is identified by {@code <org.jomc.sequences.SequenceNotFoundException>}.
  * </p>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0

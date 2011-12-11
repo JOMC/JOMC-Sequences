@@ -42,8 +42,7 @@ import java.math.BigInteger;
  * Gets thrown whenever the directories capacity limit has been reached.
  *
  * <p>
- *   This implementation is identified by identifier {@code <org.jomc.sequences.CapacityLimitException>}.
- *   It does not provide any specified objects.
+ *   This implementation is identified by {@code <org.jomc.sequences.CapacityLimitException>}.
  * </p>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0

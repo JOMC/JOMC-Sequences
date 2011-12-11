@@ -40,8 +40,7 @@ package org.jomc.sequences;
  * Gets thrown whenever invalid sequence information is passed to a method expecting valid sequence information.
  *
  * <p>
- *   This implementation is identified by identifier {@code <org.jomc.sequences.SequenceVetoException>}.
- *   It does not provide any specified objects.
+ *   This implementation is identified by {@code <org.jomc.sequences.SequenceVetoException>}.
  * </p>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0

@@ -40,8 +40,7 @@ package org.jomc.sequences;
  * Gets thrown whenever the next value of a sequence is requested although its maximum value has already been reached.
  *
  * <p>
- *   This implementation is identified by identifier {@code <org.jomc.sequences.SequenceLimitException>}.
- *   It does not provide any specified objects.
+ *   This implementation is identified by {@code <org.jomc.sequences.SequenceLimitException>}.
  * </p>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0

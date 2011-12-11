@@ -40,13 +40,8 @@ package org.jomc.sequences;
  * Provides operations performed with sequences.
  *
  * <p>
- *   This specification is identified by identifier {@code <org.jomc.sequences.SequenceOperations>}.
- *   An application assembler may provide either no or one implementation of this specification due to
- *   multiplicity {@code <One>}.
- *   This specification applies to {@code <Singleton>} scope.
- *   The same singleton object is returned whenever requested.
+ *   This specification is identified by {@code <org.jomc.sequences.SequenceOperations>}.
  * </p>
- *
  * <p>
  *   Use of class {@code ObjectManager} is supported for accessing implementations.
  *   <blockquote><pre>
@@ -54,6 +49,10 @@ package org.jomc.sequences;
  * SequenceOperations object = ObjectManagerFactory.getObjectManager( getClass().getClassLoader() ).getObject( SequenceOperations.class, "<i>implementation name</i>" );
  *   </pre></blockquote>
  * </p>
+ * <dl>
+ *   <dt><b>Multiplicity:</b></dt><dd>One</dd>
+ *   <dt><b>Scope:</b></dt><dd>Singleton</dd>
+ * </dl>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
  * @version 1.0

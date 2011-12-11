@@ -40,8 +40,7 @@ package org.jomc.sequences;
  * Gets thrown whenever a sequence is edited or removed using outdated data.
  *
  * <p>
- *   This implementation is identified by identifier {@code <org.jomc.sequences.ConcurrentModificationException>}.
- *   It does not provide any specified objects.
+ *   This implementation is identified by {@code <org.jomc.sequences.ConcurrentModificationException>}.
  * </p>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0

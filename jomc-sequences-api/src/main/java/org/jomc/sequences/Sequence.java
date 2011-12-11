@@ -43,8 +43,7 @@ import java.util.Date;
  * Sequence of numbers.
  *
  * <p>
- *   This implementation is identified by identifier {@code <org.jomc.sequences.Sequence>}.
- *   It does not provide any specified objects.
+ *   This implementation is identified by {@code <org.jomc.sequences.Sequence>}.
  * </p>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
