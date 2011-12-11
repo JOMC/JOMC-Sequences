@@ -61,8 +61,7 @@ import static org.junit.Assert.fail;
  * Testcase for SequenceDirectory implementations.
  *
  * <p>
- *   This implementation is identified by identifier {@code <org.jomc.sequences.it.SequenceDirectoryTest>}.
- *   It does not provide any specified objects.
+ *   This implementation is identified by {@code <org.jomc.sequences.it.SequenceDirectoryTest>}.
  * </p>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
