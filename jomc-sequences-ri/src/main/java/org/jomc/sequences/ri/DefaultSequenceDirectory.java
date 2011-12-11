@@ -63,16 +63,19 @@ import org.jomc.sequences.model.SequencesType;
  * SequenceDirectory reference implementation.
  *
  * <p>
- *   This implementation is identified by identifier {@code <org.jomc.sequences.ri.DefaultSequenceDirectory>}.
+ *   This implementation is identified by {@code <org.jomc.sequences.ri.DefaultSequenceDirectory>}.
+ * </p>
+ * <p>
  *   It provides objects named {@code <JOMC Sequences RI>} of the following specifications:
  *
  *   <ul>
  *     <li>{@code <org.jomc.sequences.SequenceDirectory>} at specification level 1.0 applying to {@code <Singleton>} scope.</li>
  *     <li>{@code <org.jomc.sequences.SequenceOperations>} at specification level 1.0 applying to {@code <Singleton>} scope.</li>
  *   </ul>
- *
- *   No state is retained across operations due to flag {@code <stateless>}.
  * </p>
+ * <dl>
+ *   <dt><b>Stateless:</b></dt><dd>No state is retained.</dd>
+ * </dl>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
  * @version 1.0-beta-3-SNAPSHOT

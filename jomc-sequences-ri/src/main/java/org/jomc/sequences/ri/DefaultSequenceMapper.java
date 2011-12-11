@@ -49,15 +49,18 @@ import org.jomc.sequences.model.SequenceType;
  * SequenceMapper reference implementation.
  *
  * <p>
- *   This implementation is identified by identifier {@code <org.jomc.sequences.ri.DefaultSequenceMapper>}.
+ *   This implementation is identified by {@code <org.jomc.sequences.ri.DefaultSequenceMapper>}.
+ * </p>
+ * <p>
  *   It provides objects named {@code <JOMC Sequences RI>} of the following specifications:
  *
  *   <ul>
  *     <li>{@code <org.jomc.sequences.ri.SequenceMapper>} at specification level 1.0.</li>
  *   </ul>
- *
- *   No state is retained across operations due to flag {@code <stateless>}.
  * </p>
+ * <dl>
+ *   <dt><b>Stateless:</b></dt><dd>No state is retained.</dd>
+ * </dl>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
  * @version 1.0-beta-3-SNAPSHOT
