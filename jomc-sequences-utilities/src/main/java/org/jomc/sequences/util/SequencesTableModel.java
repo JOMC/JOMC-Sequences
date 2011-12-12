@@ -63,6 +63,11 @@ import org.jomc.sequences.SequencesSystemException;
  *     <li>{@code <javax.swing.table.TableModel>} at any specification level.</li>
  *   </ul>
  * </p>
+ * <dl>
+ *   <dt><b>Abstract:</b></dt><dd>No</dd>
+ *   <dt><b>Final:</b></dt><dd>No</dd>
+ *   <dt><b>Stateless:</b></dt><dd>No</dd>
+ * </dl>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
  * @version 1.0-beta-3-SNAPSHOT
@@ -716,6 +721,9 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *   This method returns any available object of the {@code <JOMC :: Sequences :: ExceptionListener>} specification at specification level 1.0.
      *   That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.
      * </p>
+     * <dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl>
      * @return The {@code <ExceptionListener>} dependency.
      * {@code null} if no object is available.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
@@ -731,6 +739,9 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *   This method returns the {@code <default>} object of the {@code <java.util.Locale>} specification at specification level 1.1.
      *   That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.
      * </p>
+     * <dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl>
      * @return The {@code <Locale>} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
@@ -761,6 +772,9 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *     </tr>
      *   </table>
      * </p>
+     * <dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl>
      * @return The {@code <Logger>} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
@@ -777,6 +791,9 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *   This method returns any available object of the {@code <org.jomc.sequences.SequenceDirectory>} specification at specification level 1.0.
      *   That specification applies to {@code <Singleton>} scope. The singleton object is returned whenever requested and bound to this instance.
      * </p>
+     * <dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl>
      * @return The {@code <SequenceDirectory>} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
@@ -793,6 +810,11 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
     // <editor-fold defaultstate="collapsed" desc=" Generated Properties ">
     /**
      * Gets the value of the {@code <incrementColumnEditableByDefault>} property.
+     * <p>
+     *   <dl>
+     *     <dt><b>Final:</b></dt><dd>No</dd>
+     *   </dl>
+     * </p>
      * @return Flag indicating that the &quot;increment&quot; column is editable by default.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -805,6 +827,11 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
     }
     /**
      * Gets the value of the {@code <maximumColumnEditableByDefault>} property.
+     * <p>
+     *   <dl>
+     *     <dt><b>Final:</b></dt><dd>No</dd>
+     *   </dl>
+     * </p>
      * @return Flag indicating that the &quot;maximum&quot; column is editable by default.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -817,6 +844,11 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
     }
     /**
      * Gets the value of the {@code <minimumColumnEditableByDefault>} property.
+     * <p>
+     *   <dl>
+     *     <dt><b>Final:</b></dt><dd>No</dd>
+     *   </dl>
+     * </p>
      * @return Flag indicating that the &quot;minimum&quot; column is editable by default.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -829,6 +861,11 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
     }
     /**
      * Gets the value of the {@code <nameColumnEditableByDefault>} property.
+     * <p>
+     *   <dl>
+     *     <dt><b>Final:</b></dt><dd>No</dd>
+     *   </dl>
+     * </p>
      * @return Flag indicating that the &quot;name&quot; column is editable by default.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -841,6 +878,11 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
     }
     /**
      * Gets the value of the {@code <valueColumnEditableByDefault>} property.
+     * <p>
+     *   <dl>
+     *     <dt><b>Final:</b></dt><dd>No</dd>
+     *   </dl>
+     * </p>
      * @return Flag indicating that the &quot;value&quot; column is editable by default.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -863,6 +905,9 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *     <li>Deutsch</li>
      *   </ul>
      * </p>
+     * <dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl>
      *
      * @param locale The locale of the message to return.
      * @param columnIndex Format argument.
@@ -884,6 +929,9 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *     <li>Deutsch</li>
      *   </ul>
      * </p>
+     * <dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl>
      *
      * @param locale The locale of the message to return.
      * @return The text of the {@code <incrementColumnTitle>} message for {@code locale}.
@@ -904,6 +952,9 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *     <li>Deutsch</li>
      *   </ul>
      * </p>
+     * <dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl>
      *
      * @param locale The locale of the message to return.
      * @return The text of the {@code <maximumColumnTitle>} message for {@code locale}.
@@ -924,6 +975,9 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *     <li>Deutsch</li>
      *   </ul>
      * </p>
+     * <dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl>
      *
      * @param locale The locale of the message to return.
      * @return The text of the {@code <minimumColumnTitle>} message for {@code locale}.
@@ -944,6 +998,9 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *     <li>Deutsch</li>
      *   </ul>
      * </p>
+     * <dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl>
      *
      * @param locale The locale of the message to return.
      * @return The text of the {@code <nameColumnTitle>} message for {@code locale}.
@@ -964,6 +1021,9 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *     <li>Deutsch</li>
      *   </ul>
      * </p>
+     * <dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl>
      *
      * @param locale The locale of the message to return.
      * @return The text of the {@code <valueColumnTitle>} message for {@code locale}.
