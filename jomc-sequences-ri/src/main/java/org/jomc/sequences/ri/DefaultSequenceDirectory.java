@@ -74,7 +74,9 @@ import org.jomc.sequences.model.SequencesType;
  *   </ul>
  * </p>
  * <dl>
- *   <dt><b>Stateless:</b></dt><dd>No state is retained.</dd>
+ *   <dt><b>Abstract:</b></dt><dd>No</dd>
+ *   <dt><b>Final:</b></dt><dd>No</dd>
+ *   <dt><b>Stateless:</b></dt><dd>Yes</dd>
  * </dl>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
@@ -541,6 +543,9 @@ public class DefaultSequenceDirectory
      *   This method returns the {@code <JOMC SDK JPA>} object of the {@code <javax.persistence.EntityManager>} specification at any specification level.
      *   That specification does not apply to any scope. A new object is returned whenever requested.
      * </p>
+     * <dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl>
      * @return The {@code <EntityManager>} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
@@ -557,6 +562,9 @@ public class DefaultSequenceDirectory
      *   This method returns the {@code <default>} object of the {@code <java.util.Locale>} specification at specification level 1.1.
      *   That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.
      * </p>
+     * <dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl>
      * @return The {@code <Locale>} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
@@ -587,6 +595,9 @@ public class DefaultSequenceDirectory
      *     </tr>
      *   </table>
      * </p>
+     * <dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl>
      * @return The {@code <Logger>} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
@@ -603,6 +614,9 @@ public class DefaultSequenceDirectory
      *   This method returns the {@code <JOMC Sequences Model :: Select All Sequences Query>} object of the {@code <javax.persistence.Query>} specification at any specification level.
      *   That specification does not apply to any scope. A new object is returned whenever requested.
      * </p>
+     * <dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl>
      * @return The {@code <SelectAllSequencesQuery>} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
@@ -619,6 +633,9 @@ public class DefaultSequenceDirectory
      *   This method returns the {@code <JOMC Sequences Model :: Select Sequence Count Query>} object of the {@code <javax.persistence.Query>} specification at any specification level.
      *   That specification does not apply to any scope. A new object is returned whenever requested.
      * </p>
+     * <dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl>
      * @return The {@code <SelectSequenceCountQuery>} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
@@ -635,6 +652,9 @@ public class DefaultSequenceDirectory
      *   This method returns the {@code <JOMC Sequences Model :: Select Sequence Directory Query>} object of the {@code <javax.persistence.Query>} specification at any specification level.
      *   That specification does not apply to any scope. A new object is returned whenever requested.
      * </p>
+     * <dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl>
      * @return The {@code <SelectSequenceDirectoryQuery>} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
@@ -651,6 +671,9 @@ public class DefaultSequenceDirectory
      *   This method returns the {@code <JOMC Sequences Model :: Select Sequence Query>} object of the {@code <javax.persistence.Query>} specification at any specification level.
      *   That specification does not apply to any scope. A new object is returned whenever requested.
      * </p>
+     * <dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl>
      * @return The {@code <SelectSequenceQuery>} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
@@ -667,6 +690,9 @@ public class DefaultSequenceDirectory
      *   This method returns the {@code <JOMC Sequences Model :: Select Sequences Query>} object of the {@code <javax.persistence.Query>} specification at any specification level.
      *   That specification does not apply to any scope. A new object is returned whenever requested.
      * </p>
+     * <dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl>
      * @return The {@code <SelectSequencesQuery>} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
@@ -683,6 +709,9 @@ public class DefaultSequenceDirectory
      *   This method returns any available object of the {@code <org.jomc.sequences.SequenceChangeListener>} specification at specification level 1.0.
      *   That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.
      * </p>
+     * <dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl>
      * @return The {@code <SequenceChangeListener>} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
@@ -699,6 +728,9 @@ public class DefaultSequenceDirectory
      *   This method returns the {@code <JOMC Sequences RI>} object of the {@code <org.jomc.sequences.ri.SequenceMapper>} specification at specification level 1.0.
      *   That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.
      * </p>
+     * <dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl>
      * @return The {@code <SequenceMapper>} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
@@ -715,6 +747,9 @@ public class DefaultSequenceDirectory
      *   This method returns any available object of the {@code <org.jomc.sequences.VetoableSequenceChangeListener>} specification at specification level 1.0.
      *   That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.
      * </p>
+     * <dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl>
      * @return The {@code <VetoableSequenceChangeListener>} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
@@ -731,6 +766,11 @@ public class DefaultSequenceDirectory
     // <editor-fold defaultstate="collapsed" desc=" Generated Properties ">
     /**
      * Gets the value of the {@code <defaultSequenceDirectoryCapacityLimit>} property.
+     * <p>
+     *   <dl>
+     *     <dt><b>Final:</b></dt><dd>No</dd>
+     *   </dl>
+     * </p>
      * @return Default capacity limit when creating new sequence directory entities and no default value is provided otherwise.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -743,6 +783,11 @@ public class DefaultSequenceDirectory
     }
     /**
      * Gets the value of the {@code <sequenceDirectoryName>} property.
+     * <p>
+     *   <dl>
+     *     <dt><b>Final:</b></dt><dd>No</dd>
+     *   </dl>
+     * </p>
      * @return Name uniquely identifying the directory in a set of directories.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -755,6 +800,11 @@ public class DefaultSequenceDirectory
     }
     /**
      * Gets the value of the {@code <sequenceDirectoryNameQueryParameterName>} property.
+     * <p>
+     *   <dl>
+     *     <dt><b>Final:</b></dt><dd>No</dd>
+     *   </dl>
+     * </p>
      * @return Name of a JPA query parameter denoting the name of a sequence directory entity.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -767,6 +817,11 @@ public class DefaultSequenceDirectory
     }
     /**
      * Gets the value of the {@code <sequenceNameQueryParameterName>} property.
+     * <p>
+     *   <dl>
+     *     <dt><b>Final:</b></dt><dd>No</dd>
+     *   </dl>
+     * </p>
      * @return Name of a JPA query parameter denoting the name of a sequence entity.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -789,6 +844,9 @@ public class DefaultSequenceDirectory
      *     <li>Deutsch</li>
      *   </ul>
      * </p>
+     * <dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl>
      *
      * @param locale The locale of the message to return.
      * @param argumentName Format argument.
@@ -811,6 +869,9 @@ public class DefaultSequenceDirectory
      *     <li>Deutsch</li>
      *   </ul>
      * </p>
+     * <dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl>
      *
      * @param locale The locale of the message to return.
      * @param directoryInfo Format argument.
@@ -833,6 +894,9 @@ public class DefaultSequenceDirectory
      *     <li>Deutsch</li>
      *   </ul>
      * </p>
+     * <dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl>
      *
      * @param locale The locale of the message to return.
      * @param directoryInfo Format argument.
@@ -854,6 +918,9 @@ public class DefaultSequenceDirectory
      *     <li>Deutsch</li>
      *   </ul>
      * </p>
+     * <dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl>
      *
      * @param locale The locale of the message to return.
      * @param name Format argument.

@@ -52,7 +52,9 @@ import org.jomc.sequences.SequenceChangeEvent;
  *   </ul>
  * </p>
  * <dl>
- *   <dt><b>Stateless:</b></dt><dd>No state is retained.</dd>
+ *   <dt><b>Abstract:</b></dt><dd>No</dd>
+ *   <dt><b>Final:</b></dt><dd>No</dd>
+ *   <dt><b>Stateless:</b></dt><dd>Yes</dd>
  * </dl>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
@@ -105,6 +107,9 @@ public class DefaultSequenceChangeListener
      *   This method returns the {@code <default>} object of the {@code <java.util.Locale>} specification at specification level 1.1.
      *   That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.
      * </p>
+     * <dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl>
      * @return The {@code <Locale>} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
@@ -135,6 +140,9 @@ public class DefaultSequenceChangeListener
      *     </tr>
      *   </table>
      * </p>
+     * <dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl>
      * @return The {@code <Logger>} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
@@ -159,6 +167,9 @@ public class DefaultSequenceChangeListener
      *     <li>Deutsch</li>
      *   </ul>
      * </p>
+     * <dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl>
      *
      * @param locale The locale of the message to return.
      * @param oldSequenceInfo Format argument.

@@ -55,7 +55,9 @@ import org.jomc.sequences.SequenceVetoException;
  *   </ul>
  * </p>
  * <dl>
- *   <dt><b>Stateless:</b></dt><dd>No state is retained.</dd>
+ *   <dt><b>Abstract:</b></dt><dd>No</dd>
+ *   <dt><b>Final:</b></dt><dd>No</dd>
+ *   <dt><b>Stateless:</b></dt><dd>Yes</dd>
  * </dl>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
@@ -155,6 +157,11 @@ public class DefaultVetoableSequenceChangeListener
     // <editor-fold defaultstate="collapsed" desc=" Generated Properties ">
     /**
      * Gets the value of the {@code <sequenceNameMaxLength>} property.
+     * <p>
+     *   <dl>
+     *     <dt><b>Final:</b></dt><dd>No</dd>
+     *   </dl>
+     * </p>
      * @return Maximum allowed length of a sequence name.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -167,6 +174,11 @@ public class DefaultVetoableSequenceChangeListener
     }
     /**
      * Gets the value of the {@code <sequenceNameMinLength>} property.
+     * <p>
+     *   <dl>
+     *     <dt><b>Final:</b></dt><dd>No</dd>
+     *   </dl>
+     * </p>
      * @return Minimum required length of a sequence name.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
