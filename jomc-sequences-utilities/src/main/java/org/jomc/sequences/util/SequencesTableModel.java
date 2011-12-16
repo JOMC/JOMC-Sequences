@@ -53,17 +53,10 @@ import org.jomc.sequences.SequencesSystemException;
 /**
  * Swing TableModel Java Bean for displaying and editing a system's SequenceDirectory.
  *
- * <p>
- *   This implementation is identified by {@code <org.jomc.sequences.util.SequencesTableModel>}.
- * </p>
- * <p>
- *   It provides objects named {@code <JOMC Sequences Utilities>} of the following specifications:
- *
- *   <ul>
- *     <li>{@code <javax.swing.table.TableModel>} at any specification level.</li>
- *   </ul>
- * </p>
  * <dl>
+ *   <dt><b>Identifier:</b></dt><dd>org.jomc.sequences.util.SequencesTableModel</dd>
+ *   <dt><b>Name:</b></dt><dd>JOMC Sequences Utilities</dd>
+ *   <dt><b>Implements:</b></dt><dd>javax.swing.table.TableModel</dd></dt>
  *   <dt><b>Abstract:</b></dt><dd>No</dd>
  *   <dt><b>Final:</b></dt><dd>No</dd>
  *   <dt><b>Stateless:</b></dt><dd>No</dd>
