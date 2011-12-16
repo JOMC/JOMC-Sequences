@@ -46,10 +46,9 @@ import static org.junit.Assert.assertNotNull;
 /**
  * Test cases for class {@code org.jomc.sequences.Sequence}.
  *
- * <p>
- *   This implementation is identified by {@code <org.jomc.sequences.test.SequenceTest>}.
- * </p>
  * <dl>
+ *   <dt><b>Identifier:</b></dt><dd>org.jomc.sequences.test.SequenceTest</dd>
+ *   <dt><b>Name:</b></dt><dd>JOMC Sequences API</dd>
  *   <dt><b>Abstract:</b></dt><dd>No</dd>
  *   <dt><b>Final:</b></dt><dd>No</dd>
  *   <dt><b>Stateless:</b></dt><dd>No</dd>
