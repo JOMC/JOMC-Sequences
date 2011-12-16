@@ -47,10 +47,9 @@ import static org.junit.Assert.assertNotNull;
 /**
  * Test cases for the {@code SequenceMapper} specification.
  *
- * <p>
- *   This implementation is identified by {@code <org.jomc.sequences.ri.test.SequenceMapperTest>}.
- * </p>
  * <dl>
+ *   <dt><b>Identifier:</b></dt><dd>org.jomc.sequences.ri.test.SequenceMapperTest</dd>
+ *   <dt><b>Name:</b></dt><dd>JOMC Sequences RI</dd>
  *   <dt><b>Abstract:</b></dt><dd>No</dd>
  *   <dt><b>Final:</b></dt><dd>No</dd>
  *   <dt><b>Stateless:</b></dt><dd>Yes</dd>

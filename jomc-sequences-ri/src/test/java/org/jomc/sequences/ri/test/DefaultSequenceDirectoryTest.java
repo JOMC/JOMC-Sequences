@@ -41,10 +41,9 @@ import org.jomc.sequences.it.SequenceDirectoryTest;
 /**
  * Test cases for class {@code org.jomc.sequences.ri.DefaultSequenceDirectory}.
  *
- * <p>
- *   This implementation is identified by {@code <org.jomc.sequences.ri.test.DefaultSequenceDirectoryTest>}.
- * </p>
  * <dl>
+ *   <dt><b>Identifier:</b></dt><dd>org.jomc.sequences.ri.test.DefaultSequenceDirectoryTest</dd>
+ *   <dt><b>Name:</b></dt><dd>JOMC Sequences RI</dd>
  *   <dt><b>Abstract:</b></dt><dd>No</dd>
  *   <dt><b>Final:</b></dt><dd>No</dd>
  *   <dt><b>Stateless:</b></dt><dd>Yes</dd>
