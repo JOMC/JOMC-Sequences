@@ -43,25 +43,17 @@ import org.jomc.sequences.model.SequenceType;
 /**
  * Maps model classes.
  *
- * <p>
- *   This specification is identified by {@code <org.jomc.sequences.ri.SequenceMapper>}.
- * </p>
- * <p>
- *   Use of class {@code ObjectManager} is supported for accessing implementations.
- *   <blockquote><pre>
- * SequenceMapper[] objects = ObjectManagerFactory.getObjectManager( getClass().getClassLoader() ).getObject( SequenceMapper[].class );
- * SequenceMapper object = ObjectManagerFactory.getObjectManager( getClass().getClassLoader() ).getObject( SequenceMapper.class, "<i>implementation name</i>" );
- *   </pre></blockquote>
- * </p>
  * <dl>
+ *   <dt><b>Identifier:</b></dt><dd>org.jomc.sequences.ri.SequenceMapper</dd>
  *   <dt><b>Multiplicity:</b></dt><dd>Many</dd>
  *   <dt><b>Scope:</b></dt><dd>None</dd>
  * </dl>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
  * @version 1.0
+ * @see org.jomc.ObjectManager#getObject(java.lang.Class) getObject(SequenceMapper[].class)
+ * @see org.jomc.ObjectManager#getObject(java.lang.Class,java.lang.String) getObject(SequenceMapper.class, "<i>implementation name</i>")
  * @see org.jomc.ObjectManagerFactory
- * @see org.jomc.ObjectManager
  */
 // </editor-fold>
 // SECTION-END

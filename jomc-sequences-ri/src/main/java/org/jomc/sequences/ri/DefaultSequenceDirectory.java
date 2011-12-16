@@ -62,18 +62,10 @@ import org.jomc.sequences.model.SequencesType;
 /**
  * SequenceDirectory reference implementation.
  *
- * <p>
- *   This implementation is identified by {@code <org.jomc.sequences.ri.DefaultSequenceDirectory>}.
- * </p>
- * <p>
- *   It provides objects named {@code <JOMC Sequences RI>} of the following specifications:
- *
- *   <ul>
- *     <li>{@code <org.jomc.sequences.SequenceDirectory>} at specification level 1.0 applying to {@code <Singleton>} scope.</li>
- *     <li>{@code <org.jomc.sequences.SequenceOperations>} at specification level 1.0 applying to {@code <Singleton>} scope.</li>
- *   </ul>
- * </p>
  * <dl>
+ *   <dt><b>Identifier:</b></dt><dd>org.jomc.sequences.ri.DefaultSequenceDirectory</dd>
+ *   <dt><b>Name:</b></dt><dd>JOMC Sequences RI</dd>
+ *   <dt><b>Implements:</b></dt><dd>org.jomc.sequences.SequenceDirectory@1.0, org.jomc.sequences.SequenceOperations@1.0</dd></dt>
  *   <dt><b>Abstract:</b></dt><dd>No</dd>
  *   <dt><b>Final:</b></dt><dd>No</dd>
  *   <dt><b>Stateless:</b></dt><dd>Yes</dd>
