@@ -56,10 +56,9 @@ import static org.junit.Assert.fail;
 /**
  * Testcase for SequenceOperations implementations.
  *
- * <p>
- *   This implementation is identified by {@code <org.jomc.sequences.it.SequenceOperationsTest>}.
- * </p>
  * <dl>
+ *   <dt><b>Identifier:</b></dt><dd>org.jomc.sequences.it.SequenceOperationsTest</dd>
+ *   <dt><b>Name:</b></dt><dd>JOMC Sequences Test Suite</dd>
  *   <dt><b>Abstract:</b></dt><dd>No</dd>
  *   <dt><b>Final:</b></dt><dd>No</dd>
  *   <dt><b>Stateless:</b></dt><dd>No</dd>
