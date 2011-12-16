@@ -42,25 +42,17 @@ import java.util.Set;
 /**
  * Directory of sequences.
  *
- * <p>
- *   This specification is identified by {@code <org.jomc.sequences.SequenceDirectory>}.
- * </p>
- * <p>
- *   Use of class {@code ObjectManager} is supported for accessing implementations.
- *   <blockquote><pre>
- * SequenceDirectory object = ObjectManagerFactory.getObjectManager( getClass().getClassLoader() ).getObject( SequenceDirectory.class );
- * SequenceDirectory object = ObjectManagerFactory.getObjectManager( getClass().getClassLoader() ).getObject( SequenceDirectory.class, "<i>implementation name</i>" );
- *   </pre></blockquote>
- * </p>
  * <dl>
+ *   <dt><b>Identifier:</b></dt><dd>org.jomc.sequences.SequenceDirectory</dd>
  *   <dt><b>Multiplicity:</b></dt><dd>One</dd>
  *   <dt><b>Scope:</b></dt><dd>Singleton</dd>
  * </dl>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
  * @version 1.0
+ * @see org.jomc.ObjectManager#getObject(java.lang.Class) getObject(SequenceDirectory.class)
+ * @see org.jomc.ObjectManager#getObject(java.lang.Class,java.lang.String) getObject(SequenceDirectory.class, "<i>implementation name</i>")
  * @see org.jomc.ObjectManagerFactory
- * @see org.jomc.ObjectManager
  */
 // </editor-fold>
 // SECTION-END

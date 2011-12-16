@@ -39,10 +39,9 @@ package org.jomc.sequences;
 /**
  * Gets thrown when a sequence is about to be added to a directory although a sequence with the same name already exists.
  *
- * <p>
- *   This implementation is identified by {@code <org.jomc.sequences.SequenceExistsException>}.
- * </p>
  * <dl>
+ *   <dt><b>Identifier:</b></dt><dd>org.jomc.sequences.SequenceExistsException</dd>
+ *   <dt><b>Name:</b></dt><dd>JOMC Sequences API</dd>
  *   <dt><b>Abstract:</b></dt><dd>No</dd>
  *   <dt><b>Final:</b></dt><dd>No</dd>
  *   <dt><b>Stateless:</b></dt><dd>No</dd>

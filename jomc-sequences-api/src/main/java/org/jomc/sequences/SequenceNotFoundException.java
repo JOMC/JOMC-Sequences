@@ -39,10 +39,9 @@ package org.jomc.sequences;
 /**
  * Gets thrown when a sequence is not found for a given name.
  *
- * <p>
- *   This implementation is identified by {@code <org.jomc.sequences.SequenceNotFoundException>}.
- * </p>
  * <dl>
+ *   <dt><b>Identifier:</b></dt><dd>org.jomc.sequences.SequenceNotFoundException</dd>
+ *   <dt><b>Name:</b></dt><dd>JOMC Sequences API</dd>
  *   <dt><b>Abstract:</b></dt><dd>No</dd>
  *   <dt><b>Final:</b></dt><dd>No</dd>
  *   <dt><b>Stateless:</b></dt><dd>No</dd>

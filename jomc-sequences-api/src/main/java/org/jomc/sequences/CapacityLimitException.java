@@ -41,10 +41,9 @@ import java.math.BigInteger;
 /**
  * Gets thrown whenever the directories capacity limit has been reached.
  *
- * <p>
- *   This implementation is identified by {@code <org.jomc.sequences.CapacityLimitException>}.
- * </p>
  * <dl>
+ *   <dt><b>Identifier:</b></dt><dd>org.jomc.sequences.CapacityLimitException</dd>
+ *   <dt><b>Name:</b></dt><dd>JOMC Sequences API</dd>
  *   <dt><b>Abstract:</b></dt><dd>No</dd>
  *   <dt><b>Final:</b></dt><dd>No</dd>
  *   <dt><b>Stateless:</b></dt><dd>No</dd>

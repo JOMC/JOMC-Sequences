@@ -39,10 +39,9 @@ package org.jomc.sequences;
 /**
  * Gets thrown whenever an unexpected error condition is detected.
  *
- * <p>
- *   This implementation is identified by {@code <org.jomc.sequences.SequencesSystemException>}.
- * </p>
  * <dl>
+ *   <dt><b>Identifier:</b></dt><dd>org.jomc.sequences.SequencesSystemException</dd>
+ *   <dt><b>Name:</b></dt><dd>JOMC Sequences API</dd>
  *   <dt><b>Abstract:</b></dt><dd>No</dd>
  *   <dt><b>Final:</b></dt><dd>No</dd>
  *   <dt><b>Stateless:</b></dt><dd>No</dd>

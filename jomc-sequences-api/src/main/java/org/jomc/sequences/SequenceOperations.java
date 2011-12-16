@@ -39,25 +39,17 @@ package org.jomc.sequences;
 /**
  * Provides operations performed with sequences.
  *
- * <p>
- *   This specification is identified by {@code <org.jomc.sequences.SequenceOperations>}.
- * </p>
- * <p>
- *   Use of class {@code ObjectManager} is supported for accessing implementations.
- *   <blockquote><pre>
- * SequenceOperations object = ObjectManagerFactory.getObjectManager( getClass().getClassLoader() ).getObject( SequenceOperations.class );
- * SequenceOperations object = ObjectManagerFactory.getObjectManager( getClass().getClassLoader() ).getObject( SequenceOperations.class, "<i>implementation name</i>" );
- *   </pre></blockquote>
- * </p>
  * <dl>
+ *   <dt><b>Identifier:</b></dt><dd>org.jomc.sequences.SequenceOperations</dd>
  *   <dt><b>Multiplicity:</b></dt><dd>One</dd>
  *   <dt><b>Scope:</b></dt><dd>Singleton</dd>
  * </dl>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
  * @version 1.0
+ * @see org.jomc.ObjectManager#getObject(java.lang.Class) getObject(SequenceOperations.class)
+ * @see org.jomc.ObjectManager#getObject(java.lang.Class,java.lang.String) getObject(SequenceOperations.class, "<i>implementation name</i>")
  * @see org.jomc.ObjectManagerFactory
- * @see org.jomc.ObjectManager
  */
 // </editor-fold>
 // SECTION-END
