@@ -47,7 +47,8 @@ import org.jomc.sequences.SequenceVetoException;
  * <dl>
  *   <dt><b>Identifier:</b></dt><dd>org.jomc.sequences.ri.DefaultVetoableSequenceChangeListener</dd>
  *   <dt><b>Name:</b></dt><dd>JOMC Sequences RI</dd>
- *   <dt><b>Implements:</b></dt><dd>org.jomc.sequences.VetoableSequenceChangeListener@1.0</dd></dt>
+ *   <dt><b>Specifications:</b></dt>
+ *     <dd>org.jomc.sequences.VetoableSequenceChangeListener @ 1.0</dd>
  *   <dt><b>Abstract:</b></dt><dd>No</dd>
  *   <dt><b>Final:</b></dt><dd>No</dd>
  *   <dt><b>Stateless:</b></dt><dd>Yes</dd>
@@ -150,11 +151,9 @@ public class DefaultVetoableSequenceChangeListener
     // <editor-fold defaultstate="collapsed" desc=" Generated Properties ">
     /**
      * Gets the value of the {@code <sequenceNameMaxLength>} property.
-     * <p>
-     *   <dl>
-     *     <dt><b>Final:</b></dt><dd>No</dd>
-     *   </dl>
-     * </p>
+     * <p><dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl></p>
      * @return Maximum allowed length of a sequence name.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -167,11 +166,9 @@ public class DefaultVetoableSequenceChangeListener
     }
     /**
      * Gets the value of the {@code <sequenceNameMinLength>} property.
-     * <p>
-     *   <dl>
-     *     <dt><b>Final:</b></dt><dd>No</dd>
-     *   </dl>
-     * </p>
+     * <p><dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl></p>
      * @return Minimum required length of a sequence name.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */

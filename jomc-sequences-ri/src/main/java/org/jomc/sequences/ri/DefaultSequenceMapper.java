@@ -51,7 +51,8 @@ import org.jomc.sequences.model.SequenceType;
  * <dl>
  *   <dt><b>Identifier:</b></dt><dd>org.jomc.sequences.ri.DefaultSequenceMapper</dd>
  *   <dt><b>Name:</b></dt><dd>JOMC Sequences RI</dd>
- *   <dt><b>Implements:</b></dt><dd>org.jomc.sequences.ri.SequenceMapper@1.0</dd></dt>
+ *   <dt><b>Specifications:</b></dt>
+ *     <dd>org.jomc.sequences.ri.SequenceMapper @ 1.0</dd>
  *   <dt><b>Abstract:</b></dt><dd>No</dd>
  *   <dt><b>Final:</b></dt><dd>No</dd>
  *   <dt><b>Stateless:</b></dt><dd>Yes</dd>
@@ -227,15 +228,12 @@ public class DefaultSequenceMapper implements SequenceMapper
     // <editor-fold defaultstate="collapsed" desc=" Generated Messages ">
     /**
      * Gets the text of the {@code <illegalArgumentMessage>} message.
-     * <p><strong>Languages:</strong>
-     *   <ul>
-     *     <li>English (default)</li>
-     *     <li>Deutsch</li>
-     *   </ul>
-     * </p>
-     * <dl>
+     * <p><dl>
+     *   <dt><b>Languages:</b></dt>
+     *     <dd>English (default)</dd>
+     *     <dd>Deutsch</dd>
      *   <dt><b>Final:</b></dt><dd>No</dd>
-     * </dl>
+     * </dl></p>
      *
      * @param locale The locale of the message to return.
      * @param argumentName Format argument.
@@ -252,15 +250,12 @@ public class DefaultSequenceMapper implements SequenceMapper
     }
     /**
      * Gets the text of the {@code <unhandledExceptionMessage>} message.
-     * <p><strong>Languages:</strong>
-     *   <ul>
-     *     <li>English (default)</li>
-     *     <li>Deutsch</li>
-     *   </ul>
-     * </p>
-     * <dl>
+     * <p><dl>
+     *   <dt><b>Languages:</b></dt>
+     *     <dd>English (default)</dd>
+     *     <dd>Deutsch</dd>
      *   <dt><b>Final:</b></dt><dd>No</dd>
-     * </dl>
+     * </dl></p>
      *
      * @param locale The locale of the message to return.
      * @return The text of the {@code <unhandledExceptionMessage>} message for {@code locale}.

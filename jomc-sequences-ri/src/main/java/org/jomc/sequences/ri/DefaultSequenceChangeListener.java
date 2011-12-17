@@ -44,7 +44,8 @@ import org.jomc.sequences.SequenceChangeEvent;
  * <dl>
  *   <dt><b>Identifier:</b></dt><dd>org.jomc.sequences.ri.DefaultSequenceChangeListener</dd>
  *   <dt><b>Name:</b></dt><dd>JOMC Sequences RI</dd>
- *   <dt><b>Implements:</b></dt><dd>org.jomc.sequences.SequenceChangeListener@1.0</dd></dt>
+ *   <dt><b>Specifications:</b></dt>
+ *     <dd>org.jomc.sequences.SequenceChangeListener @ 1.0</dd>
  *   <dt><b>Abstract:</b></dt><dd>No</dd>
  *   <dt><b>Final:</b></dt><dd>No</dd>
  *   <dt><b>Stateless:</b></dt><dd>Yes</dd>
@@ -154,15 +155,12 @@ public class DefaultSequenceChangeListener
     // <editor-fold defaultstate="collapsed" desc=" Generated Messages ">
     /**
      * Gets the text of the {@code <operationInfo>} message.
-     * <p><strong>Languages:</strong>
-     *   <ul>
-     *     <li>English (default)</li>
-     *     <li>Deutsch</li>
-     *   </ul>
-     * </p>
-     * <dl>
+     * <p><dl>
+     *   <dt><b>Languages:</b></dt>
+     *     <dd>English (default)</dd>
+     *     <dd>Deutsch</dd>
      *   <dt><b>Final:</b></dt><dd>No</dd>
-     * </dl>
+     * </dl></p>
      *
      * @param locale The locale of the message to return.
      * @param oldSequenceInfo Format argument.
