@@ -889,7 +889,6 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *     <dd>Deutsch</dd>
      *   <dt><b>Final:</b></dt><dd>No</dd>
      * </dl></p>
-     *
      * @param locale The locale of the message to return.
      * @param columnIndex Format argument.
      * @return The text of the {@code <illegalColumnIndexMessage>} message for {@code locale}.
@@ -910,7 +909,6 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *     <dd>Deutsch</dd>
      *   <dt><b>Final:</b></dt><dd>No</dd>
      * </dl></p>
-     *
      * @param locale The locale of the message to return.
      * @return The text of the {@code <incrementColumnTitle>} message for {@code locale}.
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
@@ -930,7 +928,6 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *     <dd>Deutsch</dd>
      *   <dt><b>Final:</b></dt><dd>No</dd>
      * </dl></p>
-     *
      * @param locale The locale of the message to return.
      * @return The text of the {@code <maximumColumnTitle>} message for {@code locale}.
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
@@ -950,7 +947,6 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *     <dd>Deutsch</dd>
      *   <dt><b>Final:</b></dt><dd>No</dd>
      * </dl></p>
-     *
      * @param locale The locale of the message to return.
      * @return The text of the {@code <minimumColumnTitle>} message for {@code locale}.
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
@@ -970,7 +966,6 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *     <dd>Deutsch</dd>
      *   <dt><b>Final:</b></dt><dd>No</dd>
      * </dl></p>
-     *
      * @param locale The locale of the message to return.
      * @return The text of the {@code <nameColumnTitle>} message for {@code locale}.
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
@@ -990,7 +985,6 @@ public class SequencesTableModel extends AbstractTableModel implements Serializa
      *     <dd>Deutsch</dd>
      *   <dt><b>Final:</b></dt><dd>No</dd>
      * </dl></p>
-     *
      * @param locale The locale of the message to return.
      * @return The text of the {@code <valueColumnTitle>} message for {@code locale}.
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
