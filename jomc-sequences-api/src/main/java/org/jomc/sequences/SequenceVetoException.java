@@ -145,15 +145,12 @@ public class SequenceVetoException extends SequencesException
     // <editor-fold defaultstate="collapsed" desc=" Generated Messages ">
     /**
      * Gets the text of the {@code <illegalSequenceMessage>} message.
-     * <p><strong>Languages:</strong>
-     *   <ul>
-     *     <li>English (default)</li>
-     *     <li>Deutsch</li>
-     *   </ul>
-     * </p>
-     * <dl>
+     * <p><dl>
+     *   <dt><b>Languages:</b></dt>
+     *     <dd>English (default)</dd>
+     *     <dd>Deutsch</dd>
      *   <dt><b>Final:</b></dt><dd>No</dd>
-     * </dl>
+     * </dl></p>
      *
      * @param locale The locale of the message to return.
      * @return The text of the {@code <illegalSequenceMessage>} message for {@code locale}.
