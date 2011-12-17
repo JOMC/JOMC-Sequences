@@ -830,7 +830,6 @@ public class DefaultSequenceDirectory
      *     <dd>Deutsch</dd>
      *   <dt><b>Final:</b></dt><dd>No</dd>
      * </dl></p>
-     *
      * @param locale The locale of the message to return.
      * @param argumentName Format argument.
      * @param argumentValue Format argument.
@@ -852,7 +851,6 @@ public class DefaultSequenceDirectory
      *     <dd>Deutsch</dd>
      *   <dt><b>Final:</b></dt><dd>No</dd>
      * </dl></p>
-     *
      * @param locale The locale of the message to return.
      * @param directoryInfo Format argument.
      * @param objectInfo Format argument.
@@ -874,7 +872,6 @@ public class DefaultSequenceDirectory
      *     <dd>Deutsch</dd>
      *   <dt><b>Final:</b></dt><dd>No</dd>
      * </dl></p>
-     *
      * @param locale The locale of the message to return.
      * @param directoryInfo Format argument.
      * @return The text of the {@code <missingResultObjectError>} message for {@code locale}.
@@ -895,7 +892,6 @@ public class DefaultSequenceDirectory
      *     <dd>Deutsch</dd>
      *   <dt><b>Final:</b></dt><dd>No</dd>
      * </dl></p>
-     *
      * @param locale The locale of the message to return.
      * @param name Format argument.
      * @return The text of the {@code <successfullyCreatedSequenceDirectoryMessage>} message for {@code locale}.

@@ -161,7 +161,6 @@ public class DefaultSequenceChangeListener
      *     <dd>Deutsch</dd>
      *   <dt><b>Final:</b></dt><dd>No</dd>
      * </dl></p>
-     *
      * @param locale The locale of the message to return.
      * @param oldSequenceInfo Format argument.
      * @param newSequenceInfo Format argument.

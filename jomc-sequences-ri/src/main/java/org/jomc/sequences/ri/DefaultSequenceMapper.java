@@ -234,7 +234,6 @@ public class DefaultSequenceMapper implements SequenceMapper
      *     <dd>Deutsch</dd>
      *   <dt><b>Final:</b></dt><dd>No</dd>
      * </dl></p>
-     *
      * @param locale The locale of the message to return.
      * @param argumentName Format argument.
      * @param argumentValue Format argument.
@@ -256,7 +255,6 @@ public class DefaultSequenceMapper implements SequenceMapper
      *     <dd>Deutsch</dd>
      *   <dt><b>Final:</b></dt><dd>No</dd>
      * </dl></p>
-     *
      * @param locale The locale of the message to return.
      * @return The text of the {@code <unhandledExceptionMessage>} message for {@code locale}.
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
