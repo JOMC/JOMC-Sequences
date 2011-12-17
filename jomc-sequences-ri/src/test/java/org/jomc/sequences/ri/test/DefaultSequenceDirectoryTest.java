@@ -101,11 +101,9 @@ public class DefaultSequenceDirectoryTest extends SequenceDirectoryTest
     // <editor-fold defaultstate="collapsed" desc=" Generated Properties ">
     /**
      * Gets the value of the {@code <sequenceNameMaxLength>} property.
-     * <p>
-     *   <dl>
-     *     <dt><b>Final:</b></dt><dd>No</dd>
-     *   </dl>
-     * </p>
+     * <p><dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl></p>
      * @return Maximum allowed length of a sequence name.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -118,11 +116,9 @@ public class DefaultSequenceDirectoryTest extends SequenceDirectoryTest
     }
     /**
      * Gets the value of the {@code <sequenceNameMinLength>} property.
-     * <p>
-     *   <dl>
-     *     <dt><b>Final:</b></dt><dd>No</dd>
-     *   </dl>
-     * </p>
+     * <p><dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl></p>
      * @return Minimum required length of a sequence name.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
