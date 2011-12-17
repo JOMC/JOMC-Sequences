@@ -141,7 +141,6 @@ public class ConcurrentModificationException extends SequencesException
      *     <dd>Deutsch</dd>
      *   <dt><b>Final:</b></dt><dd>No</dd>
      * </dl></p>
-     *
      * @param locale The locale of the message to return.
      * @param name Format argument.
      * @return The text of the {@code <concurrentlyModifiedMessage>} message for {@code locale}.

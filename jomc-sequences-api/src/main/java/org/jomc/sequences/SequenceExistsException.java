@@ -140,7 +140,6 @@ public class SequenceExistsException extends SequencesException
      *     <dd>Deutsch</dd>
      *   <dt><b>Final:</b></dt><dd>No</dd>
      * </dl></p>
-     *
      * @param locale The locale of the message to return.
      * @param sequenceName Format argument.
      * @return Message stating that a sequence already exists in the directory.

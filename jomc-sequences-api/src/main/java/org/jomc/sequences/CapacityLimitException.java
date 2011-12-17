@@ -140,7 +140,6 @@ public class CapacityLimitException extends SequencesException
      *     <dd>Deutsch</dd>
      *   <dt><b>Final:</b></dt><dd>No</dd>
      * </dl></p>
-     *
      * @param locale The locale of the message to return.
      * @param limit Format argument.
      * @return The text of the {@code <capacityLimitMessage>} message for {@code locale}.
