@@ -148,22 +148,13 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
           <version>2.3.2</version>
-          <executions>
-            <execution>
-              <id>default-test-jar</id>
-              <phase>prepare-package</phase>
-              <goals>
-                <goal>test-jar</goal>
-              </goals>
-            </execution>
-          </executions>
           <configuration>
             <archive>
               <index>true</index>
               <addMavenDescriptor>false</addMavenDescriptor>
               <compress>true</compress>
               <manifestEntries>
-                <Build-Date>${buildNumber}</Build-Date>
+                <Build-Date>${build.date}</Build-Date>
                 <Maven-Version>${maven.version}</Maven-Version>
               </manifestEntries>
             </archive>
@@ -205,7 +196,8 @@
                   <resourceBundle>org.jomc.build:jomc-build-resources:${jomc.build.version}</resourceBundle>
                 </resourceBundles>
                 <properties>
-                  <buildNumber>${buildNumber}</buildNumber>
+                  <buildDate>${build.date}</buildDate>
+                  <with-developer-copyright>true</with-developer-copyright>
                 </properties>
                 <outputDirectory>${remoteResourcesOutputDirectory}</outputDirectory>
               </configuration>
@@ -309,7 +301,7 @@
               <addMavenDescriptor>false</addMavenDescriptor>
               <compress>true</compress>
               <manifestEntries>
-                <Build-Date>${buildNumber}</Build-Date>
+                <Build-Date>${build.date}</Build-Date>
                 <Maven-Version>${maven.version}</Maven-Version>
               </manifestEntries>
             </archive>
@@ -415,7 +407,7 @@
               <addMavenDescriptor>false</addMavenDescriptor>
               <compress>true</compress>
               <manifestEntries>
-                <Build-Date>${buildNumber}</Build-Date>
+                <Build-Date>${build.date}</Build-Date>
                 <Maven-Version>${maven.version}</Maven-Version>
               </manifestEntries>
             </archive>
@@ -426,7 +418,7 @@
           <artifactId>maven-scm-plugin</artifactId>
           <version>1.6</version>
           <configuration>
-            <message>[maven-scm-plugin] Build ${buildNumber}</message>
+            <message>[maven-scm-plugin] Build ${build.date}</message>
             <username>${jomc.scm.username}</username>
             <password>${jomc.scm.password}</password>
           </configuration>
@@ -520,7 +512,7 @@
               <addMavenDescriptor>false</addMavenDescriptor>
               <compress>true</compress>
               <manifestEntries>
-                <Build-Date>${buildNumber}</Build-Date>
+                <Build-Date>${build.date}</Build-Date>
                 <Maven-Version>${maven.version}</Maven-Version>
               </manifestEntries>
             </archive>
@@ -538,7 +530,7 @@
               <addMavenDescriptor>false</addMavenDescriptor>
               <compress>true</compress>
               <manifestEntries>
-                <Build-Date>${buildNumber}</Build-Date>
+                <Build-Date>${build.date}</Build-Date>
                 <Maven-Version>${maven.version}</Maven-Version>
               </manifestEntries>
             </archive>
@@ -578,20 +570,13 @@
           <version>1.7</version>
           <executions>
             <execution>
-              <id>default-maven-version</id>
-              <phase>initialize</phase>
-              <goals>
-                <goal>maven-version</goal>
-              </goals>
-            </execution>
-            <execution>
               <id>default-timestamp-property</id>
               <phase>initialize</phase>
               <goals>
                 <goal>timestamp-property</goal>
               </goals>
               <configuration>
-                <name>buildNumber</name>
+                <name>build.date</name>
                 <locale>en</locale>
                 <pattern>yyyy-MM-dd'T'HH:mm:ssZ</pattern>
               </configuration>
@@ -653,8 +638,8 @@
                         <value>${project.version}</value>
                       </parameter>
                       <parameter>
-                        <name>build.number</name>
-                        <value>${buildNumber}</value>
+                        <name>project.date</name>
+                        <value>${build.date}</value>
                       </parameter>
                     </parameters>
                   </transformationSet>
@@ -1958,6 +1943,34 @@
       </build>
     </profile>
     <profile>
+      <!-- See http://jira.codehaus.org/browse/MNG-4112 -->
+      <id>maven-version</id>
+      <activation>
+        <property>
+          <name>!maven.version</name>
+        </property>
+      </activation>
+      <build>
+        <pluginManagement>
+          <plugins>
+            <plugin>
+              <groupId>org.codehaus.mojo</groupId>
+              <artifactId>build-helper-maven-plugin</artifactId>
+              <executions>
+                <execution>
+                  <id>default-maven-version</id>
+                  <phase>initialize</phase>
+                  <goals>
+                    <goal>maven-version</goal>
+                  </goals>
+                </execution>
+              </executions>
+            </plugin>
+          </plugins>
+        </pluginManagement>
+      </build>
+    </profile>
+    <profile>
       <id>jomc-ci</id>
       <activation>
         <activeByDefault>false</activeByDefault>
@@ -2220,7 +2233,7 @@
     <umlgraph.version>5.1</umlgraph.version>
     <cc-xjc-plugin.version>2.0</cc-xjc-plugin.version>
     <jpa-xjc-plugin.version>1.0.2</jpa-xjc-plugin.version>
-    <jomc.build.version>1.6</jomc.build.version>
+    <jomc.build.version>1.7</jomc.build.version>
     <jomc.version>1.2-SNAPSHOT</jomc.version>
     <jomc-logging.version>1.1-SNAPSHOT</jomc-logging.version>
     <jomc-standalone.version>1.0-beta-3-SNAPSHOT</jomc-standalone.version>

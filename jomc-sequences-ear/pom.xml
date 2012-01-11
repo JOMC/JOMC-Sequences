@@ -58,16 +58,7 @@
           <executions>
             <execution>
               <id>default-process</id>
-              <goals>
-                <goal>process</goal>
-              </goals>
               <configuration>
-                <resourceBundles>
-                  <resourceBundle>org.jomc.build:jomc-build-resources:${jomc.build.version}</resourceBundle>
-                </resourceBundles>
-                <properties>
-                  <buildNumber>${buildNumber}</buildNumber>
-                </properties>
                 <outputDirectory>${project.build.directory}/jomc-ear</outputDirectory>
               </configuration>
             </execution>
