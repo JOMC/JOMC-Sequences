@@ -207,9 +207,6 @@
     </profile>
     <profile>
       <id>jbossjta-hibernate-mysql</id>
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
       <build>
         <testResources>
           <testResource>
@@ -263,9 +260,6 @@
     </profile>
     <profile>
       <id>jbossjta-hibernate-postgresql</id>
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
       <build>
         <testResources>
           <testResource>
@@ -318,9 +312,6 @@
     </profile>
     <profile>
       <id>jbossjta-toplink-derby</id>
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
       <build>
         <testResources>
           <testResource>
@@ -373,9 +364,6 @@
     </profile>
     <profile>
       <id>jbossjta-toplink-mysql</id>
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
       <build>
         <testResources>
           <testResource>
@@ -428,9 +416,6 @@
     </profile>
     <profile>
       <id>jbossjta-toplink-postgresql</id>
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
       <build>
         <testResources>
           <testResource>
@@ -483,9 +468,6 @@
     </profile>
     <profile>
       <id>jbossjta-openjpa-derby</id>
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
       <build>
         <testResources>
           <testResource>
@@ -543,9 +525,6 @@
     </profile>
     <profile>
       <id>jbossjta-openjpa-mysql</id>
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
       <build>
         <testResources>
           <testResource>
@@ -603,9 +582,6 @@
     </profile>
     <profile>
       <id>jbossjta-openjpa-postgresql</id>
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
       <build>
         <testResources>
           <testResource>
@@ -663,9 +639,6 @@
     </profile>
     <profile>
       <id>geronimojta-hibernate-derby</id>
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
       <build>
         <testResources>
           <testResource>
@@ -718,9 +691,6 @@
     </profile>
     <profile>
       <id>geronimojta-hibernate-mysql</id>
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
       <build>
         <testResources>
           <testResource>
@@ -773,9 +743,6 @@
     </profile>
     <profile>
       <id>geronimojta-hibernate-postgresql</id>
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
       <build>
         <testResources>
           <testResource>
@@ -828,9 +795,6 @@
     </profile>
     <profile>
       <id>geronimojta-toplink-derby</id>
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
       <build>
         <testResources>
           <testResource>
@@ -883,9 +847,6 @@
     </profile>
     <profile>
       <id>geronimojta-toplink-mysql</id>
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
       <build>
         <testResources>
           <testResource>
@@ -938,9 +899,6 @@
     </profile>
     <profile>
       <id>geronimojta-toplink-postgresql</id>
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
       <build>
         <testResources>
           <testResource>
@@ -993,9 +951,6 @@
     </profile>
     <profile>
       <id>geronimojta-openjpa-derby</id>
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
       <build>
         <testResources>
           <testResource>
@@ -1053,9 +1008,6 @@
     </profile>
     <profile>
       <id>geronimojta-openjpa-mysql</id>
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
       <build>
         <testResources>
           <testResource>
@@ -1113,9 +1065,6 @@
     </profile>
     <profile>
       <id>geronimojta-openjpa-postgresql</id>
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
       <build>
         <testResources>
           <testResource>
@@ -1173,9 +1122,6 @@
     </profile>
     <profile>
       <id>jotm-hibernate-derby</id>
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
       <build>
         <testResources>
           <testResource>
@@ -1234,9 +1180,6 @@
     </profile>
     <profile>
       <id>jotm-hibernate-mysql</id>
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
       <build>
         <testResources>
           <testResource>
@@ -1295,9 +1238,6 @@
     </profile>
     <profile>
       <id>jotm-hibernate-postgresql</id>
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
       <build>
         <testResources>
           <testResource>
@@ -1356,9 +1296,6 @@
     </profile>
     <profile>
       <id>jotm-toplink-derby</id>
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
       <build>
         <testResources>
           <testResource>
@@ -1417,9 +1354,6 @@
     </profile>
     <profile>
       <id>jotm-toplink-mysql</id>
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
       <build>
         <testResources>
           <testResource>
@@ -1478,9 +1412,6 @@
     </profile>
     <profile>
       <id>jotm-toplink-postgresql</id>
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
       <build>
         <testResources>
           <testResource>
@@ -1539,9 +1470,6 @@
     </profile>
     <profile>
       <id>jotm-openjpa-derby</id>
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
       <build>
         <testResources>
           <testResource>
@@ -1605,9 +1533,6 @@
     </profile>
     <profile>
       <id>jotm-openjpa-mysql</id>
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
       <build>
         <testResources>
           <testResource>
@@ -1671,9 +1596,6 @@
     </profile>
     <profile>
       <id>jotm-openjpa-postgresql</id>
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
       <build>
         <testResources>
           <testResource>

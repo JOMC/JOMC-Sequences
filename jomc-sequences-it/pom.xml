@@ -233,9 +233,6 @@
   <profiles>
     <profile>
       <id>jomc-sourceforge-release</id>
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
       <build>
         <pluginManagement>
           <plugins>
@@ -271,9 +268,6 @@
     </profile>
     <profile>
       <id>jomc-release</id>
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
       <build>
         <pluginManagement>
           <plugins>
