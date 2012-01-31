@@ -2288,7 +2288,7 @@
     <slf4j.version>1.6.2</slf4j.version>
     <plugintools.version>2.9</plugintools.version> <!-- See http://jira.codehaus.org/browse/MNG-3762 -->
     <plexuscontainers.version>1.5.5</plexuscontainers.version>
-    <wagon.version>1.0</wagon.version>
+    <wagon.version>2.2</wagon.version>
     <umlgraph.version>5.1</umlgraph.version>
     <cc-xjc-plugin.version>2.0</cc-xjc-plugin.version>
     <jpa-xjc-plugin.version>1.0.2</jpa-xjc-plugin.version>
