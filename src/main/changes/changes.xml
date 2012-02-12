@@ -57,7 +57,7 @@
       <action dev="schulte2005" type="update"><![CDATA[Updated the version of the <code>maven-surefire-plugin</code> from <code>2.5</code> to <code>2.12</code>.]]></action>
       <action dev="schulte2005" type="update"><![CDATA[Updated the version of the <code>maven-surefire-report-plugin</code> from <code>2.5</code> to <code>2.12</code>.]]></action>
       <action dev="schulte2005" type="update"><![CDATA[Updated the version of the <code>maven-compiler-plugin</code> from <code>2.3.1</code> to <code>2.3.2</code>.]]></action>
-      <action dev="schulte2005" type="update"><![CDATA[Updated the version of the <code>maven-checkstyle-plugin</code> from <code>2.5</code> to <code>2.8</code>.]]></action>
+      <action dev="schulte2005" type="update"><![CDATA[Updated the version of the <code>maven-checkstyle-plugin</code> from <code>2.5</code> to <code>2.9</code>.]]></action>
       <action dev="schulte2005" type="update"><![CDATA[Updated the version of the <code>maven-ejb-plugin</code> from <code>2.2.1</code> to <code>2.3</code>.]]></action>
       <action dev="schulte2005" type="update"><![CDATA[Updated the version of the <code>maven-ear-plugin</code> from <code>2.4.2</code> to <code>2.7</code>.]]></action>
       <action dev="schulte2005" type="update"><![CDATA[Updated the version of the <code>maven-assembly-plugin</code> from <code>2.2-beta-5</code> to <code>2.3</code>.]]></action>
